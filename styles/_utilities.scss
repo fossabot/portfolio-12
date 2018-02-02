@@ -1,0 +1,182 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+// Class for the hoverable elements in the header
+.about-hover {
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none; // Prevents hover action on the (invisible) psuedo element
+    position: absolute;
+    top: 0;
+    transition: opacity .2s ease;
+    width: 100%;
+    z-index: map-get($layers, basement);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &--blue {
+    &::before {
+      background-color: $clr-teal;
+    }
+  }
+
+  &--codepen {
+    &::before {
+      background-color: $clr-codepen;
+    }
+  }
+
+  &--github {
+    &::before {
+      background-color: $clr-github;
+    }
+  }
+
+  &--green {
+    &::before {
+      background-color: $clr-seagreen;
+    }
+  }
+
+  &--linkedin {
+    &::before {
+      background-color: $clr-linkedin;
+    }
+  }
+
+  &--mail {
+    &::before {
+      background-color: $clr-mail;
+    }
+  }
+
+  &--red {
+    &::before {
+      background-color: $clr-indianred;
+    }
+  }
+}
+
+// Should be used in addition to the fontello "icon-" classes
+.icon {
+  text-decoration: none;
+
+  &--hover {
+    &:focus {
+      color: $clr-secondary-accent;
+    }
+
+    &:hover {
+      color: $clr-secondary-accent;
+    }
+  }
+}
+
+// Adds decoration to a title
+.short-underline {
+  margin-bottom: 1.05em;
+
+  &::after {
+    background-color: $clr-primary-accent;
+    content: '';
+    display: block;
+    height: .15em;
+    margin: .4em 0 0;
+    position: absolute;
+    transition: background-color .2s ease;
+    width: 2em;
+  }
+
+  &.short-underline--dark {
+    &::after {
+      background-color: $clr-primary-white;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $clr-primary-accent;
+      }
+    }
+  }
+}
+
+// Class to make text thin
+.text-thin,
+%text-thin {
+  font-weight: 100;
+}
+
+// Class to make text slightly bolder
+.text-littlebold,
+%text-littlebold {
+  font-weight: 300;
+}
+
+// Class to make text slightly bolder
+.text-bold,
+%text-bold {
+  font-weight: 600;
+}
+
+// Class to make text as bold as possilbe
+.text-extrabold,
+%text-extrabold {
+  font-weight: 900;
+}
+
+// Class to make text secondary/less important
+.text-secondary,
+%text-secondary {
+  color: $clr-primary-gray;
+  font-family: $fontstack-text;
+  font-size: $fontsize-subtext;
+  font-style: italic;
+  line-height: $lineheight-subtext;
+}
+
+// Class for links in text
+.text-link {
+  background-color: transparent;
+  color: $clr-secondary-accent;
+  position: relative;
+  text-decoration: none;
+  transition: color .15s ease;
+  z-index: 0;
+
+  &::after {
+    background-color: $clr-secondary-black;
+    content: '';
+    height: calc(100% + 4px);
+    left: -2px;
+    max-height: 0;
+    padding: 0 2px;
+    position: absolute;
+    top: 1px;
+    transition: max-height .2s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:focus {
+    color: $clr-primary-accent;
+  }
+
+  &:hover {
+    color: $clr-primary-white;
+
+    &::after {
+      bottom: -1px;
+      max-height: 100%;
+      top: auto;
+    }
+  }
+}

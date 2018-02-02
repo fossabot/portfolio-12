@@ -1,0 +1,179 @@
+@import 'variables/colors';
+
+
+.list {
+  list-style: none;
+  margin: deep-map-get($dimensions-list, mobile, margin, _);
+  padding: deep-map-get($dimensions-list, mobile, padding, _);
+}
+
+.list__item {
+  cursor: pointer;
+  margin: deep-map-get($dimensions-list, mobile, margin, item);
+  padding: deep-map-get($dimensions-list, mobile, padding, item);
+  position: relative;
+}
+
+.list__item__link {
+  align-items: center;
+  display: flex;
+  margin: deep-map-get($dimensions-list, mobile, margin, item-link);
+  padding: deep-map-get($dimensions-list, mobile, padding, item-link);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    &::after {
+      background-color: $clr-primary-accent;
+    }
+
+    .list__item__title {
+      margin: deep-map-get($dimensions-list, mobile, margin, title_hover);
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    background-color: $clr-primary-black;
+    content: '';
+    flex-grow: 2;
+    height: 1px;
+    margin: deep-map-get($dimensions-list, mobile, margin, item-link-after);
+    order: 3;
+    transition: background-color .1s ease;
+    width: 100%;
+  }
+}
+
+.list__item__category {
+  color: $clr-primary-gray;
+  cursor: default;
+  display: inline-block;
+  flex-grow: 1;
+  flex-shrink: 0;
+  font-size: $fontsize-subtext;
+  font-style: italic;
+  left: deep-map-get($dimensions-list, mobile, margin, category-left);
+  margin: 0;
+  order: 1;
+  pointer-events: none;
+  position: absolute;
+}
+
+.list__item__title {
+  @extend %text-bold;
+
+  display: inline-block;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: deep-map-get($dimensions-list, mobile, margin, title);
+  opacity: .8;
+  order: 2;
+  transition: margin .2s ease;
+}
+
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .list {
+    column-count: 2;
+    margin: deep-map-get($dimensions-list, desktop, margin, _);
+    padding: deep-map-get($dimensions-list, desktop, padding, _);
+  }
+
+  .list__item {
+    margin: deep-map-get($dimensions-list, desktop, margin, item);
+  }
+
+  .list__item__link {
+    &::after {
+      margin: deep-map-get($dimensions-list, desktop, margin, item-link-after);
+    }
+  }
+
+  .list__item__category {
+    left: deep-map-get($dimensions-list, desktop, margin, category-left);
+  }
+}
+
+
+.links {
+  display: inline-block;
+  float: right;
+  list-style: none;
+  margin: deep-map-get($dimensions-links, mobile, margin, _);
+  padding: deep-map-get($dimensions-links, mobile, padding, _);
+
+  &--glyphs {
+    .links__item {
+      font-size: deep-map-get($fontsize-links, mobile, glyphs);
+    }
+  }
+}
+
+.links__item {
+  @extend %text-thin;
+
+  display: inline-block;
+  font-size: deep-map-get($fontsize-links, mobile, item);
+  margin: deep-map-get($dimensions-links, mobile, margin, item);
+  padding: deep-map-get($dimensions-links, mobile, padding, item);
+}
+
+
+@media only screen and (max-width: 440px) and (orientation: portrait) {
+  .links {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .links {
+    margin: deep-map-get($dimensions-links, desktop, margin, _);
+    padding: deep-map-get($dimensions-links, desktop, padding, _);
+
+    &--glyphs {
+      .links__item {
+        font-size: deep-map-get($fontsize-links, desktop, glyphs);
+      }
+    }
+  }
+
+  .links__item {
+    font-size: deep-map-get($fontsize-links, desktop, item);
+    margin: deep-map-get($dimensions-links, desktop, margin, item);
+    padding: deep-map-get($dimensions-links, desktop, padding, item);
+  }
+}
+
+
+.tags {
+  @include unselectable();
+
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.tag {
+  background-color: $clr-primary-accent;
+  border-radius: 4px;
+  color: $clr-primary-white;
+  cursor: default;
+  display: inline-block;
+  margin: 4px 0;
+  padding: 0 8px 0 0;
+
+  &::before {
+    background-color: $clr-secondary-accent;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    content: '#';
+    float: left;
+    margin: 0 6px 0 0;
+    padding: 0 6px;
+  }
+}

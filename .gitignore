@@ -1,0 +1,13 @@
+# dependencies directory
+node_modules/
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-metadata
+
+# Lighthouse
+lighthouse-report.html
+
+# generated files
+./stylesheet.css

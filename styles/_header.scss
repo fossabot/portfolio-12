@@ -1,0 +1,112 @@
+@import 'mixins/map';
+@import 'mixins/util';
+@import 'variables/colors';
+@import 'variables/dimensions';
+
+
+.header {
+  @include unselectable();
+
+  background-attachment: fixed;
+  background-blend-mode: overlay;
+  background-image: url('/assets/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  clip-path: deep-map-get($dimensions-header, clippath);
+  color: $clr-primary-white;
+  display: flex;
+  flex-direction: column;
+  font-size: $fontsize-root;
+  height: deep-map-get($dimensions-header, height);
+  margin: deep-map-get($dimensions-header, mobile, margin, _);
+  min-height: deep-map-get($dimensions-header, minheight);
+  overflow: hidden;
+  padding: deep-map-get($dimensions-header, mobile, padding, _);
+  position: relative;
+  width: deep-map-get($dimensions-header, width);
+  z-index: map-get($layers, roof);
+
+  &--home {
+    height: deep-map-get($dimensions-header, height-home);
+
+    .header__message {
+      margin: deep-map-get($dimensions-header, mobile, margin, message-home);
+    }
+  }
+}
+
+.header__message {
+  @extend %h6;
+
+  margin: deep-map-get($dimensions-header, mobile, margin, message);
+  text-align: center;
+}
+
+.header__title {
+  display: block;
+  margin: deep-map-get($dimensions-header, mobile, margin, title);
+}
+
+.header__links {
+  display: none;
+}
+
+.header__links__item {
+  @extend %h5;
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .header {
+    margin: deep-map-get($dimensions-header, desktop, margin, _);
+    padding: deep-map-get($dimensions-header, desktop, padding, _);
+
+    &--home {
+      .header__message {
+        margin: deep-map-get($dimensions-header, desktop, margin, message-home);
+      }
+    }
+  }
+
+  .header__background {
+    height: auto;
+    width: 100%;
+  }
+
+  .header__links,
+  .header__message {
+    align-self: flex-end;
+    display: block;
+    list-style: none;
+    margin: deep-map-get($dimensions-header, desktop, margin, message);
+    max-width: deep-map-get($dimensions-header, desktop, maxwidth, message);
+    text-align: right;
+  }
+
+  .header__links__item {
+    display: inline-block;
+    margin: deep-map-get($dimensions-header, desktop, margin, link-item);
+    padding: deep-map-get($dimensions-header, desktop, padding, link-item);
+
+    &:not(:last-child) {
+      &::after {
+        content: '/';
+      }
+    }
+
+    & > a {
+      color: $clr-secondary-white;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        color: $clr-primary-accent;
+      }
+    }
+  }
+
+  .header__title {
+    margin: deep-map-get($dimensions-header, desktop, margin, title);
+  }
+}

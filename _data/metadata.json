@@ -1,0 +1,34 @@
+{
+  "github": {
+    "icon": "github",
+    "name": "GitHub"
+  },
+  "linkedin": {
+    "icon": "linkedin",
+    "name": "LinkedIn"
+  },
+  "mail": {
+    "icon": "mail",
+    "name": "mail"
+  },
+  "website": {
+    "icon": "globe",
+    "name": "website"
+  },
+  "codepen": {
+    "icon": "codepen",
+    "name": "Codepen"
+  },
+  "download": {
+    "icon": "download",
+    "name": "download"
+  },
+  "npm": {
+    "icon": "npm",
+    "name": "NPM"
+  },
+  "gist": {
+    "icon": "gist",
+    "name": "Gist"
+  }
+}

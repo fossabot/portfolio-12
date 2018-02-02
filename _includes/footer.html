@@ -1,0 +1,11 @@
+<footer class="footer">
+  <ul class="footer__social">
+    {% for social in site.data.social %}
+    <li class="footer__social__link about-hover about-hover--{{ site.data.metadata[social.m_id].name | downcase }}">
+      <a class="icon icon--hover icon-{{ site.data.metadata[social.m_id].icon }}" aria-label="link to my {{ site.data.metadata[social.m_id].name }}" href="{{ social.url }}" rel="noopener" target="{{ social.target }}"></a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <p class="footer__message short-underline short-underline--dark">Enjoy your day!</p>
+</footer>

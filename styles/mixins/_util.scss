@@ -1,0 +1,9 @@
+// sass-lint:disable indentation, no-vendor-prefixes, property-sort-order
+
+@mixin unselectable() {
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}

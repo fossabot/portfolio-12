@@ -1,0 +1,15 @@
+---
+title: AutoCorrect-py
+layout: project
+---
+
+<p>I was inspired to do this project when I had the idea to structure a dictionary as a tree. Each layer in the tree maps to an index in a word (ignoring the root). So for example for the word "foo" the tree has an "F" at layer 1 and an "O" at layers 2 and 3. To add the word "foobar" the tree only has to add a "B" at layer 4, "A" at layer 5, and "R" at layer 6. This creates a very wide tree, the first layer has already 26 nodes (if the English alphabet is used), that is not very deep, only going as deep as the longest word in the dictionary.</p>
+
+<p>It's important to note that even though the first layer has 26 nodes, the second layer does not necessarily have 26x26 nodes. This is because nodes need not exist if they're not part of a word, for example words starting with an "L" never have "K" as a second letter. Another important aspect of this structure, as seen from the example before, is that it utilizes the fact that different words can have the same prefix. The prefix is stored only once in the dictionary.</p>
+
+<figure class="article__figure">
+  <img class="article__image" alt="Dictionary tree structure" src="/assets/images/autocorrect-py.png">
+  <figcaption class="text-secondary">Dictionary structure example with the words "Focus" and "Foobar".</figcaption>
+</figure>
+
+<p>Given this datastructure I decided to make a Python module that can be used to autocorrect texts given enough learning data. With the learning data the module creates a dictionary as described above. It then utilizes aspects of the tree structure (and some additional clues) to find alternatives for an incorrectly spelled word in a text, and corrects it accordingly.</p>
