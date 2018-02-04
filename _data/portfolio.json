@@ -4,7 +4,7 @@
       "name": "Controlled Vocabulary Tool",
       "tldr": "A multi-threaded Python CLI tool to create a controlled vocabulary.",
       "year": 2018,
-      "spotlight": false,
+      "spotlight": true,
       "tags": ["Multi-Threaded", "Python"],
       "links": [
         {
@@ -34,7 +34,7 @@
       "name": "Intersectionsim",
       "tldr": "Simplex and PDDL implementation for scheduling autonomous cars on an intersection.",
       "year": 2017,
-      "spotlight": false,
+      "spotlight": true,
       "tags": ["PDDL", "Python"],
       "links": [
         {
@@ -60,7 +60,7 @@
       "name": "Protect your Selfie",
       "tldr": "Concept for a web application to distribute sensitive documents, created at <a class=\"text-link\" href=\"https://hackdelft.com/\" rel=\"noopener\">HackDelft</a> 2017.",
       "year": 2017,
-      "spotlight": true,
+      "spotlight": false,
       "tags": ["AWS", "Gulp", "Heroku", "NodeJS", "PostgreSQL"],
       "links": [
         {
@@ -142,7 +142,7 @@
       "name": "InterstellarScaler",
       "tldr": "Small web application to calculate what you'll weigh on other planets.",
       "year": 2015,
-      "spotlight": true,
+      "spotlight": false,
       "tags": ["CSS", "HTML", "JavaScript"],
       "links": [
         {
