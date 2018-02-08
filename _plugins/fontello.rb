@@ -1,3 +1,6 @@
+# If you're interested in this plugin, you can find a clean version here:
+# https://github.com/ericcornelissen/jekyll-fontello
+
 require 'net/http'
 require 'uri'
 require 'zip'
@@ -6,16 +9,13 @@ Zip.on_exists_proc = true
 
 module Fontello
   class Generator < Jekyll::Generator
-
     FONTELLO_URL = 'http://fontello.com'
     REF_CONFIG_FILE = "#{Dir.tmpdir}/jekyll_fontello_config.json"
-    REQUEST_BOUNDARY = '----WebKitFormREQUEST_BOUNDARY7MA4YWxkTrZu0gW'
     SESSION_FILE = "#{Dir.tmpdir}/jekyll_fontello_session"
     ZIP_FILE = "#{Dir.tmpdir}/jekyll_fontello.zip"
 
-    # Read the plugin configuration and perform the
-    # generate the Fontello files based on the config
-    # file.
+    # Read the plugin configuration and generate the
+    # Fontello files based on that.
     #
     #  required by Jekyll
     def generate(site)
@@ -41,8 +41,8 @@ module Fontello
       clean_up()
     end
 
-    # Downloads the zip file from fontello based on
-    # the local configuration
+    # Download the zip file from Fontello based on
+    # the local configuration.
     #
     #  see: https://github.com/fontello/fontello/#api-methods
     def download_zip()
@@ -75,7 +75,7 @@ module Fontello
           filename = File.basename(file.name)
           case File.extname file.name
             when '.woff', '.svg', '.ttf', '.eot', '.woff2'
-              site.static_files << Jekyll::StaticFile.new(site, site.config['source'], @output_fonts, filename)
+              site.static_files << Jekyll::StaticFile.new(site, site.source, @output_fonts, filename)
               file.extract("#{@output_fonts}/#{filename}")
             when '.css'
               case @preprocessor
@@ -94,7 +94,7 @@ module Fontello
     end
 
     # Update the font paths present in the stylesheets
-    # based on the output folders or configuration.
+    # based on the output folders/configuration.
     def set_font_path()
       Dir.entries(@output_styles).each do |filename|
         next if filename =~ /^\.\.?$/
@@ -106,31 +106,32 @@ module Fontello
       end
     end
 
-    # Clean up for the Generator
+    # Clean up after the Generator.
     def clean_up()
       File.delete(ZIP_FILE)
     end
 
-    # Get a session key from Fontello or the session key
+    # Get a session key from Fontello or a session key
     # acquired before.
     #
     #  see: https://github.com/fontello/fontello/#api-methods
     def session_key
       if File.exists? SESSION_FILE
-        return File.read(SESSION_FILE) if @reference_config == @fontello_config
+        return File.read(SESSION_FILE)
       end
 
       url = URI(FONTELLO_URL)
+      boundary = '----WebKitFormREQUEST_BOUNDARY7MA4YWxkTrZu0gW'
 
       # Setup a http connection with Fontello
       http = Net::HTTP.new url.host, url.port
 
       # Construct the request to get a session key
       request = Net::HTTP::Post.new url
-      request['Content-Type'] = "multipart/form-data; REQUEST_BOUNDARY=#{REQUEST_BOUNDARY}"
+      request['Content-Type'] = "multipart/form-data; REQUEST_BOUNDARY=#{boundary}"
       request['Content-Disposition'] = 'multipart/form-data'
       request['Cache-Control'] = 'no-cache'
-      request.body = "--#{REQUEST_BOUNDARY}\r\nContent-Disposition: form-data; name=\"config\"; filename=\"#{@config_file}\"\r\nContent-Type: application/json\r\n\r\n#{@fontello_config}\r\n\r\n\r\n--#{REQUEST_BOUNDARY}"
+      request.body = "--#{boundary}\r\nContent-Disposition: form-data; name=\"config\"; filename=\"#{@config_file}\"\r\nContent-Type: application/json\r\n\r\n#{@fontello_config}\r\n\r\n\r\n--#{boundary}"
 
       # Send the request to Fontello
       response = http.request(request)
@@ -149,6 +150,5 @@ module Fontello
       fonts_path = Pathname.new(@output_fonts)
       return fonts_path.relative_path_from(style_path)
     end
-
   end
 end

@@ -20,11 +20,11 @@ backToTop.addEventListener('click', e => {
 // Observe the footer to determine if .back-to-top should be shown
 let observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) {
+    if(entry.isIntersecting && document.body.scrollTop > 50) {
       backToTop.classList.remove('back-to-top--hidden');
     } else {
       backToTop.classList.add('back-to-top--hidden');
     }
   });
-});
+}, { threshold: [0, .25, .5, .75, 1] });
 observer.observe(footer);
