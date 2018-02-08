@@ -5,11 +5,11 @@
       "tldr": "Jekyll plugin that automatically downloads your webfont from <a class=\"text-link\" href=\"http://fontello.com/\" rel=\"noopener\">Fontello</a>.",
       "year": 2018,
       "spotlight": false,
-      "tags": ["Ruby"],
+      "tags": ["Jekyll", "Ruby"],
       "links": [
         {
-          "m_id": "gist",
-          "url": "https://gist.github.com/ericcornelissen/c09b01259496922c64949ad1bb7e0559"
+          "m_id": "github",
+          "url": "https://github.com/ericcornelissen/jekyll-fontello"
         }
       ]
     },

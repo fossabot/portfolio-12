@@ -1,5 +1,5 @@
 # If you're interested in this plugin, you can find a clean version here:
-# https://gist.github.com/ericcornelissen/c09b01259496922c64949ad1bb7e0559
+# https://github.com/ericcornelissen/jekyll-fontello
 
 require 'net/http'
 require 'uri'
