@@ -47,7 +47,7 @@
       "name": "Intersectionsim",
       "tldr": "Simplex and PDDL implementation for scheduling autonomous cars on an intersection.",
       "year": 2017,
-      "spotlight": true,
+      "spotlight": false,
       "tags": ["PDDL", "Python"],
       "links": [
         {
