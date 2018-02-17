@@ -1,6 +1,36 @@
 {
   "programming": [
     {
+      "name": "svg-to-pdf-bot",
+      "tldr": "A GitHub App built with <a class=\"text-link\" href=\"https://github.com/probot/probot\" rel=\"noopener\">Probot</a> that converts SVG files into PDF files for <a class=\"text-link\" href=\"https://github.com/simple-icons/simple-icons\" rel=\"noopener\">Simple Icons</a>.",
+      "year": 2018,
+      "spotlight": false,
+      "tags": ["Jest", "NodeJS", "Probot"],
+      "links": [
+        {
+          "m_id": "github",
+          "url": "https://github.com/simple-icons/svg-to-pdf-bot"
+        }
+      ]
+    },
+    {
+      "name": "linter-htmllint",
+      "tldr": "Linter plugin for <a class=\"text-link\" href=\"https://atom.io/\" rel=\"noopener\">Atom</a> for html, using htmllint ",
+      "year": 2018,
+      "spotlight": false,
+      "tags": ["Atom", "Jasmine", "JavaScript"],
+      "links": [
+        {
+          "m_id": "github",
+          "url": "https://github.com/AtomLinter/linter-htmllint"
+        },
+        {
+          "m_id": "website",
+          "url": "https://atom.io/packages/linter-htmllint"
+        }
+      ]
+    },
+    {
       "name": "jekyll-fontello",
       "tldr": "Jekyll plugin that automatically downloads your webfont from <a class=\"text-link\" href=\"http://fontello.com/\" rel=\"noopener\">Fontello</a>.",
       "year": 2018,
