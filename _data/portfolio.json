@@ -214,8 +214,20 @@
   ],
   "snippets": [
     {
+      "name": "Mobile notifications demo",
+      "tldr": "Web based demo of notification as seen on smartphones using vanilla HTML, CSS and JavaScript.",
+      "year": 2018,
+      "tags": ["CSS", "HTML", "JavaScript"],
+      "links": [
+        {
+          "m_id": "codepen",
+          "url": "https://codepen.io/ericornelissen/full/bLaxdE"
+        }
+      ]
+    },
+    {
       "name": "Invalid form button animation",
-      "tldr": "CSS only animation for form buttons that indicating an unsuccessful action",
+      "tldr": "CSS only animation for form buttons that indicating an unsuccessful action.",
       "year": 2018,
       "tags": ["CSS", "HTML"],
       "links": [
@@ -227,7 +239,7 @@
     },
     {
       "name": "Progress buttons",
-      "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS psuedo elements and FontAwesome spinners",
+      "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS psuedo elements and FontAwesome spinners.",
       "year": 2018,
       "tags": ["CSS", "HTML", "JavaScript"],
       "links": [
@@ -239,7 +251,7 @@
     },
     {
       "name": "Overflowing Social Buttons",
-      "tldr": "Circular share buttons that have an overflowing animation when hovered",
+      "tldr": "Circular share buttons that have an overflowing animation when hovered.",
       "year": 2017,
       "tags": ["CSS", "HTML"],
       "links": [
@@ -251,7 +263,7 @@
     },
     {
       "name": "Horror text animation",
-      "tldr": "Inspired by some of the titles in the promotional webpage for the <a class=\"text-link\" href=\"http://pentakill.leagueoflegends.com/en_US/\">Grasp of the Undying album</a> by Pentakill",
+      "tldr": "Inspired by some of the titles in the promotional webpage for the <a class=\"text-link\" href=\"http://pentakill.leagueoflegends.com/en_US/\">Grasp of the Undying album</a> by Pentakill.",
       "year": 2017,
       "tags": ["CSS", "HTML"],
       "links": [
@@ -263,7 +275,7 @@
     },
     {
       "name": "Array string sort",
-      "tldr": "String sort for JavaScript that sorts correctly when the string starts with a number",
+      "tldr": "String sort for JavaScript that sorts correctly when the string starts with a number.",
       "year": 2017,
       "tags": ["JavaScript"],
       "links": [
@@ -275,7 +287,7 @@
     },
     {
       "name": "Function pipeline generator",
-      "tldr": "Ramda inspired function pipeline generators for JavaScript",
+      "tldr": "Ramda inspired function pipeline generators for JavaScript.",
       "year": 2017,
       "tags": ["JavaScript"],
       "links": [
