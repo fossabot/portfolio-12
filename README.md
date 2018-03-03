@@ -14,9 +14,9 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
 ###### How to use the build tools:
-- `$ npm run axe`: Test the website for a11y issues. (requires `$ npm run dev`)
+- `$ npm run axe`: Test the website for a11y issues. (requires `$ npm start`)
 - `$ npm run build`: Build the project once.
 - `$ npm run clean`: Clean the project, removing all generated files.
 - `$ npm run dev`: Build the project and watch for changes.
-- `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm run dev`)
+- `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm start`)
 - `$ npm run lint`: Lint the source code of the project. (requires `$ npm run build`)
