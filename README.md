@@ -8,7 +8,7 @@ Repository for the personal portfolio of Eric Cornelissen.
 | CSS preprocessor | [Sass](http://sass-lang.com/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
 | Iconography| [Fontello](http://fontello.com/) |
-| JSON linter | [jsonlint](https://github.com/zaach/jsonlint) |
+| JSON linter | [jsonlint](https://github.com/cjrd/jsonlint) |
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |
 | Site generator | [jekyll](https://jekyllrb.com/) |
 | Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
