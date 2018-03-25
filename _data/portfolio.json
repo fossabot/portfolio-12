@@ -313,6 +313,22 @@
   ],
   "contributions": [
     {
+      "name": "Public Money Public Code",
+      "about": "The website for the \"Public Money, Public Code\" campaign. It is based on Hugo, a modern static website generator. The page is visible at <a class=\"text-link\" href=\"https://publiccode.eu/\">publiccode.eu</a>.",
+      "year": 2018,
+      "spotlight": false,
+      "links": [
+        {
+          "m_id": "github",
+          "url": "https://git.fsfe.org/pmpc/website"
+        },
+        {
+          "m_id": "website",
+          "url": "https://publiccode.eu/"
+        }
+      ]
+    },
+    {
       "name": "Keep a Changelog",
       "about": "If you build software, keep a changelog.",
       "year": 2018,
