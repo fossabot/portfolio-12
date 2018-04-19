@@ -324,6 +324,22 @@
   ],
   "contributions": [
     {
+      "name": "Atom",
+      "about": "A hackable text editor for the 21st Century by Github.",
+      "year": 2018,
+      "spotlight": true,
+      "links": [
+        {
+          "m_id": "github",
+          "url": "https://github.com/atom/atom"
+        },
+        {
+          "m_id": "website",
+          "url": "https://atom.io/"
+        }
+      ]
+    },
+    {
       "name": "Public Money Public Code",
       "about": "The website for the \"Public Money, Public Code\" campaign. It is based on Hugo, a modern static website generator. The page is visible at <a class=\"text-link\" href=\"https://publiccode.eu/\">publiccode.eu</a>.",
       "year": 2018,
@@ -352,38 +368,6 @@
         {
           "m_id": "website",
           "url": "http://keepachangelog.com"
-        }
-      ]
-    },
-    {
-      "name": "Atom Linter",
-      "about": "Linter providers for Atom.",
-      "year": 2018,
-      "spotlight": true,
-      "links": [
-        {
-          "m_id": "github",
-          "url": "https://github.com/AtomLinter"
-        },
-        {
-          "m_id": "website",
-          "url": "https://atomlinter.github.io/"
-        }
-      ]
-    },
-    {
-      "name": "Atom",
-      "about": "A hackable text editor for the 21st Century by Github.",
-      "year": 2017,
-      "spotlight": true,
-      "links": [
-        {
-          "m_id": "github",
-          "url": "https://github.com/atom/atom"
-        },
-        {
-          "m_id": "website",
-          "url": "https://atom.io/"
         }
       ]
     },
