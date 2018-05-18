@@ -41,7 +41,7 @@ keywords: portfolio,contributions
               </ul>
 
               <h4 class="cardboard__item__title">{{ project.name }}</h4>
-              <p class="cardboard__item__description">{{ project.tldr }}</p>
+              <p class="cardboard__item__description">{{ project.tldr | strip_html | truncate: 80 }}</p>
               <a class="cardboard__item__more" href="portfolio/{{ project.name | downcase | replace: ' ', '-' }}">More</a>
             </div>
           </li>
@@ -67,7 +67,7 @@ keywords: portfolio,contributions
               </ul>
 
               <h4 class="cardboard__item__title">{{ project.name }}</h4>
-              <p class="cardboard__item__description">{{ project.about }}</p>
+              <p class="cardboard__item__description">{{ project.about | strip_html | truncate: 80 }}</p>
               <a class="cardboard__item__more" href="portfolio/{{ project.name | downcase | replace: ' ', '-' }}">More</a>
             </div>
           </li>
