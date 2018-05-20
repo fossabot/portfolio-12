@@ -214,6 +214,22 @@
   ],
   "snippets": [
     {
+      "name": "Automatic text alignment",
+      "tldr": "Automatic text alignment with CSS Letter spacing using JavaScript.",
+      "year": 2018,
+      "tags": ["CSS", "JavaScript"],
+      "links": [
+        {
+          "m_id": "gist",
+          "url": "https://gist.github.com/ericcornelissen/e0272b60fba665a9db67065c5c7c3d4d"
+        },
+        {
+          "m_id": "codepen",
+          "url": "https://codepen.io/ericornelissen/pen/wjNzwR"
+        }
+      ]
+    },
+    {
       "name": "Context switching animation",
       "tldr": "Animation inspired by the Windows 10 Settings interface implemented in HTML & CSS.",
       "year": 2018,
