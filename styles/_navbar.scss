@@ -39,7 +39,7 @@
   .navbar__item {
     color: var(--clr-primary-black);
     cursor: pointer;
-    font-size: deep-map-get($fontsize-navbar, desktop, glyphs);
+    font-size: var(--fontsize-navbar-glyph);
     height: deep-map-get($dimensions-navbar, desktop, height, item);
     line-height: deep-map-get($dimensions-navbar, desktop, height, item);
     margin: 0;

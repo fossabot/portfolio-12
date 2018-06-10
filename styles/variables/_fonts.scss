@@ -21,43 +21,36 @@
   --fontsize-h6: 1.5rem;
   --fontsize-text: 1.2rem;
   --fontsize-subtext: 1em;
+
+  //  cardboard
+  --fontsize-cardboard-glyph: 28px;
+
+  // footer
+  --fontsize-footer-glyph: 1.8em;
+  --fontsize-footer-message: 1.4em;
+
+  // links
+  --fontsize-links-item: 1.3em;
+  --fontsize-links-glyph: 1.7em;
+
+  // navbar
+  --fontsize-navbar-glyph: 1.6em;
 }
 
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  :root {
+    // cardboard
+    --fontsize-cardboard-glyph: 24px;
 
-$fontsize-cardboard: (
-  desktop: (
-    glyphs: 24px
-  ),
-  mobile: (
-    glyphs: 28px
-  )
-);
+    // footer
+    --fontsize-footer-glyph: 2em;
+    --fontsize-footer-message: 1.6em;
 
-$fontsize-footer: (
-  desktop: (
-    glyphs: 2em,
-    message: 1.6em
-  ),
-  mobile: (
-    glyphs: 1.8em,
-    message: 1.4em
-  )
-);
+    // links
+    --fontsize-links-item: 1.3em;
+    --fontsize-links-glyph: 1.9em;
 
-$fontsize-links: (
-  desktop: (
-    item: 1.3em,
-    glyphs: 1.9em
-  ),
-  mobile: (
-    item: 1.3em,
-    glyphs: 1.7em
-  )
-);
-
-
-$fontsize-navbar: (
-  desktop: (
-    glyphs: 1.6em
-  )
-);
+    // navbar
+    --fontsize-navbar-glyph: 1.6em;
+  }
+}

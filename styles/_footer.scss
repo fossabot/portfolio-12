@@ -31,7 +31,7 @@
 }
 
 .footer__message {
-  font-size: deep-map-get($fontsize-footer, mobile, message);
+  font-size: var(--fontsize-footer-message);
   margin: deep-map-get($dimensions-footer, mobile, margin, message);
   order: 2;
   position: relative;
@@ -48,7 +48,7 @@
   color: var(--clr-primary-white);
   cursor: pointer;
   display: inline-block;
-  font-size: deep-map-get($fontsize-footer, mobile, glyphs);
+  font-size: var(--fontsize-footer-glyph);
   margin: deep-map-get($dimensions-footer, mobile, margin, glyphs);
 
   &:focus,
@@ -73,7 +73,6 @@
 
   .footer__message {
     display: inline-block;
-    font-size: deep-map-get($fontsize-footer, desktop, message);
     margin-top: -22px;
     order: 1;
   }
@@ -84,7 +83,6 @@
   }
 
   .footer__social__link {
-    font-size: deep-map-get($fontsize-footer, desktop, glyphs);
     margin: deep-map-get($dimensions-footer, desktop, margin, glyphs);
   }
 }

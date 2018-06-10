@@ -34,7 +34,7 @@
 
 .cardboard__item__link {
   display: inline-block;
-  font-size: deep-map-get($fontsize-cardboard, mobile, glyphs);
+  font-size: var(--fontsize-cardboard-glyph);
   margin: 0;
   padding: 0;
 }
@@ -99,10 +99,6 @@
 
   .cardboard__item__description {
     padding: deep-map-get($dimensions-cardboard, desktop, padding, item-description);
-  }
-
-  .cardboard__item__link {
-    font-size: deep-map-get($fontsize-cardboard, desktop, glyphs);
   }
 
   .cardboard__item__links {

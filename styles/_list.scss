@@ -105,7 +105,7 @@
 
   &--glyphs {
     .links__item {
-      font-size: deep-map-get($fontsize-links, mobile, glyphs);
+      font-size: var(--fontsize-links-glyph);
     }
   }
 }
@@ -114,7 +114,7 @@
   @extend %text-thin;
 
   display: inline-block;
-  font-size: deep-map-get($fontsize-links, mobile, item);
+  font-size: var(--fontsize-links-item);
   margin: deep-map-get($dimensions-links, mobile, margin, item);
   padding: deep-map-get($dimensions-links, mobile, padding, item);
 }
@@ -132,16 +132,9 @@
   .links {
     margin: deep-map-get($dimensions-links, desktop, margin, _);
     padding: deep-map-get($dimensions-links, desktop, padding, _);
-
-    &--glyphs {
-      .links__item {
-        font-size: deep-map-get($fontsize-links, desktop, glyphs);
-      }
-    }
   }
 
   .links__item {
-    font-size: deep-map-get($fontsize-links, desktop, item);
     margin: deep-map-get($dimensions-links, desktop, margin, item);
     padding: deep-map-get($dimensions-links, desktop, padding, item);
   }
