@@ -1,3 +1,11 @@
+$layers: (
+  basement: -1,
+  floor: 1,
+  ceiling: 20,
+  roof: 30
+);
+
+
 :root {
   --margin-article-about: 0 .3em 0 0;
   --margin-article-img: .5em 0;
@@ -34,6 +42,22 @@
   --padding-header: 10vh 5rem;
   --width-header: 100%;
 
+  --margin-links: 0;
+  --margin-links-item: 0;
+  --padding-links: 0;
+  --padding-links-item: 0;
+
+  --margin-list: 0 0 0 3.2em;
+  --margin-list-item: 0 0 .3em 0;
+  --margin-list-item-link: 0;
+  --margin-list-item-link-after: 0 .3em;
+  --margin-list-title: 0 auto 0 0;
+  --margin-list-title_hover: 0 auto 0 .4em;
+  --margin-list-category: -3em;
+  --padding-list: 0;
+  --padding-list-item: 0;
+  --padding-list-item-link: 0;
+
   --margin-section: 2em;
   --maxwidth-section: none;
   --padding-section: 0;
@@ -42,6 +66,7 @@
   --margin-text-subheader: 1.2em 0 .3em 0;
   --margin-text-text: 0 0 1em 0;
 }
+
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   :root {
@@ -79,6 +104,17 @@
     --padding-header: 5em 6em;
     --padding-header-link-item: 0;
 
+    --margin-links: 0;
+    --margin-links-item: 0;
+    --padding-links: 0;
+    --padding-links-item: 0;
+
+    --margin-list: 0;
+    --margin-list-item: 0 2.6em 0 0;
+    --margin-list-item-link-after: 0 0 0 .3em;
+    --margin-list-category: -2.7em;
+    --padding-list: 0;
+
     --height-navbar: 100%;
     --height-navbar-item: 48px;
     --width-navbar: var(--height-navbar-item);
@@ -89,66 +125,3 @@
     --padding-section: 0 124px;
   }
 }
-
-$minwidth-desktop: 750px;
-
-
-$dimensions-links: (
-  desktop: (
-    margin: (
-      _: 0,
-      item: 0
-    ),
-    padding: (
-      _: 0,
-      item: 0
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0,
-      item: 0
-    ),
-    padding: (
-      _: 0,
-      item: 0
-    )
-  )
-);
-
-$dimensions-list: (
-  desktop: (
-    margin: (
-      _: 0,
-      item: 0 2.6em 0 0,
-      item-link-after: 0 0 0 .3em,
-      category-left: -2.7em
-    ),
-    padding: (
-      _: 0
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0 0 0 3.2em,
-      item: 0 0 .3em 0,
-      item-link: 0,
-      item-link-after: 0 .3em,
-      title: 0 auto 0 0,
-      title_hover: 0 auto 0 .4em,
-      category-left: -3em
-    ),
-    padding: (
-      _: 0,
-      item: 0,
-      item-link: 0
-    )
-  )
-);
-
-$layers: (
-  basement: -1,
-  floor: 1,
-  ceiling: 20,
-  roof: 30
-);

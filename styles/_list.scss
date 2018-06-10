@@ -3,22 +3,22 @@
 
 .list {
   list-style: none;
-  margin: deep-map-get($dimensions-list, mobile, margin, _);
-  padding: deep-map-get($dimensions-list, mobile, padding, _);
+  margin: var(--margin-list);
+  padding: var(--padding-list);
 }
 
 .list__item {
   cursor: pointer;
-  margin: deep-map-get($dimensions-list, mobile, margin, item);
-  padding: deep-map-get($dimensions-list, mobile, padding, item);
+  margin: var(--margin-list-item);
+  padding: var(--padding-list-item);
   position: relative;
 }
 
 .list__item__link {
   align-items: center;
   display: flex;
-  margin: deep-map-get($dimensions-list, mobile, margin, item-link);
-  padding: deep-map-get($dimensions-list, mobile, padding, item-link);
+  margin: var(--margin-list-item-link);
+  padding: var(--padding-list-item-link);
   text-decoration: none;
 
   &:focus,
@@ -28,7 +28,7 @@
     }
 
     .list__item__title {
-      margin: deep-map-get($dimensions-list, mobile, margin, title_hover);
+      margin: var(--margin-list-title_hover);
       opacity: 1;
     }
   }
@@ -38,7 +38,7 @@
     content: '';
     flex-grow: 2;
     height: 1px;
-    margin: deep-map-get($dimensions-list, mobile, margin, item-link-after);
+    margin: var(--margin-list-item-link-after);
     order: 3;
     transition: background-color .1s ease;
     width: 100%;
@@ -53,7 +53,7 @@
   flex-shrink: 0;
   font-size: var(--fontsize-subtext);
   font-style: italic;
-  left: deep-map-get($dimensions-list, mobile, margin, category-left);
+  left: var(--margin-list-category);
   margin: 0;
   order: 1;
   pointer-events: none;
@@ -66,7 +66,7 @@
   display: inline-block;
   flex-grow: 1;
   flex-shrink: 0;
-  margin: deep-map-get($dimensions-list, mobile, margin, title);
+  margin: var(--margin-list-title);
   opacity: .8;
   order: 2;
   transition: margin .2s ease;
@@ -76,97 +76,5 @@
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .list {
     column-count: 2;
-    margin: deep-map-get($dimensions-list, desktop, margin, _);
-    padding: deep-map-get($dimensions-list, desktop, padding, _);
-  }
-
-  .list__item {
-    margin: deep-map-get($dimensions-list, desktop, margin, item);
-  }
-
-  .list__item__link {
-    &::after {
-      margin: deep-map-get($dimensions-list, desktop, margin, item-link-after);
-    }
-  }
-
-  .list__item__category {
-    left: deep-map-get($dimensions-list, desktop, margin, category-left);
-  }
-}
-
-
-.links {
-  display: inline-block;
-  float: right;
-  list-style: none;
-  margin: deep-map-get($dimensions-links, mobile, margin, _);
-  padding: deep-map-get($dimensions-links, mobile, padding, _);
-
-  &--glyphs {
-    .links__item {
-      font-size: var(--fontsize-links-glyph);
-    }
-  }
-}
-
-.links__item {
-  @extend %text-thin;
-
-  display: inline-block;
-  font-size: var(--fontsize-links-item);
-  margin: deep-map-get($dimensions-links, mobile, margin, item);
-  padding: deep-map-get($dimensions-links, mobile, padding, item);
-}
-
-
-@media only screen and (max-width: 440px) and (orientation: portrait) {
-  .links {
-    display: block;
-    float: none;
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .links {
-    margin: deep-map-get($dimensions-links, desktop, margin, _);
-    padding: deep-map-get($dimensions-links, desktop, padding, _);
-  }
-
-  .links__item {
-    margin: deep-map-get($dimensions-links, desktop, margin, item);
-    padding: deep-map-get($dimensions-links, desktop, padding, item);
-  }
-}
-
-
-.tags {
-  @include unselectable();
-
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-.tag {
-  background-color: var(--clr-primary-accent);
-  border-radius: 4px;
-  color: var(--clr-primary-white);
-  cursor: default;
-  display: inline-block;
-  margin: 4px 0;
-  padding: 0 8px 0 0;
-
-  &::before {
-    background-color: var(--clr-secondary-accent);
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
-    content: '#';
-    float: left;
-    margin: 0 6px 0 0;
-    padding: 0 6px;
   }
 }
