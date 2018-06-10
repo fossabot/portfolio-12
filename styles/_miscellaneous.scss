@@ -17,14 +17,14 @@
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .back-to-top {
     align-items: center;
-    bottom: deep-map-get($dimensions-backtotop, bottom);
+    bottom: var(--bottom-backtotop);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     font-size: var(--fontsize-h5);
     opacity: .5;
     position: absolute;
-    right: deep-map-get($dimensions-backtotop, right);
+    right: var(--right-backtotop);
     text-decoration: none;
     transition: bottom .25s ease;
 
@@ -33,7 +33,7 @@
     }
 
     &--hidden {
-      bottom: deep-map-get($dimensions-backtotop, bottom_hidden);
+      bottom: var(--bottom-backtotop_hidden);
     }
   }
 

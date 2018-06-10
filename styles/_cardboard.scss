@@ -7,20 +7,20 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: deep-map-get($dimensions-cardboard, mobile, margin, _);
-  padding: deep-map-get($dimensions-cardboard, mobile, padding, _);
-  width: deep-map-get($dimensions-cardboard, mobile, width, _);
+  margin: var(--margin-cardboard);
+  padding: var(--padding-cardboard);
+  width: var(--width-cardboard);
 }
 
 .cardboard__item {
   background-color: var(--clr-secondary-white);
   box-shadow: 0 0 2px 0 var(--clr-shadow);
   box-sizing: border-box;
-  margin: deep-map-get($dimensions-cardboard, mobile, margin, item);
-  padding: deep-map-get($dimensions-cardboard, mobile, padding, item);
+  margin: var(--margin-cardboard-item);
+  padding: var(--padding-cardboard-item);
   position: relative;
   transition: box-shadow .3s ease;
-  width: deep-map-get($dimensions-cardboard, mobile, width, item);
+  width: var(--width-cardboard-item);
 
   &:focus-within,
   &:hover {
@@ -29,7 +29,7 @@
 }
 
 .cardboard__item__description {
-  padding: deep-map-get($dimensions-cardboard, mobile, padding, item-description);
+  padding: var(--padding-cardboard-item-description);
 }
 
 .cardboard__item__link {
@@ -43,14 +43,14 @@
   float: right;
   font-size: 0;
   list-style: none;
-  padding: deep-map-get($dimensions-cardboard, mobile, padding, item-links);
+  padding: var(--padding-cardboard-item-links);
 }
 
 .cardboard__item__more {
   @extend %text-bold;
 
   bottom: 0;
-  margin: deep-map-get($dimensions-cardboard, mobile, padding, item);
+  margin: var(--margin-cardboard-item-more);
   position: absolute;
   right: 0;
   text-decoration: none;
@@ -80,36 +80,5 @@
 }
 
 .cardboard__item__title {
-  margin: deep-map-get($dimensions-cardboard, mobile, margin, item-title);
-}
-
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .cardboard {
-    margin: deep-map-get($dimensions-cardboard, desktop, margin, _);
-    padding: deep-map-get($dimensions-cardboard, desktop, padding, _);
-    width: deep-map-get($dimensions-cardboard, mobile, width, _);
-  }
-
-  .cardboard__item {
-    margin: deep-map-get($dimensions-cardboard, desktop, margin, item);
-    padding: deep-map-get($dimensions-cardboard, desktop, padding, item);
-    width: deep-map-get($dimensions-cardboard, desktop, width, item);
-  }
-
-  .cardboard__item__description {
-    padding: deep-map-get($dimensions-cardboard, desktop, padding, item-description);
-  }
-
-  .cardboard__item__links {
-    padding: deep-map-get($dimensions-cardboard, desktop, padding, item-links);
-  }
-
-  .cardboard__item__more {
-    margin: deep-map-get($dimensions-cardboard, desktop, padding, item);
-  }
-
-  .cardboard__item__title {
-    margin: deep-map-get($dimensions-cardboard, desktop, margin, item-title);
-  }
+  margin: var(--margin-cardboard-item-title);
 }

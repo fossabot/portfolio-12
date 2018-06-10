@@ -13,7 +13,7 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    height: deep-map-get($dimensions-navbar, desktop, height, _);
+    height: var(--height-navbar);
     left: 0;
     list-style: none;
     margin: 0;
@@ -22,7 +22,7 @@
     pointer-events: none;
     position: fixed;
     top: 0;
-    width: deep-map-get($dimensions-navbar, desktop, width, _);
+    width: var(--width-navbar);
     z-index: map-get($layers, ceiling);
   }
 
@@ -40,8 +40,8 @@
     color: var(--clr-primary-black);
     cursor: pointer;
     font-size: var(--fontsize-navbar-glyph);
-    height: deep-map-get($dimensions-navbar, desktop, height, item);
-    line-height: deep-map-get($dimensions-navbar, desktop, height, item);
+    height: var(--height-navbar-item);
+    line-height: var(--height-navbar-item);
     margin: 0;
     padding: 0;
     pointer-events: auto;
@@ -49,7 +49,7 @@
     text-decoration: none;
     transition: background-color .1s ease, color .1s ease;
     vertical-align: middle;
-    width: deep-map-get($dimensions-navbar, desktop, width, item);
+    width: var(--width-navbar-item);
 
     &:focus,
     &:hover {

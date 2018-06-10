@@ -38,7 +38,7 @@ ul {
   font-family: var(--fontstack-text);
   font-size: var(--fontsize-text);
   line-height: var(--lineheight-text);
-  margin: deep-map-get($dimensions-text, margin, text);
+  margin: var(--margin-text-text);
   word-break: keep-all;
 }
 
@@ -68,7 +68,7 @@ h1,
   font-family: var(--fontstack-header);
   font-size: var(--fontsize-h1);
   line-height: var(--lineheight-header);
-  margin: deep-map-get($dimensions-text, margin, header);
+  margin: var(--margin-text-header);
 }
 
 h2,
@@ -76,7 +76,7 @@ h2,
   font-family: var(--fontstack-header);
   font-size: var(--fontsize-h2);
   line-height: var(--lineheight-header);
-  margin: deep-map-get($dimensions-text, margin, header);
+  margin: var(--margin-text-header);
 }
 
 h3,
@@ -84,7 +84,7 @@ h3,
   font-family: var(--fontstack-header);
   font-size: var(--fontsize-h3);
   line-height: var(--lineheight-header);
-  margin: deep-map-get($dimensions-text, margin, header);
+  margin: var(--margin-text-header);
 }
 
 h4,
@@ -92,7 +92,7 @@ h4,
   font-family: var(--fontstack-subheader);
   font-size: var(--fontsize-h4);
   line-height: var(--lineheight-subheader);
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  margin: var(--margin-text-subheader);
 }
 
 h5,
@@ -100,7 +100,7 @@ h5,
   font-family: var(--fontstack-subheader);
   font-size: var(--fontsize-h5);
   line-height: var(--lineheight-subheader);
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  margin: var(--margin-text-subheader);
 }
 
 h6,
@@ -108,7 +108,7 @@ h6,
   font-family: var(--fontstack-subheader);
   font-size: var(--fontsize-h6);
   line-height: var(--lineheight-subheader);
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  margin: var(--margin-text-subheader);
 }
 
 
@@ -129,17 +129,8 @@ h6,
 
 .section {
   font-size: var(--fontsize-root);
-  margin: deep-map-get($dimensions-section, mobile, margin, _);
-  padding: deep-map-get($dimensions-section, mobile, padding, _);
+  margin: var(--margin-section);
+  max-width: var(--maxwidth-section);
+  padding: var(--padding-section);
   position: relative;
-}
-
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .section {
-    margin: deep-map-get($dimensions-section, desktop, margin, _);
-    max-width: deep-map-get($dimensions-section, desktop, maxwidth, _);
-    padding: deep-map-get($dimensions-section, desktop, padding, _);
-    position: relative;
-  }
 }
