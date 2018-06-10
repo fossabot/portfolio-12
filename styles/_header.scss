@@ -15,7 +15,7 @@
   background-size: cover;
   box-sizing: border-box;
   clip-path: deep-map-get($dimensions-header, clippath);
-  color: $clr-primary-white;
+  color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
   font-size: $fontsize-root;
@@ -96,12 +96,12 @@
     }
 
     & > a {
-      color: $clr-secondary-white;
+      color: var(--clr-secondary-white);
       text-decoration: none;
 
       &:focus,
       &:hover {
-        color: $clr-primary-accent;
+        color: var(--clr-primary-accent);
       }
     }
   }

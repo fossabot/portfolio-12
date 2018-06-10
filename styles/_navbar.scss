@@ -37,7 +37,7 @@
   }
 
   .navbar__item {
-    color: $clr-primary-black;
+    color: var(--clr-primary-black);
     cursor: pointer;
     font-size: deep-map-get($fontsize-navbar, desktop, glyphs);
     height: deep-map-get($dimensions-navbar, desktop, height, item);
@@ -53,8 +53,8 @@
 
     &:focus,
     &:hover {
-      background-color: $clr-primary-black;
-      color: $clr-primary-white;
+      background-color: var(--clr-primary-black);
+      color: var(--clr-primary-white);
     }
   }
 }

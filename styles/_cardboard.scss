@@ -13,8 +13,8 @@
 }
 
 .cardboard__item {
-  background-color: $clr-secondary-white;
-  box-shadow: 0 0 2px 0 $clr-shadow;
+  background-color: var(--clr-secondary-white);
+  box-shadow: 0 0 2px 0 var(--clr-shadow);
   box-sizing: border-box;
   margin: deep-map-get($dimensions-cardboard, mobile, margin, item);
   padding: deep-map-get($dimensions-cardboard, mobile, padding, item);
@@ -24,7 +24,7 @@
 
   &:focus-within,
   &:hover {
-    box-shadow: 0 0 8px 0 $clr-shadow;
+    box-shadow: 0 0 8px 0 var(--clr-shadow);
   }
 }
 
@@ -57,7 +57,7 @@
   transition: color .1s ease, right .15s ease;
 
   &::after {
-    color: $clr-secondary-black;
+    color: var(--clr-secondary-black);
     content: '\2192';
     display: block;
     left: 100%;
@@ -69,7 +69,7 @@
 
   &:focus,
   &:hover {
-    color: $clr-primary-accent;
+    color: var(--clr-primary-accent);
     right: 1.4em;
 
     &::after {

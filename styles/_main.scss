@@ -6,9 +6,9 @@
 
 html,
 body {
-  background-color: $clr-background;
+  background-color: var(--clr-background);
   border: 0;
-  color: $clr-primary-black;
+  color: var(--clr-primary-black);
   display: flex;
   flex-direction: column;
   font-size: $fontsize-mobile-base;
@@ -58,8 +58,8 @@ ul {
   color: inherit;
 
   &::selection {
-    background-color: $clr-primary-accent;
-    color: $clr-primary-white;
+    background-color: var(--clr-primary-accent);
+    color: var(--clr-primary-white);
   }
 }
 

@@ -3,9 +3,9 @@
 
 
 .code-inline {
-  background-color: $clr-background-code;
+  background-color: var(--clr-background-code);
   border-radius: 2px;
-  color: $clr-primary-black;
+  color: var(--clr-primary-black);
   font-family: $fontstack-code;
   padding: .05em .2em;
 }

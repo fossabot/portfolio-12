@@ -1,26 +1,31 @@
-$clr-primary-accent: #29b6f6;
-$clr-primary-black: #212121;
-$clr-primary-gray: #757575;
-$clr-primary-white: #fafafa;
+:root {
+  // primaries
+  --clr-primary-accent: #29b6f6;
+  --clr-primary-black: #212121;
+  --clr-primary-gray: #757575;
+  --clr-primary-white: #fafafa;
 
-$clr-secondary-accent: #039be5;
-$clr-secondary-black: #313131;
-$clr-secondary-white: #fff;
+  // secondaries
+  --clr-secondary-accent: #039be5;
+  --clr-secondary-black: #313131;
+  --clr-secondary-white: #fff;
 
-$clr-background: $clr-primary-white;
-$clr-background-code: rgba(27, 31, 35, .05);
-$clr-footer-shadow: rgba(34, 34, 34, .5);
-$clr-header-shadow: rgba(34, 34, 34, .5);
-$clr-nav-hover: #808080;
-$clr-shadow: rgba(221, 221, 221, 1);
+  // general
+  --clr-background: var(--clr-primary-white);
+  --clr-background-code: rgba(27, 31, 35, .05);
+  --clr-footer-shadow: rgba(34, 34, 34, .5);
+  --clr-header-shadow: rgba(34, 34, 34, .5);
+  --clr-nav-hover: #808080;
+  --clr-shadow: rgba(221, 221, 221, 1);
 
-// colors
-$clr-teal: #008080;
-$clr-seagreen: #2e8b57;
-$clr-indianred: #cd5c5c;
+  // colors
+  --clr-teal: #008080;
+  --clr-seagreen: #2e8b57;
+  --clr-indianred: #cd5c5c;
 
-// brands
-$clr-codepen: #000;
-$clr-github: #181717;
-$clr-linkedin: #0077b5;
-$clr-mail: #d14836;
+  // brands
+  --clr-codepen: #000;
+  --clr-github: #181717;
+  --clr-linkedin: #0077b5;
+  --clr-mail: #d14836;
+}
