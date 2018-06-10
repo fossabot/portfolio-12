@@ -137,10 +137,10 @@
 .text-secondary,
 %text-secondary {
   color: var(--clr-primary-gray);
-  font-family: $fontstack-text;
-  font-size: $fontsize-subtext;
+  font-family: var(--fontstack-text);
+  font-size: var(--fontsize-subtext);
   font-style: italic;
-  line-height: $lineheight-subtext;
+  line-height: var(--lineheight-subtext);
 }
 
 // Class for links in text

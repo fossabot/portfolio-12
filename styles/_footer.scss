@@ -19,7 +19,7 @@
   color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
-  font-size: $fontsize-root;
+  font-size: var(--fontsize-root);
   justify-content: center;
   margin: deep-map-get($dimensions-footer, mobile, margin, _);
   overflow: hidden;

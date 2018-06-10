@@ -18,7 +18,7 @@
   color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
-  font-size: $fontsize-root;
+  font-size: var(--fontsize-root);
   height: deep-map-get($dimensions-header, height);
   margin: deep-map-get($dimensions-header, mobile, margin, _);
   min-height: deep-map-get($dimensions-header, minheight);

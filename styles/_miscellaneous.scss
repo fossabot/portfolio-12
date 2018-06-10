@@ -6,7 +6,7 @@
   background-color: var(--clr-background-code);
   border-radius: 2px;
   color: var(--clr-primary-black);
-  font-family: $fontstack-code;
+  font-family: var(--fontstack-code);
   padding: .05em .2em;
 }
 
@@ -21,7 +21,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    font-size: $fontsize-h5;
+    font-size: var(--fontsize-h5);
     opacity: .5;
     position: absolute;
     right: deep-map-get($dimensions-backtotop, right);
@@ -39,6 +39,6 @@
 
   .back-to-top__icon {
     display: block;
-    font-size: $fontsize-h3;
+    font-size: var(--fontsize-h3);
   }
 }

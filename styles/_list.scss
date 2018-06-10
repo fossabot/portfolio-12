@@ -51,7 +51,7 @@
   display: inline-block;
   flex-grow: 1;
   flex-shrink: 0;
-  font-size: $fontsize-subtext;
+  font-size: var(--fontsize-subtext);
   font-style: italic;
   left: deep-map-get($dimensions-list, mobile, margin, category-left);
   margin: 0;

@@ -7,7 +7,7 @@
   &::before {
     color: var(--clr-primary-gray);
     content: attr(data-name);
-    font-size: $fontsize-subtext;
+    font-size: var(--fontsize-subtext);
     font-style: italic;
     margin: deep-map-get($dimensions-article, mobile, margin, named-line);
     pointer-events: none;

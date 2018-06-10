@@ -1,25 +1,27 @@
-$fontstack-header: sans-serif;
-$fontstack-subheader: sans-serif;
-$fontstack-text: sans-serif;
-$fontstack-code: monospace;
+:root {
+  --fontstack-header: sans-serif;
+  --fontstack-subheader: sans-serif;
+  --fontstack-text: sans-serif;
+  --fontstack-code: monospace;
 
-$lineheight-header: 1.2em;
-$lineheight-subheader: 1.3em;
-$lineheight-text: 1.5em;
-$lineheight-subtext: 1.2em;
+  --lineheight-header: 1.2em;
+  --lineheight-subheader: 1.3em;
+  --lineheight-text: 1.5em;
+  --lineheight-subtext: 1.2em;
 
-$fontsize-desktop-base: .9em;
-$fontsize-mobile-base: calc(.8em + .75vw);
-$fontsize-root: 1rem;
+  --fontsize-desktop-base: .9em;
+  --fontsize-mobile-base: calc(.8em + .75vw);
+  --fontsize-root: 1rem;
 
-$fontsize-h1: 3.25rem;
-$fontsize-h2: 2.75rem;
-$fontsize-h3: 2.25rem;
-$fontsize-h4: 1.9rem;
-$fontsize-h5: 1.7rem;
-$fontsize-h6: 1.5rem;
-$fontsize-text: 1.2rem;
-$fontsize-subtext: 1em;
+  --fontsize-h1: 3.25rem;
+  --fontsize-h2: 2.75rem;
+  --fontsize-h3: 2.25rem;
+  --fontsize-h4: 1.9rem;
+  --fontsize-h5: 1.7rem;
+  --fontsize-h6: 1.5rem;
+  --fontsize-text: 1.2rem;
+  --fontsize-subtext: 1em;
+}
 
 
 $fontsize-cardboard: (
