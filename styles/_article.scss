@@ -1,48 +1,45 @@
-@import 'variables/colors';
-
-
-.article__named-line {
+.article__about {
   position: relative;
 
   &::before {
-    color: $clr-primary-gray;
+    color: var(--clr-secondary-gray);
     content: attr(data-name);
-    font-size: $fontsize-subtext;
+    font-size: var(--fontsize-subtext);
     font-style: italic;
-    margin: deep-map-get($dimensions-article, mobile, margin, named-line);
+    margin: var(--margin-article-about);
     pointer-events: none;
   }
+}
+
+.article__date {
+  color: var(--clr-primary-gray);
+  font-size: var(--fontsize-subtext);
+  margin: var(--margin-article-date);
 }
 
 .article__figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1em 0;
+  margin: var(--margin-article-figure);
 }
 
 .article__image {
-  margin: deep-map-get($dimensions-article, mobile, margin, image);
-  width: 100%;
+  margin: var(--margin-article-img);
+  width: var(--width-article-img);
 }
 
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
-  .article__named-line {
+  .article__about {
     &::before {
       margin: 0;
       position: absolute;
-      right: calc(100% + #{deep-map-get($dimensions-article, desktop, margin, named-line)});
+      right: calc(100% + var(--margin-article-about));
     }
   }
 
-  .article__figure {
-    margin: 1em 2.8em;
-  }
-
   .article__image {
-    margin: deep-map-get($dimensions-article, desktop, margin, image);
     max-width: 100%;
-    width: auto;
   }
 }
