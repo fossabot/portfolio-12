@@ -1,17 +1,11 @@
-@import 'mixins/map';
-@import 'variables/colors';
-@import 'variables/dimensions';
-@import 'variables/fonts';
-
-
 html,
 body {
-  background-color: $clr-background;
+  background-color: var(--clr-background);
   border: 0;
-  color: $clr-primary-black;
+  color: var(--clr-primary-black);
   display: flex;
   flex-direction: column;
-  font-size: $fontsize-mobile-base;
+  font-size: var(--fontsize-mobile-base);
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -35,10 +29,10 @@ section {
 p,
 li,
 ul {
-  font-family: $fontstack-text;
-  font-size: $fontsize-text;
-  line-height: $lineheight-text;
-  margin: deep-map-get($dimensions-text, margin, text);
+  font-family: var(--fontstack-text);
+  font-size: var(--fontsize-text);
+  line-height: var(--lineheight-text);
+  margin: var(--margin-text-text);
   word-break: keep-all;
 }
 
@@ -58,65 +52,65 @@ ul {
   color: inherit;
 
   &::selection {
-    background-color: $clr-primary-accent;
-    color: $clr-primary-white;
+    background-color: var(--clr-primary-accent);
+    color: var(--clr-primary-white);
   }
 }
 
 h1,
 %h1 {
-  font-family: $fontstack-header;
-  font-size: $fontsize-h1;
-  line-height: $lineheight-header;
-  margin: deep-map-get($dimensions-text, margin, header);
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h1);
+  line-height: var(--lineheight-header);
+  margin: var(--margin-text-header);
 }
 
 h2,
 %h2 {
-  font-family: $fontstack-header;
-  font-size: $fontsize-h2;
-  line-height: $lineheight-header;
-  margin: deep-map-get($dimensions-text, margin, header);
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h2);
+  line-height: var(--lineheight-header);
+  margin: var(--margin-text-header);
 }
 
 h3,
 %h3 {
-  font-family: $fontstack-header;
-  font-size: $fontsize-h3;
-  line-height: $lineheight-header;
-  margin: deep-map-get($dimensions-text, margin, header);
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h3);
+  line-height: var(--lineheight-header);
+  margin: var(--margin-text-header);
 }
 
 h4,
 %h4 {
-  font-family: $fontstack-subheader;
-  font-size: $fontsize-h4;
-  line-height: $lineheight-subheader;
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h4);
+  line-height: var(--lineheight-subheader);
+  margin: var(--margin-text-subheader);
 }
 
 h5,
 %h5 {
-  font-family: $fontstack-subheader;
-  font-size: $fontsize-h5;
-  line-height: $lineheight-subheader;
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h5);
+  line-height: var(--lineheight-subheader);
+  margin: var(--margin-text-subheader);
 }
 
 h6,
 %h6 {
-  font-family: $fontstack-subheader;
-  font-size: $fontsize-h6;
-  line-height: $lineheight-subheader;
-  margin: deep-map-get($dimensions-text, margin, subheader);
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h6);
+  line-height: var(--lineheight-subheader);
+  margin: var(--margin-text-subheader);
 }
 
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   html,
   body {
-    font-size: $fontsize-desktop-base;
-    min-width: $minwidth-desktop;
+    font-size: var(--fontsize-desktop-base);
+    min-width: var(--minwidth-desktop);
   }
 }
 
@@ -128,18 +122,9 @@ h6,
 }
 
 .section {
-  font-size: $fontsize-root;
-  margin: deep-map-get($dimensions-section, mobile, margin, _);
-  padding: deep-map-get($dimensions-section, mobile, padding, _);
+  font-size: var(--fontsize-root);
+  margin: var(--margin-section);
+  max-width: var(--maxwidth-section);
+  padding: var(--padding-section);
   position: relative;
-}
-
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .section {
-    margin: deep-map-get($dimensions-section, desktop, margin, _);
-    max-width: deep-map-get($dimensions-section, desktop, maxwidth, _);
-    padding: deep-map-get($dimensions-section, desktop, padding, _);
-    position: relative;
-  }
 }

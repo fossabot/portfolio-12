@@ -1,226 +1,111 @@
-$minwidth-desktop: 750px;
+:root {
+  --margin-article-about: 0 .3em 0 0;
+  --margin-article-date: -.6em 0 1.4em 0;
+  --margin-article-figure: 1em 0;
+  --margin-article-img: .5em 0;
+  --width-article-img: 100%;
+
+  --margin-cardboard: 0;
+  --margin-cardboard-item: .4em 0;
+  --margin-cardboard-item-more: .7em 1em;
+  --margin-cardboard-item-title: .4em 0;
+  --padding-cardboard: 0;
+  --padding-cardboard-item: .7em 1em;
+  --padding-cardboard-item-description: 0 3em 0 0;
+  --padding-cardboard-item-links: 0 0 0 .1em;
+  --width-cardboard: 100%;
+  --width-cardboard-item: 100%;
+
+  --clippath-footer: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
+  --margin-footer: 3em 0 0 0;
+  --margin-footer-glyph: 0 6px;
+  --margin-footer-message:  .5em 0;
+  --margin-footer-social: .5em 0;
+  --padding-footer: 3em 4em;
+  --width-footer: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
+
+  --clippath-header: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+  --height-header: 50%;
+  --height-header-home: 86.5%;
+  --margin-header: 0 0 -1em 0;
+  --margin-header-message: auto 0 0 0;
+  --margin-header-message-home: auto 0 .8em 0;
+  --margin-header-title: 0;
+  --minheight-header: 375px;
+  --padding-header: 10vh 5rem;
+  --width-header: 100%;
+
+  --margin-links: 0;
+  --margin-links-item: 0;
+  --padding-links: 0;
+  --padding-links-item: 0;
+
+  --margin-list: 0 0 0 3.2em;
+  --margin-list-item: 0 0 .3em 0;
+  --margin-list-item-link: 0;
+  --margin-list-item-link-after: 0 .3em;
+  --margin-list-title: 0 auto 0 0;
+  --margin-list-title_hover: 0 auto 0 .4em;
+  --margin-list-category: -3em;
+  --padding-list: 0;
+  --padding-list-item: 0;
+  --padding-list-item-link: 0;
+
+  --margin-section: 2em;
+  --maxwidth-section: none;
+  --padding-section: 0;
+
+  --margin-text-header: 1em 0 .3em 0;
+  --margin-text-subheader: 1.2em 0 .3em 0;
+  --margin-text-text: 0 0 1em 0;
+}
 
 
-$dimensions-article: (
-  desktop: (
-    margin: (
-      image: .4em auto,
-      named-line: .6em
-    )
-  ),
-  mobile: (
-    margin: (
-      date: -.6em 0 1.4em 0,
-      image: .5em 0,
-      named-line: 0 .3em 0 0
-    )
-  )
-);
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  :root {
+    --margin-article-about: .6em;
+    --margin-article-img: .4em auto;
+    --margin-article-figure: 1em 2.8em;
+    --width-article-img: auto;
 
-$dimensions-backtotop: (
-  bottom: -48px,
-  bottom_hidden: -164px,
-  right: 64px
-);
+    --bottom-backtotop: -48px;
+    --bottom-backtotop_hidden: -164px;
+    --right-backtotop: 64px;
 
-$dimensions-cardboard: (
-  desktop: (
-    margin: (
-      _: 0 0 0 -.4em,
-      item: .4em,
-      item-title: .3em 0
-    ),
-    padding: (
-      _: 0,
-      item: .8em 1.2em,
-      item-description: 0,
-      item-links: 0 0 0 .3em
-    ),
-    width: (
-      _: calc(100% + .4em),
-      item: calc(50% - #{2 * .4em}) // 50% - 2 * desktop.margin.item
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0,
-      item: .4em 0,
-      item-title: .4em 0
-    ),
-    padding: (
-      _: 0,
-      item: .7em 1em,
-      item-description: 0 3em 0 0,
-      item-links: 0 0 0 .1em
-    ),
-    width: (
-      _: 100%,
-      item: 100%
-    )
-  )
-);
+    --margin-cardboard: 0 0 0 -.4em;
+    --margin-cardboard-item: .4em;
+    --margin-cardboard-item-more: .8em 1.2em;
+    --margin-cardboard-item-title: .3em 0;
+    --padding-cardboard-item: .8em 1.2em;
+    --padding-cardboard-item-description: 0;
+    --padding-cardboard-item-links: 0 0 0 .3em;
+    --width-cardboard: calc(100% + .4em);
+    --width-cardboard-item: calc(50% - (2 * var(--margin-cardboard-item)));
 
-$dimensions-footer: (
-  clippath: polygon(0 0, 100% 3vw, 100% 100%, 0 100%),
-  width: 100%,
+    --margin-footer: 2em 0 0 0;
+    --margin-footer-glyph: 0;
+    --margin-footer-message:  -22px 0 .5em 0;
+    --padding-footer: 6.5em 4em 2.5em 4em;
 
-  desktop: (
-    margin: (
-      _: 2em 0 0 0,
-      glyphs: 0
-    ),
-    padding: (
-      _: 6.5em 4em 2.5em 4em
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 3em 0 0 0,
-      message: .5em 0,
-      social: .5em 0,
-      glyphs: 0 6px
-    ),
-    padding: (
-      _: 3em 4em
-    )
-  )
-);
+    --margin-header: 0 0 12px 0;
+    --margin-header-link-item: 0;
+    --margin-header-message-home: auto 0 2em 0;
+    --maxwidth-header-message: 450px;
+    --padding-header: 5em 6em;
+    --padding-header-link-item: 0;
 
-$dimensions-header: (
-  clippath: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw)),
-  height: 50%,
-  height-home: 86.5%,
-  minheight: 375px,
-  width: 100%,
+    --margin-list: 0;
+    --margin-list-item: 0 2.6em 0 0;
+    --margin-list-item-link-after: 0 0 0 .3em;
+    --margin-list-category: -2.7em;
 
-  desktop: (
-    margin: (
-      _: 0 0 12px 0,
-      link-item: 0,
-      message: auto 0 0 0,
-      message-home: auto 0 2em 0,
-      title: 0
-    ),
-    maxwidth: (
-      message: 450px
-    ),
-    padding: (
-      _: 5em 6em,
-      link-item: 0
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0 0 -1em 0,
-      message: auto 0 0 0,
-      message-home: auto 0 .8em 0,
-      title: 0
-    ),
-    padding: (
-      _: 10vh 4rem
-    )
-  )
-);
+    --height-navbar: 100%;
+    --height-navbar-item: 48px;
+    --width-navbar: var(--height-navbar-item);
+    --width-navbar-item: var(--height-navbar-item);
 
-$dimensions-links: (
-  desktop: (
-    margin: (
-      _: 0,
-      item: 0
-    ),
-    padding: (
-      _: 0,
-      item: 0
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0,
-      item: 0
-    ),
-    padding: (
-      _: 0,
-      item: 0
-    )
-  )
-);
-
-$dimensions-list: (
-  desktop: (
-    margin: (
-      _: 0,
-      item: 0 2.6em 0 0,
-      item-link-after: 0 0 0 .3em,
-      category-left: -2.7em
-    ),
-    padding: (
-      _: 0
-    )
-  ),
-  mobile: (
-    margin: (
-      _: 0 0 0 3.2em,
-      item: 0 0 .3em 0,
-      item-link: 0,
-      item-link-after: 0 .3em,
-      title: 0 auto 0 0,
-      title_hover: 0 auto 0 .4em,
-      category-left: -3em
-    ),
-    padding: (
-      _: 0,
-      item: 0,
-      item-link: 0
-    )
-  )
-);
-
-$dimensions-navbar: (
-  desktop: (
-    height: (
-      _: 100%,
-      item: 48px
-    ),
-    width: (
-      _: 48px,
-      item: 48px
-    )
-  )
-);
-
-$dimensions-section: (
-  desktop: (
-    margin: (
-      _: 2em auto
-    ),
-    maxwidth: (
-      _: 800px
-    ),
-    padding: (
-      _: 0 124px
-    )
-  ),
-  mobile: (
-    margin: (
-      _:  2em
-    ),
-    padding: (
-      _: 0
-    )
-  )
-);
-
-$dimensions-text: (
-  margin: (
-    header: 1em 0 .3em 0,
-    subheader: 1.2em 0 .3em 0,
-    text: 0 0 1em 0
-  )
-);
-
-$layers: (
-  basement: -1,
-  floor: 1,
-  ceiling: 20,
-  roof: 30
-);
+    --margin-section: 2em auto;
+    --maxwidth-section: 800px;
+    --padding-section: 0 124px;
+  }
+}
