@@ -1,6 +1,6 @@
 files:
   include: 'styles/**/*.scss'
-  exclude: 'styles/fontello/*.scss'
+  exclude: ['styles/variables/*.scss', 'styles/fontello/*.scss']
 options:
   formatter: stylish
   merge-default-rules: false

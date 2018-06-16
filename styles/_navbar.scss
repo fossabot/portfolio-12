@@ -1,6 +1,4 @@
-@import 'mixins/map';
-@import 'variables/colors';
-@import 'variables/dimensions';
+@import 'variables/layers';
 
 
 .navbar {
@@ -13,7 +11,7 @@
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    height: deep-map-get($dimensions-navbar, desktop, height, _);
+    height: var(--height-navbar);
     left: 0;
     list-style: none;
     margin: 0;
@@ -22,7 +20,7 @@
     pointer-events: none;
     position: fixed;
     top: 0;
-    width: deep-map-get($dimensions-navbar, desktop, width, _);
+    width: var(--width-navbar);
     z-index: map-get($layers, ceiling);
   }
 
@@ -37,11 +35,11 @@
   }
 
   .navbar__item {
-    color: $clr-primary-black;
+    color: var(--clr-primary-black);
     cursor: pointer;
-    font-size: deep-map-get($fontsize-navbar, desktop, glyphs);
-    height: deep-map-get($dimensions-navbar, desktop, height, item);
-    line-height: deep-map-get($dimensions-navbar, desktop, height, item);
+    font-size: var(--fontsize-navbar-glyph);
+    height: var(--height-navbar-item);
+    line-height: var(--height-navbar-item);
     margin: 0;
     padding: 0;
     pointer-events: auto;
@@ -49,12 +47,12 @@
     text-decoration: none;
     transition: background-color .1s ease, color .1s ease;
     vertical-align: middle;
-    width: deep-map-get($dimensions-navbar, desktop, width, item);
+    width: var(--width-navbar-item);
 
     &:focus,
     &:hover {
-      background-color: $clr-primary-black;
-      color: $clr-primary-white;
+      background-color: var(--clr-primary-black);
+      color: var(--clr-primary-white);
     }
   }
 }

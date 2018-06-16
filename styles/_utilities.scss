@@ -1,5 +1,4 @@
-@import 'variables/colors';
-@import 'variables/fonts';
+@import 'variables/layers';
 
 // Class for the hoverable elements in the header
 .about-hover {
@@ -25,43 +24,43 @@
 
   &--blue {
     &::before {
-      background-color: $clr-teal;
+      background-color: var(--clr-teal);
     }
   }
 
   &--codepen {
     &::before {
-      background-color: $clr-codepen;
+      background-color: var(--clr-codepen);
     }
   }
 
   &--github {
     &::before {
-      background-color: $clr-github;
+      background-color: var(--clr-github);
     }
   }
 
   &--green {
     &::before {
-      background-color: $clr-seagreen;
+      background-color: var(--clr-seagreen);
     }
   }
 
   &--linkedin {
     &::before {
-      background-color: $clr-linkedin;
+      background-color: var(--clr-linkedin);
     }
   }
 
   &--mail {
     &::before {
-      background-color: $clr-mail;
+      background-color: var(--clr-mail);
     }
   }
 
   &--red {
     &::before {
-      background-color: $clr-indianred;
+      background-color: var(--clr-indianred);
     }
   }
 }
@@ -72,11 +71,11 @@
 
   &--hover {
     &:focus {
-      color: $clr-secondary-accent;
+      color: var(--clr-secondary-accent);
     }
 
     &:hover {
-      color: $clr-secondary-accent;
+      color: var(--clr-secondary-accent);
     }
   }
 }
@@ -86,7 +85,7 @@
   margin-bottom: 1.05em;
 
   &::after {
-    background-color: $clr-primary-accent;
+    background-color: var(--clr-primary-accent);
     content: '';
     display: block;
     height: .15em;
@@ -98,12 +97,12 @@
 
   &.short-underline--dark {
     &::after {
-      background-color: $clr-primary-white;
+      background-color: var(--clr-primary-white);
     }
 
     &:hover {
       &::after {
-        background-color: $clr-primary-accent;
+        background-color: var(--clr-primary-accent);
       }
     }
   }
@@ -136,24 +135,24 @@
 // Class to make text secondary/less important
 .text-secondary,
 %text-secondary {
-  color: $clr-primary-gray;
-  font-family: $fontstack-text;
-  font-size: $fontsize-subtext;
+  color: var(--clr-primary-gray);
+  font-family: var(--fontstack-text);
+  font-size: var(--fontsize-subtext);
   font-style: italic;
-  line-height: $lineheight-subtext;
+  line-height: var(--lineheight-subtext);
 }
 
 // Class for links in text
 .text-link {
   background-color: transparent;
-  color: $clr-secondary-accent;
+  color: var(--clr-secondary-accent);
   position: relative;
   text-decoration: none;
   transition: color .15s ease;
   z-index: 0;
 
   &::after {
-    background-color: $clr-secondary-black;
+    background-color: var(--clr-secondary-black);
     content: '';
     height: calc(100% + 4px);
     left: -2px;
@@ -167,11 +166,11 @@
   }
 
   &:focus {
-    color: $clr-primary-accent;
+    color: var(--clr-primary-accent);
   }
 
   &:hover {
-    color: $clr-primary-white;
+    color: var(--clr-primary-white);
 
     &::after {
       bottom: -1px;
