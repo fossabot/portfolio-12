@@ -2,13 +2,19 @@
   position: relative;
 
   &::before {
-    color: var(--clr-primary-gray);
+    color: var(--clr-secondary-gray);
     content: attr(data-name);
     font-size: var(--fontsize-subtext);
     font-style: italic;
     margin: var(--margin-article-about);
     pointer-events: none;
   }
+}
+
+.article__date {
+  color: var(--clr-primary-gray);
+  font-size: var(--fontsize-subtext);
+  margin: var(--margin-article-date);
 }
 
 .article__figure {

@@ -38,6 +38,12 @@
 
         <h2 class="short-underline">{{ project.name }}</h2>
 
+        {% if project.start_year != project.end_year %}
+        <p class="article__date">{{ project.start_year }} - {{ project.end_year }}</p>
+        {% else %}
+        <p class="article__date">{{ project.start_year }}</p>
+        {% endif %}
+
         {% if project.tldr != null %}
         <p class="article__about" data-name="tl:dr">{{ project.tldr }}</p>
         {% endif %}
