@@ -6,11 +6,11 @@ keywords: portfolio,contributions
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
   <head>
-    {% include metadata.html %}
+    {%comment%}{% include metadata.html %}{%endcomment%}
     <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    {% include navigation.html %}
+    {%comment%}{% include navigation.html %}{%endcomment%}
 
     <header class="header header--home">
       <h1 class="header__title short-underline short-underline--dark">Eric<br>Cornelissen</h1>
@@ -29,7 +29,7 @@ keywords: portfolio,contributions
 
         <ul class="cardboard">
           {% for project in site.data.portfolio.programming %}
-          {% if project.spotlight == false %}{% continue %}{% endif %}
+          {%comment%}{% if project.spotlight == false %}{% continue %}{% endif %}{%endcomment%}
           <li class="cardboard__item">
             <div class="cardboard__item__content">
               <ul class="cardboard__item__links">
@@ -55,7 +55,7 @@ keywords: portfolio,contributions
 
         <ul class="cardboard">
           {% for project in site.data.portfolio.contributions %}
-          {% if project.spotlight == false %}{% continue %}{% endif %}
+          {%comment%}{% if project.spotlight == false %}{% continue %}{% endif %}{%endcomment%}
           <li class="cardboard__item">
             <div class="cardboard__item__content">
               <ul class="cardboard__item__links">
@@ -75,9 +75,9 @@ keywords: portfolio,contributions
         </ul>
       </section>
 
-      {% include back-to-top.html %}
+      {%comment%}{% include back-to-top.html %}{%endcomment%}
     </main>
 
-    {% include footer.html %}
+    {%comment%}{% include footer.html %}{%endcomment%}
   </body>
 </html>
