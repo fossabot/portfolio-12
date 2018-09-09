@@ -7,7 +7,7 @@ const sequential = require('gulp-sequence');
 const OUTPUT_DIR = './_site';
 
 gulp.task('assets', function() {
-  gulp.src('./assets/**')
+  gulp.src('./assets/**/*')
     .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
 });
 
@@ -20,21 +20,24 @@ gulp.task('files', function() {
   gulp.src('./LICENSE').pipe(gulp.dest(OUTPUT_DIR));
   gulp.src('./CNAME').pipe(gulp.dest(OUTPUT_DIR));
   gulp.src('./*.{htaccess,ico,txt}').pipe(gulp.dest(OUTPUT_DIR));
+  gulp.src('./downloads/**').pipe(gulp.dest(`${OUTPUT_DIR}/downloads`));
 });
 
 gulp.task('html', function() {
-  const metadata = require('./_data/metadata.json');
-  const portfolio = require('./_data/portfolio.json');
-  const social = require('./_data/social.json');
+  const options = {
+    data: {
+      site: {
+        data: {
+          metadata: require('./_data/metadata.json'),
+          portfolio: require('./_data/portfolio.json'),
+          social: require('./_data/social.json')
+        }
+      }
+    }
+  }
 
   gulp.src('./*.html')
-    .pipe(
-      liquid({
-        data: {
-          site: { data: { metadata, portfolio, social } }
-        }
-      })
-    )
+    .pipe(liquid(options))
     .pipe(gulp.dest(OUTPUT_DIR));
 
   gulp.src('./portfolio/*.html')
@@ -43,10 +46,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('misc', function() {
-  gulp.src('./iam/**')
-    .pipe(gulp.dest(`${OUTPUT_DIR}/iam`));
-  gulp.src('./downloads/**')
-    .pipe(gulp.dest(`${OUTPUT_DIR}/downloads`));
+  gulp.src('./iam/**').pipe(gulp.dest(`${OUTPUT_DIR}/iam`));
 });
 
 gulp.task('scripts', function() {
@@ -61,3 +61,11 @@ gulp.task('styles', function() {
 });
 
 gulp.task('default', sequential('clean', ['assets', 'files', 'html', 'misc', 'scripts', 'styles']));
+gulp.task('serve', ['default'], () => {
+  gulp.watch(['./LICENSE', './CNAME', './*.{htaccess,ico,txt}'], ['files']);
+  gulp.watch('./downloads/**', ['files']);
+  gulp.watch(['./*.html', './portfolio/*.html'], ['html']);
+  gulp.watch('./assets/**/*', ['assets']);
+  gulp.watch('./scripts/**/*', ['scripts']);
+  gulp.watch('./styles/**/*', ['styles']);
+});
