@@ -1,7 +1,7 @@
 ---
-title: Portfolio
+title: Archive
 description: An overview of the projects and snippets I've worked on, and projects I've contributed to
-keywords: portfolio
+keywords: portfolio,archive
 ---
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ keywords: portfolio
           {% assign last_category = '' %}
           {% for project in site.data.portfolio.programming %}
           <li class="list__item">
-            <a class="list__item__link" href="/portfolio/{{ project.name | downcase | replace: ' ', '-' }}" rel="noopener">
+            <a class="list__item__link" href="/archive/{{ project.name | downcase | replace: ' ', '-' }}" rel="noopener">
               {% if last_category != project.end_year %}
               {% assign last_category = project.end_year %}
               <p class="list__item__category">{{ project.end_year }}</p>
@@ -68,7 +68,7 @@ keywords: portfolio
           {% assign last_category = '' %}
           {% for project in site.data.portfolio.contributions %}
           <li class="list__item">
-            <a class="list__item__link" href="/portfolio/{{ project.name | downcase | replace: ' ', '-' }}" rel="noopener">
+            <a class="list__item__link" href="/archive/{{ project.name | downcase | replace: ' ', '-' }}" rel="noopener">
               {% if last_category != project.end_year %}
               {% assign last_category = project.end_year %}
               <p class="list__item__category">{{ project.end_year }}</p>

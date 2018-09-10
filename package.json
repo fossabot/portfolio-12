@@ -8,7 +8,7 @@
     "email": "ericornelissen@gmail.com"
   },
   "scripts": {
-    "axe": "axe --disable color-contrast localhost:4000 localhost:4000/portfolio",
+    "axe": "axe --disable color-contrast localhost:4000 localhost:4000/archive",
     "build": "jekyll build",
     "clean": "jekyll clean",
     "dev": "jekyll serve",
