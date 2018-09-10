@@ -355,6 +355,23 @@
   ],
   "contributions": [
     {
+      "name": "SVGOMG",
+      "about": "SVGOMG is <a class=\"text-link\" href=\"https://github.com/svg/svgo\">SVGO</a>'s Missing GUI, aiming to expose the majority, if not all the configuration options of SVGO.",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": true,
+      "links": [
+        {
+          "m_id": "github",
+          "url": "https://github.com/jakearchibald/svgomg"
+        },
+        {
+          "m_id": "website",
+          "url": "https://jakearchibald.github.io/svgomg/"
+        }
+      ]
+    },
+    {
       "name": "Atom",
       "about": "A hackable text editor for the 21st Century by Github.",
       "start_year": 2017,
@@ -444,7 +461,7 @@
       "about": "Grunt task for downloading fonts from <a class=\"text-link\" href=\"http://fontello.com/\">fontello</a>.",
       "start_year": 2017,
       "end_year": 2017,
-      "spotlight": true,
+      "spotlight": false,
       "links": [
         {
           "m_id": "github",
