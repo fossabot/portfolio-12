@@ -38,9 +38,9 @@ gulp.task('html', function() {
     .pipe(liquid())
     .pipe(gulp.dest(OUTPUT_DIR))
 
-  gulp.src('./portfolio/*.html')
+  gulp.src('./archive/*.html')
     .pipe(liquid())
-    .pipe(gulp.dest(`${OUTPUT_DIR}/portfolio`))
+    .pipe(gulp.dest(`${OUTPUT_DIR}/archive`))
 });
 
 gulp.task('misc', function() {
@@ -62,7 +62,7 @@ gulp.task('default', sequential('clean', ['assets', 'files', 'html', 'misc', 'sc
 gulp.task('serve', ['default'], function() {
   gulp.watch(['./LICENSE', './CNAME', './*.{htaccess,ico,txt}'], ['files']);
   gulp.watch('./downloads/**', ['files']);
-  gulp.watch(['./*.html', './portfolio/*.html', './_helpers/*.js', './_includes/*.hbs'], ['html']);
+  gulp.watch(['./*.html', './archive/*.html', './_helpers/*.js', './_includes/*.hbs'], ['html']);
   gulp.watch('./assets/**/*', ['assets']);
   gulp.watch('./scripts/**/*', ['scripts']);
   gulp.watch('./styles/**/*', ['styles']);
