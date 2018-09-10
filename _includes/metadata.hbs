@@ -1,0 +1,34 @@
+{{#capture "title"}}
+  {{ site.title }}{{#if page.title}} - {{ page.title }}{{/if}}
+{{/capture}}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{#if page.description}}
+  <meta name="description" content="{{ page.description }}">
+{{/if}}
+{{#if page.keywords}}
+  <meta name="keywords" content="{{ site.keywords }},{{ page.keywords }}">
+{{/if}}
+<meta name="title" content="{{ title }}">
+<meta name="theme-color" content="{{ site.theme-color }}">
+
+{{#unless_eq page.title "Page not found"}}
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:locale" content="{{ site.lang }}">
+  {{#if page.image}}
+    <meta property="og:image" content="{{ page.image }}">
+  {{/if}}
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@ericornelissen">
+{{/unless_eq}}
+
+<link href="/assets/favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
+<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+
+<title>{{ title }}</title>

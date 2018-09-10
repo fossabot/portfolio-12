@@ -1,16 +1,14 @@
----
-description: Welcome to my portfolio!
-keywords: portfolio,contributions
----
+{{ page "description" "Welcome to my portfolio!" }}
+{{ page "keywords" "portfolio,contributions" }}
 
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
   <head>
-    {%comment%}{% include metadata.html %}{%endcomment%}
+    {{> metadata }}
     <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    {%comment%}{% include navigation.html %}{%endcomment%}
+    {{> navigation }}
 
     <header class="header header--home">
       <h1 class="header__title short-underline short-underline--dark">Eric<br>Cornelissen</h1>
@@ -28,24 +26,25 @@ keywords: portfolio,contributions
         <p>A selection of the favorite projects I worked on. You can find a list of all my projects <a class="text-link" href="/portfolio">over here</a>.</p>
 
         <ul class="cardboard">
-          {% for project in site.data.portfolio.programming %}
-          {%comment%}{% if project.spotlight == false %}{% continue %}{% endif %}{%endcomment%}
-          <li class="cardboard__item">
-            <div class="cardboard__item__content">
-              <ul class="cardboard__item__links">
-                {% for link in project.links %}
-                <li class="cardboard__item__link">
-                  <a class="icon icon--hover icon-{{ site.data.metadata[link.m_id].icon }}" aria-label="link to the project's {{ site.data.metadata[link.m_id].name }}" href="{{ link.url }}"></a>
-                </li>
-                {% endfor %}
-              </ul>
+          {{#each portfolio.programming}}
+            {{#if spotlight}}
+              <li class="cardboard__item">
+                <div class="cardboard__item__content">
+                  <ul class="cardboard__item__links">
+                    {{#each links}}
+                      <li class="cardboard__item__link">
+                        <a class="icon icon--hover icon-{{metadata m_id 'icon'}}" aria-label="link to the project's {{metadata m_id 'name'}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                      </li>
+                    {{/each}}
+                  </ul>
 
-              <h4 class="cardboard__item__title">{{ project.name }}</h4>
-              <p class="cardboard__item__description">{{ project.tldr | strip_html | truncate: 80 }}</p>
-              <a class="cardboard__item__more" href="portfolio/{{ project.name | downcase | replace: ' ', '-' }}">More</a>
-            </div>
-          </li>
-          {% endfor %}
+                  <h4 class="cardboard__item__title">{{name}}</h4>
+                  <p class="cardboard__item__description">{{{truncate tldr 80}}}</p>
+                  <a class="cardboard__item__more" href="portfolio/{{to_url name}}">More</a>
+                </div>
+              </li>
+            {{/if}}
+          {{/each}}
         </ul>
       </section>
 
@@ -54,30 +53,31 @@ keywords: portfolio,contributions
         <p>As I said, I love contributing to open source software. Here are a few of the favorite projects I contributed to. You can find a complete overview <a class="text-link" href="/portfolio#contributions">here</a>.</p>
 
         <ul class="cardboard">
-          {% for project in site.data.portfolio.contributions %}
-          {%comment%}{% if project.spotlight == false %}{% continue %}{% endif %}{%endcomment%}
-          <li class="cardboard__item">
-            <div class="cardboard__item__content">
-              <ul class="cardboard__item__links">
-                {% for link in project.links %}
-                <li class="cardboard__item__link">
-                  <a class="icon icon--hover icon-{{ site.data.metadata[link.m_id].icon }}" aria-label="link to the project's {{ site.data.metadata[link.m_id].name }}" href="{{ link.url }}"></a>
-                </li>
-                {% endfor %}
-              </ul>
+          {{#each portfolio.contributions}}
+            {{#if spotlight}}
+              <li class="cardboard__item">
+                <div class="cardboard__item__content">
+                  <ul class="cardboard__item__links">
+                    {{#each links}}
+                      <li class="cardboard__item__link">
+                        <a class="icon icon--hover icon-{{metadata m_id 'icon'}}" aria-label="link to the project's {{metadata m_id 'name'}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                      </li>
+                    {{/each}}
+                  </ul>
 
-              <h4 class="cardboard__item__title">{{ project.name }}</h4>
-              <p class="cardboard__item__description">{{ project.about | strip_html | truncate: 80 }}</p>
-              <a class="cardboard__item__more" href="portfolio/{{ project.name | downcase | replace: ' ', '-' }}">More</a>
-            </div>
-          </li>
-          {% endfor %}
+                  <h4 class="cardboard__item__title">{{name}}</h4>
+                  <p class="cardboard__item__description">{{{truncate about 80}}}</p>
+                  <a class="cardboard__item__more" href="portfolio/{{to_url name}}">More</a>
+                </div>
+              </li>
+            {{/if}}
+          {{/each}}
         </ul>
       </section>
 
-      {%comment%}{% include back-to-top.html %}{%endcomment%}
+      {{> back-to-top }}
     </main>
 
-    {%comment%}{% include footer.html %}{%endcomment%}
+    {{> footer }}
   </body>
 </html>
