@@ -1,14 +1,14 @@
-{{ page "description" "Welcome to the portfolio of Eric Cornelissen!" }}
-{{ page "keywords" "portfolio,contributions" }}
+{{page "description" "Welcome to the portfolio of Eric Cornelissen!"}}
+{{page "keywords" "portfolio,contributions"}}
 
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{site.lang}}">
   <head>
-    {{> metadata }}
+    {{> metadata}}
     <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    {{> navigation }}
+  <body>{}
+    {{> navigation}}
 
     <header class="header header--home">
       <h1 class="header__title short-underline short-underline--dark">Eric<br>Cornelissen</h1>
@@ -40,7 +40,7 @@
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{truncate tldr 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{to_url name}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphencase name}}">More</a>
                 </div>
               </li>
             {{/if}}
@@ -67,7 +67,7 @@
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{truncate about 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{to_url name}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphencase name}}">More</a>
                 </div>
               </li>
             {{/if}}
@@ -75,9 +75,9 @@
         </ul>
       </section>
 
-      {{> back-to-top }}
+      {{> back-to-top}}
     </main>
 
-    {{> footer }}
+    {{> footer}}
   </body>
 </html>

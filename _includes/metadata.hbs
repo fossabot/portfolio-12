@@ -14,7 +14,7 @@
 <meta name="title" content="{{ title }}">
 <meta name="theme-color" content="{{ site.theme-color }}">
 
-{{#unless_eq page.title "Page not found"}}
+{{#unless page.no_og}}
   <meta property="og:title" content="{{ title }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@ericornelissen">
-{{/unless_eq}}
+{{/unless}}
 
 <link href="/assets/favicon.svg" rel="icon" sizes="any" type="image/svg+xml">
 <link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">

@@ -1,22 +1,20 @@
----
-title: Page not found
-permalink: /404.html
----
+{{page "title" "Page not found"}}
+{{page "no_og" true}}
 
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="{{site.lang}}">
   <head>
-    {%comment%}{% include metadata.html %}{%endcomment%}
+    {{> metadata}}
     <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <main class="main">
       <section id="programming" class="section">
-        <h1 class="short-underline">{{ page.title }}</h1>
+        <h1 class="short-underline">{{page.title}}</h1>
         <p>Oops this page doesn't exist... You might want to go back to the <a class="text-link" href="/">homepage</a>.</p>
       </section>
     </main>
 
-    {%comment%}{% include footer.html %}{%endcomment%}
+    {{> footer}}
   </body>
 </html>
