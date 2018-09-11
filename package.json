@@ -14,7 +14,7 @@
     "lighthouse": "lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=lighthouse-report.html --view",
     "lint": "run-p lint-*",
     "lint-html": "htmllint _site/**/*.html",
-    "lint-json": "jsonlint -q _data/metadata.json && jsonlint -q _data/portfolio.json && jsonlint -q _data/social.json",
+    "lint-json": "jsonlint -q _helpers/metadata.json && jsonlint -q _data/portfolio.json && jsonlint -q _data/site.json && jsonlint -q _data/social.json",
     "lint-sass": "sass-lint -v styles/*.scss styles/mixins/*.scss",
     "serve": "gulp serve & npm run start",
     "start": "http-server ./_site -p 4000"
