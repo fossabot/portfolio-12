@@ -3,8 +3,8 @@ keywords: 'eric,cornelissen'
 lang: 'en-US'
 
 collections:
-  portfolio:
-    collections_dir: 'portfolio'
+  archive:
+    collections_dir: 'archive'
 
 exclude: ["guidelines/", "node_modules/", "fontello.json", "lighthouse-report.html", "package.json", "README.md"]
 

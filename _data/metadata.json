@@ -23,12 +23,16 @@
     "icon": "download",
     "name": "download"
   },
-  "npm": {
-    "icon": "npm",
-    "name": "NPM"
-  },
   "gist": {
     "icon": "gist",
     "name": "Gist"
+  },
+  "npm": {
+    "icon": "package",
+    "name": "NPM"
+  },
+  "rubygems": {
+    "icon": "package",
+    "name": "RubyGems"
   }
 }

@@ -1,0 +1,17 @@
+jobs:
+  include:
+    - stage: "Test"
+      name: "Lint"
+      language: node_js
+      node_js: 8
+      script: npm run lint
+    - name: "Build"
+      language: ruby
+      rvm: 2.4.1
+      install: gem install jekyll jekyll-fontello
+      script: jekyll build
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
