@@ -5,18 +5,21 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Functionality | Tool |
 |---|---|
 | Accessibility tester | [aXe](https://www.axe-core.org/) |
+| Build tool | [Gulp](https://gulpjs.com/) |
 | CSS preprocessor | [Sass](http://sass-lang.com/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
-| Iconography| [Fontello](http://fontello.com/) |
+| Iconography | [Fontello](http://fontello.com/) |
 | JSON linter | [jsonlint](https://github.com/zaach/jsonlint) |
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |
-| Site generator | [jekyll](https://jekyllrb.com/) |
+| Site generator | [Handlebars.js](https://handlebarsjs.com/builtin_helpers.html) |
 | Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
 ###### How to use the build tools:
-- `$ npm run axe`: Test the website for a11y issues. (requires `$ npm start`)
-- `$ npm run build`: Build the project once.
-- `$ npm run clean`: Clean the project, removing all generated files.
-- `$ npm run dev`: Build the project and watch for changes.
-- `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm start`)
-- `$ npm run lint`: Lint the source code of the project. (requires `$ npm run build`)
+- `$ gulp clean`: Clean the project, removing all generated files.
+- `$ gulp build`: Build the project once.
+- `$ gulp dev`: Build the project and watch for changes.
+- `$ gulp lint`: Lint the source code of the project.
+- `$ npm run axe`: Test the website for a11y issues. (requires `$ npm run serve`)
+- `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm run serve`)
+- `$ npm run serve`: Build the site, watch for changes, and start a simple HTTP server (on port 4000).
+- `$ npm run start`: Start a simple HTTP server (on port 4000) for the project.
