@@ -1,0 +1,23 @@
+{{page "title" "Controlled Vocabulary Tool"}}
+
+{{#> layouts/project}}
+  {{#*inline "description"}}
+  <p>I was inspired to start this project while reading <a class="text-link" href="https://infoactive.co/data-design" rel="noopener">Data+Design</a> by Trina Chiasson and Dyanna Gregory (and over 50 global contributors). Chapter 4 contains a section named <i>Controlling for Inconsistencies</i>. Upon reading it I figured it was a good simple problem that can benefit from a multi-threaded solution. I decided to work in Python for quick and easy development.</p>
+
+  <p>The main idea of the project was to create a CLI tool that, using multiple threads, can convert a dataset into a new dataset with a controlled vocabulary (see image below). The multiple threads should utilize the fact that the user giving a mapping for a value takes a few seconds. During this time the tool can read input, convert values for which it already has a mapping, and output mapped values.</p>
+
+  <figure class="article__figure">
+    <img class="article__image" alt="illustration of controlled vocabulary" src="https://infoactive.co/data-design/images/sections/04/controlled-vocabulary.png">
+    <figcaption class="text-secondary">Illustration of controlled vocabulary taken from Data+Design.</figcaption>
+  </figure>
+
+  <p>With this goal in mind I first drafted a single-threaded script that read input from a file, prompted the user for a conversion and displayed the resulting dataset in the console. The next step was to do this on three different threads: one to read, one to convert, and one to output. To let the threads communicate with each other I created a few global variables accompanied by mutexes to align usage of the global variables between the threads, see the diagram below.</p>
+
+  <figure class="article__figure">
+    <img class="article__image" alt="diagram of global variable usage by different threads" src="https://raw.githubusercontent.com/ericcornelissen/controlled-vocab/master/diagrams/global_variable_usage.jpg">
+    <figcaption class="text-secondary">Diagram of global variable usage by different threads.</figcaption>
+  </figure>
+
+  <p>Finally I seperated the conversion thread into a conversion and prompting thread, so the tool can convert newly read values while the user is being prompted for a mapping. And also added an option to output to a file, fuse multiple input files into one output file, output the conversion map created, and to use an existing mapping for conversion.</p>
+  {{/inline}}
+{{/layouts/project}}
