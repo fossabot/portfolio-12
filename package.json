@@ -1,8 +1,9 @@
 {
   "name": "portfolio-eric-cornelissen",
-  "version": "0.0.0",
   "description": "Repository for the personal portfolio of Eric Cornelissen (2017)",
   "license": "Unlicense",
+  "private": true,
+  "version": "0.0.0",
   "author": {
     "name": "Eric Cornelissen",
     "email": "ericornelissen@gmail.com"
