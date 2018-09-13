@@ -64,6 +64,12 @@
 			"css": "arrowup",
 			"code": 59395,
 			"src": "fontawesome"
+		},
+		{
+			"uid": "cc05df515bebe11df3ada0a5910a8f6d",
+			"css": "package",
+			"code": 59396,
+			"src": "entypo"
 		}
 	]
 }
