@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const handlebars = require('gulp-hb');
 const htmlLint = require('gulp-htmllint');
 const jsonLint = require('gulp-jsonlint');
-const liquid = require('gulp-liquidjs');
 const remove = require('gulp-rm');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
@@ -14,8 +13,8 @@ const OUTPUT_DIR = './_site';
 const FILES_ASSETS = './assets/**/*';
 const FILES_DATA = './_data/*';
 const FILES_DOWNLOADS = './downloads/**/*';
-const FILES_HTML = ['./*.hbs', './archive/*.html'];
-const FILES_HANDLEBARS = ['./_helpers/*', './_includes/*'];
+const FILES_HTML = ['./*.hbs', './archive/*.hbs'];
+const FILES_HANDLEBARS = ['./_helpers/*', './_partials/**/*.hbs'];
 const FILES_MISC = ['./LICENSE', './CNAME', './*.{htaccess,ico,txt}'];
 const FILES_SCRIPTS = './scripts/**/*.js';
 const FILES_STYLES = './styles/**/*.scss';
@@ -34,18 +33,18 @@ gulp.task('files', function() {
 });
 
 gulp.task('html', function() {
-  return gulp.src('./*.hbs')
-    .pipe(
-      handlebars()
-        .partials('./_includes/*.hbs')
-        .helpers('./_helpers/*.js')
-        .data('./_data/*.json')
-    )
+  const partials = './_partials/**/*.hbs';
+  const helpers = './_helpers/*.js';
+  const data = './_data/*.json';
+
+  gulp.src('./*.hbs')
+    .pipe(handlebars().partials(partials).helpers(helpers).data(data))
     .pipe(replaceExt('.html'))
     .pipe(gulp.dest(OUTPUT_DIR));
 
-  return gulp.src('./archive/*.html')
-    .pipe(liquid())
+  return gulp.src('./archive/*.hbs')
+    .pipe(handlebars().partials(partials).helpers(helpers).data(data))
+    .pipe(replaceExt('.html'))
     .pipe(gulp.dest(`${OUTPUT_DIR}/archive`))
 });
 

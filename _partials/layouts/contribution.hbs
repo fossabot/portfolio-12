@@ -1,16 +1,9 @@
----
----
-
-{% for _project in site.data.portfolio.contributions %}
-  {% if _project.name == page.title %}
-    {% assign project = _project %}
-  {% endif %}
-{% endfor %}
+{{set_project "contributions" page.title}}
 
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html>
   <head>
-    {% include metadata.html %}
+    {{> metadata}}
     <link href="/styles/bundle.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -29,24 +22,26 @@
     <main class="main">
       <article class="section">
         <ul class="links links--glyphs">
-          {% for link in project.links %}
+          {{#each project.links}}
           <li class="links__item">
-            <a class="icon icon--hover icon-{{ site.data.metadata[link.m_id].icon }}" aria-label="link to the project's {{ site.data.metadata[link.m_id].name }}" href="{{ link.url }}"></a>
+            <a class="icon icon--hover icon-{{metadata m_id 'icon'}}" aria-label="link to the project's {{metadata m_id 'name'}}" href="{{url}}"></a>
           </li>
-          {% endfor %}
+          {{/each}}
         </ul>
 
         <h2 class="short-underline">{{ project.name }}</h2>
 
-        {% if project.about != null %}
+        {{#if project.about}}
         <p class="article__abouts" data-name="about">{{ project.about }}</p>
-        {% endif %}
+        {{/if}}
 
         <h4 class="short-underline">Description</h4>
-        {{ content }}
+        {{#> description}}
+          {{!-- Project description is inserted here --}}
+        {{/description}}
       </article>
     </main>
 
-    {% include footer.html %}
+    {{> footer}}
   </body>
 </html>
