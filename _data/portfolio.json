@@ -43,6 +43,10 @@
         {
           "m_id": "github",
           "url": "https://github.com/ericcornelissen/jekyll-fontello"
+        },
+        {
+          "m_id": "rubygems",
+          "url": "https://rubygems.org/gems/jekyll-fontello"
         }
       ]
     },
@@ -364,6 +368,10 @@
         {
           "m_id": "github",
           "url": "https://github.com/birjolaxew/svglint"
+        },
+        {
+          "m_id": "npm",
+          "url": "https://www.npmjs.com/package/svglint"
         }
       ]
     },
@@ -479,6 +487,10 @@
         {
           "m_id": "github",
           "url": "https://github.com/jubalm/grunt-fontello"
+        },
+        {
+          "m_id": "npm",
+          "url": "https://www.npmjs.com/package/grunt-fontello"
         }
       ]
     }
