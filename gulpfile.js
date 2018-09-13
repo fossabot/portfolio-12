@@ -1,16 +1,19 @@
 "use strict";
 
+const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
+const gulpIf = require('gulp-if');
 const handlebars = require('gulp-hb');
-const htmlLint = require('gulp-htmllint');
+const htmlmin = require('gulp-htmlmin');
 const jsonLint = require('gulp-jsonlint');
 const liquid = require('gulp-liquidjs');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
+const replaceExt = require('gulp-ext-replace');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
 const sequential = require('gulp-sequence');
-const replaceExt = require('gulp-ext-replace');
+const uglifyJS = require('gulp-uglify-es').default;
 
 
 const INPUT_ASSETS = './assets/**/*';
@@ -26,6 +29,8 @@ const INPUT_SCRIPTS = './scripts/**/*.js';
 const INPUT_STYLES = './styles/**/*.scss';
 
 const OUTPUT_DIR = './_site';
+
+let minifyOutput = false;
 
 
 /* Build subtasks */
@@ -50,6 +55,7 @@ gulp.task('html', function() {
         .helpers(INPUT_HANDLEBARS[1])
         .data(INPUT_HANDLEBARS[2])
     )
+    .pipe(gulpIf(minifyOutput, htmlmin({collapseWhitespace: true})))
     .pipe(replaceExt('.html'))
     .pipe(gulp.dest(OUTPUT_DIR));
 });
@@ -61,21 +67,20 @@ gulp.task('misc', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
+    .pipe(gulpIf(minifyOutput, uglifyJS()))
     .pipe(gulp.dest(`${OUTPUT_DIR}/scripts`));
 });
 
 gulp.task('styles', function() {
   return gulp.src(INPUT_STYLES)
     .pipe(sass().on('error', sass.logError))
+    .pipe(gulpIf(minifyOutput, cssnano()))
     .pipe(gulp.dest(`${OUTPUT_DIR}/styles`));
 });
 
 /* Lint subtasks */
-gulp.task('lint-html', ['build'], function() {
-  const reporter = (filepath,issues)=>{if(issues.length>0){console.log(`[htmllint] Found ${issues.length} issue(s) in '${filepath}'`);issues.forEach(issue=>{console.log(`[htmllint] ${filepath} [${issue.line}, ${issue.column}]: (${issue.code}) ${issue.msg}`)});process.exitCode=1}};
-
-  return gulp.src('./_site/**/*.html')
-    .pipe(htmlLint({config: './.htmllintrc'}, reporter));
+gulp.task('lint-html', function() {
+  // TODO: replace with Handlebars linter
 });
 
 gulp.task('lint-json', function() {
@@ -89,6 +94,11 @@ gulp.task('lint-styles', function() {
     .pipe(sassLint({options: './.sass-lint.yml'}))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
+});
+
+/* Utility subtasks */
+gulp.task('set-minify-output', function() {
+  minifyOutput = true;
 });
 
 /* General tasks */
@@ -105,6 +115,7 @@ gulp.task('dev', ['build'], function() {
   gulp.watch(INPUT_SCRIPTS, ['scripts']);
   gulp.watch(INPUT_STYLES, ['styles']);
 });
+gulp.task('dist', sequential(['set-minify-output', 'clean'], 'build'));
 gulp.task('lint', ['lint-json', /*'lint-html',*/ 'lint-styles']);
 
 gulp.task('default', sequential('clean', 'build'));

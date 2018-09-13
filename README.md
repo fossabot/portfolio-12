@@ -21,5 +21,5 @@ Repository for the personal portfolio of Eric Cornelissen.
 - `$ gulp lint`: Lint the source code of the project.
 - `$ npm run axe`: Test the website for a11y issues. (requires `$ npm run serve`)
 - `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm run serve`)
-- `$ npm run serve`: Build the site, watch for changes, and start a simple HTTP server (on port 4000).
+- `$ npm run serve`: Build the site and start a simple HTTP server (on port 4000).
 - `$ npm run start`: Start a simple HTTP server (on port 4000) for the project.
