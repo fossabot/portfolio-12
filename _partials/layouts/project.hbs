@@ -1,5 +1,4 @@
-{{set_project "programming" page.title}}
-
+{{#with_project "programming" $page.title}}
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
   <head>
@@ -32,7 +31,7 @@
         <h2 class="short-underline">{{project.name}}</h2>
 
         <p class="article__date">
-          {{project.start_year}}{{#if project.end_year}} - {{project.end_year}}{{/if}}
+          {{project.start_year}}{{#unlessEq project.start_year project.end_year}} - {{project.end_year}}{{/unlessEq}}
         </p>
 
         {{#if project.tldr}}
@@ -57,3 +56,4 @@
     {{> footer}}
   </body>
 </html>
+{{/with_project}}

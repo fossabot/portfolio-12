@@ -1,5 +1,4 @@
-{{set_project "contributions" page.title}}
-
+{{#with_project "contributions" $page.title}}
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
   <head>
@@ -47,3 +46,4 @@
     {{> footer}}
   </body>
 </html>
+{{/with_project}}
