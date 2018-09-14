@@ -10,11 +10,14 @@
   },
   "scripts": {
     "axe": "axe --disable color-contrast localhost:4000 localhost:4000/archive",
+    "commitmsg": "commitlint -E GIT_PARAMS",
     "lighthouse": "lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=lighthouse-report.html --view",
     "serve": "gulp & npm run start",
     "start": "http-server ./_site -p 4000"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
     "axe-cli": "^1.3.1",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.3",
@@ -31,6 +34,7 @@
     "gulp-sequence": "^1.0.0",
     "gulp-uglify-es": "^1.0.4",
     "handlebars-utils": "^1.0.6",
+    "husky": "^0.14.3",
     "http-server": "^0.11.1",
     "lighthouse": "^2.8.0"
   }
