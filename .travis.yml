@@ -9,6 +9,23 @@ jobs:
         - npm install gulp-cli -g
       script:
         - gulp lint
+    - name: "Build dev"
+      language: node_js
+      node_js: 8
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp build
+        - gulp dist
+    - name: "Build dist"
+      language: node_js
+      node_js: 8
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp build
 
 notifications:
   email:
