@@ -15,19 +15,21 @@ const sequential = require('gulp-sequence');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
-const INPUT_ASSETS = './assets/**/*';
-const INPUT_DOWNLOADS = './downloads/**/*';
-const INPUT_HTML = '{,./archive/}*.hbs';
-const INPUT_HANDLEBARS = [
-  './_partials/**/*.hbs', // Partials
-  './_helpers/*.js',      // Helpers
-  './_data/*.json'        // Data
-];
-const INPUT_ROOT_FILES = ['./CNAME', './*.{htaccess,ico,txt}'];
-const INPUT_SCRIPTS = './scripts/**/*.js';
-const INPUT_STYLES = './styles/**/*.scss';
-
+const INPUT_DIR = './public'
 const OUTPUT_DIR = './_site';
+
+const INPUT_ASSETS = `${INPUT_DIR}/assets/**/*`;
+const INPUT_DOWNLOADS = `${INPUT_DIR}/downloads/**/*`;
+const INPUT_HTML = `${INPUT_DIR}{,/archive}/*.hbs`;//'{,./archive/}*.hbs';
+const INPUT_HANDLEBARS = [
+  './partials/**/*.hbs', // Partials
+  './helpers/*.js',      // Helpers
+  './data/*.json'        // Data
+];
+const INPUT_ROOT_FILES = [`${INPUT_DIR}/CNAME`, `${INPUT_DIR}/*.{htaccess,ico,txt}`];
+const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
+
 
 let minifyOutput = false;
 

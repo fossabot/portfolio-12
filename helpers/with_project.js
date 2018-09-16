@@ -1,4 +1,4 @@
-const projects = require('../_data/portfolio.json');
+const projects = require('../data/portfolio.json');
 
 module.exports = function(category, name, options) {
   let project;
