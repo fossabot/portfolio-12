@@ -12,7 +12,6 @@ const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
-const sequential = require('gulp-sequence');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
@@ -100,25 +99,26 @@ gulp.task('lint-styles', function() {
 });
 
 /* Utility subtasks */
-gulp.task('set-minify-output', function() {
+gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
+  done();
 });
 
 /* General tasks */
-gulp.task('build', ['assets', 'files', 'html', 'misc', 'scripts', 'styles']);
+gulp.task('build', gulp.parallel('assets', 'files', 'html', 'misc', 'scripts', 'styles'));
 gulp.task('clean', function() {
   return gulp.src(`${OUTPUT_DIR}/**/*`)
     .pipe(remove());
 });
-gulp.task('dev', ['build'], function() {
-  gulp.watch(INPUT_ROOT_FILES, ['files']);
-  gulp.watch(INPUT_DOWNLOADS, ['files']);
-  gulp.watch([INPUT_HTML, ...INPUT_HANDLEBARS], ['html']);
-  gulp.watch(INPUT_ASSETS, ['assets']);
-  gulp.watch(INPUT_SCRIPTS, ['scripts']);
-  gulp.watch(INPUT_STYLES, ['styles']);
-});
-gulp.task('dist', sequential(['set-minify-output', 'clean'], 'build'));
-gulp.task('lint', ['lint-json', /*'lint-html',*/ 'lint-styles']);
+gulp.task('dev', gulp.series('build', function() {
+  gulp.watch(INPUT_ROOT_FILES, gulp.task('files'));
+  gulp.watch(INPUT_DOWNLOADS, gulp.task('files'));
+  gulp.watch([INPUT_HTML, ...INPUT_HANDLEBARS], gulp.task('html'));
+  gulp.watch(INPUT_ASSETS, gulp.task('assets'));
+  gulp.watch(INPUT_SCRIPTS, gulp.task('scripts'));
+  gulp.watch(INPUT_STYLES, gulp.task('styles'));
+}));
+gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
+gulp.task('lint', gulp.parallel('lint-json', /*'lint-html',*/ 'lint-styles'));
 
-gulp.task('default', sequential('clean', 'build'));
+gulp.task('default', gulp.series('clean', 'build'));
