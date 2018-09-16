@@ -22,12 +22,7 @@
     }
   }
 
-  &--blue {
-    &::before {
-      background-color: var(--clr-teal);
-    }
-  }
-
+  // -- Brand modifiers -- //
   &--codepen {
     &::before {
       background-color: var(--clr-codepen);
@@ -37,12 +32,6 @@
   &--github {
     &::before {
       background-color: var(--clr-github);
-    }
-  }
-
-  &--green {
-    &::before {
-      background-color: var(--clr-seagreen);
     }
   }
 
@@ -58,9 +47,22 @@
     }
   }
 
-  &--red {
+  // -- Color modifiers -- //
+  &--aqua-spray {
     &::before {
-      background-color: var(--clr-indianred);
+      background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
+    }
+  }
+
+  &--bloody-mimosa {
+    &::before {
+      background: linear-gradient(135deg, var(--bloody-mimosa-start) 0%, var(--bloody-mimosa-end) 100%);
+    }
+  }
+
+  &--dusty-cactus {
+    &::before {
+      background: linear-gradient(135deg, var(--dusty-cactus-start) 0%, var(--dusty-cactus-end) 100%);
     }
   }
 }
