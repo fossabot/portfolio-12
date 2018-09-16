@@ -1,0 +1,15 @@
+{{page "title" "Intersectionsim"}}
+{{page "keywords" "research,artificial intelligence,ai,diagram,python,pddl"}}
+
+{{#> layouts/project}}
+  {{#*inline "description"}}
+  <p>A project done for an Artificial Intelligence course at <a class="text-link" href="https://www.kth.se/en" rel="noopener">KTH Royal Institute of Technology</a>. We implemented a PDDL description of an intersection which can be solved using a PDDL solver, but is very limited. We also implemented a Python script that can interpret an intersection scenario and solve it using a Simplex algorithm. We compared efficiency against a simulation of a traffic light.</p>
+
+  <figure class="article__figure">
+    <img class="article__image" alt="Diagram showing time spent waiting" src="https://raw.githubusercontent.com/tatp22/intersectionsim/master/linprog/LostTime.png">
+    <figcaption class="text-secondary">Diagram comparing the time lost on the intersection using our algorithm vs. a traffic light.</figcaption>
+  </figure>
+
+  <p>To find a solution to the problem the intersection is discretized into four sections and each cars requests different slots from the intersection in order to cross it. Then, together with other constraints such as the minimum and maximum speed of each car, the intersection finds a schedule such that each car can cross the intersection without crashing using the Simplex algorithm.</p>
+  {{/inline}}
+{{/layouts/project}}

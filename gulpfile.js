@@ -7,7 +7,6 @@ const handlebars = require('gulp-hb');
 const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const jsonLint = require('gulp-jsonlint');
-const liquid = require('gulp-liquidjs');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
@@ -16,19 +15,21 @@ const sassLint = require('gulp-sass-lint');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
-const INPUT_ASSETS = './assets/**/*';
-const INPUT_DOWNLOADS = './downloads/**/*';
-const INPUT_HTML = '{,./archive/}*.hbs';
-const INPUT_HANDLEBARS = [
-  './_includes/*.hbs', // Partials
-  './_helpers/*.js',   // Helpers
-  './_data/*.json'     // Data
-];
-const INPUT_ROOT_FILES = ['./CNAME', './*.{htaccess,ico,txt}'];
-const INPUT_SCRIPTS = './scripts/**/*.js';
-const INPUT_STYLES = './styles/**/*.scss';
-
+const INPUT_DIR = './public'
 const OUTPUT_DIR = './_site';
+
+const INPUT_ASSETS = `${INPUT_DIR}/assets/**/*`;
+const INPUT_DOWNLOADS = `${INPUT_DIR}/downloads/**/*`;
+const INPUT_HTML = `${INPUT_DIR}/{,archive/}*.hbs`;
+const INPUT_HANDLEBARS = [
+  './partials/**/*.hbs', // Partials
+  './helpers/*.js',      // Helpers
+  './data/*.json'        // Data
+];
+const INPUT_ROOT_FILES = [`${INPUT_DIR}/CNAME`, `${INPUT_DIR}/*.{htaccess,ico,txt}`];
+const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
+
 
 let minifyOutput = false;
 
@@ -45,20 +46,20 @@ gulp.task('assets', function() {
     .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
 });
 gulp.task('files', function() {
-  return gulp.src(INPUT_ROOT_FILES)
+  gulp.src(INPUT_ROOT_FILES)
     .pipe(gulp.dest(OUTPUT_DIR));
   return gulp.src(INPUT_DOWNLOADS)
     .pipe(gulp.dest(`${OUTPUT_DIR}/downloads`));
 });
 gulp.task('html', function() {
-  const hbHelpers = require('handlebars-helpers');
+  const stdHelpers = require('handlebars-helpers');
 
   return gulp.src(INPUT_HTML)
     .pipe(plumber())
     .pipe(
       handlebars()
         .partials(INPUT_HANDLEBARS[0])
-        .helpers(hbHelpers)
+        .helpers(stdHelpers)
         .helpers(INPUT_HANDLEBARS[1])
         .data(INPUT_HANDLEBARS[2])
     )
