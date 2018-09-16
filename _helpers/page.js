@@ -1,7 +1,6 @@
 const path = require('path');
 const utils = require('handlebars-utils');
 
-
 function get(key, options, self) {
   switch (key.toLowerCase()) {
     case 'url':
@@ -18,7 +17,6 @@ function set(key, value, self) {
   self.$page = self.$page || { };
   self.$page[key] = value
 }
-
 
 module.exports = function(key, value) {
   if (utils.isOptions(value)) {

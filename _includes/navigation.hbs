@@ -11,7 +11,7 @@
   <ul class="navbar__group navbar__group--bottom">
     {{#each social}}
       <li class="navbar__item">
-        <a class="icon icon-{{metadata m_id 'icon'}}" aria-label="link to my {{metadata m_id 'name'}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+        <a class="icon {{get_icon @key}}" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
       </li>
     {{/each}}
   </ul>

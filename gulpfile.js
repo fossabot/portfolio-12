@@ -47,11 +47,14 @@ gulp.task('files', function() {
 });
 
 gulp.task('html', function() {
+  const hbHelpers = require('handlebars-helpers');
+
   return gulp.src(INPUT_HTML)
     .pipe(plumber())
     .pipe(
       handlebars()
         .partials(INPUT_HANDLEBARS[0])
+        .helpers(hbHelpers)
         .helpers(INPUT_HANDLEBARS[1])
         .data(INPUT_HANDLEBARS[2])
     )

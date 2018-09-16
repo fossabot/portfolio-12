@@ -1,22 +1,18 @@
-[
-  {
-    "m_id": "github",
+{
+  "github": {
     "url": "https://github.com/ericcornelissen",
     "target": "_self"
   },
-  {
-    "m_id": "codepen",
+  "codepen": {
     "url": "https://codepen.io/ericornelissen/",
     "target": "_self"
   },
-  {
-    "m_id": "linkedin",
+  "linkedin": {
     "url": "https://www.linkedin.com/in/ericornelissen/",
     "target": "_self"
   },
-  {
-    "m_id": "mail",
+  "mail": {
     "url": "mailto:ericornelissen@gmail.com?Subject=Hey%20Eric",
     "target": "_top"
   }
-]
+}

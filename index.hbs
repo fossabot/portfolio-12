@@ -33,14 +33,14 @@
                   <ul class="cardboard__item__links">
                     {{#each links}}
                       <li class="cardboard__item__link">
-                        <a class="icon icon--hover icon-{{metadata m_id 'icon'}}" aria-label="link to the project's {{metadata m_id 'name'}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                        <a class="icon icon--hover {{get_icon @key}}" aria-label="link to the project's {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
                       </li>
                     {{/each}}
                   </ul>
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
-                  <p class="cardboard__item__description">{{{truncate tldr 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphencase name}}">More</a>
+                  <p class="cardboard__item__description">{{{truncate (sanitize tldr) 80}}}</p>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate name}}">More</a>
                 </div>
               </li>
             {{/if}}
@@ -60,14 +60,14 @@
                   <ul class="cardboard__item__links">
                     {{#each links}}
                       <li class="cardboard__item__link">
-                        <a class="icon icon--hover icon-{{metadata m_id 'icon'}}" aria-label="link to the project's {{metadata m_id 'name'}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                        <a class="icon icon--hover {{get_icon @key}}" aria-label="link to the project's {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
                       </li>
                     {{/each}}
                   </ul>
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
-                  <p class="cardboard__item__description">{{{truncate about 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphencase name}}">More</a>
+                  <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate name}}">More</a>
                 </div>
               </li>
             {{/if}}
