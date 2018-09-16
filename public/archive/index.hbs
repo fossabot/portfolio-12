@@ -29,7 +29,7 @@
         <ul class="list">
           {{#each portfolio.programming}}
           <li class="list__item">
-            <a class="list__item__link" href="/archive/{{hyphenate name}}" rel="noopener">
+            <a class="list__item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
               {{#new_category end_year}}
               <p class="list__item__category">{{end_year}}</p>
               {{/new_category}}
@@ -61,7 +61,7 @@
         <ul class="list">
           {{#each portfolio.contributions}}
           <li class="list__item">
-            <a class="list__item__link" href="/archive/{{hyphenate name}}" rel="noopener">
+            <a class="list__item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
               {{#new_category end_year}}
               <p class="list__item__category">{{end_year}}</p>
               {{/new_category}}

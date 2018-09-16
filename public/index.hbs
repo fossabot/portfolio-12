@@ -40,7 +40,7 @@
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{truncate (sanitize tldr) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate name}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}">More</a>
                 </div>
               </li>
             {{/if}}
@@ -67,7 +67,7 @@
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate name}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}">More</a>
                 </div>
               </li>
             {{/if}}
