@@ -1,0 +1,46 @@
+[
+  {
+    "type": "education",
+    "title": "Master Security & Cloud Computing",
+    "institute": "Aalto University",
+    "location": {
+      "city": "Espoo",
+      "country": "Finland"
+    },
+    "start_year": 2018,
+    "end_year": 2019
+  },
+  {
+    "type": "education",
+    "title": "Bachelor Computer Science",
+    "institute": "TU Delft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "start_year": 2015,
+    "end_year": 2018
+  },
+  {
+    "type": "education",
+    "title": "Minor Computer Science",
+    "institute": "KTH Royal Institute of Technology",
+    "location": {
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    "start_year": 2017,
+    "end_year": 2018
+  },
+  {
+    "type": "education",
+    "title": "VWO science profile",
+    "institute": "De Nieuwste School",
+    "location": {
+      "city": "Tilburg",
+      "country": "Netherlands"
+    },
+    "start_year": 2009,
+    "end_year": 2015
+  }
+]
