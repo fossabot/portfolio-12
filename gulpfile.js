@@ -85,12 +85,7 @@ gulp.task('styles', function() {
 
 /* Miscellaneous tasks */
 gulp.task('build', gulp.parallel('assets', 'files', 'html', 'misc', 'scripts', 'styles'));
-gulp.task('clean', function() {
-  return gulp.src(`${OUTPUT_DIR}/**/*`)
-    .pipe(remove());
-});
-gulp.task('default', gulp.series('clean', 'build'));
-gulp.task('dev', gulp.series('build', function() {
+gulp.task('build:watch', gulp.series('build', function() {
   gulp.watch(INPUT_ROOT_FILES, gulp.task('files'));
   gulp.watch(INPUT_DOWNLOADS, gulp.task('files'));
   gulp.watch([INPUT_HTML, ...INPUT_HANDLEBARS], gulp.task('html'));
@@ -98,6 +93,11 @@ gulp.task('dev', gulp.series('build', function() {
   gulp.watch(INPUT_SCRIPTS, gulp.task('scripts'));
   gulp.watch(INPUT_STYLES, gulp.task('styles'));
 }));
+gulp.task('clean', function() {
+  return gulp.src(`${OUTPUT_DIR}/**/*`)
+    .pipe(remove());
+});
+gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
 /* Lint tasks */
