@@ -8,7 +8,29 @@
       "country": "Finland"
     },
     "start_year": 2018,
-    "end_year": 2019
+    "end_year": "ongoing"
+  },
+  {
+    "type": "intern",
+    "title": "Data Analyst Internship",
+    "institute": "Optiver Amsterdam",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "start_year": 2018,
+    "end_year": 2018
+  },
+  {
+    "type": "work",
+    "title": "Junior develop",
+    "institute": "TicketMatic NL",
+    "location": {
+      "city": "Rotterdam",
+      "country": "Netherlands"
+    },
+    "start_year": 2016,
+    "end_year": "ongoing"
   },
   {
     "type": "education",
@@ -31,6 +53,17 @@
     },
     "start_year": 2017,
     "end_year": 2018
+  },
+  {
+    "type": "volunteer",
+    "title": "Voluntary Security",
+    "institute": "Fédération Internationale de Gymnastique",
+    "location": {
+      "city": "Antwerp",
+      "country": "Belgium"
+    },
+    "start_year": 2013,
+    "end_year": 2013
   },
   {
     "type": "education",
