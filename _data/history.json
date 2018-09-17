@@ -22,6 +22,26 @@
     "end_year": 2018
   },
   {
+    "type": "achievement",
+    "title": "Case Winner Aegon",
+    "institute": "HackDelft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "start_year": 2017
+  },
+  {
+    "type": "achievement",
+    "title": "Honourable mention",
+    "institute": "Benelux Algorithm Programming Contest",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "start_year": 2016
+  },
+  {
     "type": "work",
     "title": "Junior develop",
     "institute": "TicketMatic NL",
