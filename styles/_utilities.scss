@@ -54,15 +54,15 @@
     }
   }
 
-  &--bloody-mimosa {
+  &--mystic-mauvea {
     &::before {
-      background: linear-gradient(135deg, var(--bloody-mimosa-start) 0%, var(--bloody-mimosa-end) 100%);
+      background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
     }
   }
 
-  &--dusty-cactus {
+  &--sweat-dream {
     &::before {
-      background: linear-gradient(135deg, var(--dusty-cactus-start) 0%, var(--dusty-cactus-end) 100%);
+      background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
     }
   }
 }
