@@ -6,6 +6,7 @@ const gulpIf = require('gulp-if');
 const handlebars = require('gulp-hb');
 const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
 const jsonLint = require('gulp-jsonlint');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
@@ -18,7 +19,11 @@ const uglifyJS = require('gulp-uglify-es').default;
 const INPUT_DIR = './public'
 const OUTPUT_DIR = './_site';
 
-const INPUT_ASSETS = `${INPUT_DIR}/assets/**/*`;
+const INPUT_ASSETS = [
+  `${INPUT_DIR}/assets/fonts/*`,        // Fonts
+  `${INPUT_DIR}/assets/**/*.{jpg,png}`, // Images
+  `${INPUT_DIR}/assets/**/*.svg`,       // SVGs
+];
 const INPUT_DOWNLOADS = `${INPUT_DIR}/downloads/**/*`;
 const INPUT_HTML = `${INPUT_DIR}/{,archive/}*.hbs`;
 const INPUT_HANDLEBARS = [
@@ -26,7 +31,10 @@ const INPUT_HANDLEBARS = [
   './helpers/*.js',      // Helpers
   './data/*.json'        // Data
 ];
-const INPUT_ROOT_FILES = [`${INPUT_DIR}/CNAME`, `${INPUT_DIR}/*.{htaccess,ico,txt}`];
+const INPUT_ROOT_FILES = [
+  `${INPUT_DIR}/CNAME`,
+  `${INPUT_DIR}/*.{htaccess,ico,txt}`
+];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
 const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
 
@@ -42,7 +50,14 @@ gulp.task('set-minify-output', function(done) {
 
 /* Build tasks */
 gulp.task('assets', function() {
-  return gulp.src(INPUT_ASSETS)
+  gulp.src(INPUT_ASSETS[0])
+    .pipe(gulp.dest(`${OUTPUT_DIR}/assets/fonts`));
+
+  gulp.src(INPUT_ASSETS[2])
+    .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
+
+  return gulp.src(INPUT_ASSETS[1])
+    .pipe(gulpIf(minifyOutput, imagemin()))
     .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
 });
 gulp.task('files', function() {
