@@ -91,8 +91,8 @@
   color: var(--clr-primary-white);
   cursor: default;
   display: inline-block;
-  margin: 4px 0;
-  padding: 0 8px 0 0;
+  margin: var(--margin-tags-tag);
+  padding: var(--padding-tags-tag);
 
   &::before {
     background-color: var(--clr-secondary-accent);
@@ -100,7 +100,11 @@
     border-top-left-radius: 4px;
     content: '#';
     float: left;
-    margin: 0 6px 0 0;
-    padding: 0 6px;
+    margin: var(--margin-tags-hashtag);
+    padding: var(--padding-tags-hashtag);
+  }
+
+  &:first-child {
+    margin-left: 0;
   }
 }
