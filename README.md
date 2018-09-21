@@ -15,9 +15,10 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
 ###### How to use the build tools:
-- `$ gulp clean`: Clean the project, removing all generated files.
 - `$ gulp build`: Build the project once.
-- `$ gulp dev`: Build the project and watch for changes.
+- `$ gulp build:watch`: Build the project and watch for changes.
+- `$ gulp clean`: Clean the project, removing all generated files.
+- `$ gulp dist`: Build the project for distributing purposes.
 - `$ gulp lint`: Lint the source code of the project.
 - `$ npm run axe`: Test the website for a11y issues. (requires `$ npm run serve`)
 - `$ npm run lighthouse`: Do a performance check on the sites landing page. (requires `$ npm run serve`)
