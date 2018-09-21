@@ -73,12 +73,13 @@
 
   .header__links__item {
     display: inline-block;
-    margin: var(--margin-header-link-item);
+    margin: 0;
     padding: var(--padding-header-link-item);
 
     &:not(:last-child) {
       &::after {
         content: '/';
+        margin: var(--margin-header-link-item);
       }
     }
 
