@@ -23,7 +23,7 @@
 
       <section id="projects" class="section">
         <h2 class="short-underline">Projects</h2>
-        <p>A selection of the favorite projects I worked on. You can find a list of all my projects <a class="text-link" href="/archive">over here</a>.</p>
+        <p>A selection of the favorite projects I worked on. You can find a list of all my projects <a class="text-link" href="/archive" rel="noopener">over here</a>.</p>
 
         <ul class="cardboard">
           {{#each portfolio.programming}}
@@ -31,16 +31,16 @@
               <li class="cardboard__item">
                 <div class="cardboard__item__content">
                   <ul class="cardboard__item__links">
-                    {{#each links}}
+                    {{#each links as |url key|}}
                       <li class="cardboard__item__link">
-                        <a class="icon icon--hover {{get_icon @key}}" aria-label="link to the project's {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                        <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                       </li>
                     {{/each}}
                   </ul>
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{truncate (sanitize tldr) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
                 </div>
               </li>
             {{/if}}
@@ -50,7 +50,7 @@
 
       <section id="contributions" class="section">
         <h2 class="short-underline">Contributions</h2>
-        <p>As I said, I love contributing to open source software. Here are a few of the favorite projects I contributed to. You can find a complete overview <a class="text-link" href="/archive#contributions">here</a>.</p>
+        <p>As I said, I love contributing to open source software. Here are a few of the favorite projects I contributed to. You can find a complete overview <a class="text-link" href="/archive#contributions" rel="noopener">here</a>.</p>
 
         <ul class="cardboard">
           {{#each portfolio.contributions}}
@@ -58,16 +58,16 @@
               <li class="cardboard__item">
                 <div class="cardboard__item__content">
                   <ul class="cardboard__item__links">
-                    {{#each links}}
+                    {{#each links as |url key|}}
                       <li class="cardboard__item__link">
-                        <a class="icon icon--hover {{get_icon @key}}" aria-label="link to the project's {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+                        <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                       </li>
                     {{/each}}
                   </ul>
 
                   <h4 class="cardboard__item__title">{{name}}</h4>
                   <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}">More</a>
+                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
                 </div>
               </li>
             {{/if}}
