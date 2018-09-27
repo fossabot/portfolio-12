@@ -90,7 +90,7 @@ gulp.task('metadata', function() {
              .pipe(gulp.dest(OUTPUT_DIR));
 });
 gulp.task('misc', function() {
-  return gulp.src('./iam/**')
+  return gulp.src(`${INPUT_DIR}/iam/**`)
              .pipe(gulp.dest(`${OUTPUT_DIR}/iam`));
 });
 gulp.task('scripts', function() {
