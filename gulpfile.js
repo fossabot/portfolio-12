@@ -12,6 +12,7 @@ const jsonLint = require('gulp-jsonlint');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
+const run = require('gulp-run-command').default;
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
 const uglifyJS = require('gulp-uglify-es').default;
@@ -104,6 +105,9 @@ gulp.task('styles', function() {
              .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_DIR}/styles`));
 });
+
+/* Server */
+gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
 
 /* Miscellaneous tasks */
 gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'misc', 'scripts', 'styles'));
