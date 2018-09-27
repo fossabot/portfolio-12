@@ -68,7 +68,7 @@ gulp.task('assets-images', function() {
              .pipe(gulpIf(minifyOutput, imagemin()))
              .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
 });
-gulp.task('assets', gulp.parallel('assets-downloads', 'assets-images', 'assets-svgs'));
+gulp.task('assets', gulp.parallel('assets-downloads', 'assets-fonts', 'assets-images', 'assets-svgs'));
 gulp.task('html', function() {
   const stdHelpers = require('handlebars-helpers');
 
