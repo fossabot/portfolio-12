@@ -41,7 +41,7 @@
         {{/if}}
 
         <ul class="tags">
-          {{#each project.tags}}
+          {{#each (sort project.tags)}}
             <li class="tag">{{this}}</li>
           {{/each}}
         </ul>
