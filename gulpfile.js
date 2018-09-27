@@ -106,9 +106,6 @@ gulp.task('styles', function() {
              .pipe(gulp.dest(`${OUTPUT_DIR}/styles`));
 });
 
-/* Server */
-gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
-
 /* Miscellaneous tasks */
 gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'misc', 'scripts', 'styles'));
 gulp.task('build:watch', gulp.series('build', function() {
@@ -127,6 +124,10 @@ gulp.task('clean', function() {
 });
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
+
+/* Server */
+gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
+gulp.task('serve', gulp.parallel('server', 'build:watch'));
 
 /* Lint tasks */
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {

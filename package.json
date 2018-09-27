@@ -11,8 +11,7 @@
   "scripts": {
     "axe": "axe --disable color-contrast localhost:4000 localhost:4000/archive",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "lighthouse": "lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=lighthouse-report.html --view",
-    "serve": "gulp & npm run start"
+    "lighthouse": "lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=lighthouse-report.html --view"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
