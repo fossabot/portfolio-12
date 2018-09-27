@@ -26,6 +26,7 @@
     "gulp-htmllint": "0.0.16",
     "gulp-htmlmin": "^5.0.1",
     "gulp-if": "^2.0.2",
+    "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-jsonlint": "^1.2.2",
     "gulp-plumber": "^1.2.0",
