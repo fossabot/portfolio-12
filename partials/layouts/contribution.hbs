@@ -1,4 +1,6 @@
 {{#with_project "contributions" $page.title}}
+{{page "keywords" (lowercase (join project.keywords ','))}}
+
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
   <head>

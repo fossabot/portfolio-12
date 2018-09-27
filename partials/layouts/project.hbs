@@ -1,4 +1,6 @@
 {{#with_project "programming" $page.title}}
+{{page "keywords" (lowercase (join (concat project.tags project.keywords) ','))}}
+
 <!DOCTYPE html>
 <html lang="{{site.lang}}">
   <head>
@@ -40,7 +42,7 @@
 
         <ul class="tags">
           {{#each project.tags}}
-          <li class="tag">{{this}}</li>
+            <li class="tag">{{this}}</li>
           {{/each}}
         </ul>
 
