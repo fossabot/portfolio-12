@@ -63,7 +63,7 @@ gulp.task('assets-fonts', function() {
 gulp.task('assets-iconography', function() {
   const stylesFilter = filter(['**/*.css'], {restore: true});
 
-  return gulp.src('fontello.json')
+  return gulp.src('fontello.config.json')
              .pipe(fontello({
                font: 'assets/fonts',
                css: 'styles',
