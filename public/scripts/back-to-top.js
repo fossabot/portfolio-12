@@ -11,7 +11,7 @@ backToTop.addEventListener('click', e => {
 
   let t = 0;
   let interval = setInterval(function() {
-    t += 0.01;
+    t += 0.015;
     document.body.scrollTop -= document.body.scrollTop * f(t);
     if(document.body.scrollTop <= 0) clearInterval(interval);
   }, 10);
