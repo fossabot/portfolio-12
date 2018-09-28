@@ -26,5 +26,5 @@ let observer = new IntersectionObserver((entries, observer) => {
       backToTop.classList.add('back-to-top--hidden');
     }
   });
-}, { threshold: [0, .25, .5, .75, 1] });
+}, { threshold: [0] });
 observer.observe(footer);
