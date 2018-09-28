@@ -1,6 +1,8 @@
 "use strict";
 
 const cssnano = require('gulp-cssnano');
+const filter = require('gulp-filter');
+const fontello = require('gulp-fontello');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const gulpIgnore = require('gulp-ignore');
@@ -59,17 +61,31 @@ gulp.task('assets-fonts', function() {
   return gulp.src(INPUT_ASSETS.fonts)
              .pipe(gulp.dest(`${OUTPUT_DIR}/assets/fonts`));
 });
-gulp.task('assets-svgs', function() {
-  return gulp.src(INPUT_ASSETS.svgs)
-             .pipe(gulpIgnore.exclude('**/fonts/*.svg'))
-             .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
+gulp.task('assets-iconography', function() {
+  const stylesFilter = filter(['**/*.css'], {restore: true});
+
+  return gulp.src('fontello.config.json')
+             .pipe(fontello({
+               font: 'assets/fonts',
+               css: 'styles',
+               assetsOnly: true
+             }))
+             .pipe(stylesFilter)
+             .pipe(gulpIf(minifyOutput, cssnano()))
+             .pipe(stylesFilter.restore)
+             .pipe(gulp.dest(`${OUTPUT_DIR}`));
 });
 gulp.task('assets-images', function() {
   return gulp.src(INPUT_ASSETS.images)
              .pipe(gulpIf(minifyOutput, imagemin()))
              .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
 });
-gulp.task('assets', gulp.parallel('assets-downloads', 'assets-fonts', 'assets-images', 'assets-svgs'));
+gulp.task('assets-svgs', function() {
+  return gulp.src(INPUT_ASSETS.svgs)
+             .pipe(gulpIgnore.exclude('**/fonts/*.svg'))
+             .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
+});
+gulp.task('assets', gulp.parallel('assets-downloads', 'assets-fonts', 'assets-iconography', 'assets-images', 'assets-svgs'));
 gulp.task('html', function() {
   const stdHelpers = require('handlebars-helpers');
 
