@@ -11,6 +11,10 @@
     "url": "https://www.linkedin.com/in/ericornelissen/",
     "target": "_self"
   },
+  "stackoverflow": {
+    "url": "https://stackoverflow.com/users/4132379/ericornelissen",
+    "target": "_self"
+  },
   "mail": {
     "url": "mailto:ericornelissen@gmail.com?Subject=Hey%20Eric",
     "target": "_top"
