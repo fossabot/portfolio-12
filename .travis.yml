@@ -26,6 +26,26 @@ jobs:
       script:
         - gulp dist
 
+    - stage: deploy
+      name: "GitHub pages"
+      language: node_js
+      node_js: 8
+      if: branch = master
+
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp dist
+
+      deploy:
+        local-dir: ./_site
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        on:
+          branch: master
+
 notifications:
   email:
     on_success: never
