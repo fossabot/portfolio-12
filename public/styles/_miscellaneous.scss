@@ -1,0 +1,110 @@
+.back-to-top {
+  display: none;
+}
+
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .back-to-top {
+    align-items: center;
+    bottom: var(--bottom-backtotop);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fontsize-h5);
+    opacity: .5;
+    position: absolute;
+    right: var(--right-backtotop);
+    text-decoration: none;
+    transition: bottom .25s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--hidden {
+      bottom: var(--bottom-backtotop_hidden);
+    }
+  }
+
+  .back-to-top__icon {
+    display: block;
+    font-size: var(--fontsize-h3);
+  }
+}
+
+
+.code-inline {
+  background-color: var(--clr-background-code);
+  border-radius: 2px;
+  color: var(--clr-primary-black);
+  font-family: var(--fontstack-code);
+  padding: .05em .2em;
+}
+
+
+.links {
+  display: inline-block;
+  float: right;
+  list-style: none;
+  margin: var(--margin-links);
+  padding: var(--padding-links);
+
+  &--glyphs {
+    .links__item {
+      font-size: var(--fontsize-links-glyph);
+    }
+  }
+}
+
+.links__item {
+  @extend %text-thin;
+
+  display: inline-block;
+  font-size: var(--fontsize-links-item);
+  margin: var(--margin-links-item);
+  padding: var(--padding-links-item);
+}
+
+
+@media only screen and (max-width: 440px) and (orientation: portrait) {
+  .links {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+}
+
+
+.tags {
+  @include unselectable();
+
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.tag {
+  background-color: var(--clr-primary-accent);
+  border-radius: 4px;
+  color: var(--clr-primary-white);
+  cursor: default;
+  display: inline-block;
+  margin: var(--margin-tags-tag);
+  padding: var(--padding-tags-tag);
+
+  &::before {
+    background-color: var(--clr-secondary-accent);
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    content: '#';
+    float: left;
+    margin: var(--margin-tags-hashtag);
+    padding: var(--padding-tags-hashtag);
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

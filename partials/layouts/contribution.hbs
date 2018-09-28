@@ -1,0 +1,50 @@
+{{#with_project "contributions" $page.title}}
+{{page "keywords" (lowercase (join project.keywords ','))}}
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+  <head>
+    {{> includes/metadata}}
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title short-underline short-underline--dark">Contributions</h1>
+      <ul class="header__message header__links">
+        <li class="header__links__item">
+          <a href="/" rel="noopener" target="_self">home</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/archive" rel="noopener" target="_self">archive</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <article class="section">
+        <ul class="links links--glyphs">
+          {{#each project.links as |url key|}}
+            <li class="links__item">
+              <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_self"></a>
+            </li>
+          {{/each}}
+        </ul>
+
+        <h2 class="short-underline">{{project.name}}</h2>
+
+        {{#if project.about}}
+          <p class="article__about" data-name="about">{{{project.about}}}</p>
+        {{/if}}
+
+        <h4 class="short-underline">Description</h4>
+        {{#> description}}
+          {{!-- Project description is inserted here --}}
+        {{/description}}
+      </article>
+
+      {{> includes/back-to-top}}
+    </main>
+
+    {{> includes/footer}}
+  </body>
+</html>
+{{/with_project}}

@@ -4,12 +4,47 @@ jobs:
       name: "Lint"
       language: node_js
       node_js: 8
-      script: npm run lint
-    - name: "Build"
-      language: ruby
-      rvm: 2.4.1
-      install: gem install jekyll jekyll-fontello
-      script: jekyll build
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp lint
+    - name: "Build dev"
+      language: node_js
+      node_js: 8
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp build
+    - name: "Build dist"
+      language: node_js
+      node_js: 8
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp dist
+
+    - stage: deploy
+      name: "GitHub pages"
+      language: node_js
+      node_js: 8
+      if: branch = master
+
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp dist
+
+      deploy:
+        local-dir: ./_site
+        provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        on:
+          branch: master
 
 notifications:
   email:
