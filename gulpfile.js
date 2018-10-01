@@ -143,7 +143,6 @@ gulp.task('clean', function() {
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
-
 /* Server */
 gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
 gulp.task('serve', gulp.parallel('server', 'build:watch'));
@@ -158,6 +157,7 @@ gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
+gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
