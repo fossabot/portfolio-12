@@ -1,5 +1,6 @@
 "use strict";
 
+const axe = require('gulp-axe-webdriver');
 const cssnano = require('gulp-cssnano');
 const filter = require('gulp-filter');
 const fontello = require('gulp-fontello');
@@ -21,8 +22,6 @@ const uglifyJS = require('gulp-uglify-es').default;
 
 
 const INPUT_DIR = './public'
-const OUTPUT_DIR = './_site';
-
 const INPUT_ASSETS = {
   downloads: `${INPUT_DIR}/downloads/**/*`,
   fonts: `${INPUT_DIR}/assets/fonts/*`,
@@ -42,6 +41,9 @@ const INPUT_ROOT_FILES = [
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
 const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
 
+const OUTPUT_SITE = './_site';
+const OUTPUT_REPORTS = './_reports';
+
 
 let minifyOutput = false;
 
@@ -55,11 +57,11 @@ gulp.task('set-minify-output', function(done) {
 /* Build tasks */
 gulp.task('assets-downloads', function() {
   return gulp.src(INPUT_ASSETS.downloads)
-             .pipe(gulp.dest(`${OUTPUT_DIR}/downloads`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/downloads`));
 });
 gulp.task('assets-fonts', function() {
   return gulp.src(INPUT_ASSETS.fonts)
-             .pipe(gulp.dest(`${OUTPUT_DIR}/assets/fonts`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
 gulp.task('assets-iconography', function() {
   const stylesFilter = filter(['**/*.css'], {restore: true});
@@ -73,17 +75,17 @@ gulp.task('assets-iconography', function() {
              .pipe(stylesFilter)
              .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(stylesFilter.restore)
-             .pipe(gulp.dest(`${OUTPUT_DIR}`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}`));
 });
 gulp.task('assets-images', function() {
   return gulp.src(INPUT_ASSETS.images)
              .pipe(gulpIf(minifyOutput, imagemin()))
-             .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/assets`));
 });
 gulp.task('assets-svgs', function() {
   return gulp.src(INPUT_ASSETS.svgs)
              .pipe(gulpIgnore.exclude('**/fonts/*.svg'))
-             .pipe(gulp.dest(`${OUTPUT_DIR}/assets`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/assets`));
 });
 gulp.task('assets', gulp.parallel('assets-downloads', 'assets-fonts', 'assets-iconography', 'assets-images', 'assets-svgs'));
 gulp.task('html', function() {
@@ -100,26 +102,26 @@ gulp.task('html', function() {
                 )
              .pipe(gulpIf(minifyOutput, htmlmin({collapseWhitespace: true})))
              .pipe(replaceExt('.html'))
-             .pipe(gulp.dest(OUTPUT_DIR));
+             .pipe(gulp.dest(OUTPUT_SITE));
 });
 gulp.task('metadata', function() {
   return gulp.src(INPUT_ROOT_FILES)
-             .pipe(gulp.dest(OUTPUT_DIR));
+             .pipe(gulp.dest(OUTPUT_SITE));
 });
 gulp.task('misc', function() {
   return gulp.src(`${INPUT_DIR}/iam/**`)
-             .pipe(gulp.dest(`${OUTPUT_DIR}/iam`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/iam`));
 });
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
              .pipe(gulpIf(minifyOutput, uglifyJS()))
-             .pipe(gulp.dest(`${OUTPUT_DIR}/scripts`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
 gulp.task('styles', function() {
   return gulp.src(INPUT_STYLES)
              .pipe(sass().on('error', sass.logError))
              .pipe(gulpIf(minifyOutput, cssnano()))
-             .pipe(gulp.dest(`${OUTPUT_DIR}/styles`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 
 /* Miscellaneous tasks */
@@ -135,19 +137,29 @@ gulp.task('build:watch', gulp.series('build', function() {
   gulp.watch(INPUT_STYLES, gulp.task('styles'));
 }));
 gulp.task('clean', function() {
-  return gulp.src(`${OUTPUT_DIR}/**/*`)
+  return gulp.src([`${OUTPUT_REPORTS}/**/*`, `${OUTPUT_SITE}/**/*`])
              .pipe(remove());
 });
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
+
 /* Server */
 gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
 gulp.task('serve', gulp.parallel('server', 'build:watch'));
 
-/* Lint tasks */
+/* Static analysis */
+gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
+  return axe({
+    errorOnViolation: true,
+    folderOutputReport: OUTPUT_REPORTS,
+    headless: true,
+    saveOutputIn: 'a11y-report.json',
+    urls: ['_site/**/*.html']
+  });
+}));
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
-  return gulp.src(`${OUTPUT_DIR}/**/*.html`)
+  return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
 }));
 gulp.task('lint-json', function() {

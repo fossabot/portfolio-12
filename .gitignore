@@ -1,10 +1,7 @@
 # dependencies directory
 node_modules/
 
-# Jekyll
+# generated files
+_reports/
 _site/
-.sass-cache/
-.jekyll-metadata
-
-# Lighthouse
 lighthouse-report.html
