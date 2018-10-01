@@ -23,4 +23,4 @@ Repository for the personal portfolio of Eric Cornelissen.
 - `$ gulp dist`: Build the project for distributing purposes.
 - `$ gulp lint`: Lint the source code of the project.
 - `$ gulp serve`: Build the site, watch for changes, and start a simple HTTP server (on port 4000) serving the site.
-- `$ gulp server`: Start a simple HTTP server (on port 4000) serving the site. (requires at least `$ gulp build`)
+- `$ gulp server`: Start a simple HTTP server (on port 4000) serving the site.

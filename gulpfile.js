@@ -144,8 +144,9 @@ gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
 /* Server */
-gulp.task('server', run('./node_modules/.bin/http-server ./_site -p 4000'));
-gulp.task('serve', gulp.parallel('server', 'build:watch'));
+const server = run('./node_modules/.bin/http-server ./_site -p 4000');
+gulp.task('server', gulp.series('build', server));
+gulp.task('serve', gulp.parallel('build:watch', server));
 
 /* Static analysis */
 gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
