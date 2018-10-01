@@ -1,0 +1,24 @@
+{
+  "title": "metadata.json",
+  "description": "Social links of the owner of the portfolio",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[a-z]+$": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "description": "A URL to the profile",
+          "required": true,
+          "type": "string"
+        },
+        "target": {
+          "description": "the target value for an anchor tag",
+          "required": true,
+          "type": ["_blank", "_self", "_top"]
+        }
+      }
+    }
+  }
+}

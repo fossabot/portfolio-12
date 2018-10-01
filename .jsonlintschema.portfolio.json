@@ -1,0 +1,159 @@
+{
+  "title": "portfolio.json",
+  "description": "A collection of projects for the portfolio",
+  "type": "object",
+  "properties": {
+    "programming": {
+      "description": "A list of programming projects",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "description": "The name of the project",
+            "required": true,
+            "type": "string"
+          },
+          "tldr": {
+            "description": "A short description of the project",
+            "required": true,
+            "type": "string"
+          },
+          "start_year": {
+            "description": "The year the project started",
+            "required": true,
+            "type": "integer"
+          },
+          "end_year": {
+            "description": "The year the project ended",
+            "type": "integer"
+          },
+          "spotlight": {
+            "description": "Should the project be featured in the sites spotlight",
+            "required": true,
+            "type": "boolean"
+          },
+          "tags": {
+            "description": "A list of tags for the project",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "keywords": {
+            "description": "A list of keywords (on top of 'tags') for the project",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "links": {
+            "description": "A collection of links for the project (type:url)",
+            "required": true,
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+              "^[a-z]+$": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "snippets": {
+      "description": "A list of programming snippets",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "description": "The name of the snippet",
+            "required": true,
+            "type": "string"
+          },
+          "tldr": {
+            "description": "A short description of the snippet",
+            "required": true,
+            "type": "string"
+          },
+          "year": {
+            "description": "The year the snippet was created",
+            "required": true,
+            "type": "integer"
+          },
+          "tags": {
+            "description": "A list of tags for the snippet",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "link": {
+            "description": "The link to the snippet",
+            "required": true,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contributions": {
+      "description": "A list of open source contributions",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "description": "The name of the open source project",
+            "required": true,
+            "type": "string"
+          },
+          "about": {
+            "description": "A short description of open source project",
+            "required": true,
+            "type": "string"
+          },
+          "start_year": {
+            "description": "The year contributions to the project started",
+            "required": true,
+            "type": "integer"
+          },
+          "end_year": {
+            "description": "The year contributions to the project ended",
+            "type": "integer"
+          },
+          "spotlight": {
+            "description": "Should the open source project be featured in the sites spotlight",
+            "required": true,
+            "type": "boolean"
+          },
+          "keywords": {
+            "description": "A list of keywords for the open source project",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "links": {
+            "description": "A collection of links for the open source project (type:url)",
+            "required": true,
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+              "^[a-z]+$": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
