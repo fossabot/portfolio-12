@@ -2,5 +2,5 @@
 node_modules/
 
 # generated files
+_reports/
 _site/
-lighthouse-report.html
