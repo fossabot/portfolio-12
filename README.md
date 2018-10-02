@@ -15,8 +15,11 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
 ###### How to use the build tools:
-- `$ gulp analyze:a11y`: Test the website for accessibility issues. Result can be found in `./reports`.
-- `$ gulp analyze:perf`: Do a performance check on the sites landing page. Result can be found in `./reports`. (requires `$ gulp serve(r)`)
+- `$ gulp analyze:a11y`: Test the website for accessibility issues.
+  - Result can be found in `./reports`.
+- `$ gulp analyze:perf`: Do a performance check on the sites landing page.
+  - Result can be found in `./reports`.
+  - Requires `$ gulp serve(r)`.
 - `$ gulp build`: Build the project once.
 - `$ gulp build:watch`: Build the project and watch for changes.
 - `$ gulp clean`: Clean the project, removing all generated files.
