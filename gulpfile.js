@@ -171,10 +171,26 @@ gulp.task('lint-json', gulp.series(
                .pipe(jsonLint.reporter());
   },
   gulp.parallel(
-    () => gulp.src('./data/metadata.json').pipe(jsonSchema('.jsonlintschema.metadata.json')),
-    () => gulp.src('./data/portfolio.json').pipe(jsonSchema('.jsonlintschema.portfolio.json')),
-    () => gulp.src('./data/site.json').pipe(jsonSchema('.jsonlintschema.site.json')),
-    () => gulp.src('./data/social.json').pipe(jsonSchema('.jsonlintschema.social.json')),
+    function() {
+      const schema = require('./.jsonschema.json').metadata;
+      return gulp.src('./data/metadata.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').portfolio;
+      return gulp.src('./data/portfolio.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').site;
+      return gulp.src('./data/site.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').social;
+      return gulp.src('./data/social.json')
+                 .pipe(jsonSchema({schema}))
+    }
   )
 ));
 gulp.task('lint-styles', function() {
