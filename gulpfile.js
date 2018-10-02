@@ -12,6 +12,7 @@ const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const jsonLint = require('gulp-jsonlint');
+const jsonSchema = require("gulp-json-schema");
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
@@ -159,11 +160,35 @@ gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
 }));
-gulp.task('lint-json', function() {
-  return gulp.src(['./_data/*.json', './_helpers/data/*.json'])
-             .pipe(jsonLint())
-             .pipe(jsonLint.reporter());
-});
+gulp.task('lint-json', gulp.series(
+  function() {
+    return gulp.src('./data/*.json')
+               .pipe(jsonLint())
+               .pipe(jsonLint.reporter());
+  },
+  gulp.parallel(
+    function() {
+      const schema = require('./.jsonschema.json').metadata;
+      return gulp.src('./data/metadata.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').portfolio;
+      return gulp.src('./data/portfolio.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').site;
+      return gulp.src('./data/site.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').social;
+      return gulp.src('./data/social.json')
+                 .pipe(jsonSchema({schema}))
+    }
+  )
+));
 gulp.task('lint-styles', function() {
   return gulp.src(['./styles/*.scss', './styles/mixins/*.scss'])
              .pipe(sassLint({options: './.sass-lint.yml'}))
