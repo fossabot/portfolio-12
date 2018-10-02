@@ -1,0 +1,89 @@
+.timeline {
+  display: none;
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .timeline {
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    list-style-type: none;
+
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-image: url('/assets/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 calc(100% - 3vw));
+    height: 500px;
+    margin: 80px 0 0 0;
+    padding: 0 10% 0 15%;
+    position: relative;
+    z-index: map-get($layers, roof);
+  }
+
+  .timeline__event {
+    color: white;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    height: 20%;
+    margin: 0;
+
+    &:first-child {
+      .timeline__event__title {
+        &::before {
+          width: 50%;
+        }
+      }
+    }
+
+    &:last-child {
+      .timeline__event__title {
+        &::before {
+          right: 0;
+          width: 500%;
+        }
+      }
+    }
+
+    &:hover {
+      color: gray;
+
+      .timeline__event__title {
+        &::after {
+          background-color: gray;
+        }
+      }
+    }
+  }
+
+  .timeline__event__title {
+    display: block;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    position: relative;
+
+    &::after {
+      background-color: white;
+      border-radius: 25px;
+      content: '';
+      height: 26px;
+      position: absolute;
+      left: calc(50% - 13px);
+      bottom: -13px;
+      width: 26px;
+    }
+    &::before {
+      content: '';
+      height: 1px;
+      background-color: white;
+      bottom: 0;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
