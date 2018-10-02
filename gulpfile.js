@@ -108,10 +108,6 @@ gulp.task('metadata', function() {
   return gulp.src(INPUT_ROOT_FILES)
              .pipe(gulp.dest(OUTPUT_SITE));
 });
-gulp.task('misc', function() {
-  return gulp.src(`${INPUT_DIR}/iam/**`)
-             .pipe(gulp.dest(`${OUTPUT_SITE}/iam`));
-});
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
              .pipe(gulpIf(minifyOutput, uglifyJS()))
@@ -125,7 +121,7 @@ gulp.task('styles', function() {
 });
 
 /* Miscellaneous tasks */
-gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'misc', 'scripts', 'styles'));
+gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'styles'));
 gulp.task('build:watch', gulp.series('build', function() {
   gulp.watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
   gulp.watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
