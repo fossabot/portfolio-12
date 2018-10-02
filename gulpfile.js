@@ -169,7 +169,7 @@ gulp.task('lint-json', function() {
              .pipe(jsonLint.reporter());
 });
 gulp.task('lint-styles', function() {
-  return gulp.src(['./styles/*.scss', './styles/mixins/*.scss'])
+  return gulp.src(INPUT_STYLES)
              .pipe(sassLint({options: './.sass-lint.yml'}))
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());
