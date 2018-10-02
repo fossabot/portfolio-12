@@ -16,7 +16,8 @@
         "target": {
           "description": "the target value for an anchor tag",
           "required": true,
-          "type": ["_blank", "_self", "_top"]
+          "type": "string",
+          "enum": ["_blank", "_self", "_top"]
         }
       }
     }

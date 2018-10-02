@@ -166,7 +166,7 @@ gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
 }));
 gulp.task('lint-json', gulp.series(
   function() {
-    return gulp.src(['./_data/*.json', './_helpers/data/*.json'])
+    return gulp.src('./data/*.json')
                .pipe(jsonLint())
                .pipe(jsonLint.reporter());
   },
