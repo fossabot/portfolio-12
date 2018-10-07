@@ -149,18 +149,6 @@
       }
     },
     {
-      "name": "I am Eric Cornelissen",
-      "tldr": "Onepager that used to introduce me.",
-      "start_year": 2015,
-      "end_year": 2015,
-      "spotlight": false,
-      "tags": ["CSS", "HTML", "JavaScript"],
-      "keywords": ["onepager", "one page", "website"],
-      "links": {
-        "website": "/iam"
-      }
-    },
-    {
       "name": "InterstellarScaler",
       "tldr": "Small web application to calculate what you'll weigh on other planets.",
       "start_year": 2015,

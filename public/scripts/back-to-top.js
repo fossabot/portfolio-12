@@ -11,7 +11,7 @@ backToTop.addEventListener('click', e => {
 
   let t = 0;
   let interval = setInterval(function() {
-    t += 0.01;
+    t += 0.015;
     document.body.scrollTop -= document.body.scrollTop * f(t);
     if(document.body.scrollTop <= 0) clearInterval(interval);
   }, 10);
@@ -26,5 +26,5 @@ let observer = new IntersectionObserver((entries, observer) => {
       backToTop.classList.add('back-to-top--hidden');
     }
   });
-}, { threshold: [0, .25, .5, .75, 1] });
+}, { threshold: [0] });
 observer.observe(footer);
