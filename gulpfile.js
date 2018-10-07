@@ -144,7 +144,15 @@ gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
 /* Server */
 const server = run('./node_modules/.bin/http-server ./_site -p 4000');
-gulp.task('server', gulp.series('build', server));
+gulp.task('server', gulp.series(function(done) {
+  const fs = require('fs');
+
+  if (!fs.existsSync(OUTPUT_SITE) || fs.readdirSync(OUTPUT_SITE).length === 0) {
+    throw new Error('Site has not been build yet. Run "gulp build" or "gulp dist" first.');
+  } else {
+    done();
+  }
+}, server));
 gulp.task('serve', gulp.parallel('build:watch', server));
 
 /* Static analysis */
