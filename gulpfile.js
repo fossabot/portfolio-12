@@ -13,6 +13,7 @@ const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
+const jswrap = require('gulp-js-wrapper');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
@@ -111,6 +112,7 @@ gulp.task('metadata', function() {
 });
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
+             .pipe(jswrap({}))
              .pipe(gulpIf(minifyOutput, uglifyJS()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
