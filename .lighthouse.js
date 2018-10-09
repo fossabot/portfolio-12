@@ -6,6 +6,15 @@ module.exports = {
       'accessibility',
       'best-practices',
       'seo'
+    ],
+    skipAudits: [
+      'first-interactive', // not working
+      'consistently-interactive', // not working
+      'estimated-input-latency', // not working
+      'offscreen-images', // not working
+      'uses-http2', // covered by Cloudflare
+      'manifest-short-name-length', // irrelevant for static site
+      'link-text' // not interested
     ]
   }
 };
