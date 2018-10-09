@@ -165,7 +165,7 @@ gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
+gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
