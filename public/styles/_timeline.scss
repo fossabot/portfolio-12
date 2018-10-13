@@ -5,11 +5,6 @@
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
     align-items: center;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    list-style-type: none;
-
     background-attachment: fixed;
     background-blend-mode: overlay;
     background-image: url('/assets/background.jpg');
@@ -18,15 +13,19 @@
     background-size: cover;
     box-sizing: border-box;
     clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 calc(100% - 3vw));
+    display: flex;
+    flex-direction: row-reverse;
     height: 500px;
-    margin: 80px 0 0 0;
+    justify-content: center;
+    list-style-type: none;
+    margin: 80px 0 0;
     padding: 0 10% 0 15%;
     position: relative;
     z-index: map-get($layers, roof);
   }
 
   .timeline__event {
-    color: white;
+    color: var(--clr-primary-white);
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
@@ -51,11 +50,11 @@
     }
 
     &:hover {
-      color: gray;
+      color: var(--clr-primary-gray);
 
       .timeline__event__title {
         &::after {
-          background-color: gray;
+          background-color: var(--clr-primary-gray);
         }
       }
     }
@@ -63,27 +62,28 @@
 
   .timeline__event__title {
     display: block;
-    margin: 0 0 15px 0;
-    padding: 0 0 15px 0;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
     position: relative;
 
     &::after {
-      background-color: white;
+      background-color: var(--clr-primary-white);
       border-radius: 25px;
+      bottom: -13px;
       content: '';
       height: 26px;
-      position: absolute;
       left: calc(50% - 13px);
-      bottom: -13px;
+      position: absolute;
       width: 26px;
     }
+
     &::before {
+      background-color: var(--clr-primary-white);
+      bottom: 0;
       content: '';
       height: 1px;
-      background-color: white;
-      bottom: 0;
-      width: 100%;
       position: absolute;
+      width: 100%;
     }
   }
 }
