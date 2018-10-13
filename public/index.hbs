@@ -24,9 +24,13 @@
         <ul class="timeline">
           {{#each (first history 5)}}
             <li class="timeline__event">
-              <span class="timeline__event__title">{{ title }}</span>
-              <span>{{ institute }}</span>
-              <span>{{ start_year }}{{#if end_year}} - {{ end_year }}{{/if}}</span>
+              <div class="top-part">
+                <span class="timeline__event__title">{{ title }}</span>
+              </div>
+              <div class="bottom-part">
+                <span class="timeline__event__institute">{{ institute }}</span>
+                <span class="timeline__event__time">{{ start_year }}{{#if end_year}} - {{ end_year }}{{/if}}</span>
+              </div>
             </li>
           {{/each}}
         </ul>

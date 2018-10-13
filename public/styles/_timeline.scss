@@ -4,7 +4,6 @@
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
-    align-items: center;
     background-attachment: fixed;
     background-blend-mode: overlay;
     background-image: url('/assets/background.jpg');
@@ -25,15 +24,18 @@
   }
 
   .timeline__event {
+    @include unselectable();
+
     color: var(--clr-primary-white);
+    display: flex;
     flex-basis: 0;
+    flex-direction: column;
     flex-grow: 1;
     flex-shrink: 0;
-    height: 20%;
     margin: 0;
 
     &:first-child {
-      .timeline__event__title {
+      .top-part {
         &::before {
           width: 50%;
         }
@@ -41,8 +43,9 @@
     }
 
     &:last-child {
-      .timeline__event__title {
+      .top-part {
         &::before {
+          left: auto;
           right: 0;
           width: 500%;
         }
@@ -50,31 +53,42 @@
     }
 
     &:hover {
-      color: var(--clr-primary-gray);
+      cursor: pointer;
 
-      .timeline__event__title {
+      .top-part {
         &::after {
-          background-color: var(--clr-primary-gray);
+          background-color: var(--clr-primary-accent);
         }
       }
     }
   }
 
-  .timeline__event__title {
-    display: block;
-    margin: 0 0 15px;
-    padding: 0 0 15px;
+  .top-part {
+    $ball-size: 26px;
+    $space-between: 24px;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 0;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    flex-shrink: 0;
+    font-weight: bold;
+    margin: 0 0 $space-between;
+    padding: 0 4px $space-between;
     position: relative;
+    text-align: center;
+    width: 100%;
 
     &::after {
       background-color: var(--clr-primary-white);
-      border-radius: 25px;
-      bottom: -13px;
+      border-radius: $ball-size;
+      bottom: calc(-1 * (#{$ball-size / 2}));
       content: '';
       height: 26px;
-      left: calc(50% - 13px);
+      left: calc(50% - (#{$ball-size / 2}));
       position: absolute;
-      width: 26px;
+      width: $ball-size;
     }
 
     &::before {
@@ -82,8 +96,30 @@
       bottom: 0;
       content: '';
       height: 1px;
+      left: 0;
       position: absolute;
       width: 100%;
     }
+  }
+
+  .bottom-part {
+    box-sizing: border-box;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0 4px;
+    width: 100%;
+  }
+
+  .timeline__event__institute {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .timeline__event__time {
+    display: block;
+    font-style: italic;
+    text-align: center;
   }
 }
