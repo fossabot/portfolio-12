@@ -1,6 +1,7 @@
 "use strict";
 
 const axe = require('gulp-axe-webdriver');
+const browserSync = require('browser-sync').create();
 const cssnano = require('gulp-cssnano');
 const filter = require('gulp-filter');
 const fontello = require('gulp-fontello');
@@ -48,15 +49,21 @@ const OUTPUT_REPORTS = './_reports';
 
 
 let minifyOutput = false;
+let serverActive = false;
+let watchingFiles = false;
 
 
-/* Utility tasks */
+/* Utility */
+gulp.task('clean', function() {
+  return gulp.src([`${OUTPUT_REPORTS}/**/*`, `${OUTPUT_SITE}/**/*`])
+             .pipe(remove());
+});
 gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
   done();
 });
 
-/* Build tasks */
+/* Build */
 gulp.task('assets-downloads', function() {
   return gulp.src(INPUT_ASSETS.downloads)
              .pipe(gulp.dest(`${OUTPUT_SITE}/downloads`));
@@ -123,39 +130,51 @@ gulp.task('styles', function() {
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 
-/* Miscellaneous tasks */
 gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'styles'));
-gulp.task('build:watch', gulp.series('build', function() {
-  gulp.watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
-  gulp.watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
-  gulp.watch(INPUT_ASSETS.images, gulp.task('assets-images'));
-  gulp.watch(INPUT_ASSETS.svgs, gulp.task('assets-svg'));
-  gulp.watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('html'));
-  gulp.watch(INPUT_ROOT_FILES, gulp.task('metadata'));
-  gulp.watch(INPUT_SCRIPTS, gulp.task('scripts'));
-  gulp.watch(INPUT_STYLES, gulp.task('styles'));
-}));
-gulp.task('clean', function() {
-  return gulp.src([`${OUTPUT_REPORTS}/**/*`, `${OUTPUT_SITE}/**/*`])
-             .pipe(remove());
+gulp.task('build:watch', function() {
+  watchingFiles = true;
+
+  const watch = (files, task) => gulp.watch(files, task).on('change', browserSync.reload);
+  watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
+  watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
+  watch(INPUT_ASSETS.images, gulp.task('assets-images'));
+  watch(INPUT_ASSETS.svgs, gulp.task('assets-svgs'));
+  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('html'))
+  watch(INPUT_ROOT_FILES, gulp.task('metadata'));
+  watch(INPUT_SCRIPTS, gulp.task('scripts'));
+  watch(INPUT_STYLES, gulp.task('styles'));
 });
-gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
 /* Server */
-const server = run('./node_modules/.bin/http-server ./_site -p 4000');
-gulp.task('server', gulp.series(function(done) {
-  const fs = require('fs');
+gulp.task('server', gulp.series(
+  function(done) {
+    const fs = require('fs');
 
-  if (!fs.existsSync(OUTPUT_SITE) || fs.readdirSync(OUTPUT_SITE).length === 0) {
-    throw new Error('Site has not been build yet. Run "gulp build" or "gulp dist" first.');
-  } else {
-    done();
+    if (!fs.existsSync(OUTPUT_SITE) || fs.readdirSync(OUTPUT_SITE).length === 0) {
+      throw new Error('Site has not been build yet. Run "gulp build" or "gulp dist" first.');
+    } else {
+      done();
+    }
+  },
+  function(done) {
+    serverActive = true;
+    browserSync.init({
+      open: false,
+      port: 4000,
+      server: {
+        baseDir: OUTPUT_SITE,
+        serveStaticOptions: {
+          extensions: ["html"]
+        }
+      }
+    }, done);
   }
-}, server));
-gulp.task('serve', gulp.parallel('build:watch', server));
+));
+gulp.task('serve', gulp.series('build', 'server', 'build:watch'));
 
 /* Static analysis */
+const lighthouse = run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`);
 gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
   return axe({
     errorOnViolation: true,
@@ -165,7 +184,10 @@ gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
+gulp.task('analyze:perf', gulp.series('server', lighthouse, function(done) {
+  browserSync.exit();
+  done();
+}));
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
@@ -207,3 +229,6 @@ gulp.task('lint-styles', function() {
 });
 
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-styles'));
+
+/* Default */
+gulp.task('default', gulp.series('clean', 'serve'));
