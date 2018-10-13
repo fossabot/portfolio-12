@@ -5,6 +5,7 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Functionality | Tool |
 |---|---|
 | Accessibility tester | [aXe](https://www.axe-core.org/) |
+| Automatic reloading | [browser-sync](https://browsersync.io/) |
 | Build tool | [Gulp](https://gulpjs.com/) |
 | CSS preprocessor | [Sass](http://sass-lang.com/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
