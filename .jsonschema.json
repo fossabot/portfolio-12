@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "title": "metadata.json",
+    "description": "Metadata for the portfolio",
+    "type": "object",
+    "additionalProperties": false,
+    "patternProperties": {
+      "^[a-z]+$": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["icon", "name"],
+        "properties": {
+          "icon": {
+            "description": "The name of the icon of the item",
+            "type": "string"
+          },
+          "name": {
+            "description": "The formal name of the item",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "portfolio": {
+    "title": "portfolio.json",
+    "description": "A collection of projects for the portfolio",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "programming": {
+        "description": "A list of programming projects",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "tldr", "start_year", "spotlight", "tags", "keywords", "links"],
+          "properties": {
+            "name": {
+              "description": "The name of the project",
+              "type": "string"
+            },
+            "tldr": {
+              "description": "A short description of the project",
+              "type": "string"
+            },
+            "start_year": {
+              "description": "The year the project started",
+              "type": "integer"
+            },
+            "end_year": {
+              "description": "The year the project ended",
+              "type": "integer"
+            },
+            "spotlight": {
+              "description": "Should the project be featured in the sites spotlight",
+              "type": "boolean"
+            },
+            "tags": {
+              "description": "A list of tags for the project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "keywords": {
+              "description": "A list of keywords (on top of 'tags') for the project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "links": {
+              "description": "A collection of links for the project (type:url)",
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": {
+                "^[a-z]+$": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "snippets": {
+        "description": "A list of programming snippets",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "tldr", "year", "tags", "link"],
+          "properties": {
+            "name": {
+              "description": "The name of the snippet",
+              "type": "string"
+            },
+            "tldr": {
+              "description": "A short description of the snippet",
+              "type": "string"
+            },
+            "year": {
+              "description": "The year the snippet was created",
+              "type": "integer"
+            },
+            "tags": {
+              "description": "A list of tags for the snippet",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "link": {
+              "description": "The link to the snippet",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "contributions": {
+        "description": "A list of open source contributions",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "about", "start_year", "spotlight", "keywords", "links"],
+          "properties": {
+            "name": {
+              "description": "The name of the open source project",
+              "type": "string"
+            },
+            "about": {
+              "description": "A short description of open source project",
+              "type": "string"
+            },
+            "start_year": {
+              "description": "The year contributions to the project started",
+              "type": "integer"
+            },
+            "end_year": {
+              "description": "The year contributions to the project ended",
+              "type": "integer"
+            },
+            "spotlight": {
+              "description": "Should the open source project be featured in the sites spotlight",
+              "type": "boolean"
+            },
+            "keywords": {
+              "description": "A list of keywords for the open source project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "links": {
+              "description": "A collection of links for the open source project (type:url)",
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": {
+                "^[a-z]+$": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "site": {
+    "title": "site.json",
+    "description": "Basic information about the portfolio",
+    "type": "object"
+  },
+  "social": {
+    "title": "social.json",
+    "description": "Social links of the owner of the portfolio",
+    "type": "object",
+    "additionalProperties": false,
+    "patternProperties": {
+      "^[a-z]+$": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "target"],
+        "properties": {
+          "url": {
+            "description": "A URL to the profile",
+            "type": "string"
+          },
+          "target": {
+            "description": "the target value for an anchor tag",
+            "type": "string",
+            "enum": ["_blank", "_self", "_top"]
+          }
+        }
+      }
+    }
+  }
+}

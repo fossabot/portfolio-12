@@ -1,4 +1,6 @@
 .back-to-top {
+  @include unselectable();
+
   display: none;
 }
 

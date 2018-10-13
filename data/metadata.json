@@ -1,20 +1,4 @@
 {
-  "github": {
-    "icon": "github",
-    "name": "GitHub"
-  },
-  "linkedin": {
-    "icon": "linkedin",
-    "name": "LinkedIn"
-  },
-  "mail": {
-    "icon": "mail",
-    "name": "mail"
-  },
-  "website": {
-    "icon": "globe",
-    "name": "website"
-  },
   "codepen": {
     "icon": "codepen",
     "name": "Codepen"
@@ -27,6 +11,18 @@
     "icon": "gist",
     "name": "Gist"
   },
+  "github": {
+    "icon": "github",
+    "name": "GitHub"
+  },
+  "linkedin": {
+    "icon": "linkedin",
+    "name": "LinkedIn"
+  },
+  "mail": {
+    "icon": "mail",
+    "name": "mail"
+  },
   "npm": {
     "icon": "package",
     "name": "NPM"
@@ -34,5 +30,13 @@
   "rubygems": {
     "icon": "package",
     "name": "RubyGems"
+  },
+  "stackoverflow": {
+    "icon": "stackoverflow",
+    "name": "stackoverflow"
+  },
+  "website": {
+    "icon": "globe",
+    "name": "website"
   }
 }

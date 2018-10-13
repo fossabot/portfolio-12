@@ -12,6 +12,8 @@ const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const jsonLint = require('gulp-jsonlint');
+const jsonSchema = require("gulp-json-schema");
+const jswrap = require('gulp-js-wrapper');
 const plumber = require('gulp-plumber');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
@@ -39,7 +41,7 @@ const INPUT_ROOT_FILES = [
   `${INPUT_DIR}/*.{htaccess,ico,txt}`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
-const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/*.scss`;
 
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
@@ -108,12 +110,9 @@ gulp.task('metadata', function() {
   return gulp.src(INPUT_ROOT_FILES)
              .pipe(gulp.dest(OUTPUT_SITE));
 });
-gulp.task('misc', function() {
-  return gulp.src(`${INPUT_DIR}/iam/**`)
-             .pipe(gulp.dest(`${OUTPUT_SITE}/iam`));
-});
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
+             .pipe(jswrap({}))
              .pipe(gulpIf(minifyOutput, uglifyJS()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
@@ -125,7 +124,7 @@ gulp.task('styles', function() {
 });
 
 /* Miscellaneous tasks */
-gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'misc', 'scripts', 'styles'));
+gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'styles'));
 gulp.task('build:watch', gulp.series('build', function() {
   gulp.watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
   gulp.watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
@@ -145,7 +144,15 @@ gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
 
 /* Server */
 const server = run('./node_modules/.bin/http-server ./_site -p 4000');
-gulp.task('server', gulp.series('build', server));
+gulp.task('server', gulp.series(function(done) {
+  const fs = require('fs');
+
+  if (!fs.existsSync(OUTPUT_SITE) || fs.readdirSync(OUTPUT_SITE).length === 0) {
+    throw new Error('Site has not been build yet. Run "gulp build" or "gulp dist" first.');
+  } else {
+    done();
+  }
+}, server));
 gulp.task('serve', gulp.parallel('build:watch', server));
 
 /* Static analysis */
@@ -158,16 +165,40 @@ gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --chrome-flags='--headless' --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
+gulp.task('analyze:perf', run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`));
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
 }));
-gulp.task('lint-json', function() {
-  return gulp.src(['./_data/*.json', './_helpers/data/*.json'])
-             .pipe(jsonLint())
-             .pipe(jsonLint.reporter());
-});
+gulp.task('lint-json', gulp.series(
+  function() {
+    return gulp.src('./data/*.json')
+               .pipe(jsonLint())
+               .pipe(jsonLint.reporter());
+  },
+  gulp.parallel(
+    function() {
+      const schema = require('./.jsonschema.json').metadata;
+      return gulp.src('./data/metadata.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').portfolio;
+      return gulp.src('./data/portfolio.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').site;
+      return gulp.src('./data/site.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').social;
+      return gulp.src('./data/social.json')
+                 .pipe(jsonSchema({schema}))
+    }
+  )
+));
 gulp.task('lint-styles', function() {
   return gulp.src(INPUT_STYLES)
              .pipe(sassLint({options: './.sass-lint.yml'}))

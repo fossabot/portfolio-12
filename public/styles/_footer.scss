@@ -55,7 +55,9 @@
   }
 
   &:hover {
-    color: var(--clr-primary-white);
+    & > .icon {
+      color: var(--clr-secondary-white);
+    }
   }
 }
 

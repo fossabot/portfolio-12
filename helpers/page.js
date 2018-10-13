@@ -4,10 +4,16 @@ const utils = require('handlebars-utils');
 function get(key, options, self) {
   switch (key.toLowerCase()) {
     case 'url':
-      let cwd = options.data.file.cwd;
-      let filepath = options.data.file.path;
-      let fileext = path.extname(filepath);
-      return filepath.slice(cwd.length, -fileext.length);
+      // Get the file path starting from the sites base
+      let file = options.data.file;
+      let filePath = file.path.replace(file._base, '');
+
+      // Convert the file path into a url path
+      let urlPath = filePath.replace(/\..*$/, '')
+                            .replace(/\\index/, '');
+
+      // Return the constructed URL path, defaulting to the current directory
+      return urlPath || '.';
     default:
       return self.$page[key];
   }

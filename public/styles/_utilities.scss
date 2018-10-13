@@ -47,6 +47,12 @@
     }
   }
 
+  &--stackoverflow {
+    &::before {
+      background-color: var(--clr-stackoverflow);
+    }
+  }
+
   // -- Color modifiers -- //
   &--aqua-spray {
     &::before {

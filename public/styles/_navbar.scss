@@ -32,6 +32,14 @@
     &--bottom {
       margin-top: auto;
     }
+
+    &--hidden {
+      .navbar__item {
+        &:last-child {
+          margin-bottom: -200%;
+        }
+      }
+    }
   }
 
   .navbar__item {
@@ -45,7 +53,7 @@
     pointer-events: auto;
     text-align: center;
     text-decoration: none;
-    transition: background-color .1s ease, color .1s ease;
+    transition: background-color .1s ease, color .1s ease, margin .2s ease-out;
     vertical-align: middle;
     width: var(--width-navbar-item);
 

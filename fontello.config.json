@@ -70,6 +70,12 @@
 			"css": "package",
 			"code": 59396,
 			"src": "entypo"
+		},
+		{
+			"uid": "e1597911f34fea0a188ae51fe4a2d9a9",
+			"css": "stackoverflow",
+			"code": 61804,
+			"src": "fontawesome"
 		}
 	]
 }

@@ -23,6 +23,8 @@
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
+    "gulp-js-wrapper": "0.0.3",
+    "gulp-json-schema": "^1.0.0",
     "gulp-jsonlint": "^1.2.2",
     "gulp-plumber": "^1.2.0",
     "gulp-rm": "^1.0.5",
@@ -34,6 +36,6 @@
     "handlebars-utils": "^1.0.6",
     "http-server": "^0.11.1",
     "husky": "^1.0.1",
-    "lighthouse": "^2.8.0"
+    "lighthouse": "^2.9.4"
   }
 }
