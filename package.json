@@ -35,7 +35,6 @@
     "gulp-uglify-es": "^1.0.4",
     "handlebars-helpers": "^0.10.0",
     "handlebars-utils": "^1.0.6",
-    "http-server": "^0.11.1",
     "husky": "^1.0.1",
     "lighthouse": "^2.9.4"
   }
