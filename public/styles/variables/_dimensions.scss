@@ -1,4 +1,6 @@
 :root {
+  --clippath-slope: 3vw;
+
   --margin-article-about: 0 .3em 0 0;
   --margin-article-date: -.6em 0 1.4em 0;
   --margin-article-figure: 1em 0;
@@ -16,7 +18,7 @@
   --width-cardboard: 100%;
   --width-cardboard-item: 100%;
 
-  --clippath-footer: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
+  --clippath-footer: polygon(0 0, 100% var(--clippath-slope), 100% 100%, 0 100%);
   --margin-footer: 3em 0 0 0;
   --margin-footer-glyph: 0 6px;
   --margin-footer-message:  .5em 0;
@@ -24,7 +26,7 @@
   --padding-footer: 3em 4em;
   --width-footer: 100%;
 
-  --clippath-header: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+  --clippath-header: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--clippath-slope)));
   --height-header: 50%;
   --height-header-home: 86.5%;
   --margin-header: 0 0 -1em 0;
