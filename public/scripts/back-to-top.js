@@ -2,7 +2,6 @@ let f = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
 // Elements
 let backToTop = document.querySelector('.back-to-top');
-let footer = document.querySelector('.footer');
 
 // Hide back to top and add click listener
 backToTop.classList.add('back-to-top--hidden');
@@ -27,4 +26,8 @@ let observer = new IntersectionObserver((entries, observer) => {
     }
   });
 }, { threshold: [0] });
-observer.observe(footer);
+
+document.addEventListener('DOMContentLoaded', () => {
+  let footer = document.querySelector('.footer');
+  observer.observe(footer);
+});
