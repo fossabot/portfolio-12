@@ -40,6 +40,10 @@
   margin: var(--margin-footer-social);
   order: 1;
   padding: 0;
+
+  &:hover .icon {
+    opacity: .6;
+  }
 }
 
 .footer__social__link {
@@ -57,7 +61,12 @@
   &:hover {
     & > .icon {
       color: var(--clr-secondary-white);
+      opacity: 1;
     }
+  }
+
+  & > .icon {
+    transition: opacity .2s ease;
   }
 }
 
