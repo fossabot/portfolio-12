@@ -75,6 +75,7 @@
 
 // Should be used in addition to the fontello "icon-" classes
 .icon {
+  display: block;
   text-decoration: none;
 
   &--hover {
