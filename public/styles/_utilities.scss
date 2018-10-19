@@ -1,7 +1,7 @@
 @import 'variables/layers';
 
-// Class for the hoverable elements in the header
-.about-hover {
+// Class base for elements that change the background of a container
+.background-hover {
   &::before {
     content: '';
     display: block;
@@ -19,64 +19,6 @@
   &:hover {
     &::before {
       opacity: 1;
-    }
-  }
-
-  // -- Brand modifiers -- //
-  &--codepen {
-    &::before {
-      background-color: var(--clr-codepen);
-      clip-path: var(--clippath-footer);
-    }
-  }
-
-  &--github {
-    &::before {
-      background-color: var(--clr-github);
-      clip-path: var(--clippath-footer);
-    }
-  }
-
-  &--linkedin {
-    &::before {
-      background-color: var(--clr-linkedin);
-      clip-path: var(--clippath-footer);
-    }
-  }
-
-  &--mail {
-    &::before {
-      background-color: var(--clr-mail);
-      clip-path: var(--clippath-footer);
-    }
-  }
-
-  &--stackoverflow {
-    &::before {
-      background-color: var(--clr-stackoverflow);
-      clip-path: var(--clippath-footer);
-    }
-  }
-
-  // -- Color modifiers -- //
-  &--aqua-spray {
-    &::before {
-      background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
-      clip-path: var(--clippath-header);
-    }
-  }
-
-  &--mystic-mauvea {
-    &::before {
-      background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
-      clip-path: var(--clippath-header);
-    }
-  }
-
-  &--sweat-dream {
-    &::before {
-      background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
-      clip-path: var(--clippath-header);
     }
   }
 }

@@ -52,6 +52,29 @@
       margin: var(--margin-header-message-home);
     }
   }
+
+  .background-hover {
+    &--aqua-spray {
+      &::before {
+        background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
+        clip-path: var(--clippath-header);
+      }
+    }
+
+    &--mystic-mauvea {
+      &::before {
+        background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
+        clip-path: var(--clippath-header);
+      }
+    }
+
+    &--sweat-dream {
+      &::before {
+        background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
+        clip-path: var(--clippath-header);
+      }
+    }
+  }
 }
 
 .header__message {

@@ -46,6 +46,43 @@
     background-size: cover;
     clip-path: var(--clippath-footer);
   }
+
+  .background-hover {
+    &--codepen {
+      &::before {
+        background-color: var(--clr-codepen);
+        clip-path: var(--clippath-footer);
+      }
+    }
+
+    &--github {
+      &::before {
+        background-color: var(--clr-github);
+        clip-path: var(--clippath-footer);
+      }
+    }
+
+    &--linkedin {
+      &::before {
+        background-color: var(--clr-linkedin);
+        clip-path: var(--clippath-footer);
+      }
+    }
+
+    &--mail {
+      &::before {
+        background-color: var(--clr-mail);
+        clip-path: var(--clippath-footer);
+      }
+    }
+
+    &--stackoverflow {
+      &::before {
+        background-color: var(--clr-stackoverflow);
+        clip-path: var(--clippath-footer);
+      }
+    }
+  }
 }
 
 .footer__message {
