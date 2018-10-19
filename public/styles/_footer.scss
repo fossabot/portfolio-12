@@ -32,9 +32,12 @@
   }
 
   &::before {
-    box-shadow: 0 0 calc(2.5 * var(--clippath-slope)) 0 var(--clr-footer-shadow);
-    height: calc(100% - var(--clippath-slope));
+    box-shadow: 0 calc(-1 * var(--shadow-offset)) var(--shadow-size) 0 var(--clr-header-shadow);
+    height: var(--clippath-slope);
+    left: -1%;
     top: var(--clippath-slope);
+    transform: rotateZ(1.8deg);
+    width: 101%;
   }
 
   &::after {

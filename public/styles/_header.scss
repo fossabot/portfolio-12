@@ -31,8 +31,10 @@
   }
 
   &::before {
-    box-shadow: 0 0 calc(3 * var(--clippath-slope)) 0 var(--clr-header-shadow);
+    box-shadow: 0 var(--shadow-offset) var(--shadow-size) 0 var(--clr-header-shadow);
     height: calc(100% - var(--clippath-slope));
+    transform: rotateZ(1.8deg);
+    width: 101%;
   }
 
   &::after {
