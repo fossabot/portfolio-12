@@ -34,8 +34,10 @@
     }
 
     &--hidden {
-      .navbar__item:last-child {
-        margin-bottom: -200%;
+      .navbar__item {
+        &:last-child {
+          margin-bottom: -200%;
+        }
       }
     }
   }
