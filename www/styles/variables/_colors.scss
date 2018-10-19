@@ -14,10 +14,10 @@
   // general
   --clr-background: var(--clr-primary-white);
   --clr-background-code: rgba(27, 31, 35, .05);
-  --clr-footer-shadow: rgba(34, 34, 34, .5);
-  --clr-header-shadow: rgba(34, 34, 34, .5);
+  --clr-footer-shadow: rgba(0, 0, 0, .5);
+  --clr-header-shadow: var(--clr-footer-shadow);
   --clr-nav-hover: #808080;
-  --clr-shadow: rgba(221, 221, 221, 1);
+  --clr-shadow: rgba(0, 0, 0, .25);
 
   // brands
   --clr-codepen: #000;
