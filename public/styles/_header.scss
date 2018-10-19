@@ -25,9 +25,9 @@
     height: 100%;
     left: 0;
     position: absolute;
-    z-index: map-get($layers, basement);
     top: 0;
     width: 100%;
+    z-index: map-get($layers, dungeon);
   }
 
   &::before {
