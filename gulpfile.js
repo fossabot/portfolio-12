@@ -222,7 +222,7 @@ gulp.task('lint-json', gulp.series(
   )
 ));
 gulp.task('lint-styles', function() {
-  return gulp.src(['./styles/*.scss', './styles/mixins/*.scss'])
+  return gulp.src(['./public/styles/*.scss', './public/styles/mixins/*.scss'])
              .pipe(sassLint({options: './.sass-lint.yml'}))
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());
