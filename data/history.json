@@ -12,8 +12,8 @@
     "link": "http://secclo.aalto.fi/en/"
   },
   {
-    "type": "intern",
-    "title": "Data Analyst Internship",
+    "type": "internship",
+    "title": "Data Analytics Internship",
     "institute": "Optiver Amsterdam",
     "location": {
       "city": "Amsterdam",
@@ -89,7 +89,7 @@
       "country": "Belgium"
     },
     "start_year": 2013,
-    "end_year": 2013
+    "link": "http://www.fig-gymnastics.com/site/"
   },
   {
     "type": "education",
