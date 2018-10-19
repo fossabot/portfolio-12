@@ -53,10 +53,11 @@
 
   &::after {
     color: var(--clr-secondary-black);
-    content: '\2192';
+    content: '\00A0\2192';
     display: block;
     left: 100%;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 0;
     transition: left .15s ease, opacity .1s ease;
@@ -68,8 +69,9 @@
     right: 1.4em;
 
     &::after {
-      left: calc(100% + 4px);
+      left: 100%;
       opacity: 1;
+      pointer-events: all;
     }
   }
 }
