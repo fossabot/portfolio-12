@@ -20,7 +20,6 @@ Repository for the personal portfolio of Eric Cornelissen.
   - Result can be found in `./reports`.
 - `$ gulp analyze:perf`: Do a performance check on the sites landing page.
   - Result can be found in `./reports`.
-  - Requires `$ gulp serve(r)`.
 - `$ gulp build`: Build the project once.
 - `$ gulp build:watch`: Build the project and watch for changes.
 - `$ gulp clean`: Clean the project, removing all generated files.

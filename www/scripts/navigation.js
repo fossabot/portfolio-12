@@ -1,7 +1,6 @@
 const HIDE_SOCIAL_INTERSECTION_RATIO = 0.7;
 
 // Elements
-let footer = document.querySelector('.footer');
 let navbarSocial = document.querySelector('.navbar-group-social');
 
 // Observe the footer to determine if .navbar-group-social should be hidden
@@ -14,4 +13,8 @@ let observer = new IntersectionObserver((entries, observer) => {
     }
   });
 }, { threshold: [HIDE_SOCIAL_INTERSECTION_RATIO] });
-observer.observe(footer);
+
+document.addEventListener('DOMContentLoaded', () => {
+  let footer = document.querySelector('.footer');
+  observer.observe(footer);
+});

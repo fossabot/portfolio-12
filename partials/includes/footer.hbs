@@ -1,7 +1,7 @@
 <footer class="footer">
   <ul class="footer__social">
     {{#each social}}
-      <li class="footer__social__link about-hover about-hover--{{lowercase (get_name @key)}}">
+      <li class="footer__social__link background-hover background-hover--{{lowercase (get_name @key)}}">
         <a class="icon icon--hover {{get_icon @key}}" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
       </li>
     {{/each}}
