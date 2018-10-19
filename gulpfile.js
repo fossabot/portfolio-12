@@ -24,7 +24,7 @@ const sassLint = require('gulp-sass-lint');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
-const INPUT_DIR = './public'
+const INPUT_DIR = './www'
 const INPUT_ASSETS = {
   downloads: `${INPUT_DIR}/downloads/**/*`,
   fonts: `${INPUT_DIR}/assets/fonts/*`,
@@ -222,7 +222,7 @@ gulp.task('lint-json', gulp.series(
   )
 ));
 gulp.task('lint-styles', function() {
-  return gulp.src(['./styles/*.scss', './styles/mixins/*.scss'])
+  return gulp.src([`${INPUT_DIR}/styles/*.scss`, `${INPUT_DIR}/styles/mixins/*.scss`])
              .pipe(sassLint({options: './.sass-lint.yml'}))
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());

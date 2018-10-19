@@ -5,14 +5,7 @@
 .header {
   @include unselectable();
 
-  background-attachment: fixed;
-  background-blend-mode: overlay;
-  background-image: url('/assets/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   box-sizing: border-box;
-  clip-path: var(--clippath-header);
   color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
@@ -20,17 +13,68 @@
   height: var(--height-header);
   margin: var(--margin-header);
   min-height: var(--minheight-header);
-  overflow: hidden;
+  overflow: visible;
   padding: var(--padding-header);
   position: relative;
   width: var(--width-header);
   z-index: map-get($layers, roof);
+
+  &::before,
+  &::after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: map-get($layers, dungeon);
+  }
+
+  &::before {
+    box-shadow: 0 var(--shadow-offset) var(--shadow-size) 0 var(--clr-header-shadow);
+    height: calc(100% - var(--clippath-slope));
+    transform: rotateZ(1.8deg);
+    width: 101%;
+  }
+
+  &::after {
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-image: url('/assets/background.jpg');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    clip-path: var(--clippath-header);
+  }
 
   &--home {
     height: var(--height-header-home);
 
     .header__message {
       margin: var(--margin-header-message-home);
+    }
+  }
+
+  .background-hover {
+    &--aqua-spray {
+      &::before {
+        background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
+        clip-path: var(--clippath-header);
+      }
+    }
+
+    &--mystic-mauvea {
+      &::before {
+        background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
+        clip-path: var(--clippath-header);
+      }
+    }
+
+    &--sweat-dream {
+      &::before {
+        background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
+        clip-path: var(--clippath-header);
+      }
     }
   }
 }
