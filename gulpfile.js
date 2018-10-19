@@ -42,7 +42,7 @@ const INPUT_ROOT_FILES = [
   `${INPUT_DIR}/*.{htaccess,ico,txt}`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
-const INPUT_STYLES = `${INPUT_DIR}/styles/*.scss`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
 
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
