@@ -21,6 +21,26 @@
     padding: 0 10% 0 15%;
     position: relative;
     z-index: map-get($layers, roof);
+
+    &:hover {
+      $inactive-opacity: .7;
+      $gradient-middle: rgba(255, 255, 255, 1);
+      $gradient-ends: rgba(255, 255, 255, $inactive-opacity - .1);
+
+      .timeline__event {
+        &:hover {
+          .top-part {
+            &::before {
+              background: radial-gradient(ellipse at center, $gradient-middle 0%, $gradient-ends 100%);
+            }
+          }
+        }
+
+        &:not(:hover) {
+          opacity: $inactive-opacity;
+        }
+      }
+    }
   }
 
   .timeline__event {
@@ -33,6 +53,7 @@
     flex-grow: 1;
     flex-shrink: 0;
     margin: 0;
+    transition: opacity .2s ease;
 
     &:first-child {
       .top-part {
