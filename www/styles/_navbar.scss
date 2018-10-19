@@ -58,6 +58,7 @@
     width: var(--width-navbar-item);
 
     &:focus,
+    &:focus-within,
     &:hover {
       background-color: var(--clr-primary-black);
       color: var(--clr-primary-white);
