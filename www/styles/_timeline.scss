@@ -4,14 +4,7 @@
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
-    background-attachment: fixed;
-    background-blend-mode: overlay;
-    background-image: url('/assets/background.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     box-sizing: border-box;
-    clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 calc(100% - 3vw));
     display: flex;
     flex-direction: row-reverse;
     height: 500px;
@@ -21,6 +14,35 @@
     padding: 0 10% 0 15%;
     position: relative;
     z-index: map-get($layers, roof);
+
+    &::before,
+    &::after {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: map-get($layers, dungeon);
+    }
+
+    &::before {
+      box-shadow: 0 0 calc(.8 * var(--shadow-size)) calc(.8 * var(--shadow-size)) var(--clr-header-shadow);
+      height: calc(100% - (2 * var(--clippath-slope)));
+      top: var(--clippath-slope);
+      transform: rotateZ(1.8deg);
+      width: 101%;
+    }
+
+    &::after {
+      background-attachment: fixed;
+      background-blend-mode: overlay;
+      background-image: url('/assets/background.jpg');
+      background-position: center;
+      background-repeat: repeat;
+      background-size: cover;
+      clip-path: polygon(0 0, 100% var(--clippath-slope), 100% 100%, 0 calc(100% - var(--clippath-slope)));
+      top: 0;
+    }
 
     &:hover {
       $inactive-opacity: .7;
