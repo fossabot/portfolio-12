@@ -39,6 +39,11 @@
   }
 }
 
+// Inherit all styles from the parent
+.mimic-parent {
+  all: inherit;
+}
+
 // Adds decoration to a title
 .short-underline {
   margin-bottom: 1.05em;

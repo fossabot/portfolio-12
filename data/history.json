@@ -8,7 +8,8 @@
       "country": "Finland"
     },
     "start_year": 2018,
-    "end_year": "ongoing"
+    "end_year": "ongoing",
+    "link": "http://secclo.aalto.fi/en/"
   },
   {
     "type": "intern",
@@ -18,7 +19,8 @@
       "city": "Amsterdam",
       "country": "Netherlands"
     },
-    "start_year": 2018
+    "start_year": 2018,
+    "link": "https://www.optiver.com/na/en/our-locations/amsterdam"
   },
   {
     "type": "achievement",
@@ -28,7 +30,8 @@
       "city": "Delft",
       "country": "Netherlands"
     },
-    "start_year": 2017
+    "start_year": 2017,
+    "link": "https://2018.hackdelft.nl/"
   },
   {
     "type": "achievement",
@@ -38,7 +41,8 @@
       "city": "Delft",
       "country": "Netherlands"
     },
-    "start_year": 2016
+    "start_year": 2016,
+    "link": "/downloads/honourable-mention_bapc-2016.pdf"
   },
   {
     "type": "work",
@@ -49,7 +53,8 @@
       "country": "Netherlands"
     },
     "start_year": 2016,
-    "end_year": "ongoing"
+    "end_year": "ongoing",
+    "link": "https://www.ticketmatic.com/en/"
   },
   {
     "type": "education",
@@ -60,7 +65,8 @@
       "country": "Netherlands"
     },
     "start_year": 2015,
-    "end_year": 2018
+    "end_year": 2018,
+    "link": "https://www.tudelft.nl/en/education/programmes/bachelors/cse/bachelor-of-computer-science-and-engineering/"
   },
   {
     "type": "education",
@@ -71,7 +77,8 @@
       "country": "Sweden"
     },
     "start_year": 2017,
-    "end_year": 2018
+    "end_year": 2018,
+    "link": "https://www.kth.se/"
   },
   {
     "type": "volunteer",
@@ -93,6 +100,7 @@
       "country": "Netherlands"
     },
     "start_year": 2009,
-    "end_year": 2015
+    "end_year": 2015,
+    "link": "https://www.denieuwsteschool.nl/"
   }
 ]

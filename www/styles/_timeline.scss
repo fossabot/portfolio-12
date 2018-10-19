@@ -28,7 +28,7 @@
       $gradient-ends: rgba(255, 255, 255, $inactive-opacity - .1);
 
       .timeline__event {
-        &:hover {
+        & > :hover {
           .top-part {
             &::before {
               background: radial-gradient(ellipse at center, $gradient-middle 0%, $gradient-ends 100%);
@@ -36,7 +36,7 @@
           }
         }
 
-        &:not(:hover) {
+        & > :not(:hover) {
           opacity: $inactive-opacity;
         }
       }
@@ -47,12 +47,14 @@
     @include unselectable();
 
     color: var(--clr-primary-white);
+    cursor: pointer;
     display: flex;
     flex-basis: 0;
     flex-direction: column;
     flex-grow: 1;
     flex-shrink: 0;
     margin: 0;
+    text-decoration: none;
     transition: opacity .2s ease;
 
     &:first-child {
@@ -74,8 +76,6 @@
     }
 
     &:hover {
-      cursor: pointer;
-
       .top-part {
         &::after {
           background-color: var(--clr-primary-accent);
@@ -125,6 +125,7 @@
 
   .bottom-part {
     box-sizing: border-box;
+    display: block;
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
