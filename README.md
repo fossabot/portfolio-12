@@ -17,9 +17,9 @@ Repository for the personal portfolio of Eric Cornelissen.
 
 ###### How to use the build tools:
 - `$ gulp analyze:a11y`: Test the website for accessibility issues.
-  - Result can be found in `./reports`.
+  - Result can be found in `./_reports`.
 - `$ gulp analyze:perf`: Do a performance check on the sites landing page.
-  - Result can be found in `./reports`.
+  - Result can be found in `./_reports`.
 - `$ gulp build`: Build the project once.
 - `$ gulp build:watch`: Build the project and watch for changes.
 - `$ gulp clean`: Clean the project, removing all generated files.

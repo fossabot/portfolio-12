@@ -32,6 +32,7 @@
   --height-header: 50%;
   --height-header-home: 86.5%;
   --margin-header: 0 0 -1em 0;
+  --margin-header-link-item: 0 .3em;
   --margin-header-message: auto 0 0 0;
   --margin-header-message-home: auto 0 .8em 0;
   --margin-header-title: 0;
@@ -85,7 +86,7 @@
     --margin-cardboard-item: .4em;
     --margin-cardboard-item-more: .8em 1.2em;
     --margin-cardboard-item-title: .3em 0;
-    --padding-cardboard-item: .8em 1.2em;
+    --padding-cardboard-item: .8em 1.2em 1em;
     --padding-cardboard-item-description: 0;
     --padding-cardboard-item-links: 0 0 0 .3em;
     --width-cardboard: calc(100% + .4em);
