@@ -63,6 +63,7 @@ gulp.task('clean:reports', function() {
              .pipe(remove());
 });
 gulp.task('clean', gulp.parallel('clean:reports', 'clean:site'));
+
 gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
   done();
@@ -193,6 +194,7 @@ gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse
   browserSync.exit();
   done();
 }));
+
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
@@ -232,7 +234,6 @@ gulp.task('lint-styles', function() {
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());
 });
-
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-styles'));
 
 /* Default */
