@@ -248,6 +248,17 @@
   ],
   "contributions": [
     {
+      "name": "FluentTerminal",
+      "about": "A Terminal Emulator based on UWP and web technologies.",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": false,
+      "keywords": ["C#", "c-sharp", "terminal", "cli", "UWP"],
+      "links": {
+        "github": "https://github.com/felixse/FluentTerminal"
+      }
+    },
+    {
       "name": "SVGLint",
       "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
       "start_year": 2018,
