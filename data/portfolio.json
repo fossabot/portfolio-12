@@ -176,6 +176,13 @@
   ],
   "snippets": [
     {
+      "name": "Unhovered active button",
+      "tldr": "Change style of an active but unhovered button using only CSS",
+      "year": 2018,
+      "tags": ["Pug", "CSS3"],
+      "link": "https://codepen.io/ericornelissen/pen/LgoZmj"
+    },
+    {
       "name": "partial.js",
       "tldr": "Simple and small wrapper to allow for partial function invocation.",
       "year": 2018,
