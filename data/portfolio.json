@@ -176,6 +176,13 @@
   ],
   "snippets": [
     {
+      "name": "partial.js",
+      "tldr": "Simple and small wrapper to allow for partial function invocation.",
+      "year": 2018,
+      "tags": ["JavaScript"],
+      "link": "https://gist.github.com/ericcornelissen/2e79034936fa6517712baa0773ecbdba"
+    },
+    {
       "name": "Automatic text alignment",
       "tldr": "Automatic text alignment with CSS Letter spacing using JavaScript.",
       "year": 2018,
@@ -191,7 +198,7 @@
     },
     {
       "name": "curry.js",
-      "tldr": "Simple and small curry function for any arity ",
+      "tldr": "Simple and small wrapper to curry functions of any arity.",
       "year": 2018,
       "tags": ["JavaScript"],
       "link": "https://gist.github.com/ericcornelissen/09e11b331a901c340a05664e85a02b69"
