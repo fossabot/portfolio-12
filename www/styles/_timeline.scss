@@ -7,11 +7,11 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row-reverse;
-    height: 500px;
+    height: var(--height-timeline);
     justify-content: center;
     list-style-type: none;
-    margin: 80px 0 0;
-    padding: 0 10% 0 15%;
+    margin: var(--margin-timeline);
+    padding: var(--padding-timeline);
     position: relative;
     z-index: map-get($layers, roof);
 
@@ -75,7 +75,8 @@
     flex-direction: column;
     flex-grow: 1;
     flex-shrink: 0;
-    margin: 0;
+    margin: var(--margin-timeline-event);
+    margin: var(--padding-timeline-event);
     text-decoration: none;
     transition: opacity .2s ease;
 
@@ -107,9 +108,6 @@
   }
 
   .top-part {
-    $ball-size: 26px;
-    $space-between: 24px;
-
     box-sizing: border-box;
     display: flex;
     flex-basis: 0;
@@ -117,21 +115,22 @@
     flex-grow: 1;
     flex-shrink: 0;
     font-weight: bold;
-    margin: 0 0 $space-between;
-    padding: 0 4px $space-between;
+    margin: 0 0 calc(var(--margin-timeline-event-divider) + (var(--diameter-timeline-event-ball) / 2));
+    padding: var(--padding-timeline-event-content);
+    padding-bottom: calc(var(--margin-timeline-event-divider) + (var(--diameter-timeline-event-ball) / 2));
     position: relative;
     text-align: center;
     width: 100%;
 
     &::after {
       background-color: var(--clr-primary-white);
-      border-radius: $ball-size;
-      bottom: calc(-1 * (#{$ball-size / 2}));
+      border-radius: var(--diameter-timeline-event-ball);
+      bottom: calc(-1 * (#{var(--diameter-timeline-event-ball) / 2}));
       content: '';
-      height: 26px;
-      left: calc(50% - (#{$ball-size / 2}));
+      height: var(--diameter-timeline-event-ball);
+      left: calc(50% - (#{var(--diameter-timeline-event-ball) / 2}));
       position: absolute;
-      width: $ball-size;
+      width: var(--diameter-timeline-event-ball);
     }
 
     &::before {
@@ -151,13 +150,12 @@
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
-    padding: 0 4px;
+    padding: var(--padding-timeline-event-content);
     width: 100%;
   }
 
   .timeline__event__institute {
     display: block;
-    font-weight: bold;
     text-align: center;
   }
 
