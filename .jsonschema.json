@@ -143,7 +143,7 @@
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["name", "tldr", "year", "tags", "link"],
+          "required": ["name", "tldr", "year", "languages", "link"],
           "properties": {
             "name": {
               "description": "The name of the snippet",
@@ -157,8 +157,8 @@
               "description": "The year the snippet was created",
               "type": "integer"
             },
-            "tags": {
-              "description": "A list of tags for the snippet",
+            "languages": {
+              "description": "A list of programming languages used in the snippet",
               "type": "array",
               "items": {
                 "type": "string"

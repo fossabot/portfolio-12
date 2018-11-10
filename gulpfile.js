@@ -54,10 +54,16 @@ let watchingFiles = false;
 
 
 /* Utility */
-gulp.task('clean', function() {
-  return gulp.src([`${OUTPUT_REPORTS}/**/*`, `${OUTPUT_SITE}/**/*`])
+gulp.task('clean:site', function() {
+  return gulp.src(`${OUTPUT_SITE}/**/*`)
              .pipe(remove());
 });
+gulp.task('clean:reports', function() {
+  return gulp.src(`${OUTPUT_REPORTS}/**/*`)
+             .pipe(remove());
+});
+gulp.task('clean', gulp.parallel('clean:reports', 'clean:site'));
+
 gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
   done();
@@ -144,7 +150,7 @@ gulp.task('build:watch', function() {
   watch(INPUT_SCRIPTS, gulp.task('scripts'));
   watch(INPUT_STYLES, gulp.task('styles'));
 });
-gulp.task('dist', gulp.series('clean', 'set-minify-output', 'build'));
+gulp.task('dist', gulp.series('clean:site', 'set-minify-output', 'build'));
 
 /* Server */
 gulp.task('server', gulp.series(
@@ -175,7 +181,7 @@ gulp.task('serve', gulp.series('build', 'server', 'build:watch'));
 
 /* Static analysis */
 const lighthouse = run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`);
-gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
+gulp.task('analyze:a11y', gulp.series('clean:site', 'build', function() {
   return axe({
     errorOnViolation: true,
     folderOutputReport: OUTPUT_REPORTS,
@@ -184,10 +190,11 @@ gulp.task('analyze:a11y', gulp.series('clean', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', gulp.series('server', lighthouse, function(done) {
+gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, function(done) {
   browserSync.exit();
   done();
 }));
+
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
              .pipe(htmllint('.htmlhintrc'));
@@ -232,8 +239,7 @@ gulp.task('lint-styles', function() {
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());
 });
-
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-styles'));
 
 /* Default */
-gulp.task('default', gulp.series('clean', 'serve'));
+gulp.task('default', gulp.series('clean:site', 'serve'));
