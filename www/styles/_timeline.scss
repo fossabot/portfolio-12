@@ -26,17 +26,17 @@
     }
 
     &::before {
-      box-shadow: 0 0 calc(.8 * var(--shadow-size)) calc(.8 * var(--shadow-size)) var(--clr-header-shadow);
+      box-shadow: 0 0 calc(2 * var(--shadow-size)) 0 var(--clr-header-shadow);
       height: calc(100% - (2 * var(--clippath-slope)));
       top: var(--clippath-slope);
-      transform: rotateZ(1.8deg);
+      transform: var(--clippath-slope-deg);
       width: 101%;
     }
 
     &::after {
       background-attachment: fixed;
       background-blend-mode: overlay;
-      background-image: url('/assets/background.jpg');
+      background-image: var(--background-image);
       background-position: center;
       background-repeat: repeat;
       background-size: cover;

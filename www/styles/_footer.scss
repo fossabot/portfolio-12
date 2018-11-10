@@ -1,5 +1,4 @@
 @import 'mixins/util';
-@import 'variables/layers';
 
 
 .footer {
@@ -36,14 +35,14 @@
     height: var(--clippath-slope);
     left: -1%;
     top: var(--clippath-slope);
-    transform: rotateZ(1.8deg);
+    transform: var(--clippath-slope-deg);
     width: 101%;
   }
 
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: url('/assets/background.jpg');
+    background-image: var(--background-image);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
