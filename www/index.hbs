@@ -23,7 +23,7 @@
       <section id="history">
         <ul class="timeline">
           {{#each (first timeline 5)}}
-            <li class="timeline__event">
+            <li class="timeline__event timeline__event--{{ type }}">
               <a class="mimic-parent" href="{{ link }}" rel="noopener">
                 <div class="top-part">
                   <span class="timeline__event__title">{{ title }}</span>

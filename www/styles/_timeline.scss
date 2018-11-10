@@ -105,6 +105,42 @@
         }
       }
     }
+
+    &--achievement {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/achievement.svg');
+        }
+      }
+    }
+    &--education {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/education.svg');
+        }
+      }
+    }
+    &--internship {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/internship.svg');
+        }
+      }
+    }
+    &--volunteer {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/volunteer.svg');
+        }
+      }
+    }
+    &--work {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/work.svg');
+        }
+      }
+    }
   }
 
   .top-part {
