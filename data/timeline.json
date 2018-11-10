@@ -1,14 +1,13 @@
 [
   {
     "type": "education",
-    "title": "Master Security & Cloud Computing",
+    "title": "Started MSc Security & Cloud Computing",
     "institute": "Aalto University",
     "location": {
       "city": "Espoo",
       "country": "Finland"
     },
-    "start_year": 2018,
-    "end_year": "ongoing",
+    "when": 2018,
     "link": "http://secclo.aalto.fi/en/"
   },
   {
@@ -19,19 +18,41 @@
       "city": "Amsterdam",
       "country": "Netherlands"
     },
-    "start_year": 2018,
+    "when": 2018,
     "link": "https://www.optiver.com/na/en/our-locations/amsterdam"
   },
   {
+    "type": "education",
+    "title": "Graduated BSc Computer Science",
+    "institute": "TU Delft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2018,
+    "link": "/downloads/bsc-computer-scienc_tu-delft-2018.pdf"
+  },
+  {
     "type": "achievement",
-    "title": "Case Winner Aegon",
+    "title": "Hackathon Case Winner Aegon",
     "institute": "HackDelft",
     "location": {
       "city": "Delft",
       "country": "Netherlands"
     },
-    "start_year": 2017,
-    "link": "https://2018.hackdelft.nl/"
+    "when": 2017,
+    "link": "https://hackdelft.nl/"
+  },
+  {
+    "type": "education",
+    "title": "Minor Computer Science",
+    "institute": "KTH Royal Institute of Technology",
+    "location": {
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    "when": 2017,
+    "link": "https://www.kth.se/"
   },
   {
     "type": "achievement",
@@ -41,7 +62,7 @@
       "city": "Delft",
       "country": "Netherlands"
     },
-    "start_year": 2016,
+    "when": 2016,
     "link": "/downloads/honourable-mention_bapc-2016.pdf"
   },
   {
@@ -52,33 +73,30 @@
       "city": "Rotterdam",
       "country": "Netherlands"
     },
-    "start_year": 2016,
-    "end_year": "ongoing",
+    "when": 2016,
     "link": "https://www.ticketmatic.com/en/"
   },
   {
     "type": "education",
-    "title": "Bachelor Computer Science",
+    "title": "Started BSc Computer Science",
     "institute": "TU Delft",
     "location": {
       "city": "Delft",
       "country": "Netherlands"
     },
-    "start_year": 2015,
-    "end_year": 2018,
-    "link": "https://www.tudelft.nl/en/education/programmes/bachelors/cse/bachelor-of-computer-science-and-engineering/"
+    "when": 2015,
+    "link": "https://www.tudelft.nl/en/"
   },
   {
     "type": "education",
-    "title": "Minor Computer Science",
-    "institute": "KTH Royal Institute of Technology",
+    "title": "Graduated VWO Science Profile",
+    "institute": "De Nieuwste School",
     "location": {
-      "city": "Stockholm",
-      "country": "Sweden"
+      "city": "Tilburg",
+      "country": "Netherlands"
     },
-    "start_year": 2017,
-    "end_year": 2018,
-    "link": "https://www.kth.se/"
+    "when": 2015,
+    "link": "https://www.denieuwsteschool.nl/"
   },
   {
     "type": "volunteer",
@@ -88,19 +106,18 @@
       "city": "Antwerp",
       "country": "Belgium"
     },
-    "start_year": 2013,
+    "when": 2013,
     "link": "http://www.fig-gymnastics.com/site/"
   },
   {
     "type": "education",
-    "title": "VWO science profile",
+    "title": "Started higher education",
     "institute": "De Nieuwste School",
     "location": {
       "city": "Tilburg",
       "country": "Netherlands"
     },
-    "start_year": 2009,
-    "end_year": 2015,
+    "when": 2009,
     "link": "https://www.denieuwsteschool.nl/"
   }
 ]
