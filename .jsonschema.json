@@ -1,58 +1,4 @@
 {
-  "history": {
-    "title": "history.json",
-    "description": "A timeline of major events",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["type", "title", "institute", "location", "start_year", "link"],
-      "properties": {
-        "type": {
-          "description": "The type of the event",
-          "type": "string",
-          "enum": ["achievement", "education", "internship", "volunteer", "work"]
-        },
-        "title": {
-          "description": "A description of your relation to the event",
-          "type": "string"
-        },
-        "institute": {
-          "description": "What institute is the event related",
-          "type": "string"
-        },
-        "location": {
-          "description": "Where the event took place",
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["city", "country"],
-          "properties": {
-            "city": {
-              "description": "In what city did the event take place",
-              "type": "string"
-            },
-            "country": {
-              "description": "In what country did the event take place",
-              "type": "string"
-            }
-          }
-        },
-        "start_year": {
-          "description": "The year the event started/happened",
-          "type": "integer"
-        },
-        "end_year": {
-          "description": "The year the event ended",
-          "type": ["integer", "string"]
-        },
-        "link": {
-          "description": "A link to the event/related to the event",
-          "type": "string",
-          "pattern": "(https?:\/\/(www.)?[-a-zA-Z0-9@:%._+~#=]{2,256}.[a-z]{2,6}([-a-zA-Z0-9@:%_+.~#?&//=]*))|(\/[-a-zA-Z0-9_]*)+"
-        }
-      }
-    }
-  },
   "metadata": {
     "title": "metadata.json",
     "description": "Metadata for the portfolio",
@@ -246,6 +192,56 @@
             "type": "string",
             "enum": ["_blank", "_self", "_top"]
           }
+        }
+      }
+    }
+  },
+  "timeline": {
+    "title": "timeline.json",
+    "description": "A timeline of major events",
+    "type": "array",
+    "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "title", "institute", "location", "when", "link"],
+      "properties": {
+        "type": {
+          "description": "The type of the event",
+          "type": "string",
+          "enum": ["achievement", "education", "internship", "volunteer", "work"]
+        },
+        "title": {
+          "description": "A description of your relation to the event",
+          "type": "string"
+        },
+        "institute": {
+          "description": "What institute is the event related",
+          "type": "string"
+        },
+        "location": {
+          "description": "Where the event took place",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["city", "country"],
+          "properties": {
+            "city": {
+              "description": "In what city did the event take place",
+              "type": "string"
+            },
+            "country": {
+              "description": "In what country did the event take place",
+              "type": "string"
+            }
+          }
+        },
+        "when": {
+          "description": "The year the event happened",
+          "type": "integer"
+        },
+        "link": {
+          "description": "A link to the event/related to the event",
+          "type": "string",
+          "pattern": "(https?:\/\/(www.)?[-a-zA-Z0-9@:%._+~#=]{2,256}.[a-z]{2,6}([-a-zA-Z0-9@:%_+.~#?&//=]*))|(\/[-a-zA-Z0-9_]*)+"
         }
       }
     }

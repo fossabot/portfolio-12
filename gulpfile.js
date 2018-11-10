@@ -207,11 +207,6 @@ gulp.task('lint-json', gulp.series(
   },
   gulp.parallel(
     function() {
-      const schema = require('./.jsonschema.json').history;
-      return gulp.src('./data/history.json')
-                 .pipe(jsonSchema({schema}))
-    },
-    function() {
       const schema = require('./.jsonschema.json').metadata;
       return gulp.src('./data/metadata.json')
                  .pipe(jsonSchema({schema}))
@@ -229,6 +224,11 @@ gulp.task('lint-json', gulp.series(
     function() {
       const schema = require('./.jsonschema.json').social;
       return gulp.src('./data/social.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').timeline;
+      return gulp.src('./data/timeline.json')
                  .pipe(jsonSchema({schema}))
     }
   )
