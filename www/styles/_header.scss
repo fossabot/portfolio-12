@@ -113,12 +113,14 @@
   @extend %h6;
 
   margin: var(--margin-header-message);
+  padding: var(--padding-header-message);
   text-align: center;
 }
 
 .header__title {
   display: block;
   margin: var(--margin-header-title);
+  word-break: break-all;
 }
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
