@@ -15,10 +15,6 @@
 }
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
-  #history {
-    margin: 4em 0;
-  }
-
   .timeline {
     box-sizing: border-box;
     display: flex;
@@ -92,7 +88,7 @@
     flex-grow: 1;
     flex-shrink: 0;
     margin: var(--margin-timeline-event);
-    margin: var(--padding-timeline-event);
+    padding: var(--padding-timeline-event);
     text-decoration: none;
     transition: opacity .2s ease;
 
@@ -112,7 +108,7 @@
     &:nth-last-child(3) {
       .top-part {
         &::before {
-          @include first-divider;
+          @include first-divider();
         }
       }
     }
@@ -132,6 +128,7 @@
         }
       }
     }
+
     &--education {
       & .top-part {
         &::after {
@@ -139,6 +136,7 @@
         }
       }
     }
+
     &--internship {
       & .top-part {
         &::after {
@@ -146,6 +144,7 @@
         }
       }
     }
+
     &--volunteer {
       & .top-part {
         &::after {
@@ -153,6 +152,7 @@
         }
       }
     }
+
     &--work {
       & .top-part {
         &::after {
@@ -181,18 +181,17 @@
       background-color: var(--clr-primary-white);
       border-radius: var(--diameter-timeline-event-ball);
       bottom: calc(-1 * (#{var(--diameter-timeline-event-ball) / 2}));
+      box-sizing: border-box;
       content: '';
       height: var(--diameter-timeline-event-ball);
       left: calc(50% - (#{var(--diameter-timeline-event-ball) / 2}));
+      padding: 4px;
       position: absolute;
       width: var(--diameter-timeline-event-ball);
-
-      box-sizing: border-box;
-      padding: 4px;
     }
 
     &::before {
-      @include normal-divider;
+      @include normal-divider();
 
       background-color: var(--clr-primary-white);
       bottom: 0;
@@ -231,7 +230,7 @@
 
       .top-part {
         &::before {
-          @include first-divider;
+          @include first-divider();
         }
       }
     }
@@ -239,7 +238,7 @@
     &:nth-last-child(3) {
       .top-part {
         &::before {
-          @include normal-divider;
+          @include normal-divider();
         }
       }
     }
@@ -253,7 +252,7 @@
 
       .top-part {
         &::before {
-          @include first-divider;
+          @include first-divider();
         }
       }
     }
@@ -261,7 +260,7 @@
     &:nth-last-child(2) {
       .top-part {
         &::before {
-          @include normal-divider;
+          @include normal-divider();
         }
       }
     }
