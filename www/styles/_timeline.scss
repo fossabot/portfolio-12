@@ -145,6 +145,14 @@
       }
     }
 
+    &--more {
+      & .top-part {
+        &::after {
+          content: url('/assets/icons/arrow-left.svg');
+        }
+      }
+    }
+
     &--volunteer {
       & .top-part {
         &::after {
