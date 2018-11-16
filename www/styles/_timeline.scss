@@ -15,6 +15,10 @@
 }
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
+  #history {
+    margin: 4em 0;
+  }
+
   .timeline {
     box-sizing: border-box;
     display: flex;
