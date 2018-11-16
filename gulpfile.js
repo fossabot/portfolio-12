@@ -171,7 +171,7 @@ gulp.task('server', gulp.series(
       server: {
         baseDir: OUTPUT_SITE,
         serveStaticOptions: {
-          extensions: ["html"]
+          extensions: ['html']
         }
       }
     }, done);
@@ -224,6 +224,11 @@ gulp.task('lint-json', gulp.series(
     function() {
       const schema = require('./.jsonschema.json').social;
       return gulp.src('./data/social.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').timeline;
+      return gulp.src('./data/timeline.json')
                  .pipe(jsonSchema({schema}))
     }
   )

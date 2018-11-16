@@ -1,0 +1,123 @@
+[
+  {
+    "type": "education",
+    "title": "Started MSc Security & Cloud Computing",
+    "institute": "Aalto University",
+    "location": {
+      "city": "Espoo",
+      "country": "Finland"
+    },
+    "when": 2018,
+    "link": "http://secclo.aalto.fi/en/"
+  },
+  {
+    "type": "internship",
+    "title": "Data Analytics Internship",
+    "institute": "Optiver Amsterdam",
+    "location": {
+      "city": "Amsterdam",
+      "country": "Netherlands"
+    },
+    "when": 2018,
+    "link": "https://www.optiver.com/na/en/our-locations/amsterdam"
+  },
+  {
+    "type": "education",
+    "title": "Graduated BSc Computer Science",
+    "institute": "TU Delft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2018,
+    "link": "/downloads/bsc-computer-scienc_tu-delft-2018.pdf"
+  },
+  {
+    "type": "achievement",
+    "title": "Hackathon Case Winner Aegon",
+    "institute": "HackDelft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2017,
+    "link": "https://hackdelft.nl/"
+  },
+  {
+    "type": "education",
+    "title": "Minor Computer Science",
+    "institute": "KTH Royal Institute of Technology",
+    "location": {
+      "city": "Stockholm",
+      "country": "Sweden"
+    },
+    "when": 2017,
+    "link": "https://www.kth.se/"
+  },
+  {
+    "type": "achievement",
+    "title": "Honourable mention",
+    "institute": "Benelux Algorithm Programming Contest",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2016,
+    "link": "/downloads/honourable-mention_bapc-2016.pdf"
+  },
+  {
+    "type": "work",
+    "title": "Junior developer",
+    "institute": "TicketMatic NL",
+    "location": {
+      "city": "Rotterdam",
+      "country": "Netherlands"
+    },
+    "when": 2016,
+    "link": "https://www.ticketmatic.com/en/"
+  },
+  {
+    "type": "education",
+    "title": "Started BSc Computer Science",
+    "institute": "TU Delft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2015,
+    "link": "https://www.tudelft.nl/en/"
+  },
+  {
+    "type": "education",
+    "title": "Graduated VWO Science Profile",
+    "institute": "De Nieuwste School",
+    "location": {
+      "city": "Tilburg",
+      "country": "Netherlands"
+    },
+    "when": 2015,
+    "link": "https://www.denieuwsteschool.nl/"
+  },
+  {
+    "type": "volunteer",
+    "title": "Voluntary Security",
+    "institute": "Fédération Internationale de Gymnastique",
+    "location": {
+      "city": "Antwerp",
+      "country": "Belgium"
+    },
+    "when": 2013,
+    "link": "http://www.fig-gymnastics.com/site/"
+  },
+  {
+    "type": "education",
+    "title": "Started higher education",
+    "institute": "De Nieuwste School",
+    "location": {
+      "city": "Tilburg",
+      "country": "Netherlands"
+    },
+    "when": 2009,
+    "link": "https://www.denieuwsteschool.nl/"
+  }
+]
