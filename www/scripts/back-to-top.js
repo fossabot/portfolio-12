@@ -1,4 +1,6 @@
-let f = t => t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+/* jshint browser: true */
+
+let f = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
 // Elements
 let backToTop = document.querySelector('.back-to-top');
@@ -17,7 +19,7 @@ backToTop.addEventListener('click', e => {
 });
 
 // Observe the footer to determine if .back-to-top should be shown
-let observer = new IntersectionObserver((entries, observer) => {
+let observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting && document.body.scrollTop > 50) {
       backToTop.classList.remove('back-to-top--hidden');
