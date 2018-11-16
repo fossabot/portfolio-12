@@ -1,0 +1,46 @@
+{{page "title" "Snippets"}}
+{{page "description" "An overview of coding snippets by Eric Cornelissen"}}
+{{page "keywords" "portfolio,snippets"}}
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+  <head>
+    {{> includes/metadata}}
+  </head>
+  <body>
+    {{> includes/navigation}}
+
+    <header class="header">
+      <h1 class="header__title short-underline short-underline--dark">{{page 'title'}}</h1>
+      <ul class="header__message header__links">
+        <li class="header__links__item">
+          <a href="/" rel="noopener" target="_self">home</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/archive" rel="noopener" target="_self">archive</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <section id="snippets" class="section">
+        <h2 class="short-underline">Snippets</h2>
+        <ul class="list">
+          {{#each portfolio.snippets}}
+          <li class="list__item">
+            <a class="list__item__link" href="{{link}}" rel="noopener">
+              {{#new_category year}}
+              <p class="list__item__category">{{year}}</p>
+              {{/new_category}}
+              <p class="list__item__title">{{name}}</p>
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </section>
+      {{> includes/back-to-top}}
+    </main>
+
+    {{> includes/footer}}
+  </body>
+</html>

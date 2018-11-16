@@ -1,5 +1,5 @@
 {{page "title" "Archive"}}
-{{page "description" "An overview of the projects and snippets I've worked on, and projects I've contributed to"}}
+{{page "description" "An overview of the projects I've worked on, and projects I've contributed to"}}
 {{page "keywords" "portfolio,archive,contributions"}}
 
 <!DOCTYPE html>
@@ -32,22 +32,6 @@
             <a class="list__item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
               {{#new_category end_year}}
               <p class="list__item__category">{{end_year}}</p>
-              {{/new_category}}
-              <p class="list__item__title">{{name}}</p>
-            </a>
-          </li>
-          {{/each}}
-        </ul>
-      </section>
-
-      <section id="snippets" class="section">
-        <h2 class="short-underline">Snippets</h2>
-        <ul class="list">
-          {{#each portfolio.snippets}}
-          <li class="list__item">
-            <a class="list__item__link" href="{{link}}" rel="noopener">
-              {{#new_category year}}
-              <p class="list__item__category">{{year}}</p>
               {{/new_category}}
               <p class="list__item__title">{{name}}</p>
             </a>
