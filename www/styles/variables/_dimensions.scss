@@ -1,5 +1,6 @@
 :root {
   --clippath-slope: 3vw;
+  --clippath-slope-deg: rotateZ(1.8deg);
   --shadow-size: 1.5vw;
   --shadow-offset: 1.5vw;
 
@@ -97,7 +98,7 @@
     --margin-footer-message:  -22px 0 .5em 0;
     --padding-footer: 6.5em 4em 2.5em 4em;
 
-    --margin-header: 0 0 12px 0;
+    --margin-header: 0;
     --margin-header-link-item: 0 .4em;
     --margin-header-message-home: auto 0 2em 0;
     --maxwidth-header-message: 450px;
@@ -117,5 +118,14 @@
     --margin-section: 2em auto;
     --maxwidth-section: 800px;
     --padding-section: 0 124px;
+
+    --diameter-timeline-event-ball: 32px;
+    --height-timeline: 460px;
+    --margin-timeline: 0;
+    --margin-timeline-event: 0;
+    --margin-timeline-event-divider: 12px;
+    --padding-timeline: 0 10% 0 15%;
+    --padding-timeline-event: 0;
+    --padding-timeline-event-content: 0 16px;
   }
 }

@@ -1,5 +1,3 @@
-@import 'variables/layers';
-
 // Class base for elements that change the background of a container
 .background-hover {
   &::before {
@@ -37,6 +35,11 @@
       color: var(--clr-secondary-accent);
     }
   }
+}
+
+// Inherit all styles from the parent
+.mimic-parent {
+  all: inherit;
 }
 
 // Adds decoration to a title
