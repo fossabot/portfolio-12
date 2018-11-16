@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 let $currentValue = null;
 
 module.exports = function(value, options) {
@@ -9,4 +11,4 @@ module.exports = function(value, options) {
 
   if (options.data.last) $currentValue = null;
   return returnValue;
-}
+};

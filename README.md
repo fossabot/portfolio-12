@@ -10,10 +10,11 @@ Repository for the personal portfolio of Eric Cornelissen.
 | CSS preprocessor | [Sass](http://sass-lang.com/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
 | Iconography | [Fontello](http://fontello.com/) |
+| JavaScript linter | [JSHint](https://jshint.com/) |
 | JSON linter | [jsonlint](https://github.com/zaach/jsonlint) |
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |
 | Site generator | [Handlebars.js](https://handlebarsjs.com/builtin_helpers.html) |
-| Style linter | [sass-lint](https://github.com/sasstools/sass-lint) |
+| Stylesheet linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
 ###### How to use the build tools:
 - `$ gulp analyze:a11y`: Test the website for accessibility issues.

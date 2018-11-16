@@ -25,6 +25,7 @@
     "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^4.1.0",
     "gulp-js-wrapper": "0.0.3",
+    "gulp-jshint": "^2.1.0",
     "gulp-json-schema": "^1.0.0",
     "gulp-jsonlint": "^1.2.2",
     "gulp-plumber": "^1.2.0",
@@ -36,6 +37,7 @@
     "handlebars-helpers": "^0.10.0",
     "handlebars-utils": "^1.0.6",
     "husky": "^1.0.1",
+    "jshint": "^2.9.6",
     "lighthouse": "^2.9.4"
   }
 }
