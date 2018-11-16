@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 const utils = require('handlebars-utils');
 
 module.exports = function(name, options) {
@@ -6,4 +8,4 @@ module.exports = function(name, options) {
   }
 
   this[name] = options.fn(this).trim();
-}
+};
