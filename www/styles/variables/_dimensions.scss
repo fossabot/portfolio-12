@@ -14,6 +14,7 @@
   --margin-cardboard-item: .4em 0;
   --margin-cardboard-item-more: .7em 1em;
   --margin-cardboard-item-title: .4em 0;
+  --margin-cardboard-title-category: .3em 0;
   --padding-cardboard: 0;
   --padding-cardboard-item: .7em 1em;
   --padding-cardboard-item-description: 0 3em 0 0;
@@ -84,10 +85,12 @@
     --bottom-backtotop_hidden: -164px;
     --right-backtotop: 64px;
 
-    --margin-cardboard: 0 0 0 -.4em;
+    --margin-cardboard: 0 0 1.4em -.4em;
     --margin-cardboard-item: .4em;
-    --margin-cardboard-item-more: .8em 1.2em;
+    --margin-cardboard-item-description: 0;
+    --margin-cardboard-item-more: 0;
     --margin-cardboard-item-title: .3em 0;
+    --margin-cardboard-title-category: .8em 0 0 -4em;
     --padding-cardboard-item: .8em 1.2em 1em;
     --padding-cardboard-item-description: 0;
     --padding-cardboard-item-links: 0 0 0 .3em;

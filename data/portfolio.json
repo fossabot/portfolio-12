@@ -176,88 +176,98 @@
   ],
   "snippets": [
     {
-      "name": "Unhovered active button",
-      "tldr": "Change style of an active but unhovered button using only CSS",
       "year": 2018,
-      "languages": ["Pug", "CSS3"],
-      "link": "https://codepen.io/ericornelissen/pen/LgoZmj"
+      "items": [
+        {
+          "name": "Unhovered active button",
+          "tldr": "Change style of an active but unhovered button using only CSS",
+          "year": 2018,
+          "languages": ["Pug", "CSS3"],
+          "link": "https://codepen.io/ericornelissen/pen/LgoZmj"
+        },
+        {
+          "name": "partial.js",
+          "tldr": "Simple and small wrapper to allow for partial function invocation.",
+          "year": 2018,
+          "languages": ["JavaScript"],
+          "link": "https://gist.github.com/ericcornelissen/2e79034936fa6517712baa0773ecbdba"
+        },
+        {
+          "name": "Automatic text alignment",
+          "tldr": "Automatic text alignment with CSS Letter spacing using JavaScript.",
+          "year": 2018,
+          "languages": ["CSS3", "JavaScript"],
+          "link": "https://gist.github.com/ericcornelissen/e0272b60fba665a9db67065c5c7c3d4d"
+        },
+        {
+          "name": "Context switching animation",
+          "tldr": "Animation inspired by the Windows 10 Settings interface implemented in HTML &amp; CSS.",
+          "year": 2018,
+          "languages": ["CSS3", "HTML5", "JavaScript"],
+          "link": "https://codepen.io/ericornelissen/pen/zWbrry"
+        },
+        {
+          "name": "curry.js",
+          "tldr": "Simple and small wrapper to curry functions of any arity.",
+          "year": 2018,
+          "languages": ["JavaScript"],
+          "link": "https://gist.github.com/ericcornelissen/09e11b331a901c340a05664e85a02b69"
+        },
+        {
+          "name": "Mobile notifications demo",
+          "tldr": "Web based demo of notification as seen on smartphones using vanilla HTML, CSS and JavaScript.",
+          "year": 2018,
+          "languages": ["CSS3", "HTML5", "JavaScript"],
+          "link": "https://codepen.io/ericornelissen/full/bLaxdE"
+        },
+        {
+          "name": "Invalid form button animation",
+          "tldr": "CSS only animation for form buttons that indicating an unsuccessful action.",
+          "year": 2018,
+          "languages": ["CSS3", "HTML5"],
+          "link": "https://codepen.io/ericornelissen/full/Ozovxq"
+        },
+        {
+          "name": "Progress buttons",
+          "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS psuedo elements and FontAwesome spinners.",
+          "year": 2018,
+          "languages": ["CSS3", "HTML5", "JavaScript"],
+          "link": "https://codepen.io/ericornelissen/full/qpXjdm"
+        }
+      ]
     },
     {
-      "name": "partial.js",
-      "tldr": "Simple and small wrapper to allow for partial function invocation.",
-      "year": 2018,
-      "languages": ["JavaScript"],
-      "link": "https://gist.github.com/ericcornelissen/2e79034936fa6517712baa0773ecbdba"
-    },
-    {
-      "name": "Automatic text alignment",
-      "tldr": "Automatic text alignment with CSS Letter spacing using JavaScript.",
-      "year": 2018,
-      "languages": ["CSS3", "JavaScript"],
-      "link": "https://gist.github.com/ericcornelissen/e0272b60fba665a9db67065c5c7c3d4d"
-    },
-    {
-      "name": "Context switching animation",
-      "tldr": "Animation inspired by the Windows 10 Settings interface implemented in HTML & CSS.",
-      "year": 2018,
-      "languages": ["CSS3", "HTML5", "JavaScript"],
-      "link": "https://codepen.io/ericornelissen/pen/zWbrry"
-    },
-    {
-      "name": "curry.js",
-      "tldr": "Simple and small wrapper to curry functions of any arity.",
-      "year": 2018,
-      "languages": ["JavaScript"],
-      "link": "https://gist.github.com/ericcornelissen/09e11b331a901c340a05664e85a02b69"
-    },
-    {
-      "name": "Mobile notifications demo",
-      "tldr": "Web based demo of notification as seen on smartphones using vanilla HTML, CSS and JavaScript.",
-      "year": 2018,
-      "languages": ["CSS3", "HTML5", "JavaScript"],
-      "link": "https://codepen.io/ericornelissen/full/bLaxdE"
-    },
-    {
-      "name": "Invalid form button animation",
-      "tldr": "CSS only animation for form buttons that indicating an unsuccessful action.",
-      "year": 2018,
-      "languages": ["CSS3", "HTML5"],
-      "link": "https://codepen.io/ericornelissen/full/Ozovxq"
-    },
-    {
-      "name": "Progress buttons",
-      "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS psuedo elements and FontAwesome spinners.",
-      "year": 2018,
-      "languages": ["CSS3", "HTML5", "JavaScript"],
-      "link": "https://codepen.io/ericornelissen/full/qpXjdm"
-    },
-    {
-      "name": "Overflowing Social Buttons",
-      "tldr": "Circular share buttons that have an overflowing animation when hovered.",
       "year": 2017,
-      "languages": ["CSS3", "HTML5"],
-      "link": "https://codepen.io/ericornelissen/full/gxKWmv"
-    },
-    {
-      "name": "Horror text animation",
-      "tldr": "Inspired by some of the titles in the promotional webpage for the <a class=\"text-link\" href=\"http://pentakill.leagueoflegends.com/en_US/\" rel=\"noopener\">Grasp of the Undying album</a> by Pentakill.",
-      "year": 2017,
-      "languages": ["CSS3", "HTML5"],
-      "link": "https://codepen.io/ericornelissen/full/zdRKZG"
-    },
-    {
-      "name": "Array string sort",
-      "tldr": "String sort for JavaScript that sorts correctly when the string starts with a number.",
-      "year": 2017,
-      "languages": ["JavaScript"],
-      "link": "https://gist.github.com/ericcornelissen/407f7d7f518feacbea7ff0348caeae76"
-    },
-    {
-      "name": "Function pipeline generator",
-      "tldr": "Ramda inspired function pipeline generators for JavaScript.",
-      "year": 2017,
-      "languages": ["JavaScript"],
-      "link": "https://gist.github.com/ericcornelissen/157f59a97f48c5b09a6783d422e88a9d"
+      "items": [
+        {
+          "name": "Overflowing Social Buttons",
+          "tldr": "Circular share buttons that have an overflowing animation when hovered.",
+          "year": 2017,
+          "languages": ["CSS3", "HTML5"],
+          "link": "https://codepen.io/ericornelissen/full/gxKWmv"
+        },
+        {
+          "name": "Horror text animation",
+          "tldr": "Inspired by some of the titles in the promotional webpage for the <a class=\"text-link\" href=\"http://pentakill.leagueoflegends.com/en_US/\" rel=\"noopener\">Grasp of the Undying album</a> by Pentakill.",
+          "year": 2017,
+          "languages": ["CSS3", "HTML5"],
+          "link": "https://codepen.io/ericornelissen/full/zdRKZG"
+        },
+        {
+          "name": "Array string sort",
+          "tldr": "String sort for JavaScript that sorts correctly when the string starts with a number.",
+          "year": 2017,
+          "languages": ["JavaScript"],
+          "link": "https://gist.github.com/ericcornelissen/407f7d7f518feacbea7ff0348caeae76"
+        },
+        {
+          "name": "Function pipeline generator",
+          "tldr": "Ramda inspired function pipeline generators for JavaScript.",
+          "year": 2017,
+          "languages": ["JavaScript"],
+          "link": "https://gist.github.com/ericcornelissen/157f59a97f48c5b09a6783d422e88a9d"
+        }
+      ]
     }
   ],
   "contributions": [
