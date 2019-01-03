@@ -39,8 +39,10 @@ const INPUT_HANDLEBARS = {
   data: './data/*.json'
 };
 const INPUT_ROOT_FILES = [
+  `${INPUT_DIR}/.htaccess`,
   `${INPUT_DIR}/CNAME`,
-  `${INPUT_DIR}/*.{htaccess,ico,txt}`
+  `${INPUT_DIR}/favicon.ico`,
+  `${INPUT_DIR}/robots.txt`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
 const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
