@@ -31,12 +31,12 @@
         <h2 class="short-underline">Programming &amp; Web development</h2>
         <ul class="list">
           {{#each portfolio.programming}}
-          <li class="list__item">
-            <a class="list__item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
+          <li class="list-item">
+            <a class="list-item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
               {{#new_category end_year}}
-              <p class="list__item__category">{{end_year}}</p>
+              <p class="list-item__category">{{end_year}}</p>
               {{/new_category}}
-              <p class="list__item__title">{{name}}</p>
+              <p class="list-item__title">{{name}}</p>
             </a>
           </li>
           {{/each}}
@@ -47,12 +47,12 @@
         <h2 class="short-underline">Contributions</h2>
         <ul class="list">
           {{#each portfolio.contributions}}
-          <li class="list__item">
-            <a class="list__item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
+          <li class="list-item">
+            <a class="list-item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
               {{#new_category end_year}}
-              <p class="list__item__category">{{end_year}}</p>
+              <p class="list-item__category">{{end_year}}</p>
               {{/new_category}}
-              <p class="list__item__title">{{name}}</p>
+              <p class="list-item__title">{{name}}</p>
             </a>
           </li>
           {{/each}}
