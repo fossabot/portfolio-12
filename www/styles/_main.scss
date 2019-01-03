@@ -59,6 +59,10 @@ ul {
   }
 }
 
+li {
+  margin: var(--margin-listitem);
+}
+
 h1,
 %h1 {
   font-family: var(--fontstack-header);
