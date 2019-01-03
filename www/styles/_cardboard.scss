@@ -32,6 +32,13 @@
   padding: var(--padding-cardboard-item-description);
 }
 
+.cardboard__item__header {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+
 .cardboard__item__link {
   display: inline-block;
   font-size: var(--fontsize-cardboard-glyph);
@@ -40,7 +47,7 @@
 }
 
 .cardboard__item__links {
-  float: right;
+  align-self: flex-begin;
   font-size: 0;
   list-style: none;
   padding: var(--padding-cardboard-item-links);
@@ -50,7 +57,7 @@
   @extend %text-bold;
 
   align-self: flex-end;
-  flex-grow: 1;
+  flex-grow: 0;
   margin: var(--margin-cardboard-item-more);
   position: relative;
   text-decoration: none;

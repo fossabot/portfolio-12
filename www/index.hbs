@@ -46,7 +46,9 @@
           {{#each portfolio.programming}}
             {{#if spotlight}}
               <li class="cardboard__item">
-                <div class="cardboard__item__content">
+                <div class="cardboard__item__header">
+                  <h3 class="cardboard__item__title">{{name}}</h3>
+
                   <ul class="cardboard__item__links">
                     {{#each links as |url key|}}
                       <li class="cardboard__item__link">
@@ -54,11 +56,10 @@
                       </li>
                     {{/each}}
                   </ul>
-
-                  <h3 class="cardboard__item__title">{{name}}</h3>
-                  <p class="cardboard__item__description">{{{truncate (sanitize tldr) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
                 </div>
+
+                <p class="cardboard__item__description">{{{truncate (sanitize tldr) 80}}}</p>
+                <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
               </li>
             {{/if}}
           {{/each}}
@@ -73,7 +74,9 @@
           {{#each portfolio.contributions}}
             {{#if spotlight}}
               <li class="cardboard__item">
-                <div class="cardboard__item__content">
+                <div class="cardboard__item__header">
+                  <h3 class="cardboard__item__title">{{name}}</h3>
+
                   <ul class="cardboard__item__links">
                     {{#each links as |url key|}}
                       <li class="cardboard__item__link">
@@ -81,11 +84,10 @@
                       </li>
                     {{/each}}
                   </ul>
-
-                  <h3 class="cardboard__item__title">{{name}}</h3>
-                  <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
-                  <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
                 </div>
+
+                <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
+                <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
               </li>
             {{/if}}
           {{/each}}
