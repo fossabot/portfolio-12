@@ -12,6 +12,7 @@ const handlebars = require('gulp-hb');
 const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
+const jshint = require('gulp-jshint');
 const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
 const jswrap = require('gulp-js-wrapper');
@@ -233,13 +234,19 @@ gulp.task('lint-json', gulp.series(
     }
   )
 ));
+gulp.task('lint-scripts', function() {
+  return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS])
+             .pipe(jshint())
+             .pipe(jshint.reporter('default'))
+             .pipe(jshint.reporter('fail'));
+});
 gulp.task('lint-styles', function() {
   return gulp.src([`${INPUT_DIR}/styles/*.scss`, `${INPUT_DIR}/styles/mixins/*.scss`])
              .pipe(sassLint({options: './.sass-lint.yml'}))
              .pipe(sassLint.format())
              .pipe(sassLint.failOnError());
 });
-gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-styles'));
+gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
 
 /* Default */
 gulp.task('default', gulp.series('clean:site', 'serve'));

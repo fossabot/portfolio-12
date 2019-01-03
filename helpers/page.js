@@ -1,4 +1,5 @@
-const path = require('path');
+/* jshint node: true */
+
 const utils = require('handlebars-utils');
 
 function get(key, options, self) {
@@ -21,7 +22,7 @@ function get(key, options, self) {
 
 function set(key, value, self) {
   self.$page = self.$page || { };
-  self.$page[key] = value
+  self.$page[key] = value;
 }
 
 module.exports = function(key, value) {
@@ -31,4 +32,4 @@ module.exports = function(key, value) {
   } else {
     set(key, value, this);
   }
-}
+};
