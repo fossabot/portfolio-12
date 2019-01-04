@@ -183,7 +183,7 @@
           "tldr": "Change style of an active but unhovered button using only CSS",
           "year": 2018,
           "languages": ["Pug", "CSS3"],
-          "link": "https://codepen.io/ericornelissen/pen/LgoZmj"
+          "link": "https://codepen.io/ericornelissen/full/LgoZmj"
         },
         {
           "name": "partial.js",
@@ -204,7 +204,7 @@
           "tldr": "Animation inspired by the Windows 10 Settings interface implemented in HTML &amp; CSS.",
           "year": 2018,
           "languages": ["CSS3", "HTML5", "JavaScript"],
-          "link": "https://codepen.io/ericornelissen/pen/zWbrry"
+          "link": "https://codepen.io/ericornelissen/full/zWbrry"
         },
         {
           "name": "curry.js",
