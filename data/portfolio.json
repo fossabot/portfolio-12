@@ -194,7 +194,7 @@
         },
         {
           "name": "Automatic text alignment",
-          "tldr": "Automatic text alignment with CSS Letter spacing using JavaScript.",
+          "tldr": "Automatic text alignment with CSS letter spacing using JavaScript.",
           "year": 2018,
           "languages": ["CSS3", "JavaScript"],
           "link": "https://gist.github.com/ericcornelissen/e0272b60fba665a9db67065c5c7c3d4d"
@@ -241,14 +241,14 @@
       "items": [
         {
           "name": "Overflowing Social Buttons",
-          "tldr": "Circular share buttons that have an overflowing animation when hovered.",
+          "tldr": "Circular share buttons that have an overflowing animation on hover.",
           "year": 2017,
           "languages": ["CSS3", "HTML5"],
           "link": "https://codepen.io/ericornelissen/full/gxKWmv"
         },
         {
           "name": "Horror text animation",
-          "tldr": "Inspired by some of the titles in the promotional webpage for the <a class=\"text-link\" href=\"http://pentakill.leagueoflegends.com/en_US/\" rel=\"noopener\">Grasp of the Undying album</a> by Pentakill.",
+          "tldr": "Inspired by the titles on the promotional webpage for the Grasp of the Undying album by Pentakill.",
           "year": 2017,
           "languages": ["CSS3", "HTML5"],
           "link": "https://codepen.io/ericornelissen/full/zdRKZG"
@@ -261,8 +261,8 @@
           "link": "https://gist.github.com/ericcornelissen/407f7d7f518feacbea7ff0348caeae76"
         },
         {
-          "name": "Function pipeline generator",
-          "tldr": "Ramda inspired function pipeline generators for JavaScript.",
+          "name": "Function pipeline creators",
+          "tldr": "Ramda inspired function pipeline creators for JavaScript.",
           "year": 2017,
           "languages": ["JavaScript"],
           "link": "https://gist.github.com/ericcornelissen/157f59a97f48c5b09a6783d422e88a9d"
