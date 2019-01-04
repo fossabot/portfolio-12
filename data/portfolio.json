@@ -176,7 +176,7 @@
   ],
   "snippets": [
     {
-      "year": 2018,
+      "_year": 2018,
       "items": [
         {
           "name": "Unhovered active button",
@@ -237,7 +237,7 @@
       ]
     },
     {
-      "year": 2017,
+      "_year": 2017,
       "items": [
         {
           "name": "Overflowing Social Buttons",

@@ -89,9 +89,9 @@
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["year", "items"],
+          "required": ["_year", "items"],
           "properties": {
-            "year": {
+            "_year": {
               "description": "The year for this colleciton of snippets",
               "type": "number"
             },
