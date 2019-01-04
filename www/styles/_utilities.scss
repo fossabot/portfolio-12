@@ -101,6 +101,7 @@
   font-family: var(--fontstack-text);
   font-size: var(--fontsize-subtext);
   font-style: italic;
+  font-weight: normal;
   line-height: var(--lineheight-subtext);
 }
 
@@ -140,4 +141,16 @@
       top: auto;
     }
   }
+}
+
+// Class to make a text smaller then it otherwise would have been
+.text-small,
+%text-small {
+  font-size: .8em;
+}
+
+// Class to make a text bigger then it otherwise would have been
+.text-big,
+%text-big {
+  font-size: 1.2em;
 }

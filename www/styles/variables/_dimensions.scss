@@ -14,6 +14,7 @@
   --margin-cardboard-item: .4em 0;
   --margin-cardboard-item-more: .7em 1em;
   --margin-cardboard-item-title: .4em 0;
+  --margin-cardboard-title-category: .3em 0;
   --padding-cardboard: 0;
   --padding-cardboard-item: .7em 1em;
   --padding-cardboard-item-description: 0 3em 0 0;
@@ -48,6 +49,7 @@
   --padding-links-item: 0;
 
   --margin-list: 0 0 0 3.2em;
+  --margin-list-horizontal: 0 0 0 .2em;
   --margin-list-item: 0 0 .3em 0;
   --margin-list-item-link: 0;
   --margin-list-item-link-after: 0 .3em;
@@ -65,6 +67,7 @@
   --margin-text-header: 1em 0 .3em 0;
   --margin-text-subheader: 1.2em 0 .3em 0;
   --margin-text-text: 0 0 1em 0;
+  --margin-listitem: 0 0 .1em 0;
 
   --margin-tags-hashtag: 0 6px 0 0;
   --margin-tags-tag: 4px 4px;
@@ -84,10 +87,12 @@
     --bottom-backtotop_hidden: -164px;
     --right-backtotop: 64px;
 
-    --margin-cardboard: 0 0 0 -.4em;
+    --margin-cardboard: 0 0 1.4em -.4em;
     --margin-cardboard-item: .4em;
-    --margin-cardboard-item-more: .8em 1.2em;
+    --margin-cardboard-item-description: 0;
+    --margin-cardboard-item-more: 0;
     --margin-cardboard-item-title: .3em 0;
+    --margin-cardboard-title-category: .8em 0 0 -4em;
     --padding-cardboard-item: .8em 1.2em 1em;
     --padding-cardboard-item-description: 0;
     --padding-cardboard-item-links: 0 0 0 .3em;

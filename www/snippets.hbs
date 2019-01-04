@@ -1,0 +1,50 @@
+{{page "title" "Snippets"}}
+{{page "description" "An overview of coding snippets by Eric Cornelissen"}}
+{{page "keywords" "portfolio,snippets"}}
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+  <head>
+    {{> includes/metadata}}
+  </head>
+  <body>
+    {{> includes/navigation}}
+
+    <header class="header">
+      <h1 class="header__title short-underline short-underline--dark">{{page 'title'}}</h1>
+      <ul class="header__message header__links">
+        <li class="header__links__item">
+          <a href="/" rel="noopener" target="_self">home</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/archive" rel="noopener" target="_self">archive</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/downloads/cv_eric-cornelissen.pdf" rel="noopener" target="_blank">resume</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <section id="snippets" class="section">
+        <h2 class="short-underline">Snippets</h2>
+        {{#each portfolio.snippets}}
+          <h3 class="cardboard__title cardboard__title--category">{{_year}}</h3>
+          <ul class="cardboard">
+            {{#each items}}
+              <li class="cardboard__item">
+                <h3 class="cardboard__item__title">{{name}}</h3>
+                <p class="cardboard__item__description">{{{sanitize tldr}}}</p>
+                <a class="cardboard__item__more" href="{{link}}" rel="noopener">View</a>
+              </li>
+            {{/each}}
+          </ul>
+        {{/each}}
+      </section>
+
+      {{> includes/back-to-top}}
+    </main>
+
+    {{> includes/footer}}
+  </body>
+</html>

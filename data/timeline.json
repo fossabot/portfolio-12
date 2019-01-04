@@ -1,5 +1,16 @@
 [
   {
+    "type": "volunteer",
+    "title": "Slush Volunteer",
+    "institute": "Slush",
+    "location": {
+      "city": "Helsinki",
+      "country": "Finland"
+    },
+    "when": 2018,
+    "link": "https://www.slush.org/"
+  },
+  {
     "type": "education",
     "title": "Started MSc Security & Cloud Computing",
     "institute": "Aalto University",
