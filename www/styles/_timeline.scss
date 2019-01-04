@@ -18,7 +18,7 @@
   .timeline {
     box-sizing: border-box;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: var(--height-timeline);
     justify-content: center;
     list-style-type: none;
