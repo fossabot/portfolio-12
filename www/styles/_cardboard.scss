@@ -4,16 +4,19 @@
   list-style: none;
   margin: var(--margin-cardboard);
   padding: var(--padding-cardboard);
+  position: relative;
   width: var(--width-cardboard);
 }
 
 .cardboard__item {
+  align-items: stretch;
   background-color: var(--clr-secondary-white);
   box-shadow: 0 0 2px 0 var(--clr-shadow);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   margin: var(--margin-cardboard-item);
   padding: var(--padding-cardboard-item);
-  position: relative;
   transition: box-shadow .3s ease;
   width: var(--width-cardboard-item);
 
@@ -24,7 +27,16 @@
 }
 
 .cardboard__item__description {
+  flex-grow: 2;
+  margin: var(--margin-cardboard-item-description);
   padding: var(--padding-cardboard-item-description);
+}
+
+.cardboard__item__header {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
 }
 
 .cardboard__item__link {
@@ -35,7 +47,7 @@
 }
 
 .cardboard__item__links {
-  float: right;
+  align-self: flex-begin;
   font-size: 0;
   list-style: none;
   padding: var(--padding-cardboard-item-links);
@@ -44,12 +56,12 @@
 .cardboard__item__more {
   @extend %text-bold;
 
-  bottom: 0;
+  align-self: flex-end;
+  flex-grow: 0;
   margin: var(--margin-cardboard-item-more);
-  position: absolute;
-  right: 0;
+  position: relative;
   text-decoration: none;
-  transition: color .1s ease, right .15s ease;
+  transition: color .1s ease, margin .15s ease;
 
   &::after {
     color: var(--clr-secondary-black);
@@ -66,7 +78,10 @@
   &:focus,
   &:hover {
     color: var(--clr-primary-accent);
-    right: 1.4em;
+  }
+
+  &:hover {
+    margin-right: 1.4em;
 
     &::after {
       left: 100%;
@@ -79,5 +94,26 @@
 .cardboard__item__title {
   @extend %h5;
 
+  flex-grow: 1;
   margin: var(--margin-cardboard-item-title);
+}
+
+.cardboard__title {
+  display: block;
+
+  &--category {
+    @extend %text-secondary;
+
+    cursor: default;
+    margin: var(--margin-cardboard-title-category);
+    pointer-events: none;
+  }
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .cardboard__title {
+    &--category {
+      position: absolute;
+    }
+  }
 }

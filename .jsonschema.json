@@ -84,35 +84,50 @@
         }
       },
       "snippets": {
-        "description": "A list of programming snippets",
+        "description": "A collection of programming snippets",
         "type": "array",
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["name", "tldr", "year", "languages", "link"],
+          "required": ["_year", "items"],
           "properties": {
-            "name": {
-              "description": "The name of the snippet",
-              "type": "string"
+            "_year": {
+              "description": "The year for this colleciton of snippets",
+              "type": "number"
             },
-            "tldr": {
-              "description": "A short description of the snippet",
-              "type": "string"
-            },
-            "year": {
-              "description": "The year the snippet was created",
-              "type": "integer"
-            },
-            "languages": {
-              "description": "A list of programming languages used in the snippet",
+            "items": {
+              "description": "A list of snippets for the year",
               "type": "array",
               "items": {
-                "type": "string"
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "tldr", "year", "languages", "link"],
+                "properties": {
+                  "name": {
+                    "description": "The name of the snippet",
+                    "type": "string"
+                  },
+                  "tldr": {
+                    "description": "A short description of the snippet",
+                    "type": "string"
+                  },
+                  "year": {
+                    "description": "The year the snippet was created",
+                    "type": "integer"
+                  },
+                  "languages": {
+                    "description": "A list of programming languages used in the snippet",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "link": {
+                    "description": "The link to the snippet",
+                    "type": "string"
+                  }
+                }
               }
-            },
-            "link": {
-              "description": "The link to the snippet",
-              "type": "string"
             }
           }
         }
