@@ -12,7 +12,7 @@
   },
   {
     "type": "education",
-    "title": "Started MSc Security & Cloud Computing",
+    "title": "Started M.Sc Security & Cloud Computing",
     "institute": "Aalto University",
     "location": {
       "city": "Espoo",
@@ -34,7 +34,7 @@
   },
   {
     "type": "education",
-    "title": "Graduated BSc Computer Science",
+    "title": "Graduated B.Sc Computer Science",
     "institute": "TU Delft",
     "location": {
       "city": "Delft",
@@ -78,7 +78,7 @@
   },
   {
     "type": "work",
-    "title": "Junior developer",
+    "title": "Full Stack developer (Junior)",
     "institute": "TicketMatic NL",
     "location": {
       "city": "Rotterdam",
@@ -89,7 +89,7 @@
   },
   {
     "type": "education",
-    "title": "Started BSc Computer Science",
+    "title": "Started B.Sc Computer Science",
     "institute": "TU Delft",
     "location": {
       "city": "Delft",
@@ -97,17 +97,6 @@
     },
     "when": 2015,
     "link": "https://www.tudelft.nl/en/"
-  },
-  {
-    "type": "education",
-    "title": "Graduated VWO Science Profile",
-    "institute": "De Nieuwste School",
-    "location": {
-      "city": "Tilburg",
-      "country": "Netherlands"
-    },
-    "when": 2015,
-    "link": "https://www.denieuwsteschool.nl/"
   },
   {
     "type": "volunteer",
@@ -119,16 +108,5 @@
     },
     "when": 2013,
     "link": "http://www.fig-gymnastics.com/site/"
-  },
-  {
-    "type": "education",
-    "title": "Started higher education",
-    "institute": "De Nieuwste School",
-    "location": {
-      "city": "Tilburg",
-      "country": "Netherlands"
-    },
-    "when": 2009,
-    "link": "https://www.denieuwsteschool.nl/"
   }
 ]
