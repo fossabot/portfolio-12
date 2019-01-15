@@ -154,3 +154,9 @@
 %text-big {
   font-size: 1.2em;
 }
+
+// Class to make text italic
+.text-italic,
+%text-italic {
+  font-style: italic;
+}

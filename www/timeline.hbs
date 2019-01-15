@@ -19,20 +19,23 @@
         <li class="header__links__item">
           <a href="/archive" rel="noopener" target="_self">archive</a>
         </li>
+        <li class="header__links__item">
+          <a href="/snippets" rel="noopener" target="_self">snippets</a>
+        </li>
       </ul>
     </header>
 
     <main class="main">
-      <ul class="timeline">
+      <ul class="timeline timeline--tmp-page">
         {{#each timeline}}
           <li class="timeline__event timeline__event--{{ type }}">
             <a class="mimic-parent" href="{{ link }}" rel="noopener">
-              <div class="top-part">
-                <span class="timeline__event__title">{{ title }}</span>
+              <div class="timeline__event__title">
+                <span>{{ title }}</span>
               </div>
-              <div class="bottom-part">
-                <span class="timeline__event__institute">{{ institute }}</span>
-                <span class="timeline__event__time">{{ when }}</span>
+              <div class="timeline__event__details">
+                <span>{{ institute }}</span>
+                <span class="text-italic">{{ when }}</span>
               </div>
             </a>
           </li>
