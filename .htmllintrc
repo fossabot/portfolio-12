@@ -20,7 +20,7 @@
     "href-style": false,
     "html-req-lang": true,
     "html-valid-content-model": true,
-    "id-class-no-ad": true,
+    "id-class-no-ad": false,
     "id-class-style": "dash",
     "id-no-dup": true,
     "img-req-alt": true,
