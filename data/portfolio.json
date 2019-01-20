@@ -192,7 +192,7 @@
       "items": [
         {
           "name": "Unhovered active button",
-          "tldr": "Change style of an active but unhovered button using only CSS",
+          "tldr": "Change style of an active but unhovered button using only CSS.",
           "year": 2018,
           "languages": ["Pug", "CSS3"],
           "link": "https://codepen.io/ericornelissen/full/LgoZmj"
