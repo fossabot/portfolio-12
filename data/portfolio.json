@@ -176,6 +176,18 @@
   ],
   "snippets": [
     {
+      "_year": 2019,
+      "items": [
+        {
+          "name": "Multi-input Form Field",
+          "tldr": "Simple multi-input field useful for e.g. entering software licenses, pin code or 2-factor authentication.",
+          "year": 2018,
+          "languages": ["Pug", "CSS3"],
+          "link": "https://codepen.io/ericornelissen/full/vvoQxq"
+        }
+      ]
+    },
+    {
       "_year": 2018,
       "items": [
         {
