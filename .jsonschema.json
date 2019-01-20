@@ -101,7 +101,7 @@
               "items": {
                 "type": "object",
                 "additionalProperties": false,
-                "required": ["name", "tldr", "year", "languages", "link"],
+                "required": ["name", "tldr", "languages", "link"],
                 "properties": {
                   "name": {
                     "description": "The name of the snippet",
@@ -110,10 +110,6 @@
                   "tldr": {
                     "description": "A short description of the snippet",
                     "type": "string"
-                  },
-                  "year": {
-                    "description": "The year the snippet was created",
-                    "type": "integer"
                   },
                   "languages": {
                     "description": "A list of programming languages used in the snippet",
