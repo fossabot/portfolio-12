@@ -274,7 +274,7 @@
       "name": "Fluent Terminal",
       "about": "A Terminal Emulator based on UWP and web technologies.",
       "start_year": 2018,
-      "end_year": 2018,
+      "end_year": 2019,
       "spotlight": true,
       "keywords": ["C#", "c-sharp", "terminal", "cli", "UWP"],
       "links": {
