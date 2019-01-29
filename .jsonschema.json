@@ -34,49 +34,63 @@
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["name", "tldr", "start_year", "spotlight", "tags", "keywords", "links"],
+          "required": ["_year", "items"],
           "properties": {
-            "name": {
-              "description": "The name of the project",
-              "type": "string"
+            "_year": {
+              "description": "The year for this colleciton of projects",
+              "type": "number"
             },
-            "tldr": {
-              "description": "A short description of the project",
-              "type": "string"
-            },
-            "start_year": {
-              "description": "The year the project started",
-              "type": "integer"
-            },
-            "end_year": {
-              "description": "The year the project ended",
-              "type": "integer"
-            },
-            "spotlight": {
-              "description": "Should the project be featured in the sites spotlight",
-              "type": "boolean"
-            },
-            "tags": {
-              "description": "A list of tags for the project",
+            "items": {
+              "description": "A list of projects for the year",
               "type": "array",
               "items": {
-                "type": "string"
-              }
-            },
-            "keywords": {
-              "description": "A list of keywords (on top of 'tags') for the project",
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "links": {
-              "description": "A collection of links for the project (type:url)",
-              "type": "object",
-              "additionalProperties": false,
-              "patternProperties": {
-                "^[a-z]+$": {
-                  "type": "string"
+                "additionalProperties": false,
+                "required": ["name", "tldr", "start_year", "spotlight", "tags", "keywords", "links"],
+                "properties": {
+                  "name": {
+                    "description": "The name of the project",
+                    "type": "string"
+                  },
+                  "tldr": {
+                    "description": "A short description of the project",
+                    "type": "string"
+                  },
+                  "start_year": {
+                    "description": "The year the project started",
+                    "type": "integer"
+                  },
+                  "end_year": {
+                    "description": "The year the project ended",
+                    "type": "integer"
+                  },
+                  "spotlight": {
+                    "description": "Should the project be featured in the sites spotlight",
+                    "type": "boolean"
+                  },
+                  "tags": {
+                    "description": "A list of tags for the project",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "keywords": {
+                    "description": "A list of keywords (on top of 'tags') for the project",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "links": {
+                    "description": "A collection of links for the project (type:url)",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                      "^[a-z]+$": {
+                        "type": "string"
+                      }
+                    }
+                  }
                 }
               }
             }
