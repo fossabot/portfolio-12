@@ -1,0 +1,11 @@
+.badge {
+  @include unselectable();
+  @extend %text-bold;
+
+  background-color: var(--clr-badge);
+  border-radius: 4px;
+  color: var(--clr-primary-white);
+  cursor: default;
+  display: inline-block;
+  padding: 2px 10px;
+}
