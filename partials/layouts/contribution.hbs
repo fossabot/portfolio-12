@@ -32,7 +32,12 @@
           {{/each}}
         </ul>
 
-        <h2 class="short-underline">{{project.name}}</h2>
+        <h2 class="short-underline">
+          {{project.name}}
+          {{#if project.maintainer}}
+            <span class="badge">Maintainer</span>
+          {{/if}}
+        </h2>
 
         {{#if project.about}}
           <p class="article__about" data-name="about">{{{project.about}}}</p>

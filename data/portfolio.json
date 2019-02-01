@@ -280,6 +280,19 @@
       }
     },
     {
+      "name": "Simple Icons",
+      "about": "SVG icons for popular brands.",
+      "start_year": 2017,
+      "end_year": 2019,
+      "spotlight": true,
+      "maintainer": true,
+      "keywords": ["website", "svg", "icon", "icons", "html", "liquid", "css", "javascript"],
+      "links": {
+        "github": "https://github.com/simple-icons/simple-icons",
+        "website": "https://simpleicons.org/"
+      }
+    },
+    {
       "name": "commitlint",
       "about": "📓 Lint commit messages",
       "start_year": 2018,
@@ -350,18 +363,6 @@
       "links": {
         "github": "https://github.com/olivierlacan/keep-a-changelog",
         "website": "http://keepachangelog.com"
-      }
-    },
-    {
-      "name": "Simple Icons",
-      "about": "SVG icons for popular brands.",
-      "start_year": 2017,
-      "end_year": 2018,
-      "spotlight": true,
-      "keywords": ["website", "svg", "icon", "icons", "html", "liquid", "css", "javascript"],
-      "links": {
-        "github": "https://github.com/simple-icons/simple-icons",
-        "website": "https://simpleicons.org/"
       }
     },
     {
