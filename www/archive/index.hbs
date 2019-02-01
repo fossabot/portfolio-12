@@ -29,32 +29,48 @@
     <main class="main">
       <section id="programming" class="section">
         <h2 class="short-underline">Programming &amp; Web development</h2>
-        <ul class="list">
+        <ul class="list list--cards">
           {{#each portfolio.programming}}
-          <li class="list-item">
-            <a class="list-item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
-              {{#new_category end_year}}
-              <p class="list-item__category">{{end_year}}</p>
-              {{/new_category}}
-              <p class="list-item__title">{{name}}</p>
-            </a>
-          </li>
+            <li class="list-item">
+              <div class="list-item__header">
+                <h3 class="list-item__title">{{name}}</h3>
+
+                <ul class="list-item__links">
+                  {{#each links as |url key|}}
+                    <li class="list-item__link">
+                      <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+
+              <p class="list-item__description">{{{truncate (sanitize tldr) 80}}}</p>
+              <a class="list-item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
+            </li>
           {{/each}}
         </ul>
       </section>
 
       <section id="contributions" class="section">
         <h2 class="short-underline">Contributions</h2>
-        <ul class="list">
+        <ul class="list list--cards">
           {{#each portfolio.contributions}}
-          <li class="list-item">
-            <a class="list-item__link" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">
-              {{#new_category end_year}}
-              <p class="list-item__category">{{end_year}}</p>
-              {{/new_category}}
-              <p class="list-item__title">{{name}}</p>
-            </a>
-          </li>
+            <li class="list-item">
+              <div class="list-item__header">
+                <h3 class="list-item__title">{{name}}</h3>
+
+                <ul class="list-item__links">
+                  {{#each links as |url key|}}
+                    <li class="list-item__link">
+                      <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+
+              <p class="list-item__description">{{{ellipsis (sanitize about) 80}}}</p>
+              <a class="list-item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
+            </li>
           {{/each}}
         </ul>
       </section>
