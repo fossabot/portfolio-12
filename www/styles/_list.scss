@@ -107,6 +107,7 @@
   }
 }
 
+
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .list__title {
     &--category {
@@ -141,6 +142,16 @@
     &:focus-within,
     &:hover {
       box-shadow: 0 0 8px 0 var(--clr-shadow);
+    }
+
+    &--newline {
+      margin-left: calc(var(--margin-cardboard-item) + 1px);
+
+      & + .list-item {
+        &:not(.list-item--newline) {
+          margin-left: calc(var(--margin-cardboard-item) - 1px);
+        }
+      }
     }
   }
 

@@ -6,7 +6,11 @@ module.exports = function(value, options) {
   let returnValue;
   if ($currentValue !== value) {
     $currentValue = value;
-    returnValue = options.fn(this);
+    if (options.fn) {
+      returnValue = options.fn(this);
+    } else {
+      return true;
+    }
   }
 
   if (options.data.last) $currentValue = null;
