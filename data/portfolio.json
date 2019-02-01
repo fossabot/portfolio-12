@@ -360,6 +360,7 @@
       "start_year": 2017,
       "end_year": 2019,
       "spotlight": true,
+      "maintainer": true,
       "keywords": ["website", "svg", "icon", "icons", "html", "liquid", "css", "javascript"],
       "links": {
         "github": "https://github.com/simple-icons/simple-icons",

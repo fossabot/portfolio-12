@@ -156,6 +156,10 @@
               "description": "Should the open source project be featured in the sites spotlight",
               "type": "boolean"
             },
+            "maintainer": {
+              "description": "Am I a maintainer of the project",
+              "type": "boolean"
+            },
             "keywords": {
               "description": "A list of keywords for the open source project",
               "type": "array",
