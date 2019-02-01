@@ -1,6 +1,7 @@
 .badge {
-  @include unselectable();
   @extend %text-bold;
+  @extend %text-small;
+  @include unselectable();
 
   background-color: var(--clr-badge);
   border-radius: 4px;
@@ -8,4 +9,5 @@
   cursor: default;
   display: inline-block;
   padding: 2px 10px;
+  vertical-align: middle;
 }
