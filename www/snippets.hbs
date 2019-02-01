@@ -29,13 +29,13 @@
       <section id="snippets" class="section">
         <h2 class="short-underline">Snippets</h2>
         {{#each portfolio.snippets}}
-          <h3 class="cardboard__title cardboard__title--category">{{_year}}</h3>
-          <ul class="cardboard">
+          <h3 class="list__title list__title--category">{{_year}}</h3>
+          <ul class="list list--cards">
             {{#each items}}
-              <li class="cardboard__item">
-                <h3 class="cardboard__item__title">{{name}}</h3>
-                <p class="cardboard__item__description">{{{sanitize tldr}}}</p>
-                <a class="cardboard__item__more" href="{{link}}" rel="noopener">View</a>
+              <li class="list-item">
+                <h3 class="list-item__title">{{name}}</h3>
+                <p class="list-item__description">{{{sanitize tldr}}}</p>
+                <a class="list-item__more" href="{{link}}" rel="noopener">View</a>
               </li>
             {{/each}}
           </ul>
