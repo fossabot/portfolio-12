@@ -310,6 +310,19 @@
       "_year": 2018,
       "items": [
         {
+          "name": "commitlint",
+          "about": "📓 Lint commit messages",
+          "start_year": 2018,
+          "end_year": 2018,
+          "spotlight": false,
+          "keywords": ["javascript", "git", "commit", "commitizen", "lint"],
+          "links": {
+            "github": "https://github.com/marionebl/commitlint",
+            "npm": "https://www.npmjs.com/package/@commitlint/cli",
+            "website": "https://marionebl.github.io/commitlint/"
+          }
+        },
+        {
           "name": "SVGLint",
           "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
           "start_year": 2018,
