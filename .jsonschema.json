@@ -29,7 +29,7 @@
     "additionalProperties": false,
     "properties": {
       "programming": {
-        "description": "A list of programming projects",
+        "description": "A collection of programming projects",
         "type": "array",
         "items": {
           "type": "object",
@@ -143,47 +143,62 @@
         }
       },
       "contributions": {
-        "description": "A list of open source contributions",
+        "description": "A collection of open source contributions",
         "type": "array",
         "items": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["name", "about", "start_year", "spotlight", "keywords", "links"],
+          "required": ["_year", "items"],
           "properties": {
-            "name": {
-              "description": "The name of the open source project",
-              "type": "string"
+            "_year": {
+              "description": "The year for this colleciton of snippets",
+              "type": "number"
             },
-            "about": {
-              "description": "A short description of open source project",
-              "type": "string"
-            },
-            "start_year": {
-              "description": "The year contributions to the project started",
-              "type": "integer"
-            },
-            "end_year": {
-              "description": "The year contributions to the project ended",
-              "type": "integer"
-            },
-            "spotlight": {
-              "description": "Should the open source project be featured in the sites spotlight",
-              "type": "boolean"
-            },
-            "keywords": {
-              "description": "A list of keywords for the open source project",
+            "items": {
+              "description": "A list of contributions for the year",
               "type": "array",
               "items": {
-                "type": "string"
-              }
-            },
-            "links": {
-              "description": "A collection of links for the open source project (type:url)",
-              "type": "object",
-              "additionalProperties": false,
-              "patternProperties": {
-                "^[a-z]+$": {
-                  "type": "string"
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "about", "start_year", "spotlight", "keywords", "links"],
+                "properties": {
+                  "name": {
+                    "description": "The name of the open source project",
+                    "type": "string"
+                  },
+                  "about": {
+                    "description": "A short description of open source project",
+                    "type": "string"
+                  },
+                  "start_year": {
+                    "description": "The year contributions to the project started",
+                    "type": "integer"
+                  },
+                  "end_year": {
+                    "description": "The year contributions to the project ended",
+                    "type": "integer"
+                  },
+                  "spotlight": {
+                    "description": "Should the open source project be featured in the sites spotlight",
+                    "type": "boolean"
+                  },
+                  "keywords": {
+                    "description": "A list of keywords for the open source project",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "links": {
+                    "description": "A collection of links for the open source project (type:url)",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                      "^[a-z]+$": {
+                        "type": "string"
+                      }
+                    }
+                  }
                 }
               }
             }

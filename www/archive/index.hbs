@@ -56,26 +56,29 @@
 
       <section id="contributions" class="section">
         <h2 class="short-underline">Contributions</h2>
-        <ul class="cardboard">
-          {{#each portfolio.contributions}}
-            <li class="cardboard__item">
-              <div class="cardboard__item__header">
-                <h3 class="cardboard__item__title">{{name}}</h3>
+        {{#each portfolio.contributions}}
+          <h3 class="cardboard__title cardboard__title--category">{{_year}}</h3>
+          <ul class="cardboard">
+            {{#each items}}
+              <li class="cardboard__item">
+                <div class="cardboard__item__header">
+                  <h3 class="cardboard__item__title">{{name}}</h3>
 
-                <ul class="cardboard__item__links">
-                  {{#each links as |url key|}}
-                    <li class="cardboard__item__link">
-                      <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
-                    </li>
-                  {{/each}}
-                </ul>
-              </div>
+                  <ul class="cardboard__item__links">
+                    {{#each links as |url key|}}
+                      <li class="cardboard__item__link">
+                        <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </div>
 
-              <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
-              <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">View</a>
-            </li>
-          {{/each}}
-        </ul>
+                <p class="cardboard__item__description">{{{ellipsis (sanitize about) 80}}}</p>
+                <a class="cardboard__item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">View</a>
+              </li>
+            {{/each}}
+          </ul>
+        {{/each}}
       </section>
 
       {{> includes/back-to-top}}
