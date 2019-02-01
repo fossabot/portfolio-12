@@ -31,7 +31,13 @@
         <h2 class="short-underline">Programming &amp; Web development</h2>
         <ul class="list list--cards">
           {{#each portfolio.programming}}
-            <li class="list-item">
+            {{#if (new_category end_year)}}
+              <li class="list-item list-item--newline">
+                <p class="list-item__category">{{end_year}}</p>
+            {{else}}
+              <li class="list-item">
+            {{/if}}
+
               <div class="list-item__header">
                 <h3 class="list-item__title">{{name}}</h3>
 
@@ -55,7 +61,13 @@
         <h2 class="short-underline">Contributions</h2>
         <ul class="list list--cards">
           {{#each portfolio.contributions}}
-            <li class="list-item">
+            {{#if (new_category end_year)}}
+              <li class="list-item list-item--newline">
+                <p class="list-item__category">{{end_year}}</p>
+            {{else}}
+              <li class="list-item">
+            {{/if}}
+
               <div class="list-item__header">
                 <h3 class="list-item__title">{{name}}</h3>
 
