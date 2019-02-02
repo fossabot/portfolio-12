@@ -1,0 +1,33 @@
+@import "variables/colors.css";
+
+.icon {
+  display: block;
+  text-decoration: none;
+}
+
+.short-underline {
+  margin-bottom: 1.05em;
+
+  &::after {
+    background-color: var(--clr-primary-accent);
+    content: '';
+    display: block;
+    height: .15em;
+    margin: .4em 0 0;
+    position: absolute;
+    transition: background-color .2s ease;
+    width: 2em;
+  }
+
+  &--inverse {
+    &::after {
+      background-color: var(--clr-primary-white);
+    }
+
+    &:hover {
+      &::after {
+        background-color: var(--clr-primary-accent);
+      }
+    }
+  }
+}

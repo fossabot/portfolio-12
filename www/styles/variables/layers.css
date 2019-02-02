@@ -1,0 +1,7 @@
+:root {
+  --layer-dungeon: -2;
+  --layer-basement: -1;
+  --layer-floor: 1;
+  --layer-ceiling: 20;
+  --layer-roof: 30;
+}

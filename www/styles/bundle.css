@@ -1,4 +1,7 @@
 @import "main.css";
+@import "miscellaneous.css";
+
+@import "footer.css";
 
 @import "back-to-top.css";
 @import "badge.css";
