@@ -43,6 +43,7 @@
 }
 
 // Adds decoration to a title
+%short-underline,
 .short-underline {
   margin-bottom: 1.05em;
 
@@ -154,4 +155,10 @@
 .text-big,
 %text-big {
   font-size: 1.2em;
+}
+
+// Class to emphasise some text
+%text-emph,
+.text-emph {
+  font-style: italic;
 }

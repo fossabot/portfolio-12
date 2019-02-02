@@ -61,18 +61,19 @@
 }
 
 .list-item__category {
+  @extend %text-emph;
+
   color: var(--clr-primary-gray);
   cursor: default;
   display: inline-block;
   flex-grow: 1;
   flex-shrink: 0;
   font-size: var(--fontsize-subtext);
-  font-style: italic;
-  left: .5em;
   margin: 0;
   order: 1;
   pointer-events: none;
   position: absolute;
+  right: .5em;
   top: calc(-1 * var(--margin-list-category));
 }
 
@@ -96,7 +97,8 @@
 
   .list-item__category {
     left: calc(-1 * var(--margin-list-category));
-    top: auto;
+    right: auto;
+    top: .3em;
   }
 }
 
