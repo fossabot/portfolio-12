@@ -17,6 +17,7 @@
 
   --text-small: {
     font-size: .8rem;
+    line-height: var(--lineheight-text);
   };
 
   --text-sub: {
