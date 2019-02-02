@@ -95,28 +95,6 @@
 }
 
 
-.list__title {
-  display: block;
-
-  &--category {
-    @extend %text-secondary;
-
-    cursor: default;
-    margin: var(--margin-cardboard-title-category);
-    pointer-events: none;
-  }
-}
-
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .list__title {
-    &--category {
-      position: absolute;
-    }
-  }
-}
-
-
 .list--cards {
   display: flex;
   flex-wrap: wrap;
