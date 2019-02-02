@@ -4,6 +4,9 @@
   --clr-primary-black: #000000;
   --clr-primary-white: #ffffff;
 
+  /* secondaries */
+  --clr-secondary-accent: #039be5;
+
   /* miscellaneous */
   --clr-badge: #ff9800;
 }
