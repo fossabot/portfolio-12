@@ -1,11 +1,10 @@
 .timeline {
-  --card-width: calc(100% - var(--line-offset) - var(--circle-diameter));
+  --card-width: calc(100% - (2 * var(--line-offset)) - var(--circle-diameter));
   --circle-diameter: 2em;
   --line-offset: 2em;
   --line-width: 1px;
   --margin-event: .6em 0 .6em calc(var(--line-offset) + (var(--circle-diameter) / 2));
-    --padding-event: .6em 1.2em;
-
+  --padding-event: 1.2em 1.6em;
 
   align-items: center;
   box-sizing: border-box;
@@ -16,17 +15,11 @@
   padding: 0;
   position: relative;
 
-  &--tmp-page {
-    margin-top: 24px;
-  }
-
-  .timeline__event {
-    @include unselectable();
-
+  .timeline-event {
+    box-shadow: 0 0 4px 0 var(--clr-shadow);
     background-color: white;
     border-radius: 4px;
     color: var(--clr-primary-black);
-    cursor: pointer;
     display: flex;
     flex-basis: 0;
     flex-direction: column;
@@ -35,8 +28,7 @@
     margin: var(--margin-event);
     padding: var(--padding-event);
     position: relative;
-    text-decoration: none;
-    transition: box-shadow .3s ease, opacity .2s ease;
+    transition: box-shadow .3s ease;
     width: var(--card-width);
 
     &--achievement {
@@ -89,7 +81,7 @@
       position: absolute;
       left: calc(-1 * (var(--line-offset) + (var(--circle-diameter) / 2)));
       top: calc(50% - (var(--circle-diameter) / 2));
-      transition: all .2s ease;
+      transition: border-color .2s ease;
       width: var(--circle-diameter);
     }
 
@@ -117,32 +109,21 @@
 
   }
 
-  .timeline__event__details,
-  .timeline__event__title {
+  .timeline-event__title {
+    box-sizing: border-box;
+    flex-basis: 0;
     flex-direction: column;
-    justify-content: center;
-  }
-
-  .timeline__event__details {
-    box-sizing: border-box;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 0;
-    margin: var(--margin-event-details);
-    padding: var(--padding-event-details);
-    text-align: left;
-  }
-
-  .timeline__event__title {
-    box-sizing: border-box;
-    flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
     font-weight: bold;
-    margin: var(--margin-event-title);
-    padding: var(--padding-event-title);
+    justify-content: center;
     position: relative;
     text-align: left;
+  }
+
+  .timeline-event__more {
+    align-self: flex-end;
+    flex-grow: 0;
   }
 }
 
@@ -214,7 +195,7 @@
     top: 0;
   }
 
-  .timeline__event {
+  .timeline-event {
     @include unselectable();
 
     color: var(--clr-primary-black);
@@ -230,7 +211,7 @@
     transition: opacity .2s ease;
 
     &--achievement {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/achievement.svg');
         }
@@ -238,7 +219,7 @@
     }
 
     &--education {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/education.svg');
         }
@@ -246,7 +227,7 @@
     }
 
     &--internship {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/internship.svg');
         }
@@ -255,7 +236,7 @@
 
     &--more {
       &:first-child {
-        .timeline__event__title {
+        .timeline-event__title {
           &::before {
             left: -100% !important; // sass-lint:disable-line no-important
             width: 200% !important; // sass-lint:disable-line no-important
@@ -263,7 +244,7 @@
         }
       }
 
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/arrow-left.svg');
         }
@@ -271,7 +252,7 @@
     }
 
     &--volunteer {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/volunteer.svg');
         }
@@ -279,7 +260,7 @@
     }
 
     &--work {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           content: url('/assets/icons/work.svg');
         }
@@ -287,7 +268,7 @@
     }
 
     &:hover {
-      .timeline__event__title {
+      .timeline-event__title {
         &::after {
           background-color: var(--clr-primary-accent);
         }
@@ -295,7 +276,7 @@
     }
 
     &:first-child {
-      .timeline__event__title {
+      .timeline-event__title {
         &::before {
           top: 50%;
         }
@@ -303,7 +284,7 @@
     }
 
     &:last-child {
-      .timeline__event__title {
+      .timeline-event__title {
         &::before {
           height: 50%;
         }
@@ -311,15 +292,15 @@
     }
   }
 
-  .timeline__event__details,
-  .timeline__event__title {
+  .timeline-event__details,
+  .timeline-event__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 38vw;
   }
 
-  .timeline__event__details {
+  .timeline-event__details {
     box-sizing: border-box;
     flex-basis: 0;
     flex-grow: 1;
@@ -329,7 +310,7 @@
     text-align: left;
   }
 
-  .timeline__event__title {
+  .timeline-event__title {
     box-sizing: border-box;
     flex-basis: 0;
     flex-grow: 1;
@@ -369,16 +350,16 @@
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
-    --card-width: 14em;
+    --card-width: 18em;
     --margin-event: .8em 0;
-    --padding-event: .4em .8em;
+    --padding-event: 1.1em;
 
     &--dark-bg {
-      .timeline__event {
+      .timeline-event {
         color: var(--clr-primary-white);
       }
 
-      .timeline__event__title {
+      .timeline-event__title {
         &::after,
         &::before {
           background-color: var(--clr-primary-white);
@@ -394,9 +375,9 @@
         $gradient-middle: rgba(255, 255, 255, 1);
         $gradient-ends: rgba(255, 255, 255, $inactive-opacity - .1);
 
-        .timeline__event {
+        .timeline-event {
           & > :hover {
-            .timeline__event__title {
+            .timeline-event__title {
               &::before {
                 background: radial-gradient(ellipse at center, $gradient-middle 0%, $gradient-ends 100%);
               }
@@ -409,12 +390,12 @@
         }
       }
 
-      .timeline__event {
+      .timeline-event {
         flex-direction: column;
         flex-grow: 1;
 
         &:first-child {
-          .timeline__event__title {
+          .timeline-event__title {
             &::before {
               left: 50%;
               top: auto;
@@ -424,7 +405,7 @@
         }
 
         &:last-child {
-          .timeline__event__title {
+          .timeline-event__title {
             &::before {
               height: var(--line-width);
               width: 50%;
@@ -433,19 +414,19 @@
         }
       }
 
-      .timeline__event__details,
-      .timeline__event__title {
+      .timeline-event__details,
+      .timeline-event__title {
         justify-content: flex-start;
         text-align: center;
         width: 100%;
       }
 
-      .timeline__event__details {
+      .timeline-event__details {
         margin: var(--margin-timeline-inline-event-details);
         padding: var(--padding-timeline-inline-event-details);
       }
 
-      .timeline__event__title {
+      .timeline-event__title {
         flex-direction: column-reverse;
         margin: var(--margin-timeline-inline-event-title);
         padding: var(--padding-timeline-inline-event-title);
@@ -469,19 +450,19 @@
       }
     }
 
-    .timeline__event {
+    .timeline-event {
       margin-right: calc(-1 * (
           var(--card-width)
         + (2 * var(--line-offset))
-        + 1.5em
-        + var(--line-width)
+        + (2 * var(--padding-event))
       ));
 
       &:nth-child(even) {
         margin-right: calc(
             var(--card-width)
           + (2 * var(--line-offset))
-          + 1.5em
+          + (2 * var(--padding-event))
+          - var(--line-width)
         );
 
         &::after {
@@ -496,16 +477,16 @@
       }
     }
 
-    .timeline__event__details,
-    .timeline__event__title {
+    .timeline-event__details,
+    .timeline-event__title {
 
     }
 
-    .timeline__event__details {
+    .timeline-event__details {
 
     }
 
-    .timeline__event__title {
+    .timeline-event__title {
 
     }
   }
@@ -522,7 +503,7 @@
 // Show 3 elements on small screens
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline--inline {
-    .timeline__event {
+    .timeline-event {
       &:nth-child(2),
       &:nth-child(3) {
         display: none;
@@ -534,7 +515,7 @@
 // Show 4 elements on larger screens
 @media only screen and (min-width: 1200px) and (orientation: landscape) {
   .timeline--inline {
-    .timeline__event {
+    .timeline-event {
       &:nth-child(3) {
         display: flex;
       }
@@ -545,7 +526,7 @@
 // Show 5 elements on large screens
 @media only screen and (min-width: 1500px) and (orientation: landscape) {
   .timeline--inline {
-    .timeline__event {
+    .timeline-event {
       &:nth-child(2) {
         display: flex;
       }

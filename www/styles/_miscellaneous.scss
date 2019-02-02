@@ -77,6 +77,52 @@
 }
 
 
+.more-arrow {
+  @include unselectable();
+  @extend %text-bold;
+
+  cursor: pointer;
+  margin: .7em 1em;
+  position: relative;
+  text-decoration: none;
+  transition: color .1s ease, margin .15s ease;
+
+  &::after {
+    color: var(--clr-secondary-black);
+    content: '\00A0\2192';
+    display: block;
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: left .15s ease, opacity .1s ease;
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--clr-primary-accent);
+  }
+
+  &:hover {
+    margin-right: 1.4em;
+
+    &::after {
+      left: 100%;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .more-arrow {
+    margin: 0;
+  }
+}
+
+
 .tags {
   @include unselectable();
 

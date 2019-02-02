@@ -28,21 +28,21 @@
 
       <section id="history">
         <ul class="timeline-old timeline--inline timeline--dark-bg timeline--tmp-homepage">
-          <li class="timeline__event timeline__event--more">
+          <li class="timeline-event timeline-event--more">
             <a class="mimic-parent" href="/timeline" rel="noopener">
-              <div class="timeline__event__title">
+              <div class="timeline-event__title">
                 <span>See more...</span>
               </div>
-              <div class="timeline__event__details"></div>
+              <div class="timeline-event__details"></div>
             </a>
           </li>
           {{#each (reverse (first timeline 4))}}
-            <li class="timeline__event timeline__event--{{ type }}">
+            <li class="timeline-event timeline-event--{{ type }}">
               <a class="mimic-parent" href="{{ link }}" rel="noopener">
-                <div class="timeline__event__title">
+                <div class="timeline-event__title">
                   <span>{{ title }}</span>
                 </div>
-                <div class="timeline__event__details">
+                <div class="timeline-event__details">
                   <span>{{ institute }}</span>
                   <br>
                   <span class="text-italic">{{ when }}</span>
@@ -74,7 +74,7 @@
                 </div>
 
                 <p class="list-item__description">{{{truncate (sanitize tldr) 80}}}</p>
-                <a class="list-item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
+                <a class="list-item__more more-arrow" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
               </li>
             {{/if}}
           {{/each}}
@@ -102,7 +102,7 @@
                 </div>
 
                 <p class="list-item__description">{{{ellipsis (sanitize about) 80}}}</p>
-                <a class="list-item__more" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
+                <a class="list-item__more more-arrow" href="/archive/{{hyphenate (lowercase name)}}" rel="noopener">More</a>
               </li>
             {{/if}}
           {{/each}}

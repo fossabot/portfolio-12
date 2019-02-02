@@ -29,14 +29,10 @@
       <section id="timeline" class="section">
         <ul class="timeline timeline--tmp-page">
           {{#each timeline}}
-            <li class="timeline__event timeline__event--{{ type }}">
-              {{!-- <a class="mimic-parent" href="{{ link }}" rel="noopener"> --}}
-                <p class="timeline__event__title">{{ title }}</p>
-                <div class="timeline__event__details">
-                  <span>{{ institute }}</span>
-                  <span class="text-italic">{{ when }}</span>
-                </div>
-              {{!-- </a> --}}
+            <li class="timeline-event timeline-event--{{ type }}">
+              <p class="timeline-event__title short-underline">{{ title }}</p>
+              <p><span class="text-italic">{{ when }}</span> | {{ institute }}</p>
+              <a class="timeline-event__more more-arrow" href="{{ link }}" rel="noopener">More</a>
             </li>
           {{/each}}
         </ul>
