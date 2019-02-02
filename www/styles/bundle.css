@@ -2,6 +2,7 @@
 @import 'miscellaneous.css';
 
 /* page elements */
+@import 'article.css';
 @import 'footer.css';
 @import 'header.css';
 @import 'navbar.css';
