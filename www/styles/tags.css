@@ -1,5 +1,5 @@
-@import "utilities/unselectable.css";
-@import "variables/colors.css";
+@import 'utilities/unselectable.css';
+@import 'variables/colors.css';
 
 .tags {
   @apply --unselectable;
@@ -17,7 +17,7 @@
   color: var(--clr-primary-white);
   cursor: default;
   display: inline-block;
-  margin: 4px 4px;
+  margin: 4px;
   padding: 0 8px 0 0;
 
   &::before {

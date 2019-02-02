@@ -32,6 +32,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rm": "^1.0.5",
     "gulp-run-command": "0.0.9",
+    "gulp-stylelint": "^8.0.0",
     "gulp-uglify-es": "^1.0.4",
     "handlebars-helpers": "^0.10.0",
     "handlebars-utils": "^1.0.6",
@@ -41,6 +42,7 @@
     "postcss-apply": "^0.11.0",
     "postcss-css-variables": "^0.11.0",
     "postcss-import": "^12.0.1",
-    "postcss-nested": "^4.1.1"
+    "postcss-nested": "^4.1.1",
+    "stylelint": "^9.10.1"
   }
 }

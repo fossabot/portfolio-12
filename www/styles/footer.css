@@ -1,7 +1,7 @@
-@import "utilities/unselectable.css";
-@import "variables/colors.css";
-@import "variables/fonts.css";
-@import "variables/layers.css";
+@import 'utilities/unselectable.css';
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+@import 'variables/layers.css';
 
 .footer {
   --clippath: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
@@ -16,7 +16,7 @@
   flex-shrink: 0;
   font-size: 1rem;
   justify-content: center;
-  margin: 1em 0 0 0;
+  margin: 1em 0 0;
   overflow: visible;
   padding: 3em 1.6em;
   position: relative;
@@ -36,7 +36,7 @@
   }
 
   &::before {
-    box-shadow: 0 calc(-1 * 1.5vw) 1.5vw 0 rgba(0, 0, 0, .5);
+    box-shadow: 0 -1.5vw 1.5vw 0 rgba(0, 0, 0, .5);
     height: 3vw;
     left: -1%;
     top: 3vw;
@@ -98,15 +98,15 @@
   .footer {
     flex-direction: row;
     justify-content: space-between;
-    margin: 2em 0 0 0;
-    padding: 6.5em 4em 2.5em 4em;
+    margin: 2em 0 0;
+    padding: 6.5em 4em 2.5em;
     text-align: inherit;
   }
 
   .footer__message {
     font-size: 1.6em;
     display: inline-block;
-    margin: -22px 0 .5em 0;
+    margin: -22px 0 .5em;
     order: 1;
   }
 

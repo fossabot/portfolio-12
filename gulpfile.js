@@ -21,6 +21,7 @@ const postcss = require('gulp-postcss');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
 const run = require('gulp-run-command').default;
+const stylelint = require('gulp-stylelint');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
@@ -44,7 +45,7 @@ const INPUT_ROOT_FILES = [
   `${INPUT_DIR}/robots.txt`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
-const INPUT_STYLES = `${INPUT_DIR}/styles/bundle.css`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.css`;
 
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
@@ -256,8 +257,14 @@ gulp.task('lint-scripts', function() {
              .pipe(jshint.reporter('default'))
              .pipe(jshint.reporter('fail'));
 });
-gulp.task('lint-styles', function(done) {
-  done(); // TODO update style linter
+gulp.task('lint-styles', function() {
+  return gulp .src(INPUT_STYLES)
+              .pipe(stylelint({
+                failAfterError: true,
+                reporters: [
+                  {formatter: 'string', console: true}
+                ]
+              }));
 });
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
 

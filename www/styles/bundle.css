@@ -1,9 +1,11 @@
-@import "main.css";
-@import "miscellaneous.css";
+@import 'main.css';
+@import 'miscellaneous.css';
 
-@import "footer.css";
-@import "header.css";
+/* page elements */
+@import 'footer.css';
+@import 'header.css';
 
-@import "back-to-top.css";
-@import "badge.css";
-@import "tags.css";
+/* components */
+@import 'back-to-top.css';
+@import 'badge.css';
+@import 'tags.css';
