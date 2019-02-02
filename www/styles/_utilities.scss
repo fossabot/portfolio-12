@@ -146,7 +146,8 @@
 // Class to make a text smaller then it otherwise would have been
 .text-small,
 %text-small {
-  font-size: .8em;
+  font-size: .8rem;
+  line-height: var(--lineheight-text);
 }
 
 // Class to make a text bigger then it otherwise would have been

@@ -47,6 +47,7 @@ h4,
 h5,
 h6,
 i,
+kbd,
 li,
 p,
 span,
@@ -109,6 +110,21 @@ h6,
   font-size: var(--fontsize-h6);
   line-height: var(--lineheight-subheader);
   margin: var(--margin-text-subheader);
+}
+
+kbd,
+%kbd {
+  background-color: var(--kbd-background-clr);
+  border: 1px solid var(--kbd-border-clr);
+  border-bottom-color: var(--kbd-border-bottom-clr);
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 var(--kbd-box-shadow-clr);
+  color: var(--kbd-text-clr);
+  display: inline-block;
+  font-size: .9em;
+  line-height: .8em;
+  padding: 3px 5px;
+  vertical-align: middle;
 }
 
 
