@@ -16,7 +16,8 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Site generator | [Handlebars.js](https://handlebarsjs.com/builtin_helpers.html) |
 | Stylesheet linter | [sass-lint](https://github.com/sasstools/sass-lint) |
 
-###### How to use the build tools:
+###### How to use the build tools
+- `$ gulp`: Build the site, watch for changes, and start a simple HTTP server (on port 4000) serving the site with live reload.
 - `$ gulp analyze:a11y`: Test the website for accessibility issues.
   - Result can be found in `./_reports`.
 - `$ gulp analyze:perf`: Do a performance check on the sites landing page.
@@ -26,6 +27,5 @@ Repository for the personal portfolio of Eric Cornelissen.
 - `$ gulp clean`: Clean the project, removing all generated files.
 - `$ gulp dist`: Build the project for distributing purposes.
 - `$ gulp lint`: Lint the source code of the project.
-- `$ gulp serve`: Build the site, watch for changes, and start a simple HTTP server (on port 4000) serving the site.
 - `$ gulp server`: Start a simple HTTP server (on port 4000) serving the site.
   - Requires `$ gulp build` or `$ gulp dist`.
