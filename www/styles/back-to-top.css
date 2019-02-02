@@ -1,0 +1,36 @@
+@import "utilities/unselectable.css";
+
+.back-to-top {
+  display: none;
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .back-to-top {
+    @apply --unselectable;
+
+    align-items: center;
+    bottom: -48px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    opacity: .5;
+    position: absolute;
+    right: 64px;
+    text-decoration: none;
+    transition: bottom .25s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--hidden {
+      bottom: -164px;
+    }
+  }
+
+  .back-to-top__icon {
+    display: block;
+    font-size: 2.2rem;
+  }
+}
