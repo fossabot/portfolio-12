@@ -1,0 +1,25 @@
+:root {
+  --fontstack-header: sans-serif;
+  --fontstack-subheader: sans-serif;
+  --fontstack-text: sans-serif;
+  --fontstack-code: monospace;
+
+  --lineheight-header: 1.2em;
+  --lineheight-subheader: 1.3em;
+  --lineheight-text: 1.5em;
+
+  --fontsize-root: calc(.8em + .75vw);
+  --fontsize-h1: 2.6rem;
+  --fontsize-h2: 2.4rem;
+  --fontsize-h3: 2.2rem;
+  --fontsize-h4: 1.9rem;
+  --fontsize-h5: 1.7rem;
+  --fontsize-h6: 1.5rem;
+  --fontsize-text: 1.2rem;
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  :root {
+    --fontsize-root: .9em;
+  }
+}

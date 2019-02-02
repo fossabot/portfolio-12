@@ -1,4 +1,9 @@
 :root {
-  --clr-primary-white: #fafafa;
-  --clr-badge: #FF9800;
+  /* primaries */
+  --clr-primary-accent: #29b6f6;
+  --clr-primary-black: #000000;
+  --clr-primary-white: #ffffff;
+
+  /* miscellaneous */
+  --clr-badge: #ff9800;
 }
