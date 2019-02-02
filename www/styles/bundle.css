@@ -4,6 +4,7 @@
 /* page elements */
 @import 'footer.css';
 @import 'header.css';
+@import 'navbar.css';
 
 /* components */
 @import 'back-to-top.css';
