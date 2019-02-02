@@ -17,11 +17,10 @@ const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
 const jswrap = require('gulp-js-wrapper');
 const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
 const run = require('gulp-run-command').default;
-const sass = require('gulp-sass');
-const sassLint = require('gulp-sass-lint');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
@@ -45,7 +44,7 @@ const INPUT_ROOT_FILES = [
   `${INPUT_DIR}/robots.txt`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
-const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
+const INPUT_STYLES = `${INPUT_DIR}/styles/bundle.css`;
 
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
@@ -133,9 +132,24 @@ gulp.task('scripts', function() {
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
 gulp.task('styles', function() {
+  const atApply = require('postcss-apply');
+  const atImport = require('postcss-import');
+  const cssVariables = require('postcss-css-variables');
+  const netedRules = require('postcss-nested');
+
+  const plugins = [
+    // Bundle all styles using @import
+    atImport(),
+
+    // Apply other plugins to bundled css
+    atApply(),
+    cssVariables(),
+    netedRules()
+  ];
+
   return gulp.src(INPUT_STYLES)
-             .pipe(sass().on('error', sass.logError))
-             .pipe(gulpIf(minifyOutput, cssnano()))
+             .pipe(postcss(plugins))
+             // .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 

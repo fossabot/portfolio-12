@@ -1,12 +1,16 @@
+@import "utilities/text.css";
+@import "utilities/unselectable.css";
+@import "variables/colors.css";
+
+
 .badge {
-  @extend %text-bold;
-  @extend %text-small;
-  @include unselectable();
+  @apply --text-bold;
+  @apply --text-emph;
+  @apply --unselectable;
 
   background-color: var(--clr-badge);
   border-radius: 4px;
   color: var(--clr-primary-white);
-  cursor: default;
   display: inline-block;
   padding: 2px 10px;
   vertical-align: middle;
