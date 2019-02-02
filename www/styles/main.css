@@ -1,3 +1,4 @@
+@import 'utilities/text.css';
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
 
@@ -111,6 +112,16 @@ h6 {
   font-size: var(--fontsize-h6);
   line-height: var(--lineheight-subheader);
   margin: 1.2em 0 .3em;
+}
+
+b,
+strong {
+  @apply --text-bold;
+}
+
+i,
+em {
+  @apply --text-emph;
 }
 
 code {

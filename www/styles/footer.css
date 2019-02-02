@@ -74,7 +74,6 @@
     }
 
     .footer__social__link:hover {
-      color: var(--clr-primary-accent);
       opacity: 1;
     }
   }

@@ -1,8 +1,41 @@
 @import 'variables/colors.css';
 
+.background-hover {
+  &::before {
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none; /* Prevents hover action on the (invisible) psuedo element */
+    position: absolute;
+    top: 0;
+    transition: opacity .2s ease;
+    width: 100%;
+    z-index: map-get($layers, basement);
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
 .icon {
   display: block;
   text-decoration: none;
+
+  &--hover {
+    &:focus,
+    &:hover {
+      color: var(--clr-secondary-accent);
+    }
+  }
+}
+
+.mimic-parent {
+  all: inherit;
 }
 
 .short-underline {
@@ -28,6 +61,43 @@
       &::after {
         background-color: var(--clr-primary-accent);
       }
+    }
+  }
+}
+
+.text-link {
+  background-color: transparent;
+  color: var(--clr-secondary-accent);
+  position: relative;
+  text-decoration: none;
+  transition: color .15s ease;
+  z-index: 0;
+
+  &::after {
+    background-color: var(--clr-primary-black);
+    content: '';
+    height: calc(100% + 4px);
+    left: -2px;
+    max-height: 0;
+    padding: 0 2px;
+    position: absolute;
+    top: 1px;
+    transition: max-height .2s ease;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:focus {
+    color: var(--clr-primary-accent);
+  }
+
+  &:hover {
+    color: var(--clr-primary-white);
+
+    &::after {
+      bottom: -1px;
+      max-height: 100%;
+      top: auto;
     }
   }
 }
