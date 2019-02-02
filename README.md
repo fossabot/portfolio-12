@@ -7,14 +7,14 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Accessibility tester | [aXe](https://www.axe-core.org/) |
 | Automatic reloading | [browser-sync](https://browsersync.io/) |
 | Build tool | [Gulp](https://gulpjs.com/) |
-| CSS preprocessor | [Sass](http://sass-lang.com/) |
+| CSS preprocessor | [PostCSS](https://postcss.org/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
 | Iconography | [Fontello](http://fontello.com/) |
 | JavaScript linter | [JSHint](https://jshint.com/) |
 | JSON linter | [jsonlint](https://github.com/zaach/jsonlint) |
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |
 | Site generator | [Handlebars.js](https://handlebarsjs.com/builtin_helpers.html) |
-| Stylesheet linter | [sass-lint](https://github.com/sasstools/sass-lint) |
+| Stylesheet linter | [stylelint](https://stylelint.io/) |
 
 ###### How to use the build tools:
 - `$ gulp analyze:a11y`: Test the website for accessibility issues.
