@@ -61,18 +61,20 @@
 }
 
 .list-item__category {
+  @extend %text-emph;
+
   color: var(--clr-primary-gray);
   cursor: default;
   display: inline-block;
   flex-grow: 1;
   flex-shrink: 0;
   font-size: var(--fontsize-subtext);
-  font-style: italic;
-  left: var(--margin-list-category);
   margin: 0;
   order: 1;
   pointer-events: none;
   position: absolute;
+  right: .5em;
+  top: calc(-1 * var(--margin-list-category));
 }
 
 .list-item__title {
@@ -92,27 +94,11 @@
   .list {
     column-count: 2;
   }
-}
 
-
-.list__title {
-  display: block;
-
-  &--category {
-    @extend %text-secondary;
-
-    cursor: default;
-    margin: var(--margin-cardboard-title-category);
-    pointer-events: none;
-  }
-}
-
-
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .list__title {
-    &--category {
-      position: absolute;
-    }
+  .list-item__category {
+    left: calc(-1 * var(--margin-list-category));
+    right: auto;
+    top: .3em;
   }
 }
 
@@ -146,6 +132,7 @@
 
     &--newline {
       margin-left: calc(var(--margin-cardboard-item) + 1px);
+      margin-top: calc(1.5 * var(--margin-list-category));
 
       & + .list-item {
         &:not(.list-item--newline) {
@@ -232,5 +219,14 @@
     margin: var(--margin-cardboard-item-title);
     opacity: 1;
     order: inherit;
+  }
+}
+
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .list--cards {
+    .list-item--newline {
+      margin-top: 0;
+    }
   }
 }
