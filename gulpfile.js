@@ -228,18 +228,28 @@ gulp.task('lint-json', gulp.series(
   },
   gulp.parallel(
     function() {
+      const schema = require('./.jsonschema.json').contributions;
+      return gulp.src('./data/contributions.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
       const schema = require('./.jsonschema.json').metadata;
       return gulp.src('./data/metadata.json')
                  .pipe(jsonSchema({schema}))
     },
     function() {
-      const schema = require('./.jsonschema.json').portfolio;
-      return gulp.src('./data/portfolio.json')
+      const schema = require('./.jsonschema.json').projects;
+      return gulp.src('./data/projects.json')
                  .pipe(jsonSchema({schema}))
     },
     function() {
       const schema = require('./.jsonschema.json').site;
       return gulp.src('./data/site.json')
+                 .pipe(jsonSchema({schema}))
+    },
+    function() {
+      const schema = require('./.jsonschema.json').snippets;
+      return gulp.src('./data/snippets.json')
                  .pipe(jsonSchema({schema}))
     },
     function() {

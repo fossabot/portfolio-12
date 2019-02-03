@@ -1,0 +1,175 @@
+[
+  {
+    "name": "svg-to-pdf-bot",
+    "tldr": "A GitHub App built with <a class=\"text-link\" href=\"https://github.com/probot/probot\" rel=\"noopener\">Probot</a> that converts SVG files into PDF files for <a class=\"text-link\" href=\"https://github.com/simple-icons/simple-icons\" rel=\"noopener\">Simple Icons</a>.",
+    "start_year": 2018,
+    "end_year": 2018,
+    "spotlight": false,
+    "tags": ["Jest", "NodeJS", "Probot"],
+    "keywords": ["bot", "github", "javascript"],
+    "links": {
+      "github": "https://github.com/simple-icons/svg-to-pdf-bot"
+    }
+  },
+  {
+    "name": "linter-htmllint",
+    "tldr": "Linter plugin for <a class=\"text-link\" href=\"https://atom.io/\" rel=\"noopener\">Atom</a> for html, using htmllint.",
+    "start_year": 2018,
+    "end_year": 2018,
+    "spotlight": false,
+    "tags": ["Atom", "Jasmine", "JavaScript"],
+    "keywords": ["linter", "htmllint"],
+    "links": {
+      "github": "https://github.com/AtomLinter/linter-htmllint",
+      "website": "https://atom.io/packages/linter-htmllint"
+    }
+  },
+  {
+    "name": "jekyll-fontello",
+    "tldr": "Jekyll plugin that automatically downloads your webfont from <a class=\"text-link\" href=\"http://fontello.com/\" rel=\"noopener\">Fontello</a>.",
+    "start_year": 2018,
+    "end_year": 2018,
+    "spotlight": false,
+    "tags": ["Jekyll", "Ruby"],
+    "keywords": ["open source", "fontello"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/jekyll-fontello",
+      "rubygems": "https://rubygems.org/gems/jekyll-fontello"
+    }
+  },
+  {
+    "name": "Controlled Vocabulary Tool",
+    "tldr": "A multi-threaded Python CLI tool to create a controlled vocabulary.",
+    "start_year": 2017,
+    "end_year": 2018,
+    "spotlight": true,
+    "tags": ["Multi-Threading", "Python"],
+    "keywords": ["data", "data analysis", "data analytics"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/controlled-vocab"
+    }
+  },
+  {
+    "name": "Pinned tabs for Atom",
+    "tldr": "Package for the <a class=\"text-link\" href=\"https://atom.io/\" rel=\"noopener\">Atom text editor</a> that allows you to you to pin tabs.",
+    "start_year": 2015,
+    "end_year": 2018,
+    "spotlight": true,
+    "tags": ["Atom", "Babel", "Jasmine", "JavaScript", "Less"],
+    "keywords": ["package", "apm"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/pinned-tabs-for-atom",
+      "website": "https://atom.io/packages/pinned-tabs"
+    }
+  },
+  {
+    "name": "Intersectionsim",
+    "tldr": "Simplex and PDDL implementation for scheduling autonomous cars on an intersection.",
+    "start_year": 2017,
+    "end_year": 2017,
+    "spotlight": false,
+    "tags": ["PDDL", "Python"],
+    "keywords": ["research", "artificial intelligence", "ai", "diagram"],
+    "links": {
+      "github": "https://github.com/tatp22/intersectionsim"
+    }
+  },
+  {
+    "name": "NervousFish",
+    "tldr": "App for your &#128241; to exchange public-keys in a secure manner.",
+    "start_year": 2017,
+    "end_year": 2017,
+    "spotlight": true,
+    "tags": ["Android", "Bluetooth", "Gradle", "Java"],
+    "keywords": ["security", "encryption", "Gradle", "Java"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/NervousFish"
+    }
+  },
+  {
+    "name": "Protect your Selfie",
+    "tldr": "Concept for a web application to distribute sensitive documents, created at <a class=\"text-link\" href=\"https://hackdelft.com/\" rel=\"noopener\">HackDelft</a> 2017.",
+    "start_year": 2017,
+    "end_year": 2017,
+    "spotlight": false,
+    "tags": ["AWS", "Gulp", "Heroku", "NodeJS", "PostgreSQL"],
+    "keywords": ["security", "encryption", "hackathon"],
+    "links": {
+      "github": "https://github.com/jverbraeken/Protect-your-Selfie"
+    }
+  },
+  {
+    "name": "Bands in a Barn website",
+    "tldr": "Website for the first edition of the <a class=\"text-link\" href=\"https://www.facebook.com/Bandsinabarn/\" rel=\"noopener\">Bands in a Barn</a> festival.",
+    "start_year": 2016,
+    "end_year": 2017,
+    "spotlight": false,
+    "tags": ["Gulp", "HTML", "JavaScript", "Mailgun", "NodeJS", "Sass", "Vue"],
+    "keywords": ["website"],
+    "links": {
+      "website": "http://www.bandsinabarn.nl/"
+    }
+  },
+  {
+    "name": "AutoCorrect-py",
+    "tldr": "A simple supervised learning dictionary to correct texts implemented in Python.",
+    "start_year": 2016,
+    "end_year": 2017,
+    "spotlight": true,
+    "tags": ["Python", "Supervised Learning"],
+    "keywords": ["machine learning", "tree"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/AutoCorrect-py"
+    }
+  },
+  {
+    "name": "IncaseJS",
+    "tldr": "An extremely small but powerful library designed to assert the variable types of function parameters.",
+    "start_year": 2016,
+    "end_year": 2016,
+    "spotlight": false,
+    "tags": ["Jasmine", "JavaScript"],
+    "keywords": ["npm", "package"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/incaseJS",
+      "npm": "https://www.npmjs.com/package/incase.js"
+    }
+  },
+  {
+    "name": "JavaPromise",
+    "tldr": "Java implementation of the JavaScript Promise.",
+    "start_year": 2016,
+    "end_year": 2016,
+    "spotlight": false,
+    "tags": ["Gradle", "Java"],
+    "keywords": ["promise", "lambda"],
+    "links": {
+      "download": "/downloads/JavaPromise_repository.zip"
+    }
+  },
+  {
+    "name": "InterstellarScaler",
+    "tldr": "Small web application to calculate what you'll weigh on other planets.",
+    "start_year": 2015,
+    "end_year": 2015,
+    "spotlight": false,
+    "tags": ["CSS", "HTML", "JavaScript"],
+    "keywords": ["onepager", "one page", "website", "webapp", "web application"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/InterstellarScaler",
+      "website": "https://ericcornelissen.github.io/InterstellarScaler/"
+    }
+  },
+  {
+    "name": "Register Callback Function UDF",
+    "tldr": "An UDF to create a callback loop for a certain function in your Au3 project.",
+    "start_year": 2015,
+    "end_year": 2015,
+    "spotlight": false,
+    "tags": ["AutoIt v3"],
+    "keywords": ["scripting", "UDF"],
+    "links": {
+      "github": "https://github.com/ericcornelissen/_RegisterCallbackFunction-UDF"
+    }
+  }
+]

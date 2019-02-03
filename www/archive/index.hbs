@@ -30,7 +30,7 @@
       <section id="programming" class="section">
         <h2 class="short-underline">Programming &amp; Web development</h2>
         <ul class="list list--cards">
-          {{#each portfolio.programming}}
+          {{#each projects}}
             {{#if (new_category end_year)}}
               <li class="list-item list-item--newline">
                 <p class="list-item__category">{{end_year}}</p>
@@ -59,7 +59,7 @@
       <section id="contributions" class="section">
         <h2 class="short-underline">Contributions</h2>
         <ul class="list list--cards">
-          {{#each portfolio.contributions}}
+          {{#each contributions}}
             {{#if (new_category end_year)}}
               <li class="list-item list-item--newline">
                 <p class="list-item__category">{{end_year}}</p>
