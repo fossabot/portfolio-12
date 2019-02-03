@@ -1,22 +1,28 @@
-@import 'mixins/util';
-
+@import 'utilities/unselectable.css';
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+@import 'variables/layers.css';
+@import 'variables/paths.css';
 
 .header {
-  @include unselectable();
+  --clippath: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
+
+  @apply --unselectable;
 
   box-sizing: border-box;
   color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
-  font-size: var(--fontsize-root);
-  height: var(--height-header);
-  margin: var(--margin-header);
-  min-height: var(--minheight-header);
+  flex-shrink: 0;
+  font-size: 1rem;
+  height: 50%;
+  margin: 0 0 -1em;
+  min-height: 375px;
   overflow: visible;
-  padding: var(--padding-header);
+  padding: 10vh 5rem;
   position: relative;
-  width: var(--width-header);
-  z-index: map-get($layers, roof);
+  width: 100%;
+  z-index: var(--layer-roof);
 
   &::before,
   &::after {
@@ -26,31 +32,35 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: map-get($layers, dungeon);
+    z-index: var(--layer-dungeon);
   }
 
   &::before {
-    box-shadow: 0 var(--shadow-offset) var(--shadow-size) 0 var(--clr-header-shadow);
-    height: calc(100% - var(--clippath-slope));
-    transform: var(--clippath-slope-deg);
+    box-shadow: 0 1.5vw 1.5vw 0 rgba(0, 0, 0, .5);
+    height: calc(100% - 3vw);
+    transform: rotateZ(1.8deg);
     width: 101%;
   }
 
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: var(--background-image);
+    background-image: var(--url-background);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
-    clip-path: var(--clippath-header);
+    clip-path: var(--clippath);
   }
 
   &--home {
-    height: var(--height-header-home);
+    height: 86.5%;
 
     .header__message {
-      margin: var(--margin-header-message-home);
+      margin: auto 0 .8em;
+
+      b {
+        @apply --text-extrabold;
+      }
     }
   }
 
@@ -58,21 +68,21 @@
     &--aqua-spray {
       &::before {
         background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
-        clip-path: var(--clippath-header);
+        clip-path: var(--clippath);
       }
     }
 
     &--mystic-mauvea {
       &::before {
         background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
-        clip-path: var(--clippath-header);
+        clip-path: var(--clippath);
       }
     }
 
     &--sweat-dream {
       &::before {
         background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
-        clip-path: var(--clippath-header);
+        clip-path: var(--clippath);
       }
     }
   }
@@ -80,26 +90,25 @@
 
 .header__links {
   list-style: none;
-  margin: var(--margin-header-message);
+  margin: auto 0 0;
   text-align: center;
 }
 
 .header__links__item {
-  @extend %h5;
-
   display: inline-block;
+  font-size: 1.7rem;
   margin: 0;
-  padding: var(--padding-header-link-item);
+  padding: 0;
 
   &:not(:last-child) {
     &::after {
       content: '/';
-      margin: var(--margin-header-link-item);
+      margin: 0 .3em;
     }
   }
 
   & > a {
-    color: var(--clr-secondary-white);
+    color: var(--clr-primary-white);
     text-decoration: none;
 
     &:focus,
@@ -110,20 +119,25 @@
 }
 
 .header__message {
-  @extend %h6;
-
-  margin: var(--margin-header-message);
-  padding: var(--padding-header-message);
+  font-size: 1.5rem;
+  margin: auto 0 0;
+  padding: 0;
   text-align: center;
 }
 
 .header__title {
   display: block;
-  margin: var(--margin-header-title);
+  margin: 0;
+  padding: 0;
   word-break: break-all;
 }
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
+  .header {
+    margin: 0;
+    padding: 5em 6em;
+  }
+
   .header__background {
     height: auto;
     width: 100%;
@@ -133,7 +147,11 @@
   .header__message {
     align-self: flex-end;
     display: block;
-    max-width: var(--maxwidth-header-message);
+    max-width: 450px;
     text-align: right;
+  }
+
+  .header__links__item {
+    padding: 0;
   }
 }

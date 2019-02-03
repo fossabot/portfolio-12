@@ -1,12 +1,15 @@
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+
 .article__about {
   position: relative;
 
   &::before {
-    color: var(--clr-secondary-gray);
+    color: var(--clr-primary-gray);
     content: attr(data-name);
     font-size: var(--fontsize-subtext);
     font-style: italic;
-    margin: var(--margin-article-about);
+    margin: 0 .3em 0 0;
     pointer-events: none;
   }
 }
@@ -14,32 +17,37 @@
 .article__date {
   color: var(--clr-primary-gray);
   font-size: var(--fontsize-subtext);
-  margin: var(--margin-article-date);
+  margin: -.6em 0 1.4em;
 }
 
 .article__figure {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: var(--margin-article-figure);
+  margin: 1em 0;
 }
 
 .article__image {
-  margin: var(--margin-article-img);
-  width: var(--width-article-img);
+  margin: .5em 0;
+  width: 100%;
 }
-
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .article__about {
     &::before {
       margin: 0;
       position: absolute;
-      right: calc(100% + var(--margin-article-about));
+      right: calc(100% + .6em);
     }
   }
 
   .article__image {
+    margin: .4em auto;
     max-width: 100%;
+    width: auto;
+  }
+
+  .article__figure {
+    margin: 1em 2.8em;
   }
 }

@@ -17,11 +17,11 @@ const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
 const jswrap = require('gulp-js-wrapper');
 const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
 const run = require('gulp-run-command').default;
-const sass = require('gulp-sass');
-const sassLint = require('gulp-sass-lint');
+const stylelint = require('gulp-stylelint');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
@@ -45,7 +45,10 @@ const INPUT_ROOT_FILES = [
   `${INPUT_DIR}/robots.txt`
 ];
 const INPUT_SCRIPTS = `${INPUT_DIR}/scripts/**/*.js`;
-const INPUT_STYLES = `${INPUT_DIR}/styles/**/*.scss`;
+const INPUT_STYLES = {
+  all: `${INPUT_DIR}/styles/**/*.css`,
+  bundles: `${INPUT_DIR}/styles/bundle*.css`
+};
 
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
@@ -133,8 +136,23 @@ gulp.task('scripts', function() {
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
 gulp.task('styles', function() {
-  return gulp.src(INPUT_STYLES)
-             .pipe(sass().on('error', sass.logError))
+  const atApply = require('postcss-apply');
+  const atImport = require('postcss-import');
+  const autoprefixer = require('autoprefixer');
+  const cssVariables = require('postcss-css-variables');
+  const netedRules = require('postcss-nested');
+
+  return gulp.src(INPUT_STYLES.bundles)
+             .pipe(postcss([
+               // Bundle all styles using @import
+               atImport(),
+
+               // Apply other plugins to bundled css
+               atApply(),
+               autoprefixer(),
+               cssVariables(),
+               netedRules()
+             ]))
              .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
@@ -151,7 +169,7 @@ gulp.task('build:watch', function() {
   watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('html'))
   watch(INPUT_ROOT_FILES, gulp.task('metadata'));
   watch(INPUT_SCRIPTS, gulp.task('scripts'));
-  watch(INPUT_STYLES, gulp.task('styles'));
+  watch(INPUT_STYLES.all, gulp.task('styles'));
 });
 gulp.task('dist', gulp.series('clean:site', 'set-minify-output', 'build'));
 
@@ -243,10 +261,13 @@ gulp.task('lint-scripts', function() {
              .pipe(jshint.reporter('fail'));
 });
 gulp.task('lint-styles', function() {
-  return gulp.src([`${INPUT_DIR}/styles/*.scss`, `${INPUT_DIR}/styles/mixins/*.scss`])
-             .pipe(sassLint({options: './.sass-lint.yml'}))
-             .pipe(sassLint.format())
-             .pipe(sassLint.failOnError());
+  return gulp.src(INPUT_STYLES.all)
+             .pipe(stylelint({
+                failAfterError: true,
+                reporters: [
+                  {formatter: 'string', console: true}
+                ]
+              }));
 });
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
 

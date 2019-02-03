@@ -1,0 +1,39 @@
+@import '../variables/colors.css';
+@import '../variables/fonts.css';
+@import '../variables/layers.css';
+
+:root {
+  --text-big: {
+    font-size: 1.2em;
+  };
+
+  --text-bold: {
+    font-weight: 700;
+  };
+
+  --text-extrabold: {
+    font-weight: 900;
+  };
+
+  --text-emph: {
+    font-style: italic;
+  };
+
+  --text-small: {
+    font-size: .8rem;
+    line-height: var(--lineheight-text);
+  };
+
+  --text-sub: {
+    color: var(--clr-primary-gray);
+    font-family: var(--fontstack-text);
+    font-size: var(--fontsize-subtext);
+    font-style: italic;
+    font-weight: 400;
+    line-height: var(--lineheight-subtext);
+  };
+
+  --text-thin: {
+    font-weight: 200;
+  };
+}

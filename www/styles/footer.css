@@ -1,23 +1,28 @@
-@import 'mixins/util';
-
+@import 'utilities/unselectable.css';
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+@import 'variables/layers.css';
 
 .footer {
-  @include unselectable();
+  --clippath: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
+
+  @apply --unselectable;
 
   align-items: center;
   box-sizing: border-box;
   color: var(--clr-primary-white);
   display: flex;
   flex-direction: column;
-  font-size: var(--fontsize-root);
+  flex-shrink: 0;
+  font-size: 1rem;
   justify-content: center;
-  margin: var(--margin-footer);
+  margin: 1em 0 0;
   overflow: visible;
-  padding: var(--padding-footer);
+  padding: 3em 1.6em;
   position: relative;
   text-align: center;
-  width: var(--width-footer);
-  z-index: map-get($layers, roof);
+  width: 100%;
+  z-index: var(--layer-roof);
 
   &::before,
   &::after {
@@ -27,82 +32,89 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: map-get($layers, dungeon);
+    z-index: var(--layer-dungeon);
   }
 
   &::before {
-    box-shadow: 0 calc(-1 * var(--shadow-offset)) var(--shadow-size) 0 var(--clr-header-shadow);
-    height: var(--clippath-slope);
+    box-shadow: 0 -1.5vw 1.5vw 0 rgba(0, 0, 0, .5);
+    height: 3vw;
     left: -1%;
-    top: var(--clippath-slope);
-    transform: var(--clippath-slope-deg);
+    top: 3vw;
+    transform: rotateZ(1.8deg);
     width: 101%;
   }
 
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: var(--background-image);
+    background-image: var(--url-background);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
-    clip-path: var(--clippath-footer);
+    clip-path: var(--clippath);
   }
 
   .background-hover {
     &--codepen {
       &::before {
         background-color: var(--clr-codepen);
-        clip-path: var(--clippath-footer);
+        clip-path: var(--clippath);
       }
     }
 
     &--github {
       &::before {
         background-color: var(--clr-github);
-        clip-path: var(--clippath-footer);
+        clip-path: var(--clippath);
       }
     }
 
     &--linkedin {
       &::before {
         background-color: var(--clr-linkedin);
-        clip-path: var(--clippath-footer);
+        clip-path: var(--clippath);
       }
     }
 
     &--mail {
       &::before {
         background-color: var(--clr-mail);
-        clip-path: var(--clippath-footer);
+        clip-path: var(--clippath);
       }
     }
 
     &--stackoverflow {
       &::before {
         background-color: var(--clr-stackoverflow);
-        clip-path: var(--clippath-footer);
+        clip-path: var(--clippath);
       }
     }
   }
 }
 
 .footer__message {
-  font-size: var(--fontsize-footer-message);
-  margin: var(--margin-footer-message);
+  font-size: 1.4em;
+  margin: .5em 0;
   order: 2;
   position: relative;
 }
 
 .footer__social {
   list-style: none;
-  margin: var(--margin-footer-social);
+  margin: .5em 0;
   order: 1;
   padding: 0;
 
   &:hover {
-    .icon {
+    .footer__social__link .icon {
       opacity: .6;
+    }
+
+    .footer__social__link:hover {
+      .icon {
+        color: var(--clr-primary-white);
+        opacity: 1;
+      }
     }
   }
 }
@@ -111,41 +123,39 @@
   color: var(--clr-primary-white);
   cursor: pointer;
   display: inline-block;
-  font-size: var(--fontsize-footer-glyph);
-  margin: var(--margin-footer-glyph);
+  font-size: 1.8em;
+  margin: 0 .1em;
+  transition: all .2s ease;
 
   &:focus,
   &:focus-within {
     color: var(--clr-primary-accent);
   }
-
-  &:hover {
-    & > .icon {
-      color: var(--clr-secondary-white);
-      opacity: 1;
-    }
-  }
-
-  & > .icon {
-    transition: opacity .2s ease;
-  }
 }
-
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .footer {
     flex-direction: row;
     justify-content: space-between;
+    margin: 2em 0 0;
+    padding: 6.5em 4em 2.5em;
     text-align: inherit;
   }
 
   .footer__message {
     display: inline-block;
+    font-size: 1.6em;
+    margin: -22px 0 .5em;
     order: 1;
   }
 
   .footer__social {
     display: inline-block;
     order: 2;
+  }
+
+  .footer__social__link {
+    font-size: 2em;
+    margin: 0;
   }
 }

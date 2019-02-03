@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title short-underline short-underline--dark">Projects</h1>
+      <h1 class="header__title short-underline short-underline--inverse">Projects</h1>
       <ul class="header__message header__links">
         <li class="header__links__item">
           <a href="/" rel="noopener" target="_self">home</a>
@@ -24,7 +24,7 @@
 
     <main class="main">
       <article class="section">
-        <ul class="links links--glyphs">
+        <ul class="list list--links list--glyphs">
           {{#each project.links as |url key|}}
             <li class="links__item">
               <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_self"></a>
