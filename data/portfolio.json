@@ -300,7 +300,7 @@
       "spotlight": false,
       "keywords": ["javascript", "git", "commit", "commitizen", "lint"],
       "links": {
-        "github": "https://github.com/marionebl/commitlint",
+        "github": "https://github.com/conventional-changelog/commitlint",
         "npm": "https://www.npmjs.com/package/@commitlint/cli",
         "website": "https://marionebl.github.io/commitlint/"
       }
