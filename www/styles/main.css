@@ -126,8 +126,17 @@ em,
   @apply --text-emph;
 }
 
+figcaption,
+.text-sub {
+  @apply --text-sub;
+}
+
 code {
+  background-color: var(--clr-code-background);
+  border-radius: 2px;
+  color: var(--clr-primary-black);
   font-family: var(--fontstack-code);
+  padding: .05em .2em;
 }
 
 article,
