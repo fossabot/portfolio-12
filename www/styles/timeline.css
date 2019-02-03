@@ -219,41 +219,33 @@
           }
         }
       }
-    }
-  }
-}
 
-/* --- Adept #-elements in horizontal timeline --- */
-
-/* Show 3 elements on small screens */
-@media only screen and (min-width: 961px) and (orientation: landscape) {
-  .timeline--horizontal {
-    .timeline-event {
-      &:nth-child(2),
-      &:nth-child(3) {
-        display: none;
+      /* Show 3 elements on small screens */
+      @media only screen and (min-width: 961px) and (orientation: landscape) {
+        .timeline-event {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: none;
+          }
+        }
       }
-    }
-  }
-}
 
-/* Show 4 elements on larger screens */
-@media only screen and (min-width: 1200px) and (orientation: landscape) {
-  .timeline--horizontal {
-    .timeline-event {
-      &:nth-child(3) {
-        display: flex;
+      /* Show 4 elements on medium screens */
+      @media only screen and (min-width: 1200px) and (orientation: landscape) {
+        .timeline-event {
+          &:nth-child(3) {
+            display: flex;
+          }
+        }
       }
-    }
-  }
-}
 
-/* Show 5 elements on large screens */
-@media only screen and (min-width: 1500px) and (orientation: landscape) {
-  .timeline--horizontal {
-    .timeline-event {
-      &:nth-child(2) {
-        display: flex;
+      /* Show 5 elements on large screens */
+      @media only screen and (min-width: 1500px) and (orientation: landscape) {
+        .timeline-event {
+          &:nth-child(2) {
+            display: flex;
+          }
+        }
       }
     }
   }
