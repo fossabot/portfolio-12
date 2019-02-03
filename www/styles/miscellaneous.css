@@ -1,4 +1,8 @@
-// Class base for elements that change the background of a container
+@import 'utilities/text.css';
+@import 'utilities/unselectable.css';
+@import 'variables/colors.css';
+@import 'variables/fonts.css';
+
 .background-hover {
   &::before {
     content: '';
@@ -6,7 +10,7 @@
     height: 100%;
     left: 0;
     opacity: 0;
-    pointer-events: none; // Prevents hover action on the (invisible) psuedo element
+    pointer-events: none; /* Prevents hover action on the (invisible) psuedo element */
     position: absolute;
     top: 0;
     transition: opacity .2s ease;
@@ -21,28 +25,71 @@
   }
 }
 
-// Should be used in addition to the fontello "icon-" classes
+.code-inline {
+  background-color: var(--clr-code-background);
+  border-radius: 2px;
+  color: var(--clr-primary-black);
+  font-family: var(--fontstack-code);
+  padding: .05em .2em;
+}
+
 .icon {
   display: block;
   text-decoration: none;
 
   &--hover {
-    &:focus {
-      color: var(--clr-secondary-accent);
-    }
-
+    &:focus,
     &:hover {
       color: var(--clr-secondary-accent);
     }
   }
 }
 
-// Inherit all styles from the parent
 .mimic-parent {
   all: inherit;
 }
 
-// Adds decoration to a title
+.more-arrow {
+  @apply --unselectable;
+  @apply --text-bold;
+
+  cursor: pointer;
+  margin: .7em 1em;
+  position: relative;
+  text-decoration: none;
+  transition: color .1s ease, margin .15s ease;
+
+  &::after {
+    color: var(--clr-primary-black);
+    content: '\00A0\2192';
+    display: block;
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: left .15s ease, opacity .1s ease;
+  }
+
+  &:focus,
+  &:hover {
+    color: var(--clr-primary-accent);
+    margin-right: 1.4em;
+
+    &::after {
+      left: 100%;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+@media only screen and (min-width: 961px) and (orientation: landscape) {
+  .more-arrow {
+    margin: 0;
+  }
+}
+
 .short-underline {
   margin-bottom: 1.05em;
 
@@ -57,7 +104,7 @@
     width: 2em;
   }
 
-  &.short-underline--dark {
+  &--inverse {
     &::after {
       background-color: var(--clr-primary-white);
     }
@@ -70,42 +117,12 @@
   }
 }
 
-// Class to make text thin
-.text-thin,
-%text-thin {
-  font-weight: 100;
+.section--full-width {
+  margin: 0;
+  max-width: none;
+  padding: 0;
 }
 
-// Class to make text slightly bolder
-.text-littlebold,
-%text-littlebold {
-  font-weight: 300;
-}
-
-// Class to make text slightly bolder
-.text-bold,
-%text-bold {
-  font-weight: 600;
-}
-
-// Class to make text as bold as possilbe
-.text-extrabold,
-%text-extrabold {
-  font-weight: 900;
-}
-
-// Class to make text secondary/less important
-.text-secondary,
-%text-secondary {
-  color: var(--clr-primary-gray);
-  font-family: var(--fontstack-text);
-  font-size: var(--fontsize-subtext);
-  font-style: italic;
-  font-weight: normal;
-  line-height: var(--lineheight-subtext);
-}
-
-// Class for links in text
 .text-link {
   background-color: transparent;
   color: var(--clr-secondary-accent);
@@ -115,7 +132,7 @@
   z-index: 0;
 
   &::after {
-    background-color: var(--clr-secondary-black);
+    background-color: var(--clr-primary-black);
     content: '';
     height: calc(100% + 4px);
     left: -2px;
@@ -141,23 +158,4 @@
       top: auto;
     }
   }
-}
-
-// Class to make a text smaller then it otherwise would have been
-.text-small,
-%text-small {
-  font-size: .8rem;
-  line-height: var(--lineheight-text);
-}
-
-// Class to make a text bigger then it otherwise would have been
-.text-big,
-%text-big {
-  font-size: 1.2em;
-}
-
-// Class to make text italic
-.text-italic,
-%text-italic {
-  font-style: italic;
 }

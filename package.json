@@ -11,6 +11,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.0",
     "gulp": "^4.0.0",
     "gulp-axe-webdriver": "^3.1.0",
@@ -29,15 +30,20 @@
     "gulp-json-schema": "^1.0.0",
     "gulp-jsonlint": "^1.2.2",
     "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-rm": "^1.0.5",
     "gulp-run-command": "0.0.9",
-    "gulp-sass": "^4.0.1",
-    "gulp-sass-lint": "^1.4.0",
+    "gulp-stylelint": "^8.0.0",
     "gulp-uglify-es": "^1.0.4",
     "handlebars-helpers": "^0.10.0",
     "handlebars-utils": "^1.0.6",
     "husky": "^1.1.4",
     "jshint": "^2.9.6",
-    "lighthouse": "^2.9.4"
+    "lighthouse": "^2.9.4",
+    "postcss-apply": "^0.11.0",
+    "postcss-css-variables": "^0.11.0",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.1",
+    "stylelint": "^9.10.1"
   }
 }
