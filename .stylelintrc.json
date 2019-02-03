@@ -1,4 +1,7 @@
 {
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
     "at-rule-no-unknown": true,
     "at-rule-blacklist": null,
@@ -122,6 +125,7 @@
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "number-max-precision": 2,
+    "order/properties-alphabetical-order": true,
     "property-blacklist": null,
     "property-case": "lower",
     "property-no-unknown": true,

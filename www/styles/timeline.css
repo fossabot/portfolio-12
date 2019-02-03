@@ -20,9 +20,9 @@
   position: relative;
 
   .timeline-event {
-    box-shadow: 0 0 4px 0 var(--clr-shadow);
     background-color: var(--clr-primary-white);
     border-radius: 4px;
+    box-shadow: 0 0 4px 0 var(--clr-shadow);
     color: var(--clr-primary-black);
     display: flex;
     flex: 0 0 0;
@@ -91,9 +91,9 @@
       box-sizing: border-box;
       color: var(--clr-primary-white);
       height: var(--circle-diameter);
+      left: calc(-1 * (var(--line-offset) + (var(--circle-diameter) / 2)));
       padding: 8px;
       position: absolute;
-      left: calc(-1 * (var(--line-offset) + (var(--circle-diameter) / 2)));
       top: calc(50% - (var(--circle-diameter) / 2));
       transition: border-color .2s ease;
       width: var(--circle-diameter);
@@ -103,8 +103,8 @@
       background-color: var(--clr-primary-black);
       content: '';
       height: calc(100% + (2 * var(--line-offset)));
-      position: absolute;
       left: calc(-1 * var(--line-offset));
+      position: absolute;
       top: 0;
       width: var(--line-width);
     }
@@ -199,8 +199,8 @@
           background-color: var(--clr-primary-black);
           content: '';
           height: var(--line-width);
-          position: absolute;
           left: 0;
+          position: absolute;
           top: calc(-1 * var(--line-offset));
           width: calc(100% + var(--margin-between));
         }

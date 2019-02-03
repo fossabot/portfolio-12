@@ -11,6 +11,10 @@
     font-weight: 700;
   };
 
+  --text-extrabold: {
+    font-weight: 900;
+  };
+
   --text-emph: {
     font-style: italic;
   };

@@ -2,6 +2,7 @@
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
+@import 'variables/paths.css';
 
 .header {
   --clippath: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
@@ -44,7 +45,7 @@
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: url('/assets/background.jpg');
+    background-image: var(--url-background);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
@@ -56,6 +57,33 @@
 
     .header__message {
       margin: auto 0 .8em;
+
+      b {
+        @apply --text-extrabold;
+      }
+    }
+  }
+
+  .background-hover {
+    &--aqua-spray {
+      &::before {
+        background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--mystic-mauvea {
+      &::before {
+        background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--sweat-dream {
+      &::before {
+        background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
+        clip-path: var(--clippath);
+      }
     }
   }
 }

@@ -2,6 +2,7 @@
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
+@import 'variables/layers.css';
 
 .background-hover {
   &::before {
@@ -15,7 +16,7 @@
     top: 0;
     transition: opacity .2s ease;
     width: 100%;
-    z-index: map-get($layers, basement);
+    z-index: var(--layer-basement);
   }
 
   &:hover {
@@ -23,14 +24,6 @@
       opacity: 1;
     }
   }
-}
-
-.code-inline {
-  background-color: var(--clr-code-background);
-  border-radius: 2px;
-  color: var(--clr-primary-black);
-  font-family: var(--fontstack-code);
-  padding: .05em .2em;
 }
 
 .icon {

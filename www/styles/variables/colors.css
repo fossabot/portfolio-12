@@ -12,4 +12,19 @@
   --clr-badge: #ff9800;
   --clr-code-background: rgba(27, 31, 35, .05);
   --clr-shadow: rgba(0, 0, 0, .25);
+
+  /* brands */
+  --clr-codepen: #000000;
+  --clr-github: #181717;
+  --clr-linkedin: #0077b5;
+  --clr-stackoverflow: #fe7a16;
+  --clr-mail: #d14836;
+
+  /* gradients */
+  --aqua-spray-start: #00d2ff;
+  --aqua-spray-end: #3a47d5;
+  --mystic-mauvea-start: #63e2ff;
+  --mystic-mauvea-end: #5752f2;
+  --sweat-dream-start: #a3a1ff;
+  --sweat-dream-end: #3a3897;
 }
