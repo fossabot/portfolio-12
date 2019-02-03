@@ -143,8 +143,8 @@
   }
 
   .footer__message {
-    font-size: 1.6em;
     display: inline-block;
+    font-size: 1.6em;
     margin: -22px 0 .5em;
     order: 1;
   }
