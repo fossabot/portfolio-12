@@ -27,27 +27,15 @@
       </section>
 
       <section id="history" class="section section--full-width">
-        <ul class="timeline-old timeline-old--inline timeline-old--dark-bg">
+        <ul class="timeline timeline--horizontal">
           <li class="timeline-event timeline-event--more">
-            <a class="mimic-parent" href="/timeline" rel="noopener">
-              <div class="timeline-event__title">
-                <span>See more...</span>
-              </div>
-              <div class="timeline-event__details"></div>
-            </a>
+            <a href="/timeline" rel="noopener">more...</a>
           </li>
           {{#each (reverse (first timeline 4))}}
             <li class="timeline-event timeline-event--{{ type }}">
-              <a class="mimic-parent" href="{{ link }}" rel="noopener">
-                <div class="timeline-event__title">
-                  <span>{{ title }}</span>
-                </div>
-                <div class="timeline-event__details">
-                  <span>{{ institute }}</span>
-                  <br>
-                  <span class="text-italic">{{ when }}</span>
-                </div>
-              </a>
+              <p class="timeline-event__title short-underline">{{ title }}</p>
+              <p><span class="text-italic">{{ when }}</span> | {{ institute }}</p>
+              <a class="timeline-event__more more-arrow" href="{{ link }}" rel="noopener">More</a>
             </li>
           {{/each}}
         </ul>
