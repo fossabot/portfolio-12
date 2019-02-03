@@ -26,5 +26,13 @@
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   :root {
     --fontsize-root: .9em;
+    --fontsize-h1: 3.25rem;
+    --fontsize-h2: 2.75rem;
+    --fontsize-h3: 2.25rem;
+    --fontsize-h4: 1.9rem;
+    --fontsize-h5: 1.7rem;
+    --fontsize-h6: 1.5rem;
+    --fontsize-text: 1.2rem;
+    --fontsize-subtext: 1em;
   }
 }

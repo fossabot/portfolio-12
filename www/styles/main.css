@@ -115,12 +115,14 @@ h6 {
 }
 
 b,
-strong {
+strong,
+.text-bold {
   @apply --text-bold;
 }
 
 i,
-em {
+em,
+.text-emph {
   @apply --text-emph;
 }
 

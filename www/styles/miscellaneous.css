@@ -1,5 +1,6 @@
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
+@import 'variables/layers.css';
 
 .background-hover {
   &::before {
@@ -13,7 +14,7 @@
     top: 0;
     transition: opacity .2s ease;
     width: 100%;
-    z-index: map-get($layers, basement);
+    z-index: var(--layer-basement);
   }
 
   &:hover {

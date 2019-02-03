@@ -57,6 +57,33 @@
 
     .header__message {
       margin: auto 0 .8em;
+
+      b {
+        @apply --text-extrabold;
+      }
+    }
+  }
+
+  .background-hover {
+    &--aqua-spray {
+      &::before {
+        background: linear-gradient(135deg, var(--aqua-spray-start) 0%, var(--aqua-spray-end) 100%);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--mystic-mauvea {
+      &::before {
+        background: linear-gradient(135deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--sweat-dream {
+      &::before {
+        background: linear-gradient(135deg, var(--sweat-dream-start) 0%, var(--sweat-dream-end) 100%);
+        clip-path: var(--clippath);
+      }
     }
   }
 }

@@ -53,6 +53,43 @@
     background-size: cover;
     clip-path: var(--clippath);
   }
+
+  .background-hover {
+    &--codepen {
+      &::before {
+        background-color: var(--clr-codepen);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--github {
+      &::before {
+        background-color: var(--clr-github);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--linkedin {
+      &::before {
+        background-color: var(--clr-linkedin);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--mail {
+      &::before {
+        background-color: var(--clr-mail);
+        clip-path: var(--clippath);
+      }
+    }
+
+    &--stackoverflow {
+      &::before {
+        background-color: var(--clr-stackoverflow);
+        clip-path: var(--clippath);
+      }
+    }
+  }
 }
 
 .footer__message {
@@ -69,12 +106,15 @@
   padding: 0;
 
   &:hover {
-    .footer__social__link {
+    .footer__social__link .icon {
       opacity: .6;
     }
 
     .footer__social__link:hover {
-      opacity: 1;
+      .icon {
+        color: var(--clr-primary-white);
+        opacity: 1;
+      }
     }
   }
 }
