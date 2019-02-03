@@ -18,14 +18,14 @@ Repository for the personal portfolio of Eric Cornelissen.
 
 ###### How to use the build tools
 - `$ gulp`: Build the site, watch for changes, and start a simple HTTP server (on port 4000) serving the site with live reload.
-- `$ gulp analyze:a11y`: Test the website for accessibility issues.
-  - Result can be found in `./_reports`.
-- `$ gulp analyze:perf`: Do a performance check on the sites landing page.
-  - Result can be found in `./_reports`.
+- `$ gulp analyze:a11y`: Test the website for accessibility issues. Result can be found in `./_reports`.
+- `$ gulp analyze:perf`: Do a performance check on the sites landing page. Result can be found in `./_reports`.
 - `$ gulp build`: Build the project once.
 - `$ gulp build:watch`: Build the project and watch for changes.
 - `$ gulp clean`: Clean the project, removing all generated files.
 - `$ gulp dist`: Build the project for distributing purposes.
 - `$ gulp lint`: Lint the source code of the project.
+- `$ gulp lint:fix`: _[experimental]_ Lint the source code and try to automatically fix any issues.
+- `$ gulp lint:report`: Lint the source code of the project and output the result to `./_reports`.
 - `$ gulp server`: Start a simple HTTP server (on port 4000) serving the site.
   - Requires `$ gulp build` or `$ gulp dist`.
