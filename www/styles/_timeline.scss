@@ -185,7 +185,7 @@
       content: '';
       height: var(--diameter-timeline-event-ball);
       left: calc(50% - (#{var(--diameter-timeline-event-ball) / 2}));
-      padding: 4px;
+      padding: 6px;
       position: absolute;
       width: var(--diameter-timeline-event-ball);
     }
