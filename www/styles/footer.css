@@ -47,7 +47,7 @@
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: url('/assets/background.jpg');
+    background-image: var(--url-background);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;

@@ -2,6 +2,7 @@
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
+@import 'variables/paths.css';
 
 .header {
   --clippath: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
@@ -44,7 +45,7 @@
   &::after {
     background-attachment: fixed;
     background-blend-mode: overlay;
-    background-image: url('/assets/background.jpg');
+    background-image: var(--url-background);
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
