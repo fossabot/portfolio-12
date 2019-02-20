@@ -140,6 +140,7 @@ code {
 }
 
 article,
+header,
 section {
   margin: 2em;
   max-width: none;
@@ -147,9 +148,17 @@ section {
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   article,
+  header,
   section {
     margin: 2em auto;
     max-width: 800px;
     padding: 0 124px;
+  }
+}
+@media only screen and (min-width: 1600px) and (orientation: landscape) {
+  article,
+  header,
+  section {
+    padding: 0 0 0 248px;
   }
 }

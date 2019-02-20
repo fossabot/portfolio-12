@@ -7,11 +7,17 @@
     {{> includes/metadata}}
   </head>
   <body>
-    {{> includes/navigation}}
+    <header class="new-header">
+      <h1 class="new-header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
+      <p class="new-header__message text-littlebold">A <b>programmer</b>, <b>web developer</b> and <b>open source enthusiast</b> from The Netherlands based in Helsinki.</p>
 
-    <header class="header header--home">
-      <h1 class="header__title short-underline short-underline--inverse">Eric<br>Cornelissen</h1>
-      <p class="header__message text-littlebold">A <b class="background-hover background-hover--mystic-mauvea">programmer</b>, <b class="background-hover background-hover--aqua-spray">web developer</b> and <b class="background-hover background-hover--sweat-dream">open source enthusiast</b> from The Netherlands based in Helsinki.</p>
+      <ul class="new-header__list">
+        {{#each social}}
+          <li class="list-item">
+            <a class="icon {{get_icon @key}}" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+          </li>
+        {{/each}}
+      </ul>
     </header>
 
     <main class="main">
