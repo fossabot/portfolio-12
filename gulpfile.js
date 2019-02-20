@@ -161,7 +161,7 @@ gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'style
 gulp.task('build:watch', function() {
   watchingFiles = true;
 
-  const watch = (files, task) => gulp.watch(files, task).on('change', browserSync.reload);
+  const watch = (files, task) => gulp.watch(files, task).on('all', browserSync.reload);
   watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
   watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
   watch(INPUT_ASSETS.images, gulp.task('assets-images'));
