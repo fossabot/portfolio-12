@@ -24,18 +24,6 @@
   }
 }
 
-.icon {
-  display: block;
-  text-decoration: none;
-
-  &--hover {
-    &:focus,
-    &:hover {
-      color: var(--clr-secondary-accent);
-    }
-  }
-}
-
 .mimic-parent {
   all: inherit;
 }

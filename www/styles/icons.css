@@ -8,6 +8,16 @@
 }
 
 .icon {
+  display: block;
+  text-decoration: none;
+
+  &--hover {
+    &:focus,
+    &:hover {
+      color: var(--clr-secondary-accent);
+    }
+  }
+
   &::before {
     font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
   }
