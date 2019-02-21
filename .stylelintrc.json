@@ -54,7 +54,7 @@
     "declaration-block-semicolon-space-before": "never",
     "declaration-block-trailing-semicolon": "always",
     "declaration-colon-newline-after": "always-multi-line",
-    "declaration-colon-space-after": "always",
+    "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": ["always", {
       "except": ["after-declaration", "first-nested"]
@@ -187,7 +187,7 @@
     "value-keyword-case": "lower",
     "value-list-comma-newline-after": "always-multi-line",
     "value-list-comma-newline-before": "never-multi-line",
-    "value-list-comma-space-after": "always",
+    "value-list-comma-space-after": "always-single-line",
     "value-list-comma-space-before": "never",
     "value-list-max-empty-lines": 0,
     "value-no-vendor-prefix": true
