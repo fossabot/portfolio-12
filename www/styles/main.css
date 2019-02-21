@@ -7,8 +7,6 @@ body {
   background-color: #fafafa;
   border: 0;
   color: var(--clr-primary-black);
-  display: flex;
-  flex-direction: column;
   font-size: var(--fontsize-root);
   height: 100%;
   margin: 0;
@@ -156,9 +154,31 @@ section {
   }
 }
 @media only screen and (min-width: 1600px) and (orientation: landscape) {
+  body {
+    display: grid;
+    grid-gap: 0 48px;
+    grid-template-columns: 32% calc(68% - 48px);
+    width: 100%;
+  }
+
+  header {
+    align-self: start;
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 3;
+  }
+
+  footer {
+    grid-column: span 2;
+  }
+
   article,
   header,
   section {
-    padding: 0 0 0 248px;
+    margin: 0;
+    padding: 0;
+    width: auto;
   }
 }

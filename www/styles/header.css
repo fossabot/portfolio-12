@@ -179,7 +179,7 @@
   .new-header {
     background-color: var(--clr-primary-white);
     box-shadow: 0 0 4px 0 var(--clr-shadow);
-    left: 8vw;
+    justify-self: end;
     margin: 0;
     padding: 0 32px 24px;
     position: sticky;
