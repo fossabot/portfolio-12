@@ -1,0 +1,34 @@
+@font-face {
+  font-family: icon-e;
+  src: url('/assets/fonts/icon-e.eot');
+  src:
+    url('/assets/fonts/icon-e.woff') format('woff'),
+    url('/assets/fonts/icon-e.otf') format('opentype'),
+    url('/assets/fonts/icon-e.svg#filename') format('svg');
+}
+
+.icon {
+  &::before {
+    font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
+  }
+
+  &-codepen::before {
+    content: '\EA02';
+  }
+
+  &-github::before {
+    content: '\EA04';
+  }
+
+  &-linkedin::before {
+    content: '\EA06';
+  }
+
+  &-mail::before {
+    content: '\EA07';
+  }
+
+  &-stackoverflow::before {
+    content: '\EA08';
+  }
+}

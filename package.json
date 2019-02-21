@@ -22,6 +22,7 @@
     "gulp-hb": "^7.0.1",
     "gulp-htmllint": "0.0.16",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-iconfont": "^10.0.2",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-imagemin": "^5.0.3",
