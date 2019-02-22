@@ -222,20 +222,15 @@
             width: 50%;
           }
         }
-      }
 
-      /* Show 3 elements on small screens */
-      @media only screen and (min-width: 961px) and (orientation: landscape) {
-        .timeline-event {
-          &:nth-child(2),
-          &:nth-child(3) {
-            display: none;
-          }
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: none;
         }
       }
 
       /* Show 4 elements on medium screens */
-      @media only screen and (min-width: 1200px) and (orientation: landscape) {
+      @media only screen and (min-width: 1340px) and (orientation: landscape) {
         .timeline-event {
           &:nth-child(3) {
             display: flex;
@@ -244,7 +239,7 @@
       }
 
       /* Show 5 elements on large screens */
-      @media only screen and (min-width: 1500px) and (orientation: landscape) {
+      @media only screen and (min-width: 1640px) and (orientation: landscape) {
         .timeline-event {
           &:nth-child(2) {
             display: flex;
