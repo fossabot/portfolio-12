@@ -1,0 +1,44 @@
+{{page "title" "Timeline"}}
+{{page "description" "An overview of major events in my life"}}
+{{page "keywords" "timeline,events,work,education,achievements,volunteer"}}
+
+<!DOCTYPE html>
+<html lang="{{site.lang}}">
+  <head>
+    {{> includes/metadata}}
+  </head>
+  <body>
+    {{> includes/navigation}}
+
+    <header class="header">
+      <h1 class="header__title short-underline short-underline--dark">{{page 'title'}}</h1>
+      <ul class="header__message header__links">
+        <li class="header__links__item">
+          <a href="/" rel="noopener" target="_self">home</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/archive" rel="noopener" target="_self">archive</a>
+        </li>
+        <li class="header__links__item">
+          <a href="/snippets" rel="noopener" target="_self">snippets</a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <section id="timeline" class="section">
+        <ul class="timeline timeline--alternate">
+          {{#each timeline}}
+            <li class="timeline-event timeline-event--{{ type }}">
+              <p class="timeline-event__title short-underline">{{ title }}</p>
+              <p><span class="text-italic">{{ when }}</span> | {{ institute }}</p>
+              <a class="timeline-event__more more-arrow" href="{{ link }}" rel="noopener">More</a>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    </main>
+
+    {{> includes/footer}}
+  </body>
+</html>

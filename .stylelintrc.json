@@ -54,7 +54,7 @@
     "declaration-block-semicolon-space-before": "never",
     "declaration-block-trailing-semicolon": "always",
     "declaration-colon-newline-after": "always-multi-line",
-    "declaration-colon-space-after": "always",
+    "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": ["always", {
       "except": ["after-declaration", "first-nested"]
@@ -70,7 +70,7 @@
     "font-family-no-missing-generic-family-keyword": true,
     "font-weight-notation": "numeric",
     "function-blacklist": null,
-    "function-calc-no-invalid": true,
+    "function-calc-no-invalid": null,
     "function-calc-no-unspaced-operator": true,
     "function-comma-newline-after": "always-multi-line",
     "function-comma-newline-before": "never-multi-line",
@@ -80,7 +80,7 @@
     "function-max-empty-lines": 0,
     "function-name-case": "lower",
     "function-parentheses-newline-inside": "always-multi-line",
-    "function-parentheses-space-inside": "never",
+    "function-parentheses-space-inside": "never-single-line",
     "function-url-no-scheme-relative": true,
     "function-url-quotes": "always",
     "function-url-scheme-blacklist": null,
