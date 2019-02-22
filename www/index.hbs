@@ -28,9 +28,7 @@
 
       <section id="history" class="section section--full-width">
         <ul class="timeline timeline--horizontal">
-          <li class="timeline-event timeline-event--more">
-            <a href="/timeline" rel="noopener">more...</a>
-          </li>
+          <a class="timeline-event timeline-event--more" aria-label="View full timeline" href="/timeline" rel="noopener"></a>
           {{#each (reverse (first timeline 4))}}
             <li class="timeline-event timeline-event--{{ type }}">
               <p class="timeline-event__title short-underline">{{ title }}</p>

@@ -190,6 +190,14 @@
         flex: 0 1 var(--card-width);
         margin: 0 calc(var(--margin-between) / 2);
 
+        &--more {
+          box-shadow: none;
+          height: 0;
+          outline: 0;
+          padding: 0;
+          width: 0;
+        }
+
         &::after {
           left: calc(50% - (var(--circle-diameter) / 2));
           top: calc(-1 * (var(--line-offset) + (var(--circle-diameter) / 2)));
