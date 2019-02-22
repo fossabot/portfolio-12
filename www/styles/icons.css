@@ -20,9 +20,10 @@
 
   &::before {
     font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
+    font-style: normal;
   }
 
-  &-arrowup::before {
+  &-chevron-up::before {
     content: '\EA02';
   }
 
