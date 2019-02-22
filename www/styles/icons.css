@@ -22,23 +22,51 @@
     font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
   }
 
-  &-codepen::before {
+  &-arrowup::before {
     content: '\EA02';
   }
 
-  &-github::before {
+  &-codepen::before {
+    content: '\EA03';
+  }
+
+  &-document::before {
     content: '\EA04';
   }
 
-  &-linkedin::before {
-    content: '\EA06';
+  &-download::before {
+    content: '\EA05';
   }
 
-  &-mail::before {
+  &-github::before {
     content: '\EA07';
   }
 
-  &-stackoverflow::before {
+  &-home::before {
     content: '\EA08';
+  }
+
+  &-linkedin::before {
+    content: '\EA0A';
+  }
+
+  &-mail::before {
+    content: '\EA0B';
+  }
+
+  &-npm::before {
+    content: '\EA0C';
+  }
+
+  &-rubygems::before {
+    content: '\EA0D';
+  }
+
+  &-stackoverflow::before {
+    content: '\EA0E';
+  }
+
+  &-website::before {
+    content: '\EA10';
   }
 }
