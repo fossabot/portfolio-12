@@ -143,10 +143,6 @@
   }
 }
 
-.timeline-old {
-  display: none;
-}
-
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
     --card-width: 18em;
