@@ -43,7 +43,7 @@
                 <ul class="list-item__links">
                   {{#each links as |url key|}}
                     <li class="list-item__link">
-                      <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
+                      <a class="icon icon-{{@key}} icon--hover" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                     </li>
                   {{/each}}
                 </ul>
@@ -72,7 +72,7 @@
                 <ul class="list-item__links">
                   {{#each links as |url key|}}
                     <li class="list-item__link">
-                      <a class="icon icon--hover {{get_icon key}}" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
+                      <a class="icon icon-{{@key}} icon--hover" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                     </li>
                   {{/each}}
                 </ul>
