@@ -8,17 +8,15 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title short-underline short-underline--inverse">Projects</h1>
-      <ul class="header__message header__links">
-        <li class="header__links__item">
-          <a href="/" rel="noopener" target="_self">home</a>
-        </li>
-        <li class="header__links__item">
-          <a href="/archive" rel="noopener" target="_self">archive</a>
-        </li>
-        <li class="header__links__item">
-          <a href="/snippets" rel="noopener" target="_self">snippets</a>
-        </li>
+      <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
+      <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here, or at the links below.</p>
+
+      <ul class="header__list">
+        {{#each social}}
+          <li class="list-item">
+            <a class="icon {{get_icon @key}}" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+          </li>
+        {{/each}}
       </ul>
     </header>
 

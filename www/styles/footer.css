@@ -2,6 +2,7 @@
 @import 'variables/colors.css';
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
+@import 'variables/paths.css';
 
 .footer {
   --clippath: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
