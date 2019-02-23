@@ -168,9 +168,13 @@
 
   .new-header__list {
     list-style: none;
+    position: relative;
 
     .list-item {
       display: inline-block;
+      font-size: 28px;
+      margin: 0 4px;
+      padding: 0;
     }
   }
 }
@@ -185,5 +189,24 @@
     position: sticky;
     top: 0;
     width: 340px;
+
+    .new-header__list {
+      align-content: center;
+      align-items: stretch;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      margin: 20px 0 0;
+      padding: 16px 0 0;
+
+      &::before {
+        background-color: var(--clr-primary-black);
+        content: '';
+        height: 1px;
+        position: absolute;
+        top: 0;
+        width: 30%;
+      }
+    }
   }
 }
