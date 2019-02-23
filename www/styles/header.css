@@ -6,15 +6,8 @@
 .header {
   z-index: var(--layer-roof);
 
-  .header__title {
-    @apply --unselectable;
-
-    overflow-wrap: break-word;
-    word-break: normal;
-
-    &::after {
-      background: linear-gradient(90deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
-    }
+  .header__icon {
+    display: none;
   }
 
   .header__list {
@@ -29,6 +22,17 @@
     }
   }
 
+  .header__title {
+    @apply --unselectable;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+
+    &::after {
+      background: linear-gradient(90deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
+    }
+  }
+
   &--compact {
     align-content: center;
     background-color: var(--clr-primary-white);
@@ -38,7 +42,6 @@
     margin: 0;
     max-width: none;
     overflow: hidden;
-    /* margin-top: 64px; */
     padding: 12px 200px;
     position: sticky;
     top: 0;
