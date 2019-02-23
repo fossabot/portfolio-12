@@ -1,0 +1,32 @@
+@import './variables/colors.css';
+
+.breadcrumbs {
+  --text-color: var(--clr-primary-gray);
+  --hover-color: var(--clr-secondary-gray);
+
+  font-family: monospace;
+  font-size: 0;
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+
+  & > li {
+    color: var(--text-color);
+    display: inline-block;
+    font-family: monospace;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+
+    &:not(:last-child)::after {
+      content: '>';
+      font-size: .6em;
+      padding: 0 8px;
+      pointer-events: none;
+    }
+
+    & > a:hover {
+      color: var(--hover-color);
+    }
+  }
+}
