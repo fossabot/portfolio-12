@@ -9,7 +9,6 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Build tool | [Gulp](https://gulpjs.com/) |
 | CSS preprocessor | [PostCSS](https://postcss.org/) |
 | HTML linter | [htmllint](http://htmllint.github.io/) |
-| Iconography | [Fontello](http://fontello.com/) |
 | JavaScript linter | [JSHint](https://jshint.com/) |
 | JSON linter | [jsonlint](https://github.com/zaach/jsonlint) |
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |

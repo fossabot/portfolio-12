@@ -150,8 +150,8 @@
 
   .list-item__link {
     display: inline-block;
-    font-size: 28px;
-    margin: 0;
+    font-size: 1.6em;
+    margin: 0 0 0 .3em;
     padding: 0;
 
     &::after {
@@ -163,7 +163,6 @@
     align-self: flex-begin;
     display: flex;
     flex-flow: row nowrap;
-    font-size: 0;
     list-style: none;
     padding: 0 0 0 .1em;
   }
@@ -209,6 +208,10 @@
       padding: 0;
     }
 
+    .list-item__link {
+      font-size: 1.3em;
+    }
+
     .list-item__links {
       padding: 0 0 0 .3em;
     }
@@ -235,7 +238,7 @@
 
     display: inline-block;
     font-size: 1.3em;
-    margin: 0;
+    margin: 0 0 0 .25em;
     padding: 0;
   }
 

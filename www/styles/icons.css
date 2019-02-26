@@ -1,0 +1,73 @@
+@font-face {
+  font-family: icon-e;
+  src: url('/assets/fonts/icon-e.eot');
+  src:
+    url('/assets/fonts/icon-e.woff') format('woff'),
+    url('/assets/fonts/icon-e.otf') format('opentype'),
+    url('/assets/fonts/icon-e.svg#filename') format('svg');
+}
+
+.icon {
+  display: block;
+  text-decoration: none;
+
+  &--hover {
+    &:focus,
+    &:hover {
+      color: var(--clr-secondary-accent);
+    }
+  }
+
+  &::before {
+    font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
+    font-style: normal;
+  }
+
+  &-chevron-up::before {
+    content: '\EA02';
+  }
+
+  &-codepen::before {
+    content: '\EA03';
+  }
+
+  &-document::before {
+    content: '\EA04';
+  }
+
+  &-download::before {
+    content: '\EA05';
+  }
+
+  &-github::before {
+    content: '\EA07';
+  }
+
+  &-home::before {
+    content: '\EA08';
+  }
+
+  &-linkedin::before {
+    content: '\EA0A';
+  }
+
+  &-mail::before {
+    content: '\EA0B';
+  }
+
+  &-npm::before {
+    content: '\EA0C';
+  }
+
+  &-rubygems::before {
+    content: '\EA0D';
+  }
+
+  &-stackoverflow::before {
+    content: '\EA0E';
+  }
+
+  &-website::before {
+    content: '\EA10';
+  }
+}
