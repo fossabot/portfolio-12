@@ -24,50 +24,50 @@
   }
 
   &-chevron-up::before {
-    content: '\EA02';
-  }
-
-  &-codepen::before {
     content: '\EA03';
   }
 
-  &-document::before {
+  &-codepen::before {
     content: '\EA04';
   }
 
-  &-download::before {
+  &-document::before {
     content: '\EA05';
   }
 
-  &-github::before {
-    content: '\EA07';
+  &-download::before {
+    content: '\EA06';
   }
 
-  &-home::before {
+  &-github::before {
     content: '\EA08';
   }
 
-  &-linkedin::before {
-    content: '\EA0A';
+  &-home::before {
+    content: '\EA09';
   }
 
-  &-mail::before {
+  &-linkedin::before {
     content: '\EA0B';
   }
 
-  &-npm::before {
+  &-mail::before {
     content: '\EA0C';
   }
 
-  &-rubygems::before {
+  &-npm::before {
     content: '\EA0D';
   }
 
-  &-stackoverflow::before {
+  &-rubygems::before {
     content: '\EA0E';
   }
 
+  &-stackoverflow::before {
+    content: '\EA0F';
+  }
+
   &-website::before {
-    content: '\EA10';
+    content: '\EA11';
   }
 }

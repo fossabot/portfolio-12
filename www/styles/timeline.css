@@ -1,10 +1,12 @@
 @import 'utilities/text.css';
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
+@import 'icons.css';
 
 .timeline {
-  --line-offset: 2em;
-  --circle-diameter: 2em;
+  --icon-size: 20px;
+  --line-offset: 40px;
+  --circle-diameter: 40px;
   --card-width: calc(100% - (2 * var(--line-offset)) - var(--circle-diameter));
   --line-width: 1px;
   --margin-event: .6em 0 .6em calc(var(--line-offset) + (var(--circle-diameter) / 2));
@@ -35,25 +37,25 @@
 
     &--achievement {
       &::after {
-        content: url('/assets/icons/achievement.svg');
+        content: '\EA01';
       }
     }
 
     &--education {
       &::after {
-        content: url('/assets/icons/education.svg');
+        content: '\EA07';
       }
     }
 
     &--internship {
       &::after {
-        content: url('/assets/icons/internship.svg');
+        content: '\EA0A';
       }
     }
 
     &--more {
       &::after {
-        content: url('/assets/icons/arrow-left.svg');
+        content: '\EA02';
       }
 
       &::before {
@@ -64,13 +66,13 @@
 
     &--volunteer {
       &::after {
-        content: url('/assets/icons/volunteer.svg');
+        content: '\EA10';
       }
     }
 
     &--work {
       &::after {
-        content: url('/assets/icons/work.svg');
+        content: '\EA12';
       }
     }
 
@@ -82,6 +84,7 @@
     &:focus-within::after,
     &:hover::after {
       border-color: var(--clr-primary-accent);
+      color: var(--clr-primary-accent);
     }
 
     &::after {
@@ -89,13 +92,20 @@
       border: 2px solid var(--clr-primary-black);
       border-radius: var(--circle-diameter);
       box-sizing: border-box;
-      color: var(--clr-primary-white);
+      color: var(--clr-primary-black);
+      font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
+      font-size: var(--icon-size);
+      font-style: normal;
       height: var(--circle-diameter);
       left: calc(-1 * (var(--line-offset) + (var(--circle-diameter) / 2)));
-      padding: 8px;
+      overflow: hidden;
+      padding: 3px 4px;
       position: absolute;
+      text-align: center;
       top: calc(50% - (var(--circle-diameter) / 2));
-      transition: border-color .2s ease;
+      transition:
+        border-color .2s ease,
+        color .2s ease;
       width: var(--circle-diameter);
     }
 
@@ -146,10 +156,15 @@
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .timeline {
     --card-width: 18em;
-    --line-offset: 2.5em;
-    --circle-diameter: 2.5em;
+    --icon-size: 22px;
+    --line-offset: 44px;
+    --circle-diameter: 44px;
     --margin-event: .8em 0;
     --padding-event: 1.1em;
+
+    .timeline-event::after {
+      padding: 7px 4px 5px;
+    }
 
     &--alternate {
       --alternating-offset: calc(var(--card-width) + (2 * var(--line-offset)) + (2 * var(--padding-event)));

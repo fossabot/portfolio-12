@@ -89,7 +89,8 @@ gulp.task('assets-iconography', function() {
              .pipe(iconfont({
                fontName: 'icon-e',
                fontHeight: 1001,
-               formats: ['eot', 'svg', 'ttf', 'woff']
+               formats: ['eot', 'svg', 'ttf', 'woff'],
+               normalize: true
              }))
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
