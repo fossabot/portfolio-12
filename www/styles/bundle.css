@@ -5,6 +5,7 @@
 @import 'article.css';
 @import 'footer.css';
 @import 'header.css';
+@import 'icons.css';
 @import 'navbar.css';
 
 /* components */
@@ -12,3 +13,4 @@
 @import 'badge.css';
 @import 'list.css';
 @import 'tags.css';
+@import 'timeline.css';

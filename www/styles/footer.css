@@ -125,8 +125,8 @@
   cursor: pointer;
   display: inline-block;
   font-size: 1.8em;
-  margin: 0 .1em;
-  transition: all .2s ease;
+  margin: 0 .15em;
+  transition: color .2s ease;
 
   &:focus,
   &:focus-within {
@@ -157,6 +157,6 @@
 
   .footer__social__link {
     font-size: 2em;
-    margin: 0;
+    margin: 0 0 0 .1em;
   }
 }

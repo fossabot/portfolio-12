@@ -3,14 +3,13 @@
 const axe = require('gulp-axe-webdriver');
 const browserSync = require('browser-sync').create();
 const cssnano = require('gulp-cssnano');
-const filter = require('gulp-filter');
-const fontello = require('gulp-fontello');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const gulpIgnore = require('gulp-ignore');
 const handlebars = require('gulp-hb');
 const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
+const iconfont = require('gulp-iconfont');
 const imagemin = require('gulp-imagemin');
 const jshint = require('gulp-jshint');
 const jsonLint = require('gulp-jsonlint');
@@ -29,6 +28,7 @@ const INPUT_DIR = './www'
 const INPUT_ASSETS = {
   downloads: `${INPUT_DIR}/downloads/**/*`,
   fonts: `${INPUT_DIR}/assets/fonts/*`,
+  icons: `${INPUT_DIR}/assets/icons/*.svg`,
   images: `${INPUT_DIR}/assets/**/*.{jpg,png}`,
   svgs: `${INPUT_DIR}/assets/**/*.svg`
 };
@@ -85,18 +85,14 @@ gulp.task('assets-fonts', function() {
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
 gulp.task('assets-iconography', function() {
-  const stylesFilter = filter(['**/*.css'], {restore: true});
-
-  return gulp.src('fontello.config.json')
-             .pipe(fontello({
-               font: 'assets/fonts',
-               css: 'styles',
-               assetsOnly: true
+  return gulp.src(INPUT_ASSETS.icons)
+             .pipe(iconfont({
+               fontName: 'icon-e',
+               fontHeight: 1001,
+               formats: ['eot', 'svg', 'ttf', 'woff'],
+               normalize: true
              }))
-             .pipe(stylesFilter)
-             .pipe(gulpIf(minifyOutput, cssnano()))
-             .pipe(stylesFilter.restore)
-             .pipe(gulp.dest(`${OUTPUT_SITE}`));
+             .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
 gulp.task('assets-images', function() {
   return gulp.src(INPUT_ASSETS.images)
@@ -164,6 +160,7 @@ gulp.task('build:watch', function() {
   const watch = (files, task) => gulp.watch(files, task).on('all', browserSync.reload);
   watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
   watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
+  watch(INPUT_ASSETS.icons, gulp.task('assets-iconography'));
   watch(INPUT_ASSETS.images, gulp.task('assets-images'));
   watch(INPUT_ASSETS.svgs, gulp.task('assets-svgs'));
   watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('html'))

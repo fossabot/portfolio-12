@@ -6,7 +6,7 @@
   <ul class="header__list">
     {{#each social}}
       <li class="list-item">
-        <a class="icon {{get_icon @key}}" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+        <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
       </li>
     {{/each}}
   </ul>
