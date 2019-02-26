@@ -7,7 +7,11 @@
     <ul class="breadcrumbs">
       <li><a href="/" rel="noopener">Home</a></li>
       {{#each (get_crumbs)}}
-        <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
+        {{#unless @last}}
+          <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
+        {{else}}
+          <li>{{name}}</li>
+        {{/unless}}
       {{/each}}
     </ul>
   {{/unless}}
