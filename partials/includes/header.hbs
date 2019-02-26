@@ -6,7 +6,7 @@
   <ul class="breadcrumbs">
     <li><a href="/" rel="noopener">Home</a></li>
     {{#each (get_crumbs)}}
-      <li><a href="/" rel="noopener">{{this}}</a></li>
+      <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
     {{/each}}
   </ul>
 

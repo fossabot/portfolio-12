@@ -5,19 +5,27 @@ function toTitleCase(str) {
 }
 
 module.exports = function(options) {
-  let base = options.data.file._base;
-  let path = options.data.file.path;
+  const base = options.data.file._base;
+  const path = options.data.file.path;
+
+  let fullPath = '';
   let crumbs = path.replace(base, '')
                    .split(/\\|\./)
                    .slice(1, -1)
                    .filter(name => name !== 'index')
-                   .map(toTitleCase);
+                   .map(name => {
+                     fullPath += `/${name}`;
+                     return {
+                       name: toTitleCase(name),
+                       path: fullPath
+                     };
+                   });
 
   // If the $page has a title defined
   // use that as last crumb
   if (this.$page.title) {
     let lastCrumbIndex = crumbs.length - 1;
-    crumbs[lastCrumbIndex] = this.$page.title;
+    crumbs[lastCrumbIndex].name = this.$page.title;
   }
 
   return crumbs;
