@@ -1,17 +1,16 @@
 @import './variables/colors.css';
 
 .breadcrumbs {
-  --text-color: var(--clr-primary-gray);
-  --hover-color: var(--clr-secondary-gray);
+  --space-between: 8px;
 
   font-family: monospace;
   font-size: 0;
   list-style: none;
-  margin: 12px 0;
+  margin: 0;
   padding: 0;
 
   & > li {
-    color: var(--text-color);
+    color: var(--clr-primary-gray);
     cursor: default;
     display: inline-block;
     font-family: monospace;
@@ -22,12 +21,12 @@
     &:not(:last-child)::after {
       content: '>';
       font-size: .6em;
-      padding: 0 8px;
+      padding: 0 var(--space-between);
       pointer-events: none;
     }
 
     & > a:hover {
-      color: var(--hover-color);
+      color: var(--clr-secondary-gray);
       cursor: pointer;
     }
   }

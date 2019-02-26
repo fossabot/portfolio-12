@@ -21,8 +21,7 @@ module.exports = function(options) {
                      };
                    });
 
-  // If the $page has a title defined
-  // use that as last crumb
+  // If the $page has a title defined use that as last crumb
   if (this.$page.title) {
     let lastCrumbIndex = crumbs.length - 1;
     crumbs[lastCrumbIndex].name = this.$page.title;
