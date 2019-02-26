@@ -3,12 +3,14 @@
   <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
   <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here, or at the links below.</p>
 
-  <ul class="breadcrumbs">
-    <li><a href="/" rel="noopener">Home</a></li>
-    {{#each (get_crumbs)}}
-      <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
-    {{/each}}
-  </ul>
+  {{#unless no_breadcrumbs}}
+    <ul class="breadcrumbs">
+      <li><a href="/" rel="noopener">Home</a></li>
+      {{#each (get_crumbs)}}
+        <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
+      {{/each}}
+    </ul>
+  {{/unless}}
 
   <ul class="header__list">
     {{#each social}}
