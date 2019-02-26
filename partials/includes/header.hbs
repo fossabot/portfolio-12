@@ -5,8 +5,9 @@
 
   <ul class="breadcrumbs">
     <li><a href="/" rel="noopener">Home</a></li>
-    <li><a href="/archive#projects" rel="noopener">Projects</a></li>
-    <li><a href="/archive/pinned-tabs-for-atom" rel="noopener">Pinned tabs for Atom</a></li>
+    {{#each (get_crumbs)}}
+      <li><a href="/" rel="noopener">{{this}}</a></li>
+    {{/each}}
   </ul>
 
   <ul class="header__list">
