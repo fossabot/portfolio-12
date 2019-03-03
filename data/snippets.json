@@ -1,5 +1,12 @@
 [
   {
+    "name": "CSS only hidden menu",
+    "tldr": "A menu hiding behind its parent implemented using only CSS.",
+    "_year": 2019,
+    "languages": ["Pug", "CSS3"],
+    "link": "https://codepen.io/ericornelissen/full/QYeMxj"
+  },
+  {
     "name": "Multi-input Form Field",
     "tldr": "Simple multi-input field useful for e.g. entering software licenses, pin code or 2-factor authentication.",
     "_year": 2019,
