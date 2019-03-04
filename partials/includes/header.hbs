@@ -1,26 +1,28 @@
 <header class="header {{modifiers}}">
-  <img class="header__icon" alt="Personal logo" src="/assets/favicon.svg">
-  <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
-  <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here, or at the links below.</p>
+  <div class="header__container">
+    <img class="header__icon" alt="Personal logo" src="/assets/favicon.svg">
+    <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
+    <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here, or at the links below.</p>
 
-  {{#unless no_breadcrumbs}}
-    <ul class="breadcrumbs">
-      <li><a href="/" rel="noopener">Home</a></li>
-      {{#each (get_crumbs)}}
-        {{#unless @last}}
-          <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
-        {{else}}
-          <li>{{name}}</li>
-        {{/unless}}
+    {{#unless no_breadcrumbs}}
+      <ul class="breadcrumbs">
+        <li><a href="/" rel="noopener">Home</a></li>
+        {{#each (get_crumbs)}}
+          {{#unless @last}}
+            <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
+          {{else}}
+            <li>{{name}}</li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    {{/unless}}
+
+    <ul class="header__list">
+      {{#each social}}
+        <li class="list-item">
+          <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+        </li>
       {{/each}}
     </ul>
-  {{/unless}}
-
-  <ul class="header__list">
-    {{#each social}}
-      <li class="list-item">
-        <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
-      </li>
-    {{/each}}
-  </ul>
+  </div>
 </header>
