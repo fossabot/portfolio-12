@@ -1,5 +1,6 @@
 @import 'utilities/text.css';
 @import 'variables/colors.css';
+@import 'variables/dimensions.css';
 @import 'variables/fonts.css';
 
 .list {
@@ -93,7 +94,7 @@
   }
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .list {
     .list-item__category {
       left: -3.4em;
@@ -182,7 +183,7 @@
   }
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .list--cards {
     margin: 0 0 1.4em -.4em;
     width: calc(100% + .4em);
@@ -255,7 +256,7 @@
   }
 }
 
-@media only screen and (max-width: 961px) and (orientation: portrait) {
+@media (--medium-screen) {
   .list--links {
     display: block;
     float: none;

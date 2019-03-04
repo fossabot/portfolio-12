@@ -1,10 +1,11 @@
 @import 'utilities/unselectable.css';
+@import 'variables/dimensions.css';
 
 .back-to-top {
   display: none;
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .back-to-top {
     @apply --unselectable;
 

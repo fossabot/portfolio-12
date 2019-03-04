@@ -1,6 +1,7 @@
 @import 'utilities/text.css';
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
+@import 'variables/dimensions.css';
 @import 'icons.css';
 
 .timeline {
@@ -152,7 +153,7 @@
   }
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .timeline {
     --card-width: 18em;
     --icon-size: 22px;
