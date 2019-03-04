@@ -24,6 +24,18 @@
     }
   },
   {
+    "name": "SVGLint",
+    "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
+    "start_year": 2018,
+    "end_year": 2019,
+    "spotlight": false,
+    "keywords": ["svg", "svglint", "linter", "npm", "package", "javascript", "glob"],
+    "links": {
+      "github": "https://github.com/birjolaxew/svglint",
+      "npm": "https://www.npmjs.com/package/svglint"
+    }
+  },
+  {
     "name": "commitlint",
     "about": "📓 Lint commit messages",
     "start_year": 2018,
@@ -34,18 +46,6 @@
       "github": "https://github.com/conventional-changelog/commitlint",
       "npm": "https://www.npmjs.com/package/@commitlint/cli",
       "website": "https://marionebl.github.io/commitlint/"
-    }
-  },
-  {
-    "name": "SVGLint",
-    "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
-    "start_year": 2018,
-    "end_year": 2018,
-    "spotlight": false,
-    "keywords": ["svg", "svglint", "linter", "npm", "package", "javascript", "glob"],
-    "links": {
-      "github": "https://github.com/birjolaxew/svglint",
-      "npm": "https://www.npmjs.com/package/svglint"
     }
   },
   {

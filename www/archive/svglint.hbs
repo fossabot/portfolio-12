@@ -3,5 +3,7 @@
 {{#> layouts/contribution}}
   {{#*inline "description"}}
   <p>As this linter was relatively new, there was a small issue with the command line utilities when using it on Windows. Because it was originally develop on a Unix system, the input paths where automatically globbed, which does not happen on Windows. So in <a class="text-link" href="https://github.com/birjolaxew/svglint/pull/3" rel="noopener">#3</a> I added support for globbing on Windows using an existing package and some clever mapping of the input.</p>
+
+  <p>After finding out that the base linter does not validate SVGs (over at <a class="text-link" href="https://github.com/simple-icons/simple-icons/pull/1112" rel="noopener">this Pull Request</a>), I added a new standard rule that validates any SVG passed to the linter in <a class="text-link" href="https://github.com/birjolaxew/svglint/pull/6" rel="noopener">#6</a>. The new rule uses <a class="text-link" href="https://www.npmjs.com/package/fast-xml-parser" rel="noopener">fast-xml-parser</a> to validate if the SVG is structered correctly. Of course, one can disable the validation but by default it is enabled.</p>
   {{/inline}}
 {{/layouts/contribution}}
