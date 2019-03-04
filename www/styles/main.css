@@ -155,7 +155,7 @@ section {
     padding: 0 124px;
   }
 }
-@media only screen and (min-width: 1600px) and (orientation: landscape) {
+@media (--large-screen) {
   body {
     display: grid;
     grid-gap: 0 48px;

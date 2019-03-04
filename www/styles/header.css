@@ -89,7 +89,7 @@
     padding: 12px 124px;
   }
 }
-@media only screen and (min-width: 1600px) and (orientation: landscape) {
+@media (--large-screen) {
   .header {
     background-color: var(--clr-primary-white);
     box-shadow: 0 0 4px 0 var(--clr-shadow);
