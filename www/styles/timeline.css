@@ -93,7 +93,7 @@
       border-radius: var(--circle-diameter);
       box-sizing: border-box;
       color: var(--clr-primary-black);
-      font-family: icon-e; /* stylelint-disable font-family-no-missing-generic-family-keyword */
+      font-family: icon-e; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
       font-size: var(--icon-size);
       font-style: normal;
       height: var(--circle-diameter);

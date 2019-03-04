@@ -32,7 +32,7 @@
 
 @media only screen and (min-width: 961px) and (orientation: landscape) {
   .mobile-only {
-    display: none !important; /* stylelint-disable declaration-no-important */
+    display: none !important; /* stylelint-disable-line declaration-no-important */
   }
 }
 
