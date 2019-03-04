@@ -1,6 +1,7 @@
 @import 'utilities/text.css';
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
+@import 'variables/dimensions.css';
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
 
@@ -30,7 +31,7 @@
   all: inherit;
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .mobile-only {
     display: none !important; /* stylelint-disable declaration-no-important */
   }
@@ -71,7 +72,7 @@
   }
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .more-arrow {
     margin: 0;
   }
