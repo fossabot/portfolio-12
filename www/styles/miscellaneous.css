@@ -41,6 +41,7 @@
   @apply --text-bold;
 
   cursor: pointer;
+  font-family: var(--fontstack-text);
   margin: .7em 1em;
   position: relative;
   text-decoration: none;
@@ -61,7 +62,7 @@
   &:focus,
   &:hover {
     color: var(--clr-primary-accent);
-    margin-right: 1.4em;
+    margin-right: 1.4em !important; /* stylelint-disable-line declaration-no-important */
 
     &::after {
       left: 100%;
