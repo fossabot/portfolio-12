@@ -135,6 +135,7 @@ gulp.task('styles', function() {
   const atApply = require('postcss-apply');
   const atImport = require('postcss-import');
   const autoprefixer = require('autoprefixer');
+  const customMedia = require('postcss-custom-media');
   const cssVariables = require('postcss-css-variables');
   const netedRules = require('postcss-nested');
 
@@ -147,6 +148,7 @@ gulp.task('styles', function() {
                atApply(),
                autoprefixer(),
                cssVariables(),
+               customMedia(),
                netedRules()
              ]))
              .pipe(gulpIf(minifyOutput, cssnano()))

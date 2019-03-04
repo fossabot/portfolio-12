@@ -1,5 +1,6 @@
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
+@import 'variables/dimensions.css';
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
 @import 'variables/paths.css';
@@ -134,7 +135,7 @@
   }
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .footer {
     flex-direction: row;
     justify-content: space-between;
