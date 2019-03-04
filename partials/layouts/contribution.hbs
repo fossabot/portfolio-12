@@ -39,6 +39,10 @@
           {{/if}}
         </h2>
 
+        <p class="article__date">
+          {{project.start_year}}{{#unlessEq project.start_year project.end_year}} - {{project.end_year}}{{/unlessEq}}
+        </p>
+
         {{#if project.about}}
           <p class="article__about" data-name="about">{{{project.about}}}</p>
         {{/if}}

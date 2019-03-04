@@ -1,11 +1,12 @@
 @import 'variables/colors.css';
+@import 'variables/dimensions.css';
 @import 'variables/layers.css';
 
 .navbar {
   display: none;
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   .navbar {
     --icon-size: 48px;
 
