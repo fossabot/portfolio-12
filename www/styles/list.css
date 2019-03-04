@@ -65,13 +65,12 @@
   }
 
   .list-item__category {
-    @apply --text-emph;
-
     color: var(--clr-primary-gray);
     cursor: default;
     display: inline-block;
     flex-grow: 1;
     flex-shrink: 0;
+    font-family: var(--fontstack-code);
     font-size: var(--fontsize-subtext);
     margin: 0;
     order: 1;
