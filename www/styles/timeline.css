@@ -27,7 +27,6 @@
     box-shadow: 0 0 4px 0 var(--clr-shadow);
     color: var(--clr-primary-black);
     display: flex;
-    flex: 0 0 0;
     flex-direction: column;
     margin: var(--margin-event);
     padding: var(--padding-event);
