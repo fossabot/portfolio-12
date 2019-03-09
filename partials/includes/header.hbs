@@ -6,17 +6,17 @@
 
     {{#unless no_breadcrumbs}}
       <ul class="breadcrumbs">
-        <li><a href="/" rel="noopener">Home</a></li>
+        <li class="crumb"><a href="/" rel="noopener">Home</a></li>
         {{#each (get_crumbs)}}
           {{#unless @last}}
-            <li><a href="{{path}}" rel="noopener">{{name}}</a></li>
+            <li class="crumb"><a href="{{path}}" rel="noopener">{{name}}</a></li>
           {{else}}
-            <li>{{name}}</li>
+            <li class="crumb">{{name}}</li>
           {{/unless}}
         {{/each}}
       </ul>
     {{else}}
-      <ul class="breadcrumbs breadcrumbs--tmp">
+      <ul class="vlist vlist--evenly-spaced">
         <li><a href="/archive#projects">Projects</a></li>
         <li><a href="/archive#contributions">Contributions</a></li>
         <li><a href="/snippets">Snippets</a></li>

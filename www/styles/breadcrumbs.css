@@ -1,33 +1,19 @@
 @import './variables/colors.css';
+@import './list.css';
 
 .breadcrumbs {
+  @extend .vlist;
+
+  --separator: '>';
+  --separator-fontsize: .8em;
   --space-between: 8px;
 
-  font-family: monospace;
-  font-size: 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  & > li {
-    color: var(--clr-primary-gray);
-    cursor: default;
-    display: inline-block;
-    font-family: monospace;
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-
+  & > .crumb {
     &:not(:last-child)::after {
-      content: '>';
-      font-size: .6em;
+      content: var(--separator);
+      font-size: var(--separator-fontsize);
       padding: 0 var(--space-between);
       pointer-events: none;
-    }
-
-    & > a:hover {
-      color: var(--clr-secondary-gray);
-      cursor: pointer;
     }
   }
 }
