@@ -10,7 +10,7 @@ module.exports = function(options) {
 
   let fullPath = '';
   let crumbs = path.replace(base, '')
-                   .split(/\\|\./)
+                   .split(/\\|\/|\./)
                    .slice(1, -1)
                    .filter(name => name !== 'index')
                    .map(name => {
