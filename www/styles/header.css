@@ -5,19 +5,31 @@
 @import 'variables/layers.css';
 
 .header {
+  background-color: var(--clr-primary-white);
+  box-shadow: 0 0 4px 0 var(--clr-shadow);
+  margin: 0;
+  padding: 2em;
   z-index: var(--layer-roof);
+
+  .header__container {
+    display: flex;
+    flex-direction: column;
+  }
 
   .header__icon {
     display: none;
+    order: 1;
   }
 
   .header__list {
-    align-self: center;
+    align-self: flex-end;
     display: flex;
     flex-flow: row nowrap;
-    flex-shrink: 100;
     list-style: none;
-    position: relative;
+    margin: 12px;
+    order: 2;
+    padding: 0;
+    position: absolute;
 
     .list-item {
       color: var(--clr-primary-gray);
@@ -28,13 +40,23 @@
     }
   }
 
+  .header__message {
+    order: 3;
+  }
+
   .header__title {
+    margin-top: 0;
+    order: 1;
     overflow-wrap: break-word;
     word-break: normal;
 
     &::after {
       background: linear-gradient(90deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
     }
+  }
+
+  .vlist {
+    order: 4;
   }
 }
 
@@ -52,12 +74,14 @@
 
   .breadcrumbs {
     align-self: center;
+    order: 3;
   }
 
   .header__container {
     align-content: center;
     box-sizing: border-box;
     display: flex;
+    flex-direction: row;
     height: 100%;
     padding: 12px 2em;
   }
@@ -66,11 +90,15 @@
     display: block;
     height: 100%;
     margin: 0 1.4em 0 0;
+    order: 1;
   }
 
   .header__list {
     margin: 0 0 0 auto;
+    order: 3;
     padding: 0;
+    position: relative;
+    top: initial;
   }
 
   .header__message {
@@ -83,10 +111,26 @@
 }
 
 @media (--medium-screen) {
-  .header > .header__container {
-    margin: 0 auto;
-    max-width: calc(800px + (2 * 124px));
-    padding: 12px 124px;
+  .header {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 2em auto;
+    padding: 0;
+
+    .header__container {
+      margin: 12px 96px;
+    }
+  }
+
+  .header--compact {
+    background-color: var(--clr-primary-white);
+    box-shadow: 0 0 4px 0 var(--clr-shadow);
+
+    .header__container {
+      margin: 0 auto;
+      max-width: calc(800px + (2 * 124px));
+      padding: 12px 124px;
+    }
   }
 }
 @media (--large-screen) {
@@ -102,9 +146,10 @@
     top: 0;
     width: 400px;
 
-    & > .header__container {
+    .header__container {
       display: block;
-      padding: 0 32px 24px;
+      margin: 0;
+      padding: 32px 32px 24px;
     }
 
     .header__icon {
@@ -119,6 +164,8 @@
       justify-content: center;
       margin: 20px 0 0;
       padding: 16px 0 0;
+      position: relative;
+      top: initial;
 
       .list-item {
         margin: 0 0 0 10px;
