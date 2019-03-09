@@ -2,19 +2,6 @@
 @import 'variables/dimensions.css';
 @import 'variables/fonts.css';
 
-.article__about {
-  position: relative;
-
-  &::before {
-    color: var(--clr-primary-gray);
-    content: attr(data-name);
-    font-family: var(--fontstack-code);
-    font-size: var(--fontsize-subtext);
-    margin: 0 .3em 0 0;
-    pointer-events: none;
-  }
-}
-
 .article__date {
   color: var(--clr-primary-gray);
   font-family: var(--fontstack-code);
@@ -49,14 +36,6 @@
 }
 
 @media (--medium-screen) {
-  .article__about {
-    &::before {
-      margin: 0;
-      position: absolute;
-      right: calc(100% + .6em);
-    }
-  }
-
   .article__image {
     margin: .4em auto;
     max-width: 100%;
@@ -65,14 +44,5 @@
 
   .article__figure {
     margin: 1em 2.8em;
-  }
-}
-@media (--large-screen) {
-  .article__about {
-    &::before {
-      margin: 0 .3em 0 0;
-      position: relative;
-      right: auto;
-    }
   }
 }
