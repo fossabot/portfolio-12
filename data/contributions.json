@@ -1,123 +1,129 @@
-[
-  {
-    "name": "Fluent Terminal",
-    "about": "A Terminal Emulator based on UWP and web technologies.",
-    "start_year": 2018,
-    "end_year": 2019,
-    "spotlight": true,
-    "keywords": ["C#", "c-sharp", "terminal", "cli", "UWP"],
-    "links": {
-      "github": "https://github.com/felixse/FluentTerminal"
+{
+  "2019": [
+    {
+      "name": "Fluent Terminal",
+      "about": "A Terminal Emulator based on UWP and web technologies.",
+      "start_year": 2018,
+      "end_year": 2019,
+      "spotlight": true,
+      "keywords": ["C#", "c-sharp", "terminal", "cli", "UWP"],
+      "links": {
+        "github": "https://github.com/felixse/FluentTerminal"
+      }
+    },
+    {
+      "name": "Simple Icons",
+      "about": "SVG icons for popular brands.",
+      "start_year": 2017,
+      "end_year": 2019,
+      "spotlight": true,
+      "maintainer": true,
+      "keywords": ["website", "svg", "icon", "icons", "html", "liquid", "css", "javascript"],
+      "links": {
+        "github": "https://github.com/simple-icons/simple-icons",
+        "website": "https://simpleicons.org/"
+      }
+    },
+    {
+      "name": "SVGLint",
+      "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
+      "start_year": 2018,
+      "end_year": 2019,
+      "spotlight": false,
+      "keywords": ["svg", "svglint", "linter", "npm", "package", "javascript", "glob"],
+      "links": {
+        "github": "https://github.com/birjolaxew/svglint",
+        "npm": "https://www.npmjs.com/package/svglint"
+      }
     }
-  },
-  {
-    "name": "Simple Icons",
-    "about": "SVG icons for popular brands.",
-    "start_year": 2017,
-    "end_year": 2019,
-    "spotlight": true,
-    "maintainer": true,
-    "keywords": ["website", "svg", "icon", "icons", "html", "liquid", "css", "javascript"],
-    "links": {
-      "github": "https://github.com/simple-icons/simple-icons",
-      "website": "https://simpleicons.org/"
+  ],
+  "2018": [
+    {
+      "name": "commitlint",
+      "about": "📓 Lint commit messages",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": false,
+      "keywords": ["javascript", "git", "commit", "commitizen", "lint"],
+      "links": {
+        "github": "https://github.com/conventional-changelog/commitlint",
+        "npm": "https://www.npmjs.com/package/@commitlint/cli",
+        "website": "https://marionebl.github.io/commitlint/"
+      }
+    },
+    {
+      "name": "SVGOMG",
+      "about": "SVGOMG is <a class=\"text-link\" href=\"https://github.com/svg/svgo\" rel=\"noopener\">SVGO</a>'s Missing GUI, aiming to expose the majority, if not all the configuration options of SVGO.",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": true,
+      "keywords": ["svg", "svgomg", "webapp", "website", "javascript"],
+      "links": {
+        "github": "https://github.com/jakearchibald/svgomg",
+        "website": "https://jakearchibald.github.io/svgomg/"
+      }
+    },
+    {
+      "name": "Atom",
+      "about": "A hackable text editor for the 21st Century by Github.",
+      "start_year": 2017,
+      "end_year": 2018,
+      "spotlight": true,
+      "keywords": ["atom", "editor", "javascript", "coffeescript"],
+      "links": {
+        "github": "https://github.com/atom/atom",
+        "website": "https://atom.io/"
+      }
+    },
+    {
+      "name": "Public Money Public Code",
+      "about": "The website for the \"Public Money, Public Code\" campaign. It is based on Hugo, a modern static website generator. The page is visible at <a class=\"text-link\" href=\"https://publiccode.eu/\" rel=\"noopener\">publiccode.eu</a>.",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": false,
+      "keywords": ["software", "EU", "activism", "hugo", "html"],
+      "links": {
+        "github": "https://git.fsfe.org/pmpc/website",
+        "website": "https://publiccode.eu/"
+      }
+    },
+    {
+      "name": "Keep a Changelog",
+      "about": "If you build software, keep a changelog.",
+      "start_year": 2018,
+      "end_year": 2018,
+      "spotlight": false,
+      "keywords": ["changelog", "documentation"],
+      "links": {
+        "github": "https://github.com/olivierlacan/keep-a-changelog",
+        "website": "http://keepachangelog.com"
+      }
     }
-  },
-  {
-    "name": "SVGLint",
-    "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
-    "start_year": 2018,
-    "end_year": 2019,
-    "spotlight": false,
-    "keywords": ["svg", "svglint", "linter", "npm", "package", "javascript", "glob"],
-    "links": {
-      "github": "https://github.com/birjolaxew/svglint",
-      "npm": "https://www.npmjs.com/package/svglint"
+  ],
+  "2017": [
+    {
+      "name": "File Icons for Atom",
+      "about": "File-specific icons in Atom for improved visual grepping.",
+      "start_year": 2017,
+      "end_year": 2017,
+      "spotlight": false,
+      "keywords": ["icons", "atom"],
+      "links": {
+        "github": "https://github.com/file-icons/atom",
+        "website": "https://atom.io/packages/file-icons"
+      }
+    },
+    {
+      "name": "grunt-fontello",
+      "about": "Grunt task for downloading fonts from <a class=\"text-link\" href=\"http://fontello.com/\" rel=\"noopener\">fontello</a>.",
+      "start_year": 2017,
+      "end_year": 2017,
+      "spotlight": false,
+      "keywords": ["grunt", "fontello", "npm", "package", "javascript"],
+      "links": {
+        "github": "https://github.com/jubalm/grunt-fontello",
+        "npm": "https://www.npmjs.com/package/grunt-fontello"
+      }
     }
-  },
-  {
-    "name": "commitlint",
-    "about": "📓 Lint commit messages",
-    "start_year": 2018,
-    "end_year": 2018,
-    "spotlight": false,
-    "keywords": ["javascript", "git", "commit", "commitizen", "lint"],
-    "links": {
-      "github": "https://github.com/conventional-changelog/commitlint",
-      "npm": "https://www.npmjs.com/package/@commitlint/cli",
-      "website": "https://marionebl.github.io/commitlint/"
-    }
-  },
-  {
-    "name": "SVGOMG",
-    "about": "SVGOMG is <a class=\"text-link\" href=\"https://github.com/svg/svgo\" rel=\"noopener\">SVGO</a>'s Missing GUI, aiming to expose the majority, if not all the configuration options of SVGO.",
-    "start_year": 2018,
-    "end_year": 2018,
-    "spotlight": true,
-    "keywords": ["svg", "svgomg", "webapp", "website", "javascript"],
-    "links": {
-      "github": "https://github.com/jakearchibald/svgomg",
-      "website": "https://jakearchibald.github.io/svgomg/"
-    }
-  },
-  {
-    "name": "Atom",
-    "about": "A hackable text editor for the 21st Century by Github.",
-    "start_year": 2017,
-    "end_year": 2018,
-    "spotlight": true,
-    "keywords": ["atom", "editor", "javascript", "coffeescript"],
-    "links": {
-      "github": "https://github.com/atom/atom",
-      "website": "https://atom.io/"
-    }
-  },
-  {
-    "name": "Public Money Public Code",
-    "about": "The website for the \"Public Money, Public Code\" campaign. It is based on Hugo, a modern static website generator. The page is visible at <a class=\"text-link\" href=\"https://publiccode.eu/\" rel=\"noopener\">publiccode.eu</a>.",
-    "start_year": 2018,
-    "end_year": 2018,
-    "spotlight": false,
-    "keywords": ["software", "EU", "activism", "hugo", "html"],
-    "links": {
-      "github": "https://git.fsfe.org/pmpc/website",
-      "website": "https://publiccode.eu/"
-    }
-  },
-  {
-    "name": "Keep a Changelog",
-    "about": "If you build software, keep a changelog.",
-    "start_year": 2018,
-    "end_year": 2018,
-    "spotlight": false,
-    "keywords": ["changelog", "documentation"],
-    "links": {
-      "github": "https://github.com/olivierlacan/keep-a-changelog",
-      "website": "http://keepachangelog.com"
-    }
-  },
-  {
-    "name": "File Icons for Atom",
-    "about": "File-specific icons in Atom for improved visual grepping.",
-    "start_year": 2017,
-    "end_year": 2017,
-    "spotlight": false,
-    "keywords": ["icons", "atom"],
-    "links": {
-      "github": "https://github.com/file-icons/atom",
-      "website": "https://atom.io/packages/file-icons"
-    }
-  },
-  {
-    "name": "grunt-fontello",
-    "about": "Grunt task for downloading fonts from <a class=\"text-link\" href=\"http://fontello.com/\" rel=\"noopener\">fontello</a>.",
-    "start_year": 2017,
-    "end_year": 2017,
-    "spotlight": false,
-    "keywords": ["grunt", "fontello", "npm", "package", "javascript"],
-    "links": {
-      "github": "https://github.com/jubalm/grunt-fontello",
-      "npm": "https://www.npmjs.com/package/grunt-fontello"
-    }
-  }
-]
+  ]
+}

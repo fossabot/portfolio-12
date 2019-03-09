@@ -64,22 +64,6 @@
     }
   }
 
-  .list-item__category {
-    color: var(--clr-primary-gray);
-    cursor: default;
-    display: inline-block;
-    flex-grow: 1;
-    flex-shrink: 0;
-    font-family: var(--fontstack-code);
-    font-size: var(--fontsize-subtext);
-    margin: 0;
-    order: 1;
-    pointer-events: none;
-    position: absolute;
-    right: .5em;
-    top: -2em;
-  }
-
   .list-item__title {
     @apply --text-bold;
 
@@ -93,21 +77,11 @@
   }
 }
 
-@media (--medium-screen) {
-  .list {
-    .list-item__category {
-      left: -3.4em;
-      right: auto;
-      top: .3em;
-    }
-  }
-}
-
 .list--cards {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0;
+  margin: 0 0 1em;
   padding: 0;
   position: relative;
   width: 100%;
@@ -128,10 +102,6 @@
     &:focus-within,
     &:hover {
       box-shadow: 0 0 8px 0 var(--clr-shadow);
-    }
-
-    &--newline {
-      margin-top: calc(1.5 * 2em);
     }
   }
 
@@ -182,24 +152,33 @@
   }
 }
 
+.category {
+  color: var(--clr-primary-gray);
+  cursor: default;
+  display: inline-block;
+  float: right;
+  font-family: var(--fontstack-code);
+  font-size: var(--fontsize-subtext);
+  font-weight: 400;
+  margin: 0;
+  pointer-events: none;
+}
+
 @media (--medium-screen) {
   .list--cards {
-    margin: 0 0 1.4em -.4em;
-    width: calc(100% + .4em);
+    margin: 0 0 .2em;
+    width: 100%;
 
     .list-item {
-      margin: .4em;
       padding: .8em 1.2em 1em;
-      width: calc(50% - .8em);
+      width: calc(50% - .4em);
 
-      &--newline {
-        margin-left: calc(.4em + 1px);
+      &:nth-child(odd) {
+        margin: .4em .4em .4em 0;
+      }
 
-        & + .list-item {
-          &:not(.list-item--newline) {
-            margin-left: calc(.4em - 1px);
-          }
-        }
+      &:nth-child(even) {
+        margin: .4em 0 .4em .4em;
       }
     }
 
@@ -223,6 +202,21 @@
     .list-item__title {
       margin: .1em 0 .3em;
     }
+  }
+
+  .category {
+    font-size: 1.2em;
+    margin: .6em 0 0;
+    position: absolute;
+    right: calc(100% + 1em);
+  }
+}
+@media (--large-screen) {
+  .category {
+    font-size: 1.3em;
+    margin: 0;
+    right: calc(100% + .1em);
+    transform: rotateZ(-90deg) translateX(-60%);
   }
 }
 

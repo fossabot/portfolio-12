@@ -73,6 +73,15 @@
   }
 }
 
+.ordered {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ordered-item {
+  order: attr(data-order);
+}
+
 .short-underline {
   margin-bottom: 1.05em;
 
