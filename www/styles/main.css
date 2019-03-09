@@ -8,8 +8,6 @@ body {
   background-color: #fafafa;
   border: 0;
   color: var(--clr-primary-black);
-  display: flex;
-  flex-direction: column;
   font-size: var(--fontsize-root);
   height: 100%;
   margin: 0;
@@ -141,16 +139,50 @@ code {
 }
 
 article,
+header,
 section {
+  box-sizing: border-box;
   margin: 2em;
-  max-width: none;
+  padding: 0;
 }
 
 @media (--medium-screen) {
+  header,
+  main {
+    padding: 0 124px;
+  }
+
   article,
   section {
     margin: 2em auto;
     max-width: 800px;
-    padding: 0 124px;
+  }
+}
+@media (--large-screen) {
+  body {
+    display: grid;
+    grid-gap: 0 54px;
+    grid-template-columns: 36% calc(64% - 54px);
+    width: 100%;
+  }
+
+  header {
+    align-self: start;
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 3;
+    padding: 0;
+  }
+
+  footer {
+    grid-column: span 2;
+  }
+
+  article,
+  header,
+  section {
+    margin: 0;
   }
 }

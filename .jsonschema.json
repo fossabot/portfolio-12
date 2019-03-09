@@ -1,50 +1,56 @@
 {
   "contributions": {
-    "description": "A list of open source contributions",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name", "about", "start_year", "spotlight", "keywords", "links"],
-      "properties": {
-        "name": {
-          "description": "The name of the open source project",
-          "type": "string"
-        },
-        "about": {
-          "description": "A short description of open source project",
-          "type": "string"
-        },
-        "start_year": {
-          "description": "The year contributions to the project started",
-          "type": "integer"
-        },
-        "end_year": {
-          "description": "The year contributions to the project ended",
-          "type": "integer"
-        },
-        "spotlight": {
-          "description": "Should the open source project be featured in the sites spotlight",
-          "type": "boolean"
-        },
-        "maintainer": {
-          "description": "Am I a maintainer of the project",
-          "type": "boolean"
-        },
-        "keywords": {
-          "description": "A list of keywords for the open source project",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "links": {
-          "description": "A collection of links for the open source project (type:url)",
+    "description": "The open source contributions database",
+    "additionalProperties": false,
+    "patternProperties": {
+      "[0-9]{4}": {
+        "description": "A list of contributions for that year",
+        "type": "array",
+        "items": {
           "type": "object",
           "additionalProperties": false,
-          "patternProperties": {
-            "^[a-z]+$": {
+          "required": ["name", "about", "start_year", "spotlight", "keywords", "links"],
+          "properties": {
+            "name": {
+              "description": "The name of the open source project",
               "type": "string"
+            },
+            "about": {
+              "description": "A short description of open source project",
+              "type": "string"
+            },
+            "start_year": {
+              "description": "The year contributions to the project started",
+              "type": "integer"
+            },
+            "end_year": {
+              "description": "The year contributions to the project ended",
+              "type": "integer"
+            },
+            "spotlight": {
+              "description": "Should the open source project be featured in the sites spotlight",
+              "type": "boolean"
+            },
+            "maintainer": {
+              "description": "Am I a maintainer of the project",
+              "type": "boolean"
+            },
+            "keywords": {
+              "description": "A list of keywords for the open source project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "links": {
+              "description": "A collection of links for the open source project (type:url)",
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": {
+                "^[a-z]+$": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
@@ -75,54 +81,61 @@
     }
   },
   "projects": {
-    "description": "A list of programming projects",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name", "tldr", "start_year", "spotlight", "tags", "keywords", "links"],
-      "properties": {
-        "name": {
-          "description": "The name of the project",
-          "type": "string"
-        },
-        "tldr": {
-          "description": "A short description of the project",
-          "type": "string"
-        },
-        "start_year": {
-          "description": "The year the project started",
-          "type": "integer"
-        },
-        "end_year": {
-          "description": "The year the project ended",
-          "type": "integer"
-        },
-        "spotlight": {
-          "description": "Should the project be featured in the sites spotlight",
-          "type": "boolean"
-        },
-        "tags": {
-          "description": "A list of tags for the project",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "keywords": {
-          "description": "A list of keywords (on top of 'tags') for the project",
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "links": {
-          "description": "A collection of links for the project (type:url)",
+    "description": "The programming projects database",
+    "type": "object",
+    "additionalProperties": false,
+    "patternProperties": {
+      "[0-9]{4}": {
+        "description": "A list of project of that year",
+        "type": "array",
+        "items": {
           "type": "object",
           "additionalProperties": false,
-          "patternProperties": {
-            "^[a-z]+$": {
+          "required": ["name", "tldr", "start_year", "spotlight", "tags", "keywords", "links"],
+          "properties": {
+            "name": {
+              "description": "The name of the project",
               "type": "string"
+            },
+            "tldr": {
+              "description": "A short description of the project",
+              "type": "string"
+            },
+            "start_year": {
+              "description": "The year the project started",
+              "type": "integer"
+            },
+            "end_year": {
+              "description": "The year the project ended",
+              "type": "integer"
+            },
+            "spotlight": {
+              "description": "Should the project be featured in the sites spotlight",
+              "type": "boolean"
+            },
+            "tags": {
+              "description": "A list of tags for the project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "keywords": {
+              "description": "A list of keywords (on top of 'tags') for the project",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "links": {
+              "description": "A collection of links for the project (type:url)",
+              "type": "object",
+              "additionalProperties": false,
+              "patternProperties": {
+                "^[a-z]+$": {
+                  "type": "string"
+                }
+              }
             }
           }
         }
@@ -135,35 +148,38 @@
     "type": "object"
   },
   "snippets": {
-    "description": "A list of programming snippets",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["name", "tldr", "_year", "languages", "link"],
-      "properties": {
-        "name": {
-          "description": "The name of the snippet",
-          "type": "string"
-        },
-        "tldr": {
-          "description": "A short description of the snippet",
-          "type": "string"
-        },
-        "_year": {
-          "description": "The year the snippet was created",
-          "type": "integer"
-        },
-        "languages": {
-          "description": "A list of programming languages used in the snippet",
-          "type": "array",
-          "items": {
-            "type": "string"
+    "description": "The programming snippets database",
+    "type": "object",
+    "additionalProperties": false,
+    "patternProperties": {
+      "[0-9]{4}": {
+        "description": "A list of snippet of that year",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "tldr", "languages", "link"],
+          "properties": {
+            "name": {
+              "description": "The name of the snippet",
+              "type": "string"
+            },
+            "tldr": {
+              "description": "A short description of the snippet",
+              "type": "string"
+            },
+            "languages": {
+              "description": "A list of programming languages used in the snippet",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "link": {
+              "description": "The link to the snippet",
+              "type": "string"
+            }
           }
-        },
-        "link": {
-          "description": "The link to the snippet",
-          "type": "string"
         }
       }
     }

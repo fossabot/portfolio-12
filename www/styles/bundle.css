@@ -11,6 +11,7 @@
 /* components */
 @import 'back-to-top.css';
 @import 'badge.css';
+@import 'breadcrumbs.css';
 @import 'list.css';
 @import 'tags.css';
 @import 'timeline.css';

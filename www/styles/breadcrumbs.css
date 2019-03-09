@@ -1,0 +1,19 @@
+@import './variables/colors.css';
+@import './list.css';
+
+.breadcrumbs {
+  @extend .vlist;
+
+  --separator: '>';
+  --separator-fontsize: .8em;
+  --space-between: 8px;
+
+  & > .crumb {
+    &:not(:last-child)::after {
+      content: var(--separator);
+      font-size: var(--separator-fontsize);
+      padding: 0 var(--space-between);
+      pointer-events: none;
+    }
+  }
+}

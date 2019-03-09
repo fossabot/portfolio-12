@@ -137,6 +137,7 @@ gulp.task('styles', function() {
   const autoprefixer = require('autoprefixer');
   const customMedia = require('postcss-custom-media');
   const cssVariables = require('postcss-css-variables');
+  const extendRules = require('postcss-extend');
   const netedRules = require('postcss-nested');
 
   return gulp.src(INPUT_STYLES.bundles)
@@ -149,6 +150,7 @@ gulp.task('styles', function() {
                autoprefixer(),
                cssVariables(),
                customMedia(),
+               extendRules(),
                netedRules()
              ]))
              .pipe(gulpIf(minifyOutput, cssnano()))
@@ -159,7 +161,7 @@ gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'style
 gulp.task('build:watch', function() {
   watchingFiles = true;
 
-  const watch = (files, task) => gulp.watch(files, task).on('change', browserSync.reload);
+  const watch = (files, task) => gulp.watch(files, task).on('all', browserSync.reload);
   watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
   watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
   watch(INPUT_ASSETS.icons, gulp.task('assets-iconography'));

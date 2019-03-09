@@ -8,22 +8,7 @@
     {{> includes/metadata}}
   </head>
   <body>
-    {{> includes/navigation}}
-
-    <header class="header">
-      <h1 class="header__title short-underline short-underline--dark">{{page 'title'}}</h1>
-      <ul class="header__message header__links">
-        <li class="header__links__item">
-          <a href="/" rel="noopener" target="_self">home</a>
-        </li>
-        <li class="header__links__item">
-          <a href="/archive" rel="noopener" target="_self">archive</a>
-        </li>
-        <li class="header__links__item">
-          <a href="/snippets" rel="noopener" target="_self">snippets</a>
-        </li>
-      </ul>
-    </header>
+    {{> includes/header modifiers="header--compact"}}
 
     <main class="main">
       <section id="timeline" class="section">

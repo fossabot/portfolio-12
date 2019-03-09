@@ -31,12 +31,6 @@
   all: inherit;
 }
 
-@media (--medium-screen) {
-  .mobile-only {
-    display: none !important; /* stylelint-disable-line declaration-no-important */
-  }
-}
-
 .more-arrow {
   @apply --unselectable;
   @apply --text-bold;
@@ -77,6 +71,15 @@
   .more-arrow {
     margin: 0;
   }
+}
+
+.ordered {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.ordered-item {
+  order: attr(data-order);
 }
 
 .short-underline {

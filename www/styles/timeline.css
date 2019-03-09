@@ -54,13 +54,15 @@
     }
 
     &--more {
+      flex: 0 1 var(--circle-diameter) !important; /* stylelint-disable-line declaration-no-important */
+
       &::after {
         content: '\EA02';
       }
 
       &::before {
-        left: -100% !important; /* stylelint-disable-line declaration-no-important */
-        width: calc(200% + 100px) !important; /* stylelint-disable-line declaration-no-important */
+        left: -900px !important; /* stylelint-disable-line declaration-no-important */
+        width: calc(100% + 950px) !important; /* stylelint-disable-line declaration-no-important */
       }
     }
 
@@ -182,7 +184,7 @@
 
           &::before {
             left: auto;
-            right: calc(-1 * var(--line-offset));
+            right: calc(-1 * var(--line-offset) - 1px);
           }
         }
       }
@@ -193,7 +195,7 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
-      margin: calc(2rem + (2 * var(--line-offset))) 5rem 3rem;
+      margin: calc(2rem + (2 * var(--line-offset))) 0 3rem;
 
       .timeline-event {
         --margin-between: 3em;
@@ -238,29 +240,38 @@
           }
         }
 
-        &:nth-child(2),
-        &:nth-child(3) {
+        &:nth-child(2) {
           display: none;
         }
       }
 
       /* Show 4 elements on medium screens */
-      @media only screen and (min-width: 1340px) and (orientation: landscape) {
-        .timeline-event {
-          &:nth-child(3) {
-            display: flex;
-          }
-        }
-      }
-
-      /* Show 5 elements on large screens */
-      @media only screen and (min-width: 1640px) and (orientation: landscape) {
+      @media only screen and (min-width: 1440px) and (orientation: landscape) {
         .timeline-event {
           &:nth-child(2) {
             display: flex;
           }
         }
       }
+
+      /* Show 5 elements on large screens */
+      @media (--large-screen) {
+        .timeline-event {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (--large-screen) {
+  .timeline--horizontal {
+    max-width: 1000px;
+
+    .timeline-event--more::before {
+      left: -100px !important; /* stylelint-disable-line declaration-no-important */
+      width: calc(100% + 150px) !important; /* stylelint-disable-line declaration-no-important */
     }
   }
 }
