@@ -13,6 +13,9 @@
 
   .header__list {
     align-self: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-shrink: 100;
     list-style: none;
     position: relative;
 
@@ -26,8 +29,6 @@
   }
 
   .header__title {
-    @apply --unselectable;
-
     overflow-wrap: break-word;
     word-break: normal;
 
@@ -100,6 +101,18 @@
     position: sticky;
     top: 0;
     width: 400px;
+
+    .breadcrumbs--tmp {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+
+      & > li {
+        &:not(:last-child)::after {
+          content: ' ';
+        }
+      }
+    }
 
     & > .header__container {
       display: block;

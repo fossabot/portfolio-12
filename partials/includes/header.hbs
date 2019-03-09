@@ -2,7 +2,7 @@
   <div class="header__container">
     <img class="header__icon" alt="Personal logo" src="/assets/favicon.svg">
     <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
-    <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here, or at the links below.</p>
+    <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here or at the links below.</p>
 
     {{#unless no_breadcrumbs}}
       <ul class="breadcrumbs">
@@ -14,6 +14,12 @@
             <li>{{name}}</li>
           {{/unless}}
         {{/each}}
+      </ul>
+    {{else}}
+      <ul class="breadcrumbs breadcrumbs--tmp">
+        <li><a href="/archive#projects">Projects</a></li>
+        <li><a href="/archive#contributions">Contributions</a></li>
+        <li><a href="/snippets">Snippets</a></li>
       </ul>
     {{/unless}}
 
