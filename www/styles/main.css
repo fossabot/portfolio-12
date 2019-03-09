@@ -161,8 +161,8 @@ section {
 @media (--large-screen) {
   body {
     display: grid;
-    grid-gap: 0 48px;
-    grid-template-columns: 32% calc(68% - 48px);
+    grid-gap: 0 54px;
+    grid-template-columns: 36% calc(64% - 54px);
     width: 100%;
   }
 
