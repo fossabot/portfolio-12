@@ -195,7 +195,7 @@
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
-      margin: calc(2rem + (2 * var(--line-offset))) 5rem 3rem;
+      margin: calc(2rem + (2 * var(--line-offset))) 0 3rem;
 
       .timeline-event {
         --margin-between: 3em;
@@ -267,7 +267,7 @@
 }
 @media (--large-screen) {
   .timeline--horizontal {
-    margin-left: 0;
+    max-width: 1000px;
 
     .timeline-event--more::before {
       left: -100px !important; /* stylelint-disable-line declaration-no-important */

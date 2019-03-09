@@ -147,12 +147,12 @@ section {
 }
 
 @media (--medium-screen) {
+  header,
   main {
     padding: 0 124px;
   }
 
   article,
-  header,
   section {
     margin: 2em auto;
     max-width: 800px;

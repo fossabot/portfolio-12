@@ -265,7 +265,7 @@
 
 .vlist {
   --item-color: var(--clr-primary-gray);
-  --item-color-hovered: var(--clr-primary-gray);
+  --item-color-hovered: var(--clr-secondary-gray);
   --fontsize: 14px;
 
   font-family: var(--fontstack-subtext);
@@ -292,6 +292,11 @@
 
 .vlist--evenly-spaced {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
   width: 100%;
+
+  & > li {
+    padding: 0 8px;
+  }
 }
