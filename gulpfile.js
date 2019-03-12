@@ -127,7 +127,9 @@ gulp.task('metadata', function() {
 });
 gulp.task('scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
-             .pipe(jswrap({}))
+             .pipe(jswrap({
+               globals: { window: 'root' }
+             }))
              .pipe(gulpIf(minifyOutput, uglifyJS()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
