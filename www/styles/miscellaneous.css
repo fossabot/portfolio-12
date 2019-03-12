@@ -27,17 +27,13 @@
   }
 }
 
-.mimic-parent {
-  all: inherit;
-}
-
 .more-arrow {
   @apply --unselectable;
   @apply --text-bold;
 
   cursor: pointer;
   font-family: var(--fontstack-text);
-  margin: .7em 1em;
+  margin: .7em 1em 0;
   position: relative;
   text-decoration: none;
   transition: color .1s ease, margin .15s ease;

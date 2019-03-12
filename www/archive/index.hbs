@@ -9,7 +9,7 @@
     <link href="/styles/bundle.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
-    {{> includes/header modifiers="header--compact"}}
+    {{> includes/header compact=true}}
 
     <main class="main">
       <section id="projects" class="section">
@@ -24,9 +24,9 @@
                     <div class="list-item__header">
                       <h3 class="list-item__title">{{name}}</h3>
 
-                      <ul class="list-item__links">
+                      <ul class="list-of-icons">
                         {{#each links as |url key|}}
-                          <li class="list-item__link">
+                          <li class="list-item">
                             <a class="icon icon-{{@key}} icon--hover" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                           </li>
                         {{/each}}
@@ -55,9 +55,9 @@
                     <div class="list-item__header">
                       <h3 class="list-item__title">{{name}}</h3>
 
-                      <ul class="list-item__links">
+                      <ul class="list-of-icons">
                         {{#each links as |url key|}}
-                          <li class="list-item__link">
+                          <li class="list-item">
                             <a class="icon icon-{{@key}} icon--hover" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_blank"></a>
                           </li>
                         {{/each}}

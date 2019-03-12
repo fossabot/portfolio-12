@@ -22,17 +22,7 @@
 }
 
 .article__links {
-  display: inline-flex;
-  flex-direction: row;
   float: right;
-  list-style: none;
-
-  & > .links__item {
-    display: block;
-    font-size: 28px;
-    height: 100%;
-    margin: 0 0 0 12px;
-  }
 }
 
 @media (--medium-screen) {

@@ -33,37 +33,6 @@
     position: relative;
   }
 
-  .list-item__link {
-    align-items: center;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-      &::after {
-        background-color: var(--clr-primary-accent);
-      }
-
-      .list-item__title {
-        margin: 0 auto 0 .4em;
-        opacity: 1;
-      }
-    }
-
-    &::after {
-      background-color: var(--clr-primary-black);
-      content: '';
-      flex-grow: 2;
-      height: 1px;
-      margin: 0 .3em;
-      order: 3;
-      transition: background-color .1s ease;
-      width: 100%;
-    }
-  }
-
   .list-item__title {
     @apply --text-bold;
 
@@ -86,7 +55,7 @@
   position: relative;
   width: 100%;
 
-  .list-item {
+  & > .list-item {
     align-items: stretch;
     background-color: var(--clr-primary-white);
     box-shadow: 0 0 2px 0 var(--clr-shadow);
@@ -95,7 +64,7 @@
     display: flex;
     flex-direction: column;
     margin: .4em 0;
-    padding: .7em 1em;
+    padding: 1.1em 1em;
     transition: box-shadow .3s ease;
     width: 100%;
 
@@ -118,25 +87,6 @@
     padding: 0;
   }
 
-  .list-item__link {
-    display: inline-block;
-    font-size: 1.6em;
-    margin: 0 0 0 .3em;
-    padding: 0;
-
-    &::after {
-      content: none;
-    }
-  }
-
-  .list-item__links {
-    align-self: flex-begin;
-    display: flex;
-    flex-flow: row nowrap;
-    list-style: none;
-    padding: 0 0 0 .1em;
-  }
-
   .list-item__more {
     align-self: flex-end;
     flex-grow: 0;
@@ -146,7 +96,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     font-size: var(--fontsize-h5);
-    margin: .4em 0;
+    margin: 0 0 .4em;
     opacity: 1;
     order: inherit;
   }
@@ -169,7 +119,7 @@
     margin: 0 0 .2em;
     width: 100%;
 
-    .list-item {
+    & > .list-item {
       padding: .8em 1.2em 1em;
       width: calc(50% - .4em);
 
@@ -185,14 +135,6 @@
     .list-item__description {
       margin: 0;
       padding: 0;
-    }
-
-    .list-item__link {
-      font-size: 1.3em;
-    }
-
-    .list-item__links {
-      padding: 0 0 0 .3em;
     }
 
     .list-item__more {
@@ -298,5 +240,38 @@
 
   & > li {
     padding: 0 8px;
+  }
+}
+
+.list-of-icons {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > .list-item {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 0 0 .4em;
+  }
+
+  &--large {
+    & > .list-item {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (--medium-screen) {
+  .list-of-icons {
+    & > .list-item {
+      font-size: 1.6rem;
+    }
+
+    &--large {
+      & > .list-item {
+        font-size: 2.2rem;
+      }
+    }
   }
 }

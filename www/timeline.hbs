@@ -8,7 +8,7 @@
     {{> includes/metadata}}
   </head>
   <body>
-    {{> includes/header modifiers="header--compact"}}
+    {{> includes/header compact=true}}
 
     <main class="main">
       <section id="timeline" class="section">
@@ -22,6 +22,8 @@
           {{/each}}
         </ul>
       </section>
+
+      {{> includes/back-to-top}}
     </main>
 
     {{> includes/footer}}

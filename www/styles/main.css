@@ -130,6 +130,10 @@ figcaption,
   @apply --text-sub;
 }
 
+img {
+  color: transparent; /* hide the alt text when image is not found */
+}
+
 code {
   background-color: var(--clr-code-background);
   border-radius: 2px;

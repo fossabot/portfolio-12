@@ -1,6 +1,8 @@
-<header class="header {{modifiers}}">
+<header class="header {{#if compact}}header--compact{{/if}}">
   <div class="header__container">
-    <img class="header__icon" alt="Personal logo" src="/assets/favicon.svg">
+    <a class="header__logo" href="/" rel="noopener">
+      <img alt="Personal logo" src="/assets/favicon.svg">
+    </a>
     <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
     <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here or at the links below.</p>
 
@@ -24,7 +26,7 @@
       </ul>
     {{/unless}}
 
-    <ul class="header__list">
+    <ul class="header__list list-of-icons">
       {{#each social}}
         <li class="list-item">
           <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
