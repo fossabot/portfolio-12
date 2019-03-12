@@ -1,3 +1,18 @@
+/**
+ * one can use icons simply by adding the .icon class and a
+ * particular icon instance class (e.g. .icon-github):
+ *
+ * ```
+ * <i class="icon icon-chevron-up"></i>
+ * ```
+ *
+ * Note that the .icon class is required, so this won't work:
+ *
+ * ```
+ * <i class="icon-chevron-up"></i>
+ * ```
+ */
+
 @font-face {
   font-family: icon-e;
   src: url('/assets/fonts/icon-e.eot');
