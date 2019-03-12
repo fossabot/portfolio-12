@@ -19,6 +19,7 @@ module.exports = {
         'chore',
         'ci',
         'design',
+        'docs',
         'feat',
         'fix',
         'perf',
