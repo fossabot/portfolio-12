@@ -5,13 +5,12 @@
 @import 'article.css';
 @import 'footer.css';
 @import 'header.css';
-@import 'icons.css';
-@import 'navbar.css';
 
 /* components */
 @import 'back-to-top.css';
 @import 'badge.css';
 @import 'breadcrumbs.css';
+@import 'icons.css';
 @import 'list.css';
 @import 'tags.css';
 @import 'timeline.css';
