@@ -22,7 +22,12 @@ body {
 footer,
 header,
 main {
+  box-sizing: border-box;
+  display: block;
   flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 main {
@@ -32,12 +37,9 @@ main {
 article,
 aside,
 div,
-footer,
-header,
-main,
 nav,
 section {
-  display: block;
+  box-sizing: border-box;
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -155,11 +157,8 @@ code {
 }
 
 article,
-header,
 section {
-  box-sizing: border-box;
-  margin: 2em;
-  padding: 0;
+  margin: 1em 2em;
 }
 
 @media (--medium-screen) {
@@ -199,6 +198,6 @@ section {
   article,
   header,
   section {
-    margin: 0;
+    margin: 2em 0;
   }
 }
