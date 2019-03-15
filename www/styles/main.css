@@ -8,6 +8,8 @@ body {
   background-color: #fafafa;
   border: 0;
   color: var(--clr-primary-black);
+  display: flex;
+  flex-flow: column nowrap;
   font-size: var(--fontsize-root);
   height: 100%;
   margin: 0;
@@ -15,6 +17,16 @@ body {
   overflow-y: auto;
   padding: 0;
   width: 100%;
+}
+
+footer,
+header,
+main {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 2;
 }
 
 article,
