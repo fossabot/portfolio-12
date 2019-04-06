@@ -1,0 +1,7 @@
+{{page "title" "gulp-gitstage"}}
+
+{{#> layouts/project}}
+  {{#*inline "description"}}
+  <p>Starting as a fork of <a class="text-link" href="https://github.com/mikaelbr/gulp-gitmodified" rel="noopener">gulp-gitmodified</a> I converted the project into a <a class="text-link" href="https://gulpjs.com/" rel="noopener">Gulp</a> plugin that stages files in the file-stream automatically. The idea was born out of a desire to build custom <a class="text-link" href="https://prettier.io/" rel="noopener">Prettier</a>-like pipelines within Gulp. More specifically, I wanted to build a pipeline that gets all staged files using gulp-gitmodified and applies <a class="text-link" href="https://stylelint.io/" rel="noopener">Stylelint&apos;s</a> automatic fix, finally staging the files before a commit is made. Using <a class="text-link" href="https://www.npmjs.com/package/husky" rel="noopener">husky</a> one can easily add a <code>pre-commit</code> hook that runs this custom pipeline on all commits, guaranteeing code quality.</p>
+  {{/inline}}
+{{/layouts/project}}
