@@ -4,8 +4,6 @@
   background: #171717;
   box-shadow: 0 -2px 4px 0 var(--clr-shadow);
   height: 3em;
-  margin: 0;
-  padding: 0;
   position: relative;
   width: 100%;
   z-index: var(--layer-roof);

@@ -12,49 +12,89 @@ body {
   flex-flow: column nowrap;
   font-size: var(--fontsize-root);
   height: 100%;
-  margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 0;
   width: 100%;
 }
 
-footer,
-header,
-main {
-  box-sizing: border-box;
-  display: block;
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-main {
-  flex-grow: 2;
-}
+/* Layout
+   ========================================================================== */
 
 article,
-aside,
+body,
 div,
+footer,
+header,
+main,
 nav,
-section {
+ol,
+section,
+ul {
   box-sizing: border-box;
+  display: block;
   font-size: 1rem;
   margin: 0;
   padding: 0;
   position: relative;
 }
 
-p,
-li,
-ul {
-  font-family: var(--fontstack-text);
-  font-size: var(--fontsize-text);
-  line-height: var(--lineheight-text);
-  margin: 0 0 1em;
-  word-break: keep-all;
+article,
+section {
+  margin: 1em 2em;
 }
+
+footer,
+header {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 2;
+}
+
+@media (--medium-screen) {
+  header,
+  main {
+    padding: 0 124px;
+  }
+
+  article,
+  section {
+    margin: 2em auto;
+    max-width: 800px;
+  }
+}
+@media (--large-screen) {
+  body {
+    display: grid;
+    grid-gap: 0 54px;
+    grid-template-columns: 36% calc(64% - 54px);
+    width: 100%;
+  }
+
+  header {
+    align-self: start;
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 3;
+    padding: 0;
+  }
+
+  footer {
+    grid-column: span 2;
+  }
+
+  article,
+  header,
+  section {
+    margin: 2em 0;
+  }
+}
+
+/* Text
+   ========================================================================== */
 
 a,
 b,
@@ -74,15 +114,13 @@ p,
 span,
 ul {
   color: inherit;
+  margin: 0;
+  padding: 0;
 
   &::selection {
     background-color: var(--clr-primary-accent);
     color: var(--clr-primary-white);
   }
-}
-
-li {
-  margin: 0 0 .1em;
 }
 
 h1 {
@@ -127,6 +165,19 @@ h6 {
   margin: 1.2em 0 .3em;
 }
 
+p,
+li {
+  font-family: var(--fontstack-text);
+  font-size: var(--fontsize-text);
+  line-height: var(--lineheight-text);
+  word-break: keep-all;
+}
+
+span {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 b,
 strong,
 .text-bold {
@@ -139,14 +190,8 @@ em,
   @apply --text-emph;
 }
 
-figcaption,
-.text-sub {
-  @apply --text-sub;
-}
-
-img {
-  color: transparent; /* hide the alt text when image is not found */
-}
+/* Utillity
+   ========================================================================== */
 
 code {
   background-color: var(--clr-code-background);
@@ -156,48 +201,11 @@ code {
   padding: .05em .2em;
 }
 
-article,
-section {
-  margin: 1em 2em;
+figcaption,
+.text-sub {
+  @apply --text-sub;
 }
 
-@media (--medium-screen) {
-  header,
-  main {
-    padding: 0 124px;
-  }
-
-  article,
-  section {
-    margin: 2em auto;
-    max-width: 800px;
-  }
-}
-@media (--large-screen) {
-  body {
-    display: grid;
-    grid-gap: 0 54px;
-    grid-template-columns: 36% calc(64% - 54px);
-    width: 100%;
-  }
-
-  header {
-    align-self: start;
-    grid-column: 1 / 2;
-  }
-
-  main {
-    grid-column: 2 / 3;
-    padding: 0;
-  }
-
-  footer {
-    grid-column: span 2;
-  }
-
-  article,
-  header,
-  section {
-    margin: 2em 0;
-  }
+img {
+  color: transparent; /* hide the alt text when image is not found */
 }

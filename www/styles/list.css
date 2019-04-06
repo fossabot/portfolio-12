@@ -6,16 +6,12 @@
 .list {
   list-style: none;
   margin: 0 0 0 3.2em;
-  padding: 0;
 
   &--horizontal {
     margin: 0 0 0 .2em;
-    padding: 0;
 
     .list-item {
       display: inline-block;
-      margin: 0;
-      padding: 0;
 
       &:not(:last-child) {
         &::after {
@@ -29,7 +25,6 @@
   .list-item {
     cursor: pointer;
     margin: 0 0 .3em;
-    padding: 0;
     position: relative;
   }
 
@@ -51,7 +46,6 @@
   flex-wrap: wrap;
   list-style: none;
   margin: 0 0 1em;
-  padding: 0;
   position: relative;
   width: 100%;
 
@@ -76,15 +70,12 @@
 
   .list-item__description {
     flex-grow: 2;
-    margin: 0;
     padding: 0 3em 0 0;
   }
 
   .list-item__header {
     display: flex;
     flex-direction: row;
-    margin: 0;
-    padding: 0;
   }
 
   .list-item__more {
@@ -110,7 +101,6 @@
   font-family: var(--fontstack-code);
   font-size: var(--fontsize-subtext);
   font-weight: 400;
-  margin: 0;
   pointer-events: none;
 }
 
@@ -132,15 +122,6 @@
       }
     }
 
-    .list-item__description {
-      margin: 0;
-      padding: 0;
-    }
-
-    .list-item__more {
-      margin: 0;
-    }
-
     .list-item__title {
       margin: .1em 0 .3em;
     }
@@ -156,7 +137,6 @@
 @media (--large-screen) {
   .category {
     font-size: 1.3em;
-    margin: 0;
     right: calc(100% + .1em);
     transform: rotateZ(-90deg) translateX(-60%);
   }
@@ -166,8 +146,6 @@
   display: inline-block;
   float: right;
   list-style: none;
-  margin: 0;
-  padding: 0;
 
   .links__item {
     @apply --text-thin;
@@ -175,7 +153,6 @@
     display: inline-block;
     font-size: 1.3em;
     margin: 0 0 0 .25em;
-    padding: 0;
   }
 
   &--glyphs {
@@ -213,8 +190,6 @@
   font-family: var(--fontstack-subtext);
   font-size: 0;
   list-style: none;
-  margin: 0;
-  padding: 0;
 
   & > li {
     color: var(--item-color);
@@ -222,8 +197,6 @@
     display: inline-block;
     font-family: monospace;
     font-size: var(--fontsize);
-    margin: 0;
-    padding: 0;
 
     & > a:hover {
       color: var(--item-color-hovered);
@@ -246,8 +219,6 @@
 .list-of-icons {
   font-size: 0;
   list-style: none;
-  margin: 0;
-  padding: 0;
 
   & > .list-item {
     display: inline-block;
