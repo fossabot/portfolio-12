@@ -8,6 +8,8 @@ body {
   background-color: #fafafa;
   border: 0;
   color: var(--clr-primary-black);
+  display: flex;
+  flex-flow: column nowrap;
   font-size: var(--fontsize-root);
   height: 100%;
   margin: 0;
@@ -17,15 +19,27 @@ body {
   width: 100%;
 }
 
+footer,
+header,
+main {
+  box-sizing: border-box;
+  display: block;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+main {
+  flex-grow: 2;
+}
+
 article,
 aside,
 div,
-footer,
-header,
-main,
 nav,
 section {
-  display: block;
+  box-sizing: border-box;
   font-size: 1rem;
   margin: 0;
   padding: 0;
@@ -143,11 +157,8 @@ code {
 }
 
 article,
-header,
 section {
-  box-sizing: border-box;
-  margin: 2em;
-  padding: 0;
+  margin: 1em 2em;
 }
 
 @media (--medium-screen) {
@@ -187,6 +198,6 @@ section {
   article,
   header,
   section {
-    margin: 0;
+    margin: 2em 0;
   }
 }
