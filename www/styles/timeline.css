@@ -77,7 +77,6 @@
       }
     }
 
-    &:focus-within,
     &:hover {
       box-shadow: 0 0 8px 0 var(--clr-shadow);
     }

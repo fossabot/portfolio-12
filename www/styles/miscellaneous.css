@@ -52,7 +52,6 @@
 
   &:focus,
   &:hover {
-    color: var(--clr-primary-accent);
     margin-right: 1.4em !important; /* stylelint-disable-line declaration-no-important */
 
     &::after {
@@ -60,6 +59,10 @@
       opacity: 1;
       pointer-events: all;
     }
+  }
+
+  &:hover {
+    color: var(--clr-primary-accent);
   }
 }
 

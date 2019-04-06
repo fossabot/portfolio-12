@@ -62,7 +62,6 @@
     transition: box-shadow .3s ease;
     width: 100%;
 
-    &:focus-within,
     &:hover {
       box-shadow: 0 0 8px 0 var(--clr-shadow);
     }
@@ -217,6 +216,7 @@
 }
 
 .list-of-icons {
+  display: flex;
   font-size: 0;
   list-style: none;
 

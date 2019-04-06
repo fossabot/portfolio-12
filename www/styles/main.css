@@ -2,6 +2,7 @@
 @import 'variables/colors.css';
 @import 'variables/dimensions.css';
 @import 'variables/fonts.css';
+@import 'variables/paths.css';
 
 body {
   background-color: #fafafa;
@@ -206,7 +207,13 @@ figcaption,
 }
 
 img {
+  background-image: var(--placeholder-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: transparent; /* hide the alt text when image is not found */
+  min-height: 256px;
+  min-width: 256px;
 }
 
 kbd { /* Based on GitHub's <kbd> styling */
