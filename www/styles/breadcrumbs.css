@@ -1,6 +1,25 @@
 @import './variables/colors.css';
 @import './list.css';
 
+/**
+ * Breadcrumbs[1] are used as a navigation tool to inform the
+ * user where on the website they are.
+ *
+ * For correctness the .breadcrumbs class should be used on an
+ * ordered list (`<ol>`).
+ *
+ * ```
+ * <ol class="breadcrumbs">
+ *   <li class="crumb">Home</li>
+ *   <li class="crumb">Page 1</li>
+ *   <li class="crumb">Page 2</li>
+ * </ol>
+ * ```
+ *
+ * --
+ * 1: https://en.wikipedia.org/wiki/Breadcrumb_(navigation)
+ */
+
 .breadcrumbs {
   @extend .vlist;
 
