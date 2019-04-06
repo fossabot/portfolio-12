@@ -3,7 +3,6 @@
 @import 'variables/dimensions.css';
 @import 'variables/fonts.css';
 
-html,
 body {
   background-color: #fafafa;
   border: 0;
