@@ -3,7 +3,7 @@
 .footer {
   background: #171717;
   box-shadow: 0 -2px 4px 0 var(--clr-shadow);
-  height: 2.3em;
+  height: 3em;
   margin: 0;
   padding: 0;
   position: relative;
@@ -23,11 +23,12 @@
 
 @media (--medium-screen) {
   .footer {
-    height: 3em;
+    height: 4em;
   }
 }
 @media (--large-screen) {
   .footer {
     align-self: end;
+    height: 3em;
   }
 }
