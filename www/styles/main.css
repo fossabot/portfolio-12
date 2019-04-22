@@ -4,6 +4,90 @@
 @import 'variables/fonts.css';
 @import 'variables/paths.css';
 
+/* Reset
+   ========================================================================== */
+
+article,
+aside,
+body,
+details,
+div,
+figure,
+footer,
+form,
+header,
+main,
+nav,
+ol,
+section,
+ul {
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+article,
+footer,
+header,
+main,
+nav,
+section {
+  font-size: 1rem;
+  position: relative;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+abbr,
+b,
+blockquote,
+caption,
+code,
+cite,
+em,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+kbd,
+label,
+li,
+p,
+pre,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+u {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background-color: var(--clr-primary-accent);
+    color: var(--clr-primary-white);
+  }
+}
+
+/* Layout
+   ========================================================================== */
+
 body {
   background-color: #fafafa;
   border: 0;
@@ -12,30 +96,12 @@ body {
   flex-flow: column nowrap;
   font-size: var(--fontsize-root);
   height: 100%;
+  line-height: 1;
+  margin: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  width: 100%;
-}
-
-/* Layout
-   ========================================================================== */
-
-article,
-body,
-div,
-footer,
-header,
-main,
-nav,
-ol,
-section,
-ul {
-  box-sizing: border-box;
-  display: block;
-  font-size: 1rem;
-  margin: 0;
   padding: 0;
-  position: relative;
+  width: 100%;
 }
 
 article,
@@ -96,33 +162,6 @@ main {
 /* Text
    ========================================================================== */
 
-a,
-b,
-br,
-code,
-figcaption,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-i,
-kbd,
-li,
-p,
-span,
-ul {
-  color: inherit;
-  margin: 0;
-  padding: 0;
-
-  &::selection {
-    background-color: var(--clr-primary-accent);
-    color: var(--clr-primary-white);
-  }
-}
-
 h1 {
   font-family: var(--fontstack-header);
   font-size: var(--fontsize-h1);
@@ -179,14 +218,12 @@ span {
 }
 
 b,
-strong,
-.text-bold {
+strong {
   @apply --text-bold;
 }
 
 i,
-em,
-.text-emph {
+em {
   @apply --text-emph;
 }
 
@@ -201,8 +238,7 @@ code {
   padding: .05em .2em;
 }
 
-figcaption,
-.text-sub {
+figcaption {
   @apply --text-sub;
 }
 
