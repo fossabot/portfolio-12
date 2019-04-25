@@ -61,7 +61,7 @@ let watchingFiles = false;
 
 /* Utility */
 gulp.task('clean:site', function() {
-  return gulp.src(`${OUTPUT_SITE}/**/*`)
+  return gulp.src(`${OUTPUT_SITE}/**/{.,}*`)
              .pipe(remove());
 });
 gulp.task('clean:reports', function() {
