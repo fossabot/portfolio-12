@@ -1,17 +1,19 @@
 /* jshint browser: true */
 
-let f = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+const MINIMUM_TOP_OFFSET = 50;
+const backToTop = document.querySelector('.back-to-top');
 
-// Elements
-let backToTop = document.querySelector('.back-to-top');
-
-// Hide back to top and add click listener
+// Hide .back-to-top and add click listener
 backToTop.classList.add('back-to-top--hidden');
+
+// Move to top when .back-to-top is clicked
 backToTop.addEventListener('click', e => {
   e.preventDefault();
 
+  let f = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
   let t = 0;
-  let interval = setInterval(function() {
+  let interval = setInterval(() => {
     t += 0.015;
     document.body.scrollTop -= document.body.scrollTop * f(t);
     if(document.body.scrollTop <= 0) clearInterval(interval);
@@ -19,9 +21,9 @@ backToTop.addEventListener('click', e => {
 });
 
 // Observe the footer to determine if .back-to-top should be shown
-let observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting && document.body.scrollTop > 50) {
+    if(entry.isIntersecting && document.body.scrollTop > MINIMUM_TOP_OFFSET) {
       backToTop.classList.remove('back-to-top--hidden');
     } else {
       backToTop.classList.add('back-to-top--hidden');
