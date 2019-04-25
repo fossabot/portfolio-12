@@ -7,7 +7,7 @@
     <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here or at the links below.</p>
 
     {{#unless no_breadcrumbs}}
-      <ul class="breadcrumbs">
+      <ol class="breadcrumbs">
         <li class="crumb"><a href="/" rel="noopener">Home</a></li>
         {{#each (get_crumbs)}}
           {{#unless @last}}
@@ -16,13 +16,14 @@
             <li class="crumb">{{name}}</li>
           {{/unless}}
         {{/each}}
-      </ul>
+      </ol>
     {{else}}
       <ul class="vlist vlist--evenly-spaced">
-        <li><a href="/archive#projects">Projects</a></li>
-        <li><a href="/archive#contributions">Contributions</a></li>
-        <li><a href="/snippets">Snippets</a></li>
-        <li><a href="/timeline">Timeline</a></li>
+        <li><a href="/archive#projects" rel="noopener">Projects</a></li>
+        <li><a href="/archive#contributions" rel="noopener">Contributions</a></li>
+        <li><a href="/snippets" rel="noopener">Snippets</a></li>
+        <li><a href="/downloads/cv_eric-cornelissen.pdf" rel="noopener">Resume</a></li>
+        <li><a href="/timeline" rel="noopener">Timeline</a></li>
       </ul>
     {{/unless}}
 

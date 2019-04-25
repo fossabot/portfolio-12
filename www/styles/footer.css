@@ -1,152 +1,34 @@
-@import 'utilities/unselectable.css';
-@import 'variables/colors.css';
 @import 'variables/dimensions.css';
-@import 'variables/fonts.css';
-@import 'variables/layers.css';
-@import 'variables/paths.css';
 
 .footer {
-  --clippath: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
-
-  @apply --unselectable;
-
-  align-items: center;
-  box-sizing: border-box;
-  color: var(--clr-primary-white);
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  font-size: 1rem;
-  justify-content: center;
-  margin: 1em 0 0;
-  overflow: visible;
-  padding: 3em 1.6em;
+  background: #171717;
+  box-shadow: 0 -2px 4px 0 var(--clr-shadow);
+  height: 3em;
+  margin: 0;
+  padding: 0;
   position: relative;
-  text-align: center;
   width: 100%;
   z-index: var(--layer-roof);
 
-  &::before,
-  &::after {
+  &::before {
+    background: linear-gradient(90deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
     content: '';
-    height: 100%;
+    height: 2px;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: var(--layer-dungeon);
-  }
-
-  &::before {
-    box-shadow: 0 -1.5vw 1.5vw 0 rgba(0, 0, 0, .5);
-    height: 3vw;
-    left: -1%;
-    top: 3vw;
-    transform: rotateZ(1.8deg);
-    width: 101%;
-  }
-
-  &::after {
-    background-attachment: fixed;
-    background-blend-mode: overlay;
-    background-image: var(--url-background);
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
-    clip-path: var(--clippath);
-  }
-
-  .background-hover {
-    &--codepen {
-      &::before {
-        background-color: var(--clr-codepen);
-        clip-path: var(--clippath);
-      }
-    }
-
-    &--github {
-      &::before {
-        background-color: var(--clr-github);
-        clip-path: var(--clippath);
-      }
-    }
-
-    &--linkedin {
-      &::before {
-        background-color: var(--clr-linkedin);
-        clip-path: var(--clippath);
-      }
-    }
-
-    &--mail {
-      &::before {
-        background-color: var(--clr-mail);
-        clip-path: var(--clippath);
-      }
-    }
-
-    &--stackoverflow {
-      &::before {
-        background-color: var(--clr-stackoverflow);
-        clip-path: var(--clippath);
-      }
-    }
-  }
-}
-
-.footer__message {
-  font-size: 1.4em;
-  margin: .5em 0;
-  order: 2;
-  position: relative;
-}
-
-.footer__social {
-  display: none;
-  order: 1;
-  padding: 0;
-
-  &:hover {
-    .footer__social__link .icon {
-      opacity: .6;
-    }
-
-    .footer__social__link:hover {
-      .icon {
-        color: var(--clr-primary-white);
-        opacity: 1;
-      }
-    }
-  }
-}
-
-.footer__social__link {
-  color: var(--clr-primary-white);
-
-  &:focus,
-  &:focus-within {
-    color: var(--clr-primary-accent);
   }
 }
 
 @media (--medium-screen) {
   .footer {
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 2em 0 0;
-    padding: 6.5em 4em 2.5em;
-    text-align: inherit;
+    height: 4em;
   }
-
-  .footer__message {
-    display: inline-block;
-    font-size: 1.6em;
-    margin: -22px 0 .5em;
-    order: 1;
-  }
-
-  .footer__social {
-    display: inline-block;
-    order: 2;
+}
+@media (--large-screen) {
+  .footer {
+    align-self: end;
+    height: 3em;
   }
 }

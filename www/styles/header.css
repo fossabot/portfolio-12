@@ -35,6 +35,13 @@
   .header__logo {
     display: none;
     order: 1;
+
+    img&,
+    & > img {
+      background-image: none;
+      min-height: unset;
+      min-width: unset;
+    }
   }
 
   .header__message {

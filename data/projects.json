@@ -1,4 +1,19 @@
 {
+  "2019": [
+    {
+      "name": "gulp-gitstage",
+      "tldr": "A plugin for Gulp to stage files in the object stream for git.",
+      "start_year": 2019,
+      "end_year": 2019,
+      "spotlight": false,
+      "tags": ["JavaScript", "Gulp"],
+      "keywords": ["git", "git stage", "npm", "package"],
+      "links": {
+        "github": "https://github.com/ericcornelissen/gulp-gitstage",
+        "npm": "https://www.npmjs.com/package/gulp-gitstage"
+      }
+    }
+  ],
   "2018": [
     {
       "name": "svg-to-pdf-bot",
@@ -123,33 +138,6 @@
       "keywords": ["machine learning", "tree"],
       "links": {
         "github": "https://github.com/ericcornelissen/AutoCorrect-py"
-      }
-    }
-  ],
-  "2016": [
-    {
-      "name": "IncaseJS",
-      "tldr": "An extremely small but powerful library designed to assert the variable types of function parameters.",
-      "start_year": 2016,
-      "end_year": 2016,
-      "spotlight": false,
-      "tags": ["Jasmine", "JavaScript"],
-      "keywords": ["npm", "package"],
-      "links": {
-        "github": "https://github.com/ericcornelissen/incaseJS",
-        "npm": "https://www.npmjs.com/package/incase.js"
-      }
-    },
-    {
-      "name": "JavaPromise",
-      "tldr": "Java implementation of the JavaScript Promise.",
-      "start_year": 2016,
-      "end_year": 2016,
-      "spotlight": false,
-      "tags": ["Gradle", "Java"],
-      "keywords": ["promise", "lambda"],
-      "links": {
-        "download": "/downloads/JavaPromise_repository.zip"
       }
     }
   ],
