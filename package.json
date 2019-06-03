@@ -9,7 +9,7 @@
     "email": "ericornelissen@gmail.com"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.1.2",
+    "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^7.1.2",
     "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.0",
