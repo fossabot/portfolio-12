@@ -9,8 +9,8 @@
     "email": "ericornelissen@gmail.com"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.0.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "autoprefixer": "^9.4.7",
     "browser-sync": "^2.26.0",
     "gulp": "^4.0.0",
