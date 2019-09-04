@@ -2,7 +2,6 @@
 
 const axe = require('gulp-axe-webdriver');
 const browserSync = require('browser-sync').create();
-const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const gulpIgnore = require('gulp-ignore');
@@ -138,6 +137,7 @@ gulp.task('styles', function() {
   const atImport = require('postcss-import');
   const autoprefixer = require('autoprefixer');
   const customMedia = require('postcss-custom-media');
+  const cssnano = require('cssnano');
   const cssVariables = require('postcss-css-variables');
   const extendRules = require('postcss-extend');
   const nestedRules = require('postcss-nested');
@@ -153,9 +153,11 @@ gulp.task('styles', function() {
                cssVariables(),
                customMedia(),
                extendRules(),
-               nestedRules()
+               nestedRules(),
+
+               // Finally minify the CSS (if needed)
+               minifyOutput ? cssnano() : x => x
              ]))
-             .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 
