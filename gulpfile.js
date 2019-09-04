@@ -140,7 +140,7 @@ gulp.task('styles', function() {
   const customMedia = require('postcss-custom-media');
   const cssVariables = require('postcss-css-variables');
   const extendRules = require('postcss-extend');
-  const netedRules = require('postcss-nested');
+  const nestedRules = require('postcss-nested');
 
   return gulp.src(INPUT_STYLES.bundles)
              .pipe(postcss([
@@ -153,7 +153,7 @@ gulp.task('styles', function() {
                cssVariables(),
                customMedia(),
                extendRules(),
-               netedRules()
+               nestedRules()
              ]))
              .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
