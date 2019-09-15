@@ -45,7 +45,7 @@
     "postcss-extend": "^1.0.5",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.1.1",
-    "stylelint": "^10.0.1",
+    "stylelint": "^11.0.0",
     "stylelint-order": "^3.0.0"
   }
 }
