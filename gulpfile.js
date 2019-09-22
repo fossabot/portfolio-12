@@ -60,11 +60,11 @@ let watchingFiles = false;
 
 /* Utility */
 gulp.task('clean:site', function() {
-  return gulp.src(`${OUTPUT_SITE}/**/*`)
+  return gulp.src(`${OUTPUT_SITE}/**/{.,}*`, { read: false })
              .pipe(remove());
 });
 gulp.task('clean:reports', function() {
-  return gulp.src(`${OUTPUT_REPORTS}/**/*`)
+  return gulp.src(`${OUTPUT_REPORTS}/**/*`, { read: false })
              .pipe(remove());
 });
 gulp.task('clean', gulp.parallel('clean:reports', 'clean:site'));
