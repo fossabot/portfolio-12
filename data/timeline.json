@@ -1,5 +1,16 @@
 [
   {
+    "type": "internship",
+    "title": "Cyber-Security Internship",
+    "institute": "Mezu",
+    "location": {
+      "city": "Lisbon",
+      "country": "Portugal"
+    },
+    "when": 2019,
+    "link": "https://www.mezu.com/"
+  },
+  {
     "type": "volunteer",
     "title": "Slush Volunteer",
     "institute": "Slush",
