@@ -32,7 +32,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rm": "^2.0.0",
     "gulp-run-command": "0.0.9",
-    "gulp-stylelint": "^9.0.0",
+    "gulp-stylelint": "^10.0.0",
     "gulp-uglify-es": "^1.0.4",
     "handlebars-helpers": "^0.10.0",
     "handlebars-utils": "^1.0.6",
