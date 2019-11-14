@@ -31,7 +31,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rm": "^2.0.0",
-    "gulp-run-command": "0.0.9",
+    "gulp-run-command": "0.0.10",
     "gulp-stylelint": "^10.0.0",
     "gulp-uglify-es": "^2.0.0",
     "handlebars-helpers": "^0.10.0",
