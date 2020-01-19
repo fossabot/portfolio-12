@@ -10,6 +10,7 @@ const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const iconfont = require('gulp-iconfont');
 const imagemin = require('gulp-imagemin');
+const jest = require('gulp-jest').default;
 const jshint = require('gulp-jshint');
 const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
@@ -52,10 +53,19 @@ const INPUT_STYLES = {
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
 
+const TEST_DIR = './tests';
+const TEST_FILES = `${TEST_DIR}/**/*.js`;
+
 
 let minifyOutput = false;
 let serverActive = false;
 let watchingFiles = false;
+
+
+function gracefulExit(done) {
+  browserSync.exit();
+  done();
+};
 
 
 /* Utility */
@@ -67,7 +77,11 @@ gulp.task('clean:reports', function() {
   return gulp.src(`${OUTPUT_REPORTS}/**/*`, { read: false })
              .pipe(remove());
 });
-gulp.task('clean', gulp.parallel('clean:reports', 'clean:site'));
+gulp.task('clean:tests', function() {
+  return gulp.src(`${TEST_DIR}/_artifacts/**/*`, { read: false })
+             .pipe(remove());
+});
+gulp.task('clean', gulp.parallel('clean:reports', 'clean:site', 'clean:tests'));
 
 gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
@@ -216,10 +230,7 @@ gulp.task('analyze:a11y', gulp.series('clean:site', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, function(done) {
-  browserSync.exit();
-  done();
-}));
+gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, gracefulExit));
 
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
@@ -270,7 +281,7 @@ gulp.task('lint-json', gulp.series(
   )
 ));
 gulp.task('lint-scripts', function() {
-  return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS])
+  return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS, TEST_FILES])
              .pipe(jshint())
              .pipe(jshint.reporter('default'))
              .pipe(jshint.reporter('fail'));
@@ -285,6 +296,13 @@ gulp.task('lint-styles', function() {
               }));
 });
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
+
+/* Testing */
+gulp.task('test-integration', function() {
+  return gulp.src(TEST_DIR)
+             .pipe(jest());
+});
+gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', 'test-integration', gracefulExit));
 
 /* Default */
 gulp.task('default', gulp.series('clean:site', 'serve'));

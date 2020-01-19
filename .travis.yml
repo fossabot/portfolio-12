@@ -1,7 +1,15 @@
 jobs:
   include:
     - stage: "Test"
-      name: "Lint"
+      name: "Tests"
+      language: node_js
+      node_js: 8
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp test
+    - name: "Lint"
       language: node_js
       node_js: 8
       install:
