@@ -11,7 +11,6 @@ const htmlmin = require('gulp-htmlmin');
 const iconfont = require('gulp-iconfont');
 const imagemin = require('gulp-imagemin');
 const isCI = require('is-ci');
-const jest = require('gulp-jest').default;
 const jshint = require('gulp-jshint');
 const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
@@ -305,11 +304,8 @@ gulp.task('lint-styles', function() {
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
 
 /* Testing */
-gulp.task('test-integration', function() {
-  return gulp.src(TEST_DIR)
-             .pipe(jest());
-});
-gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sleep(isCI ? 10000 : 0), 'test-integration', gracefulExit));
+const testIntegration = run('./node_modules/.bin/jest');
+gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sleep(isCI ? 10000 : 0), testIntegration, gracefulExit));
 
 /* Default */
 gulp.task('default', gulp.series('clean:site', 'serve'));
