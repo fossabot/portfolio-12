@@ -6,7 +6,6 @@
     ":prImmediately",
     ":semanticPrefixFixDepsChoreOthers",
     ":updateNotScheduled",
-    ":automergeDisabled",
     ":ignoreModulesAndTests",
     ":maintainLockFilesDisabled",
     ":autodetectPinVersions",
@@ -16,6 +15,16 @@
     "group:recommended",
     "helpers:disableTypesNodeMajor"
   ],
+
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
+
+  "automerge": true,
+  "automergeType": "pr",
 
   "labels": ["dependencies"]
 }
