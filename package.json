@@ -38,7 +38,7 @@
     "handlebars-utils": "1.0.6",
     "husky": "4.2.3",
     "is-ci": "2.0.0",
-    "jest-cli": "25.2.3",
+    "jest-cli": "25.2.4",
     "jest-matcher-one-of": "1.0.2",
     "jest-puppeteer": "4.4.0",
     "jshint": "2.11.0",
