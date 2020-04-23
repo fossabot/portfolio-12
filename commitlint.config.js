@@ -7,7 +7,8 @@ module.exports = {
       [
         'contrib',
         'project',
-        'snippet'
+        'snippet',
+        'timeline'
       ]
     ],
     'type-enum': [
@@ -18,6 +19,7 @@ module.exports = {
         'build',
         'chore',
         'ci',
+        'content',
         'design',
         'feat',
         'fix',
