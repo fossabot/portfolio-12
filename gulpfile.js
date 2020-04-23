@@ -2,7 +2,6 @@
 
 const axe = require('gulp-axe-webdriver');
 const browserSync = require('browser-sync').create();
-const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const gulpIgnore = require('gulp-ignore');
@@ -11,6 +10,7 @@ const htmllint = require('gulp-htmllint');
 const htmlmin = require('gulp-htmlmin');
 const iconfont = require('gulp-iconfont');
 const imagemin = require('gulp-imagemin');
+const isCI = require('is-ci');
 const jshint = require('gulp-jshint');
 const jsonLint = require('gulp-jsonlint');
 const jsonSchema = require("gulp-json-schema");
@@ -53,22 +53,41 @@ const INPUT_STYLES = {
 const OUTPUT_SITE = './_site';
 const OUTPUT_REPORTS = './_reports';
 
+const TEST_DIR = './tests';
+const TEST_FILES = `${TEST_DIR}/**/*.js`;
+
 
 let minifyOutput = false;
 let serverActive = false;
 let watchingFiles = false;
 
 
+function gracefulExit(done) {
+  browserSync.exit();
+  done();
+};
+
+function sleep(timeout) {
+  return function(done) {
+    setTimeout(done, timeout);
+  };
+};
+
+
 /* Utility */
 gulp.task('clean:site', function() {
-  return gulp.src(`${OUTPUT_SITE}/**/*`)
+  return gulp.src(`${OUTPUT_SITE}/**/{.,}*`, { read: false })
              .pipe(remove());
 });
 gulp.task('clean:reports', function() {
-  return gulp.src(`${OUTPUT_REPORTS}/**/*`)
+  return gulp.src(`${OUTPUT_REPORTS}/**/*`, { read: false })
              .pipe(remove());
 });
-gulp.task('clean', gulp.parallel('clean:reports', 'clean:site'));
+gulp.task('clean:tests', function() {
+  return gulp.src(`${TEST_DIR}/_artifacts/**/*`, { read: false })
+             .pipe(remove());
+});
+gulp.task('clean', gulp.parallel('clean:reports', 'clean:site', 'clean:tests'));
 
 gulp.task('set-minify-output', function(done) {
   minifyOutput = true;
@@ -138,9 +157,10 @@ gulp.task('styles', function() {
   const atImport = require('postcss-import');
   const autoprefixer = require('autoprefixer');
   const customMedia = require('postcss-custom-media');
+  const cssnano = require('cssnano');
   const cssVariables = require('postcss-css-variables');
   const extendRules = require('postcss-extend');
-  const netedRules = require('postcss-nested');
+  const nestedRules = require('postcss-nested');
 
   return gulp.src(INPUT_STYLES.bundles)
              .pipe(postcss([
@@ -153,9 +173,11 @@ gulp.task('styles', function() {
                cssVariables(),
                customMedia(),
                extendRules(),
-               netedRules()
+               nestedRules(),
+
+               // Finally minify the CSS (if needed)
+               minifyOutput ? cssnano() : x => x
              ]))
-             .pipe(gulpIf(minifyOutput, cssnano()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 
@@ -214,10 +236,7 @@ gulp.task('analyze:a11y', gulp.series('clean:site', 'build', function() {
     urls: ['_site/**/*.html']
   });
 }));
-gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, function(done) {
-  browserSync.exit();
-  done();
-}));
+gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, gracefulExit));
 
 gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
@@ -268,7 +287,7 @@ gulp.task('lint-json', gulp.series(
   )
 ));
 gulp.task('lint-scripts', function() {
-  return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS])
+  return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS, TEST_FILES])
              .pipe(jshint())
              .pipe(jshint.reporter('default'))
              .pipe(jshint.reporter('fail'));
@@ -283,6 +302,10 @@ gulp.task('lint-styles', function() {
               }));
 });
 gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-scripts', 'lint-styles'));
+
+/* Testing */
+const testIntegration = run('./node_modules/.bin/jest');
+gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sleep(isCI ? 10000 : 0), testIntegration, gracefulExit));
 
 /* Default */
 gulp.task('default', gulp.series('clean:site', 'serve'));

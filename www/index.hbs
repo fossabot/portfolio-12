@@ -11,16 +11,18 @@
 
     <main class="main">
       <section id="history" class="section section--full-width">
-        <div class="timeline timeline--horizontal">
-          <a class="timeline-event timeline-event--more" aria-label="View full timeline" href="/timeline" rel="noopener"></a>
+        <ol class="timeline timeline--horizontal">
+          <li class="timeline-event timeline-event--more">
+            <a class="timeline-event__bullet-link" aria-label="View full timeline" href="/timeline" rel="noopener"></a>
+          </li>
           {{#each (reverse (first timeline 4))}}
-            <div class="timeline-event timeline-event--{{ type }}">
+            <li class="timeline-event timeline-event--{{ type }}">
               <p class="timeline-event__title short-underline">{{ title }}</p>
               <p><span class="text-italic">{{ when }}</span> | {{ institute }}</p>
               <a class="timeline-event__more more-arrow" href="{{ link }}" rel="noopener">More</a>
-            </div>
+            </li>
           {{/each}}
-        </div>
+        </ol>
       </section>
 
       <section id="projects" class="section">

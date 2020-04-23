@@ -14,6 +14,7 @@ Repository for the personal portfolio of Eric Cornelissen.
 | Performance evaluator | [Lighthouse](https://github.com/GoogleChrome/lighthouse) |
 | Site generator | [Handlebars.js](https://handlebarsjs.com/builtin_helpers.html) |
 | Stylesheet linter | [stylelint](https://stylelint.io/) |
+| Test runner | [Jest](https://jestjs.io/) |
 
 ###### How to use the build tools
 - `$ gulp`: Build the site, watch for changes, and start a simple HTTP server (on port 4000) serving the site with live reload.
@@ -28,3 +29,4 @@ Repository for the personal portfolio of Eric Cornelissen.
 - `$ gulp lint`: Lint the source code of the project.
 - `$ gulp server`: Start a simple HTTP server (on port 4000) serving the site.
   - Requires `$ gulp build` or `$ gulp dist`.
+- `$ gulp test`: Run the test suites of the project.
