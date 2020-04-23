@@ -11,7 +11,6 @@ module.exports = function(categoryName, projectName, options) {
   if (categoryName === 'event') {
     for (let event of events) {
       if (event.title === projectName) {
-        console.log(event);
         this.project = event;
         return options.fn(this);
       }
