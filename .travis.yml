@@ -3,7 +3,7 @@ jobs:
     - stage: "Test"
       name: "Tests"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -11,7 +11,7 @@ jobs:
         - gulp test
     - name: "Lint"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -20,7 +20,7 @@ jobs:
     - name: "Accessibility"
       sudo: required
       language: node_js
-      node_js: 8
+      node_js: 10
       addons:
         chrome: stable
       install:
@@ -30,7 +30,7 @@ jobs:
         - gulp analyze:a11y
     - name: "Build dev"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -38,7 +38,7 @@ jobs:
         - gulp build
     - name: "Build dist"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -48,7 +48,7 @@ jobs:
     - stage: deploy
       name: "GitHub pages"
       language: node_js
-      node_js: 8
+      node_js: 10
       if: branch = master
 
       install:
