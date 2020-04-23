@@ -32,7 +32,7 @@ const INPUT_ASSETS = {
   images: `${INPUT_DIR}/assets/**/*.{jpg,png}`,
   svgs: `${INPUT_DIR}/assets/**/*.svg`
 };
-const INPUT_HTML = `${INPUT_DIR}/{,archive,timeline/}*.hbs`;
+const INPUT_HTML = `${INPUT_DIR}/**/*.hbs`;
 const INPUT_HANDLEBARS = {
   partials: './partials/**/*.hbs',
   helpers: './helpers/*.js',
