@@ -1,5 +1,25 @@
 {
+  "2020": [
+    {
+      "name": "Fluent hovering effect",
+      "tldr": "An iOS 13.4 inspired cursor pointer and button hovering effect.",
+      "languages": ["HTML", "CSS3"],
+      "link": "https://codepen.io/ericornelissen/full/ExjGozQ"
+    }
+  ],
   "2019": [
+    {
+      "name": "Custom status tooltip",
+      "tldr": "A CSS-only status tooltip for buttons that remains visible for a bit after interaction.",
+      "languages": ["HTML", "CSS3"],
+      "link": "https://codepen.io/ericornelissen/full/zYORVje"
+    },
+    {
+      "name": "Animated counter",
+      "tldr": "A single element counter component with animation.",
+      "languages": ["HTML", "CSS3"],
+      "link": "https://codepen.io/ericornelissen/full/JgjMBx"
+    },
     {
       "name": "CSS only hidden menu",
       "tldr": "A menu hiding behind its parent implemented using only CSS.",

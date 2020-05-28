@@ -1,0 +1,11 @@
+{{page "title" "SVGO Action"}}
+
+{{#> layouts/project}}
+  {{#*inline "description"}}
+  <p>I started this project to automate the <abbr title="Scalable Vector Graphic">SVG</abbr> optimization process for the <a class="text-link" href="https://simpleicons.org/" rel="noopener">Simple Icons</a> project and decided to do this project in TypeScript, which was a first for me (although I have worked with typed languages before). In the end, the project grew quite a bit until it was a fully configurable Action that can easily be used in other projects.</p>
+
+  <p>Since this project is a GitHub Action, I decided to use GitHub Actions as the main Continuous Integration (<abbr title="Continuous Integration">CI</abbr>) service for this project, which was also a first for me. I set up a simple Workflow early on in the project that runs the build script, test script, and linting script. In addition, I later set up integration with both <a class="text-link" href="https://codecov.io/" rel="noopener">CodeCov</a> and <a class="text-link" href="https://codeclimate.com/github/ericcornelissen/svgo-action" rel="noopener">Code Climate</a> to continuously monitor code coverage and code quality for the project.</p>
+
+  <p>To start this project of I created a proof of concept which finds <abbr title="Scalable Vector Graphic">SVG</abbr>s in Pull Requests, runs <abbr title="Scalable Vector Graphic Optimizer">SVGO</abbr> on them using the standard configuration, and commits the result back. The first improvements to that where using an SVGO configuration that can be found in the repository. Gradually, I expanded the configurability of the Action with, among others: configurable commit messages, <abbr title="Pull Request">PR</abbr> comments, and an ignore glob.</p>
+  {{/inline}}
+{{/layouts/project}}

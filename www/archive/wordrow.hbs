@@ -1,0 +1,15 @@
+{{page "title" "wordrow"}}
+
+{{#> layouts/project}}
+  {{#*inline "description"}}
+  <p>This project was born when I was writing my Masters Thesis and I wanted to ensure I used British english instead of American english throughout the text. So, I created a simple tool that can find words in a text and replace them in a context aware way. To do this, I decided to use, and learn, the Go programming language.</p>
+
+  <p>As my first Go project, I started simple with a tool that performs simple string replacement in files. I gradually expended this to include more complex features such as maintaining capitalization (e.g. <a class="text-link" href="https://github.com/ericcornelissen/wordrow/pull/26" rel="noopener">#26</a>) and prefix and suffix matching (<a class="text-link" href="https://github.com/ericcornelissen/wordrow/pull/22" rel="noopener">#22</a>).</p>
+
+  <p>To be able to learn the ropes of the programming language as quickly as possible I decided to hold off on the usage of packages. As a result I had to implemented standard functionality such as a CLI argument parser myself. This was a valuable exercise with regards to learning the language, but also with regards to understanding the design command line <em>interfaces</em> better.</p>
+
+  <p>I spend significant effort on the <a class="text-link" href="https://github.com/ericcornelissen/wordrow/tree/master/docs" rel="noopener">documentation</a> for wordrow. My goal was to provide detailed but readable documentation which at the same time guides the reader how the tool can be used. The result is a linear tutorial to learn the tool in which each section provides documentation on a feature.</p>
+
+  <p>Gradually, I become more familiar with Go tooling. Over time, I started to use tools such as <a class="text-link" href="https://github.com/golang/lint" rel="noopener">golint</a> and <a class="text-link" href="https://golang.org/cmd/gofmt/" rel="noopener">gofmt</a>. In addition, I utilized <a class="text-link" href="https://codeclimate.com/" rel="noopener">Code Climate</a> to get insights into the quality of my code. I also utilized <a class="text-link" href="https://www.npmjs.com/package/npx" rel="noopener">Node's npx</a> to be able to lint MarkDown files without extra prerequisites.</p>
+  {{/inline}}
+{{/layouts/project}}
