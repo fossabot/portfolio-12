@@ -1,4 +1,31 @@
 {
+  "2020": [
+    {
+      "name": "wordrow",
+      "tldr": "A small CLI tool to replace instances of words with other words in plaintext.",
+      "start_year": 2020,
+      "end_year": 2020,
+      "spotlight": false,
+      "tags": ["Go", "CLI"],
+      "keywords": ["Golang", "makefile", "code climate"],
+      "links": {
+        "github": "https://github.com/ericcornelissen/wordrow"
+      }
+    },
+    {
+      "name": "SVGO Action",
+      "tldr": "A GitHub Action to automatically run <a class=\"text-link\" href=\"https://github.com/svg/svgo\" rel=\"noopener\">SVGO</a> on SVGs in Pull Requests.",
+      "start_year": 2020,
+      "end_year": 2020,
+      "spotlight": false,
+      "tags": ["TypeScript", "GitHub Actions", "Jest"],
+      "keywords": ["SVGO", "node", "action", "codecov", "code climate"],
+      "links": {
+        "github": "https://github.com/ericcornelissen/svgo-action",
+        "website": "https://github.com/marketplace/actions/svgo-action"
+      }
+    }
+  ],
   "2019": [
     {
       "name": "gulp-gitstage",
