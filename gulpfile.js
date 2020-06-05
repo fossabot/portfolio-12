@@ -21,6 +21,7 @@ const postcss = require('gulp-postcss');
 const remove = require('gulp-rm');
 const replaceExt = require('gulp-ext-replace');
 const run = require('gulp-run-command').default;
+const shell = require('gulp-shell');
 const stylelint = require('gulp-stylelint');
 const through2 = require('through2');
 const uglifyJS = require('gulp-uglify-es').default;
@@ -57,6 +58,9 @@ const OUTPUT_REPORTS = './_reports';
 
 const TEST_DIR = './tests';
 const TEST_FILES = `${TEST_DIR}/**/*.js`;
+
+const DOCKER_IMAGE_NAME = 'portfolio-eric';
+const DOCKER_CONTAINER_NAME = 'portfolio-server';
 
 
 let minifyOutput = false;
@@ -325,6 +329,14 @@ gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-markdown', 'lint
 /* Testing */
 const testIntegration = run('./node_modules/.bin/jest');
 gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sleep(isCI ? 10000 : 0), testIntegration, gracefulExit));
+
+/* Docker */
+gulp.task('docker:build', run(`docker build -t ${DOCKER_IMAGE_NAME} .`));
+gulp.task('docker:rmi', run(`docker rmi ${DOCKER_IMAGE_NAME}`));
+gulp.task('docker:start', run(`docker run -d --rm -p 4000:4000 --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
+gulp.task('docker:stop', run(`docker stop ${DOCKER_CONTAINER_NAME}`));
+gulp.task('docker:logs', run(`docker logs ${DOCKER_CONTAINER_NAME}`));
+gulp.task('docker:attach', shell.task(`docker exec -it  ${DOCKER_CONTAINER_NAME} /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"`));
 
 /* Default */
 gulp.task('default', gulp.series('clean:site', 'serve'));

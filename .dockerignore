@@ -1,0 +1,8 @@
+# NodeJS
+node_modules/
+npm-debug.log
+
+# generated files
+_reports/
+_site/
+tests/_artifacts/
