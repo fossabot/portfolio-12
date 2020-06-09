@@ -1,5 +1,6 @@
-# dependencies directory
+# NodeJS
 node_modules/
+npm-debug.log
 
 # generated files
 _reports/

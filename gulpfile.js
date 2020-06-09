@@ -59,14 +59,19 @@ const OUTPUT_REPORTS = './_reports';
 const TEST_DIR = './tests';
 const TEST_FILES = `${TEST_DIR}/**/*.js`;
 
+const SERVER_PORT = 4000;
+
 const DOCKER_IMAGE_NAME = 'portfolio-eric';
 const DOCKER_CONTAINER_NAME = 'portfolio-server';
 
 
 let minifyOutput = false;
-let serverActive = false;
-let watchingFiles = false;
 
+
+function setMinifyOutput(done) {
+  minifyOutput = true;
+  done();
+};
 
 function gracefulExit(done) {
   browserSync.exit();
@@ -81,12 +86,12 @@ function sleep(timeout) {
 
 
 /* Utility */
-gulp.task('clean:site', function() {
-  return gulp.src(`${OUTPUT_SITE}/**/{.,}*`, { read: false })
-             .pipe(remove());
-});
 gulp.task('clean:reports', function() {
   return gulp.src(`${OUTPUT_REPORTS}/**/*`, { read: false })
+             .pipe(remove());
+});
+gulp.task('clean:site', function() {
+  return gulp.src(`${OUTPUT_SITE}/**/{.,}*`, { read: false })
              .pipe(remove());
 });
 gulp.task('clean:tests', function() {
@@ -95,21 +100,16 @@ gulp.task('clean:tests', function() {
 });
 gulp.task('clean', gulp.parallel('clean:reports', 'clean:site', 'clean:tests'));
 
-gulp.task('set-minify-output', function(done) {
-  minifyOutput = true;
-  done();
-});
-
 /* Build */
-gulp.task('assets-downloads', function() {
+gulp.task('build-assets-downloads', function() {
   return gulp.src(INPUT_ASSETS.downloads)
              .pipe(gulp.dest(`${OUTPUT_SITE}/downloads`));
 });
-gulp.task('assets-fonts', function() {
+gulp.task('build-assets-fonts', function() {
   return gulp.src(INPUT_ASSETS.fonts)
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
-gulp.task('assets-iconography', function() {
+gulp.task('build-assets-iconography', function() {
   return gulp.src(INPUT_ASSETS.icons)
              .pipe(iconfont({
                fontName: 'icon-e',
@@ -119,18 +119,25 @@ gulp.task('assets-iconography', function() {
              }))
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets/fonts`));
 });
-gulp.task('assets-images', function() {
+gulp.task('build-assets-images', function() {
   return gulp.src(INPUT_ASSETS.images)
              .pipe(gulpIf(minifyOutput, imagemin()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets`));
 });
-gulp.task('assets-svgs', function() {
+gulp.task('build-assets-svgs', function() {
   return gulp.src(INPUT_ASSETS.svgs)
              .pipe(gulpIgnore.exclude('**/fonts/*.svg'))
              .pipe(gulp.dest(`${OUTPUT_SITE}/assets`));
 });
-gulp.task('assets', gulp.parallel('assets-downloads', 'assets-fonts', 'assets-iconography', 'assets-images', 'assets-svgs'));
-gulp.task('html', function() {
+gulp.task('build-assets', gulp.parallel(
+  'build-assets-downloads',
+  'build-assets-fonts',
+  'build-assets-iconography',
+  'build-assets-images',
+  'build-assets-svgs'
+));
+
+gulp.task('build-html', function() {
   const stdHelpers = require('handlebars-helpers');
 
   return gulp.src(INPUT_HTML)
@@ -146,11 +153,13 @@ gulp.task('html', function() {
              .pipe(replaceExt('.html'))
              .pipe(gulp.dest(OUTPUT_SITE));
 });
-gulp.task('metadata', function() {
+
+gulp.task('build-metadata', function() {
   return gulp.src(INPUT_ROOT_FILES)
              .pipe(gulp.dest(OUTPUT_SITE));
 });
-gulp.task('scripts', function() {
+
+gulp.task('build-scripts', function() {
   return gulp.src(INPUT_SCRIPTS)
              .pipe(jswrap({
                globals: { window: 'root' }
@@ -158,7 +167,8 @@ gulp.task('scripts', function() {
              .pipe(gulpIf(minifyOutput, uglifyJS()))
              .pipe(gulp.dest(`${OUTPUT_SITE}/scripts`));
 });
-gulp.task('styles', function() {
+
+gulp.task('build-styles', function() {
   const atApply = require('postcss-apply');
   const atImport = require('postcss-import');
   const autoprefixer = require('autoprefixer');
@@ -187,22 +197,27 @@ gulp.task('styles', function() {
              .pipe(gulp.dest(`${OUTPUT_SITE}/styles`));
 });
 
-gulp.task('build', gulp.parallel('assets', 'metadata', 'html', 'scripts', 'styles'));
+gulp.task('build', gulp.parallel(
+  'build-assets',
+  'build-metadata',
+  'build-html',
+  'build-scripts',
+  'build-styles'
+));
 gulp.task('build:watch', function() {
-  watchingFiles = true;
-
   const watch = (files, task) => gulp.watch(files, task).on('all', browserSync.reload);
-  watch(INPUT_ASSETS.downloads, gulp.task('assets-downloads'));
-  watch(INPUT_ASSETS.fonts, gulp.task('assets-fonts'));
-  watch(INPUT_ASSETS.icons, gulp.task('assets-iconography'));
-  watch(INPUT_ASSETS.images, gulp.task('assets-images'));
-  watch(INPUT_ASSETS.svgs, gulp.task('assets-svgs'));
-  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('html'))
-  watch(INPUT_ROOT_FILES, gulp.task('metadata'));
-  watch(INPUT_SCRIPTS, gulp.task('scripts'));
-  watch(INPUT_STYLES.all, gulp.task('styles'));
+  watch(INPUT_ASSETS.downloads, gulp.task('build-assets-downloads'));
+  watch(INPUT_ASSETS.fonts, gulp.task('build-assets-fonts'));
+  watch(INPUT_ASSETS.icons, gulp.task('build-assets-iconography'));
+  watch(INPUT_ASSETS.images, gulp.task('build-assets-images'));
+  watch(INPUT_ASSETS.svgs, gulp.task('build-assets-svgs'));
+  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('build-html'))
+  watch(INPUT_ROOT_FILES, gulp.task('build-metadata'));
+  watch(INPUT_SCRIPTS, gulp.task('build-scripts'));
+  watch(INPUT_STYLES.all, gulp.task('build-styles'));
 });
-gulp.task('dist', gulp.series('clean:site', 'set-minify-output', 'build'));
+
+gulp.task('dist', gulp.series('clean:site', setMinifyOutput, 'build'));
 
 /* Server */
 gulp.task('server', gulp.series(
@@ -216,10 +231,9 @@ gulp.task('server', gulp.series(
     }
   },
   function(done) {
-    serverActive = true;
     browserSync.init({
       open: false,
-      port: 4000,
+      port: SERVER_PORT,
       server: {
         baseDir: OUTPUT_SITE,
         serveStaticOptions: {
@@ -232,7 +246,7 @@ gulp.task('server', gulp.series(
 gulp.task('serve', gulp.series('build', 'server', 'build:watch'));
 
 /* Static analysis */
-const lighthouse = run(`./node_modules/.bin/lighthouse http://localhost:4000/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`);
+const lighthouse = run(`./node_modules/.bin/lighthouse http://localhost:${SERVER_PORT}/ --config-path=.lighthouse.js --chrome-flags=--headless --output-path=${OUTPUT_REPORTS}/lighthouse-report.html --view`);
 gulp.task('analyze:a11y', gulp.series('clean:site', 'build', function() {
   return axe({
     errorOnViolation: true,
@@ -244,11 +258,11 @@ gulp.task('analyze:a11y', gulp.series('clean:site', 'build', function() {
 }));
 gulp.task('analyze:perf', gulp.series('clean:site', 'dist', 'server', lighthouse, gracefulExit));
 
-gulp.task('lint-html', gulp.series('set-minify-output', 'html', function() {
+gulp.task('lint:html', gulp.series(setMinifyOutput, 'build-html', function() {
   return gulp.src(`${OUTPUT_SITE}/**/*.html`)
-             .pipe(htmllint('.htmlhintrc'));
+             .pipe(htmllint({config: '.htmllintrc.json'}));
 }));
-gulp.task('lint-json', gulp.series(
+gulp.task('lint:json', gulp.series(
   function() {
     return gulp.src('./data/*.json')
                .pipe(jsonLint())
@@ -292,7 +306,7 @@ gulp.task('lint-json', gulp.series(
     }
   )
 ));
-gulp.task('lint-markdown', function task() {
+gulp.task('lint:markdown', function task() {
   return gulp.src(['./*.md'])
     .pipe(through2.obj(function obj(file, _, next) {
       markdownlint(
@@ -309,13 +323,13 @@ gulp.task('lint-markdown', function task() {
         });
     }));
 });
-gulp.task('lint-scripts', function() {
+gulp.task('lint:scripts', function() {
   return gulp.src([INPUT_HANDLEBARS.helpers, INPUT_SCRIPTS, TEST_FILES])
              .pipe(jshint())
              .pipe(jshint.reporter('default'))
              .pipe(jshint.reporter('fail'));
 });
-gulp.task('lint-styles', function() {
+gulp.task('lint:styles', function() {
   return gulp.src(INPUT_STYLES.all)
              .pipe(stylelint({
                 failAfterError: true,
@@ -324,7 +338,7 @@ gulp.task('lint-styles', function() {
                 ]
               }));
 });
-gulp.task('lint', gulp.parallel('lint-json', 'lint-html', 'lint-markdown', 'lint-scripts', 'lint-styles'));
+gulp.task('lint', gulp.parallel('lint:json', 'lint:html', 'lint:markdown', 'lint:scripts', 'lint:styles'));
 
 /* Testing */
 const testIntegration = run('./node_modules/.bin/jest');
@@ -333,7 +347,7 @@ gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sl
 /* Docker */
 gulp.task('docker:build', run(`docker build -t ${DOCKER_IMAGE_NAME} .`));
 gulp.task('docker:rmi', run(`docker rmi ${DOCKER_IMAGE_NAME}`));
-gulp.task('docker:start', run(`docker run -d --rm -p 4000:4000 --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
+gulp.task('docker:start', run(`docker run -d --rm -p ${SERVER_PORT}:${SERVER_PORT} --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
 gulp.task('docker:stop', run(`docker stop ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:logs', run(`docker logs ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:attach', shell.task(`docker exec -it  ${DOCKER_CONTAINER_NAME} /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"`));
