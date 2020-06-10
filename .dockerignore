@@ -5,3 +5,4 @@ npm-debug.log
 # generated files
 _reports/
 _site/
+tests/_artifacts/
