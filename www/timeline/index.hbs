@@ -17,7 +17,7 @@
             <li class="timeline-event timeline-event--{{ type }}">
               <p class="timeline-event__title short-underline">{{ title }}</p>
               <p><span class="text-italic">{{ when }}</span> | {{ institute }}</p>
-              <a class="timeline-event__more more-arrow" href="/timeline/{{hyphenate (lowercase title)}}" rel="noopener">More</a>
+              <a class="timeline-event__more more-arrow" href="/timeline/{{to_url title}}" rel="noopener">More</a>
             </li>
           {{/each}}
         </ol>
