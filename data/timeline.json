@@ -1,5 +1,27 @@
 [
   {
+    "type": "education",
+    "title": "Graduated M.Sc Security & Cloud Computing",
+    "institutes": [
+      {
+        "name": "Aalto University",
+        "location": {
+          "city": "Espoo",
+          "country": "Finland"
+        }
+      },
+      {
+        "name": "Tartu University",
+        "location": {
+          "city": "Tartu",
+          "country": "Estonia"
+        }
+      }
+    ],
+    "when": 2020,
+    "link": "http://secclo.aalto.fi/en/"
+  },
+  {
     "type": "internship",
     "title": "Cyber-Security Internship",
     "institutes": [
@@ -38,6 +60,13 @@
         "location": {
           "city": "Espoo",
           "country": "Finland"
+        }
+      },
+      {
+        "name": "Tartu University",
+        "location": {
+          "city": "Tartu",
+          "country": "Estonia"
         }
       }
     ],
