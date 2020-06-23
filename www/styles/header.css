@@ -154,6 +154,7 @@
     display: block;
     height: auto;
     justify-self: end;
+    padding: 0;  /* Undo padding from --medium-screen */
     position: sticky;
     top: 0;
     width: 400px;
