@@ -9,17 +9,21 @@
   .back-to-top {
     @apply --unselectable;
 
+    --bottom: 1em;
+    --right: 54px;
+    --height: 100px;
+
     align-items: center;
-    bottom: 1em;
+    bottom: var(--bottom);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     font-size: 1.7rem;
-    max-height: 100px;
+    max-height: var(--height);
     opacity: .5;
     overflow: hidden;
     position: absolute;
-    right: 54px;
+    right: var(--right);
     text-decoration: none;
     transition:
       bottom .25s ease,
@@ -30,7 +34,7 @@
       opacity: 1;
     }
 
-    &--hidden {
+    &&--hidden {
       bottom: 0;
       max-height: 0;
     }
@@ -39,9 +43,5 @@
   .back-to-top__icon {
     display: block;
     font-size: 2.2rem;
-  }
-
-  .back-to-top__text {
-    margin: 0;
   }
 }
