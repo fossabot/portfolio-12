@@ -1,0 +1,33 @@
+{
+  "default": true,
+  "no-hard-tabs": true,
+  "MD003": {
+    "style": "atx"
+  },
+  "MD004": {
+    "style": "dash"
+  },
+  "MD009": {
+    "br_spaces": 0,
+    "strict": true
+  },
+  "MD012": {
+    "maximum": 1
+  },
+  "MD013": {
+    "stern": true,
+    "line_length": 80
+  },
+  "MD029": {
+    "style": "one"
+  },
+  "MD035": {
+    "style": "---"
+  },
+  "MD046": {
+    "style": "fenced"
+  },
+  "MD048": {
+    "style": "backtick"
+  }
+}

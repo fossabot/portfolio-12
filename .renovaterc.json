@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    "group:all"
+  ],
+
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ],
+
+  "lockFileMaintenance": {
+    "extends": [
+      "group:all"
+    ],
+
+    "enabled": true,
+    "schedule": "before 3am on Monday"
+  },
+
+  "automerge": true,
+  "automergeType": "pr",
+
+  "schedule": "before 3am on Monday",
+
+  "labels": ["dependencies"]
+}

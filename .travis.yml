@@ -1,18 +1,29 @@
+os: linux
+dist: xenial
+language: node_js
+
 jobs:
   include:
     - stage: "Test"
-      name: "Lint"
+      name: "Tests"
       language: node_js
-      node_js: 8
+      node_js: 10
+      install:
+        - npm install
+        - npm install gulp-cli -g
+      script:
+        - gulp test
+    - name: "Lint"
+      language: node_js
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
       script:
         - gulp lint
     - name: "Accessibility"
-      sudo: required
       language: node_js
-      node_js: 8
+      node_js: 10
       addons:
         chrome: stable
       install:
@@ -22,7 +33,7 @@ jobs:
         - gulp analyze:a11y
     - name: "Build dev"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -30,7 +41,7 @@ jobs:
         - gulp build
     - name: "Build dist"
       language: node_js
-      node_js: 8
+      node_js: 10
       install:
         - npm install
         - npm install gulp-cli -g
@@ -40,7 +51,7 @@ jobs:
     - stage: deploy
       name: "GitHub pages"
       language: node_js
-      node_js: 8
+      node_js: 10
       if: branch = master
 
       install:
@@ -50,10 +61,11 @@ jobs:
         - gulp dist
 
       deploy:
-        local-dir: ./_site
+        skip_cleanup: true
+        local_dir: ./_site
         provider: pages
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
+        token: $GITHUB_TOKEN
+        strategy: git
         on:
           branch: master
 

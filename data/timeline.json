@@ -1,5 +1,16 @@
 [
   {
+    "type": "internship",
+    "title": "Cyber-Security Internship",
+    "institute": "Mezu",
+    "location": {
+      "city": "Lisbon",
+      "country": "Portugal"
+    },
+    "when": 2019,
+    "link": "https://www.mezu.com/"
+  },
+  {
     "type": "volunteer",
     "title": "Slush Volunteer",
     "institute": "Slush",
@@ -22,6 +33,17 @@
     "link": "http://secclo.aalto.fi/en/"
   },
   {
+    "type": "education",
+    "title": "Graduated B.Sc Computer Science",
+    "institute": "TU Delft",
+    "location": {
+      "city": "Delft",
+      "country": "Netherlands"
+    },
+    "when": 2018,
+    "link": "/downloads/bsc-computer-science_tu-delft-2018.pdf"
+  },
+  {
     "type": "internship",
     "title": "Data Analytics Internship",
     "institute": "Optiver Amsterdam",
@@ -31,17 +53,6 @@
     },
     "when": 2018,
     "link": "https://www.optiver.com/na/en/our-locations/amsterdam"
-  },
-  {
-    "type": "education",
-    "title": "Graduated B.Sc Computer Science",
-    "institute": "TU Delft",
-    "location": {
-      "city": "Delft",
-      "country": "Netherlands"
-    },
-    "when": 2018,
-    "link": "/downloads/bsc-computer-scienc_tu-delft-2018.pdf"
   },
   {
     "type": "achievement",
