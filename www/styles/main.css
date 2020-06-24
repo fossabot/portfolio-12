@@ -88,11 +88,6 @@ u {
 /* Layout
    ========================================================================== */
 
-html {
-  height: 100%;
-  overflow: auto;
-}
-
 body {
   background-color: #fafafa;
   border: 0;
