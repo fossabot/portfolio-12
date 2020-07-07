@@ -120,16 +120,12 @@
 
 @media (--medium-screen) {
   .header {
-    --padding-h: 124px;
-
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0 var(--padding-h);
+    margin: 0 auto;
+    padding: 0; /* Undo padding for mobile */
 
     .header__container {
       background-color: var(--clr-primary-white);
       box-shadow: 0 0 4px 0 var(--clr-shadow);
-      margin: 0 auto;
       max-width: 780px;
       padding: 3em 4em;
     }
@@ -153,12 +149,10 @@
 }
 @media (--large-screen) {
   .header {
-    background-color: var(--clr-primary-white);
-    box-shadow: 0 0 4px 0 var(--clr-shadow);
     display: block;
     height: auto;
     justify-self: end;
-    padding: 0;  /* Undo padding from --medium-screen */
+    margin: 0; /* Undo padding from --medium-screen */
     position: sticky;
     top: 0;
     width: 400px;
