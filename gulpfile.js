@@ -27,7 +27,7 @@ const through2 = require('through2');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
-const INPUT_DIR = './www'
+const INPUT_DIR = './www';
 const INPUT_ASSETS = {
   downloads: `${INPUT_DIR}/downloads/**/*`,
   fonts: `${INPUT_DIR}/assets/fonts/*`,
@@ -211,7 +211,7 @@ gulp.task('build:watch', function() {
   watch(INPUT_ASSETS.icons, gulp.task('build-assets-iconography'));
   watch(INPUT_ASSETS.images, gulp.task('build-assets-images'));
   watch(INPUT_ASSETS.svgs, gulp.task('build-assets-svgs'));
-  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('build-html'))
+  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('build-html'));
   watch(INPUT_ROOT_FILES, gulp.task('build-metadata'));
   watch(INPUT_SCRIPTS, gulp.task('build-scripts'));
   watch(INPUT_STYLES.all, gulp.task('build-styles'));
