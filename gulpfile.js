@@ -62,6 +62,7 @@ const TEST_FILES = `${TEST_DIR}/**/*.js`;
 const SERVER_PORT = 4000;
 
 const DOCKER_IMAGE_NAME = 'portfolio-eric';
+const DOCKER_IMAGE_WORKDIR = '/usr/src/portfolio';
 const DOCKER_CONTAINER_NAME = 'portfolio-server';
 
 
@@ -347,7 +348,7 @@ gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sl
 /* Docker */
 gulp.task('docker:build', run(`docker build -t ${DOCKER_IMAGE_NAME} .`));
 gulp.task('docker:rmi', run(`docker rmi ${DOCKER_IMAGE_NAME}`));
-gulp.task('docker:start', run(`docker run -d --rm -p ${SERVER_PORT}:${SERVER_PORT} --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
+gulp.task('docker:start', run(`docker run -d --rm -v ${process.env.PWD}:${DOCKER_IMAGE_WORKDIR} -p ${SERVER_PORT}:${SERVER_PORT} --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
 gulp.task('docker:stop', run(`docker stop ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:logs', run(`docker logs ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:attach', shell.task(`docker exec -it  ${DOCKER_CONTAINER_NAME} /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"`));
