@@ -1,31 +1,36 @@
 @import 'utilities/unselectable.css';
 @import 'variables/colors.css';
+@import 'variables/temp.css';
 
 .tags {
   @apply --unselectable;
 
+  --margin-v: 1.5em;
+
   display: block;
   list-style: none;
+  margin: var(--margin-v) 0;
   position: relative;
 }
 
 .tag {
   background-color: var(--clr-primary-accent);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   color: var(--clr-primary-white);
   cursor: default;
   display: inline-block;
-  margin: 4px;
-  padding: 0 8px 0 0;
+  font-size: 1.1em;
+  margin: 0 var(--space-between);
+  padding: var(--padding-v) var(--padding-h);
 
   &::before {
     background-color: var(--clr-secondary-accent);
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
+    border-bottom-left-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
     content: '#';
     float: left;
-    margin: 0 6px 0 0;
-    padding: 0 6px;
+    margin: calc(-1 * var(--padding-v)) var(--padding-h) calc(-1 * var(--padding-v)) calc(-1 * var(--padding-h));
+    padding: var(--padding-v) var(--padding-h);
   }
 
   &:first-child {
