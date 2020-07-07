@@ -1,0 +1,77 @@
+article,
+aside,
+body,
+details,
+div,
+figure,
+footer,
+form,
+header,
+main,
+nav,
+ol,
+section,
+ul {
+  border: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+article,
+footer,
+header,
+main,
+nav,
+section {
+  font-size: 1rem;
+  position: relative;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+abbr,
+b,
+blockquote,
+caption,
+code,
+cite,
+em,
+figcaption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+i,
+kbd,
+label,
+li,
+p,
+pre,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+u {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 100%;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+
+  &::selection {
+    background-color: var(--clr-primary-accent);
+    color: var(--clr-primary-white);
+  }
+}
