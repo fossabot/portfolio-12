@@ -32,6 +32,17 @@ module.exports = {
     ['Mobile (landscape)', puppeteer.devices['Nexus 4 landscape']],
   ]),
 
+  runForDesktops: describe.each([
+    ['Desktop (large)', devices['Desktop 1920x1080']],
+    ['Desktop (medium)', devices['Desktop 1280x720']],
+  ]),
+
+  sleep: function(timeInMillis) {
+    return new Promise(resolve => {
+      setTimeout(resolve, timeInMillis);
+    });
+  },
+
   takeScreenshot: doNotRunOnCI(async (page, filePrefix) => {
     const pageTitle = await page.title();
     await page.screenshot({path: `${ARTIFACTS_PATH}/${filePrefix}_${pageTitle}.png`});
