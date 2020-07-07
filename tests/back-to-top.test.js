@@ -1,7 +1,7 @@
 const utils = require('./utils.js');
 
 const scrollToBottom = async (page) => {
-  await page.evaluate('document.body.scrollBy(0, 9999);');
+  await page.evaluate('window.scrollBy(0, 9999);');
   await utils.sleep(500); // Wait for scroll-to-top button animation
 };
 
@@ -17,7 +17,7 @@ utils.runForDesktops('Back to top on %s', (name, device) => {
     await expect(page).toClick('a.back-to-top');
 
     await utils.sleep(2000); // Wait for scroll-to-top animation
-    const scrollTop = await page.evaluate('document.body.scrollTop');
+    const scrollTop = await page.evaluate('document.documentElement.scrollTop');
     expect(scrollTop).toBe(0);
   });
 
