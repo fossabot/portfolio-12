@@ -1,122 +1,195 @@
 [
   {
+    "type": "education",
+    "title": "Graduated M.Sc Security & Cloud Computing",
+    "institutes": [
+      {
+        "name": "Aalto University",
+        "location": {
+          "city": "Espoo",
+          "country": "Finland"
+        }
+      },
+      {
+        "name": "Tartu University",
+        "location": {
+          "city": "Tartu",
+          "country": "Estonia"
+        }
+      }
+    ],
+    "when": 2020,
+    "link": "http://secclo.aalto.fi/en/"
+  },
+  {
     "type": "internship",
     "title": "Cyber-Security Internship",
-    "institute": "Mezu",
-    "location": {
-      "city": "Lisbon",
-      "country": "Portugal"
-    },
+    "institutes": [
+      {
+        "name": "Mezu",
+        "location": {
+          "city": "Lisbon",
+          "country": "Portugal"
+        }
+      }
+    ],
     "when": 2019,
     "link": "https://www.mezu.com/"
   },
   {
     "type": "volunteer",
     "title": "Slush Volunteer",
-    "institute": "Slush",
-    "location": {
-      "city": "Helsinki",
-      "country": "Finland"
-    },
+    "institutes": [
+      {
+        "name": "Slush",
+        "location": {
+          "city": "Helsinki",
+          "country": "Finland"
+        }
+      }
+    ],
     "when": 2018,
     "link": "https://www.slush.org/"
   },
   {
     "type": "education",
     "title": "Started M.Sc Security & Cloud Computing",
-    "institute": "Aalto University",
-    "location": {
-      "city": "Espoo",
-      "country": "Finland"
-    },
+    "institutes": [
+      {
+        "name": "Aalto University",
+        "location": {
+          "city": "Espoo",
+          "country": "Finland"
+        }
+      },
+      {
+        "name": "Tartu University",
+        "location": {
+          "city": "Tartu",
+          "country": "Estonia"
+        }
+      }
+    ],
     "when": 2018,
     "link": "http://secclo.aalto.fi/en/"
   },
   {
     "type": "education",
     "title": "Graduated B.Sc Computer Science",
-    "institute": "TU Delft",
-    "location": {
-      "city": "Delft",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "TU Delft",
+        "location": {
+          "city": "Delft",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2018,
     "link": "/downloads/bsc-computer-science_tu-delft-2018.pdf"
   },
   {
     "type": "internship",
     "title": "Data Analytics Internship",
-    "institute": "Optiver Amsterdam",
-    "location": {
-      "city": "Amsterdam",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "Optiver Amsterdam",
+        "location": {
+          "city": "Amsterdam",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2018,
     "link": "https://www.optiver.com/na/en/our-locations/amsterdam"
   },
   {
     "type": "achievement",
     "title": "Hackathon Case Winner Aegon",
-    "institute": "HackDelft",
-    "location": {
-      "city": "Delft",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "HackDelft",
+        "location": {
+          "city": "Delft",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2017,
     "link": "https://hackdelft.nl/"
   },
   {
     "type": "education",
     "title": "Minor Computer Science",
-    "institute": "KTH Royal Institute of Technology",
-    "location": {
-      "city": "Stockholm",
-      "country": "Sweden"
-    },
+    "institutes": [
+      {
+        "name": "KTH Royal Institute of Technology",
+        "location": {
+          "city": "Stockholm",
+          "country": "Sweden"
+        }
+      }
+    ],
     "when": 2017,
     "link": "https://www.kth.se/"
   },
   {
     "type": "achievement",
     "title": "Honourable mention",
-    "institute": "Benelux Algorithm Programming Contest",
-    "location": {
-      "city": "Delft",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "Benelux Algorithm Programming Contest",
+        "location": {
+          "city": "Delft",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2016,
     "link": "/downloads/honourable-mention_bapc-2016.pdf"
   },
   {
     "type": "work",
     "title": "Full Stack developer (Junior)",
-    "institute": "TicketMatic NL",
-    "location": {
-      "city": "Rotterdam",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "TicketMatic NL",
+        "location": {
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2016,
     "link": "https://www.ticketmatic.com/en/"
   },
   {
     "type": "education",
     "title": "Started B.Sc Computer Science",
-    "institute": "TU Delft",
-    "location": {
-      "city": "Delft",
-      "country": "Netherlands"
-    },
+    "institutes": [
+      {
+        "name": "TU Delft",
+        "location": {
+          "city": "Delft",
+          "country": "Netherlands"
+        }
+      }
+    ],
     "when": 2015,
     "link": "https://www.tudelft.nl/en/"
   },
   {
     "type": "volunteer",
     "title": "Voluntary Security",
-    "institute": "Fédération Internationale de Gymnastique",
-    "location": {
-      "city": "Antwerp",
-      "country": "Belgium"
-    },
+    "institutes": [
+      {
+        "name": "Fédération Internationale de Gymnastique",
+        "location": {
+          "city": "Antwerp",
+          "country": "Belgium"
+        }
+      }
+    ],
     "when": 2013,
     "link": "http://www.fig-gymnastics.com/site/"
   }

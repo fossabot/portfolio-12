@@ -215,7 +215,7 @@
     "items": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "title", "institute", "location", "when", "link"],
+      "required": ["type", "title", "institutes", "when", "link"],
       "properties": {
         "type": {
           "description": "The type of the event",
@@ -226,9 +226,37 @@
           "description": "A description of your relation to the event",
           "type": "string"
         },
-        "institute": {
-          "description": "What institute is the event related",
-          "type": "string"
+        "institutes": {
+          "description": "What institute(s) is the event related to",
+          "type": "array",
+          "items": {
+            "description": "Metadata of an institute",
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "location"],
+            "properties": {
+              "name": {
+                "description": "The name of the institute",
+                "type": "string"
+              },
+               "location": {
+                "description": "The location of the institute",
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["city", "country"],
+                "properties": {
+                  "city": {
+                    "description": "The city in which the institute is located",
+                    "type": "string"
+                  },
+                  "country": {
+                    "description": "The country in which the institute is located",
+                    "type": "string"
+                  }
+                }
+               }
+            }
+          }
         },
         "location": {
           "description": "Where the event took place",
