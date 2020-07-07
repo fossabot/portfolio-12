@@ -12,7 +12,7 @@
     height: 100%;
     left: 0;
     opacity: 0;
-    pointer-events: none; /* Prevents hover action on the (invisible) psuedo element */
+    pointer-events: none; /* Prevents hover action on the (invisible) pseudo element */
     position: absolute;
     top: 0;
     transition: opacity .2s ease;

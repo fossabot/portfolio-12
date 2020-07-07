@@ -5,9 +5,12 @@
 @import 'variables/layers.css';
 
 .header {
+  --boxshadow-blur: 4px;
+  --padding: 2em;
+
   background-color: var(--clr-primary-white);
-  box-shadow: 0 0 4px 0 var(--clr-shadow);
-  padding: 2em;
+  box-shadow: 0 0 var(--boxshadow-blur) 0 var(--clr-shadow);
+  padding: var(--padding);
   z-index: var(--layer-roof);
 
   .header__container {
@@ -63,9 +66,9 @@
 }
 
 .header--compact {
-  background-color: var(--clr-primary-white);
-  box-shadow: 0 0 4px 0 var(--clr-shadow);
-  height: 64px;
+  --height: 64px;
+
+  height: var(--height);
   max-width: none;
   overflow: hidden;
   padding: 0; /* counteract padding from .header */
@@ -117,10 +120,11 @@
 
 @media (--medium-screen) {
   .header {
+    --padding-h: 124px;
+
     background-color: transparent;
     box-shadow: none;
-    margin-top: 0;
-    padding: 0 124px;
+    padding: 0 var(--padding-h);
 
     .header__container {
       background-color: var(--clr-primary-white);

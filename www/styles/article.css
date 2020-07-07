@@ -10,14 +10,18 @@
 }
 
 .article__figure {
+  --margin-v: 1em;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1em 0;
+  margin: var(--margin-v) 0;
 }
 
 .article__image {
-  margin: .5em 0;
+  --margin-v: .5em;
+
+  margin: var(--margin-v) 0;
   width: 100%;
 }
 
@@ -27,12 +31,18 @@
 
 @media (--medium-screen) {
   .article__image {
-    margin: .4em auto;
+    --margin-h: auto;
+    --margin-v: .4em;
+
+    margin: var(--margin-v) var(--margin-h);
     max-width: 100%;
     width: auto;
   }
 
   .article__figure {
-    margin: 1em 2.8em;
+    --margin-h: 2.8em;
+    --margin-v: 1em;
+
+    margin: var(--margin-v) var(--margin-h);
   }
 }

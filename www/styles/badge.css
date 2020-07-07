@@ -7,10 +7,14 @@
   @apply --text-small;
   @apply --unselectable;
 
+  --border-radius: 4px;
+  --padding-v: 10px;
+  --padding-h: 2px;
+
   background-color: var(--clr-badge);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   color: var(--clr-primary-white);
   display: inline-block;
-  padding: 2px 10px;
+  padding: var(--padding-h) var(--padding-v);
   vertical-align: middle;
 }
