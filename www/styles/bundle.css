@@ -1,6 +1,7 @@
 @import 'reset.css';
 @import 'main.css';
 @import 'miscellaneous.css';
+@import 'utilities.css';
 
 /* page elements */
 @import 'article.css';

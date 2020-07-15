@@ -1,8 +1,21 @@
 <header class="header {{#if compact}}header--compact{{/if}}">
   <div class="header__container">
-    <a class="header__logo" href="/" rel="noopener">
-      <img alt="Personal logo" src="/assets/favicon.svg">
-    </a>
+    {{#if compact}}
+      <a class="header__logo" href="/" rel="noopener">
+        <img alt="Personal logo" src="/assets/favicon.svg">
+      </a>
+    {{/if}}
+
+    {{#unless compact}}
+      <ul class="list-of-icons vlist float-right">
+        {{#each social}}
+          <li class="list-item">
+            <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
+          </li>
+        {{/each}}
+      </ul>
+    {{/unless}}
+
     <h1 class="header__title short-underline short-underline--inverse">Eric Cornelissen</h1>
     <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here or at the links below.</p>
 
@@ -26,13 +39,5 @@
         <li><a href="/timeline" rel="noopener">Timeline</a></li>
       </ul>
     {{/unless}}
-
-    <ul class="header__list list-of-icons">
-      {{#each social}}
-        <li class="list-item">
-          <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
-        </li>
-      {{/each}}
-    </ul>
   </div>
 </header>
