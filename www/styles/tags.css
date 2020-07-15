@@ -2,10 +2,13 @@
 @import 'variables/colors.css';
 @import 'variables/temp.css';
 
+:root {
+  --hashtag: '#';
+}
+
 .tags {
   @apply --unselectable;
 
-  --hashtag: '#';
   --margin-v: 1.5em;
 
   display: block;
