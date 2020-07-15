@@ -38,7 +38,6 @@ main {
 }
 
 @media (--medium-screen) {
-  header,
   main {
     padding: 0 124px;
   }
@@ -46,7 +45,7 @@ main {
   article,
   section {
     margin: 2em auto;
-    max-width: 800px;
+    max-width: var(--standard-max-width);
   }
 }
 @media (--large-screen) {
