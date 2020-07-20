@@ -18,8 +18,9 @@
           {{#each (reverse (first timeline 4))}}
             <li class="timeline-event timeline-event--{{ type }}">
               <p class="timeline-event__title short-underline">{{ title }}</p>
-              <p><span class="text-italic">{{ when }}</span> | {{#each institutes}}{{ name }}{{#unless @last}}, {{/unless}}{{/each}}</p>
-              <a class="timeline-event__more more-arrow" href="{{ link }}" rel="noopener">More</a>
+              <p><span class="text-italic">{{ when }}</span> | {{#each institutes}}{{ name }}{{#unless @last}}, {{/unless}}{{/each}}
+              </p>
+              <a class="timeline-event__more more-arrow" href="/timeline/{{to_url title}}" rel="noopener">More</a>
             </li>
           {{/each}}
         </ol>
