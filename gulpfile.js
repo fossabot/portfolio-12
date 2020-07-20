@@ -27,7 +27,7 @@ const through2 = require('through2');
 const uglifyJS = require('gulp-uglify-es').default;
 
 
-const INPUT_DIR = './www'
+const INPUT_DIR = './www';
 const INPUT_ASSETS = {
   downloads: `${INPUT_DIR}/downloads/**/*`,
   fonts: `${INPUT_DIR}/assets/fonts/*`,
@@ -62,6 +62,7 @@ const TEST_FILES = `${TEST_DIR}/**/*.js`;
 const SERVER_PORT = 4000;
 
 const DOCKER_IMAGE_NAME = 'portfolio-eric';
+const DOCKER_IMAGE_WORKDIR = '/usr/src/portfolio';
 const DOCKER_CONTAINER_NAME = 'portfolio-server';
 
 
@@ -211,7 +212,7 @@ gulp.task('build:watch', function() {
   watch(INPUT_ASSETS.icons, gulp.task('build-assets-iconography'));
   watch(INPUT_ASSETS.images, gulp.task('build-assets-images'));
   watch(INPUT_ASSETS.svgs, gulp.task('build-assets-svgs'));
-  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('build-html'))
+  watch([INPUT_HTML, ...Object.values(INPUT_HANDLEBARS)], gulp.task('build-html'));
   watch(INPUT_ROOT_FILES, gulp.task('build-metadata'));
   watch(INPUT_SCRIPTS, gulp.task('build-scripts'));
   watch(INPUT_STYLES.all, gulp.task('build-styles'));
@@ -347,7 +348,7 @@ gulp.task('test', gulp.series('clean:site', 'clean:tests', 'build', 'server', sl
 /* Docker */
 gulp.task('docker:build', run(`docker build -t ${DOCKER_IMAGE_NAME} .`));
 gulp.task('docker:rmi', run(`docker rmi ${DOCKER_IMAGE_NAME}`));
-gulp.task('docker:start', run(`docker run -d --rm -p ${SERVER_PORT}:${SERVER_PORT} --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
+gulp.task('docker:start', run(`docker run -d --rm -v ${process.env.PWD}:${DOCKER_IMAGE_WORKDIR} -p ${SERVER_PORT}:${SERVER_PORT} --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}`));
 gulp.task('docker:stop', run(`docker stop ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:logs', run(`docker logs ${DOCKER_CONTAINER_NAME}`));
 gulp.task('docker:attach', shell.task(`docker exec -it  ${DOCKER_CONTAINER_NAME} /bin/sh -c "[ -e /bin/bash ] && /bin/bash || /bin/sh"`));

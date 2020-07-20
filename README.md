@@ -39,10 +39,23 @@ of commands that analyze the source code can be found in `./_reports`.
 
 ## Docker
 
-To serve the portfolio from a [Docker] image run:
+You can use [Gulp] commands to run the server for this portfolio from a [Docker]
+image:
+
+- `gulp docker:build`: build the Docker image for the project.
+- `gulp docker:rmi`: remove the Docker of the project image from the system.
+- `gulp docker:start`: start a Docker container with a server for the portfolio.
+  This image will be attached to local workspace so that local changes are
+  immediately reflected by the server.
+- `gulp docker:stop`: stop (and remove) the Docker container.
+- `gulp docker:logs`: shows the logs of the Docker container.
+- `gulp docker:attach`: attach a shell to the Docker container.
+
+Alternatively, you can serve the portfolio from a [Docker] image by running
+commands along the lines of:
 
 ```bash
-# Build the Docker image to run the portfolio
+# Build the Docker image to serve the portfolio
 $ docker build -t portfolio-eric .
 
 # Run the Docker image as a container to start a web server
@@ -51,18 +64,9 @@ $ docker run -d --rm -p 4000:4000 --name portfolio-server portfolio-eric
 # Check the server logs
 $ docker logs portfolio-server
 
-# To stop the web server (and delete the container)
+# To stop the web server and delete the container
 $ docker stop portfolio-server
 ```
-
-Alternatively, you can use [Gulp] commands to execute the above commands:
-
-- `gulp docker:build`: build the Docker image from the Dockerfile.
-- `gulp docker:rmi`: remove the Docker image from the system.
-- `gulp docker:start`: start a Docker container from the image.
-- `gulp docker:stop`: stop (and remove) the Docker container.
-- `gulp docker:logs`: shows the logs of the Docker container.
-- `gulp docker:attach`: attach a shell to the Docker container.
 
 [aXe]: https://www.axe-core.org/
 [browser-sync]: https://browsersync.io/

@@ -20,7 +20,7 @@
         <h2 class="short-underline">{{project.title}}</h2>
         <p class="article__date">{{project.when}}</p>
 
-        <p class="article__about" data-name="about">{{project.title}} at {{project.institute}} in <i>{{project.location.city}}, {{project.location.country}}</i>.</p>
+        <p class="article__about" data-name="about">{{project.title}} at {{#each project.institutes}}{{ name }} in <i>{{ location.city }}, {{ location.country }}</i>{{#unless @last}}, and{{/unless}}{{/each}}.</p>
 
         <h3 class="short-underline">Description</h3>
         {{#> description}}
