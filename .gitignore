@@ -5,3 +5,7 @@ npm-debug.log
 # generated files
 _reports/
 _site/
+
+# Editors/IDEs
+.idea/
+.vscode/
