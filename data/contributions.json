@@ -27,7 +27,7 @@
     },
     {
       "name": "Atom Tool Bar",
-      "about": "Package providing a customisable toolbar for Atom.",
+      "about": "Package providing a customizable toolbar for Atom.",
       "start_year": 2019,
       "end_year": 2020,
       "spotlight": false,
@@ -53,7 +53,7 @@
     },
     {
       "name": "SVGLint",
-      "about": "Lints SVG files. Can be run as a commandline utility, or as a NodeJS library.",
+      "about": "Lints SVG files. Can be run as a command line utility, or as a NodeJS library.",
       "start_year": 2018,
       "end_year": 2019,
       "spotlight": false,
