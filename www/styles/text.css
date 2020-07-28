@@ -1,0 +1,91 @@
+@import './utilities/text.css';
+@import './variables/colors.css';
+@import './variables/fonts.css';
+
+h1 {
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h1);
+  line-height: var(--lineheight-header);
+}
+
+h2 {
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h2);
+  line-height: var(--lineheight-header);
+}
+
+h3 {
+  font-family: var(--fontstack-header);
+  font-size: var(--fontsize-h3);
+  line-height: var(--lineheight-header);
+}
+
+h1,
+h2,
+h3 {
+  margin: 1em 0 .3em;
+}
+
+h4 {
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h4);
+  line-height: var(--lineheight-subheader);
+}
+
+h5 {
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h5);
+  line-height: var(--lineheight-subheader);
+}
+
+h6 {
+  font-family: var(--fontstack-subheader);
+  font-size: var(--fontsize-h6);
+  line-height: var(--lineheight-subheader);
+}
+
+h4,
+h5,
+h6 {
+  margin: 1.2em 0 .3em;
+}
+
+p,
+li {
+  font-family: var(--fontstack-text);
+  font-size: var(--fontsize-text);
+  line-height: var(--lineheight-text);
+  word-break: keep-all;
+}
+
+b,
+strong {
+  @apply --text-bold;
+}
+
+i,
+em {
+  @apply --text-emph;
+}
+
+code {
+  background-color: var(--clr-code-background);
+  border-radius: 2px;
+  color: var(--clr-primary-black);
+  font-family: var(--fontstack-code);
+  padding: .05em .2em;
+}
+
+kbd { /* Based on GitHub's <kbd> styling */
+  background-color: #fafbfc;
+  border: 1px solid #c6cbd1;
+  border-bottom-color: #959da5;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #959da5;
+  color: #444d56;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}

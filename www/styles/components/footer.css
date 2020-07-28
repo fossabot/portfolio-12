@@ -1,4 +1,4 @@
-@import 'variables/dimensions.css';
+@import '../variables/dimensions.css';
 
 .footer {
   --background-color: #171717;

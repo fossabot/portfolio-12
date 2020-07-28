@@ -1,7 +1,7 @@
-@import 'utilities/text.css';
-@import 'variables/colors.css';
-@import 'variables/dimensions.css';
-@import 'variables/fonts.css';
+@import '../utilities/text.css';
+@import '../variables/colors.css';
+@import '../variables/dimensions.css';
+@import '../variables/fonts.css';
 
 .list {
   list-style: none;

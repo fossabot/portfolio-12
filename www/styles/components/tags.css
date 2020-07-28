@@ -1,5 +1,5 @@
-@import 'utilities/unselectable.css';
-@import 'variables/colors.css';
+@import '../utilities/unselectable.css';
+@import '../variables/colors.css';
 
 :root {
   --hashtag: '#';

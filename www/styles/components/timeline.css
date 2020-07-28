@@ -1,8 +1,8 @@
-@import 'utilities/text.css';
-@import 'utilities/unselectable.css';
-@import 'variables/colors.css';
-@import 'variables/dimensions.css';
-@import 'icons.css';
+@import '../utilities/text.css';
+@import '../utilities/unselectable.css';
+@import '../variables/colors.css';
+@import '../variables/dimensions.css';
+@import './icons.css';
 
 .timeline {
   --icon-size: 20px;

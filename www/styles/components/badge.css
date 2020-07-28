@@ -1,6 +1,6 @@
-@import 'utilities/text.css';
-@import 'utilities/unselectable.css';
-@import 'variables/colors.css';
+@import '../utilities/text.css';
+@import '../utilities/unselectable.css';
+@import '../variables/colors.css';
 
 .badge {
   @apply --text-bold;

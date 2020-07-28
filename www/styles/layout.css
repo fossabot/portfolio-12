@@ -1,0 +1,80 @@
+@import './variables/colors.css';
+@import './variables/dimensions.css';
+@import './variables/fonts.css';
+
+body {
+  background-color: #fafafa;
+  border: 0;
+  color: var(--clr-primary-black);
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: var(--fontsize-root);
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  min-width: 420px;
+  overflow-x: auto;
+  overflow-y: auto;
+  padding: 0;
+  width: 100%;
+}
+
+article,
+header,
+section {
+  padding: 0 var(--mobile-side-space);
+}
+
+article,
+section {
+  margin-top: 1em;
+}
+
+footer,
+header {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 2;
+}
+
+@media (--medium-screen) {
+  main {
+    padding: 0 124px;
+  }
+
+  article,
+  section {
+    margin: 2em auto;
+    max-width: var(--standard-max-width);
+    padding: 0;
+  }
+}
+@media (--large-screen) {
+  body {
+    display: grid;
+    grid-gap: 0 54px;
+    grid-template-columns: 36% calc(64% - 54px);
+    width: 100%;
+  }
+
+  header {
+    align-self: start;
+    grid-column: 1 / 2;
+  }
+
+  main {
+    grid-column: 2 / 3;
+    padding: 0;
+  }
+
+  footer {
+    grid-column: span 2;
+  }
+
+  article,
+  section {
+    margin: 2em 0;
+  }
+}

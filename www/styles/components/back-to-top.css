@@ -1,5 +1,5 @@
-@import 'utilities/unselectable.css';
-@import 'variables/dimensions.css';
+@import '../utilities/unselectable.css';
+@import '../variables/dimensions.css';
 
 .back-to-top {
   display: none;

@@ -1,3 +1,5 @@
+@import './dimensions.css';
+
 :root {
   /* font stacks */
   --fontstack-header: sans-serif;
@@ -24,7 +26,7 @@
   --fontsize-subtext: 1em;
 }
 
-@media only screen and (min-width: 961px) and (orientation: landscape) {
+@media (--medium-screen) {
   :root {
     --fontsize-root: .9em;
     --fontsize-h1: 3.25rem;
