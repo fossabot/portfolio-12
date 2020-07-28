@@ -4,9 +4,12 @@
 @import 'variables/fonts.css';
 @import 'variables/layers.css';
 
+:root {
+  --header-padding: 2em;
+}
+
 .header {
   --boxshadow-blur: 4px;
-  --header-padding: 2em;
   --space-between-in-header: 12px;
 
   background-color: var(--clr-primary-white);
@@ -37,8 +40,8 @@
 }
 
 .header--compact {
-  --height: 64px;
-  --header-padding: 12px;
+  --height: 4em;
+  --header-padding-compact: .75em;
 
   height: var(--height);
   overflow: hidden;
@@ -55,13 +58,13 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-    padding: var(--header-padding) 0;
+    padding: var(--header-padding-compact) 0;
   }
 
   .header__logo {
     display: block;
     height: 100%;
-    margin: 0 1.4em 0 0;
+    margin: 0 1em 0 0;
 
     img&,
     & > img {
@@ -72,6 +75,7 @@
     }
   }
 
+  .list-of-icons,
   .header__message,
   .header__title {
     display: none;
@@ -80,8 +84,6 @@
 
 @media (--medium-screen) {
   .header {
-    --header-padding: 3em;
-
     margin: 0 auto;
     max-width: var(--standard-max-width);
   }
@@ -98,8 +100,6 @@
 }
 @media (--large-screen) {
   .header {
-    --header-padding: 2em;
-
     justify-self: end;
     margin: 0; /* Undo padding from --medium-screen */
     position: sticky;
@@ -108,20 +108,20 @@
   }
 
   .header--compact {
-    --header-padding: 2em;
+    --header-padding-compact: var(--header-padding);
 
     height: unset;
 
     .header__container {
       display: block;
       height: 100%;
-      padding: var(--header-padding) 0;
     }
 
     .header__logo {
       display: none;
     }
 
+    .list-of-icons,
     .header__message,
     .header__title {
       display: block;
