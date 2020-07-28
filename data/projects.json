@@ -94,7 +94,7 @@
     },
     {
       "name": "Pinned tabs for Atom",
-      "tldr": "Package for the <a class=\"text-link\" href=\"https://atom.io/\" rel=\"noopener\">Atom text editor</a> that allows you to you to pin tabs.",
+      "tldr": "Package for the <a class=\"text-link\" href=\"https://atom.io/\" rel=\"noopener\">Atom text editor</a> that allows you to pin tabs.",
       "start_year": 2015,
       "end_year": 2018,
       "spotlight": true,
@@ -176,7 +176,7 @@
       "end_year": 2015,
       "spotlight": false,
       "tags": ["CSS", "HTML", "JavaScript"],
-      "keywords": ["onepager", "one page", "website", "webapp", "web application"],
+      "keywords": ["one-pager", "one page", "website", "webapp", "web application"],
       "links": {
         "github": "https://github.com/ericcornelissen/InterstellarScaler",
         "website": "https://ericcornelissen.github.io/InterstellarScaler/"

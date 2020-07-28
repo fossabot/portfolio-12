@@ -78,7 +78,7 @@
     },
     {
       "name": "Progress buttons",
-      "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS psuedo elements and FontAwesome spinners.",
+      "tldr": "Button with instant feedback 'Busy...' feedback when disabled using CSS pseudo-elements and FontAwesome spinners.",
       "languages": ["CSS3", "HTML5", "JavaScript"],
       "link": "https://codepen.io/ericornelissen/full/qpXjdm"
     }
