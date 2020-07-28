@@ -3,6 +3,7 @@
 
 :root {
   --border-radius: 4px;
+  --mobile-side-space: 2em;
   --padding-h: .5em;
   --padding-v: .1em;
   --space-between: .3em;
