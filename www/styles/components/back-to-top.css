@@ -10,7 +10,7 @@
     @apply --unselectable;
 
     --bottom: 1em;
-    --right: 54px;
+    --right: 0;
     --height: 100px;
 
     align-items: center;

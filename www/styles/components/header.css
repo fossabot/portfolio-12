@@ -84,8 +84,7 @@
 
 @media (--medium-screen) {
   .header {
-    margin: 0 auto;
-    max-width: var(--standard-max-width);
+    padding: 0 2em;
   }
 
   .header--compact {

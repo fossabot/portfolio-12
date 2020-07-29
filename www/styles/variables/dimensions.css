@@ -2,15 +2,24 @@
 @custom-media --large-screen only screen and (min-width: 1600px) and (orientation: landscape);
 
 :root {
+  --min-width: 420px;
   --border-radius: 4px;
   --mobile-side-space: 2em;
   --padding-h: .5em;
   --padding-v: .1em;
   --space-between: .3em;
+  --space-between-sections: 2em;
 }
 
 @media (--medium-screen) {
   :root {
     --standard-max-width: 48.75em;
+    --space-between-sections: 2em;
+  }
+}
+@media (--large-screen) {
+  :root {
+    --grid-gap: 3.375em;
+    --space-between-sections: 2em;
   }
 }

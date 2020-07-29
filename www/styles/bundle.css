@@ -16,3 +16,9 @@
 @import './components/list.css';
 @import './components/tags.css';
 @import './components/timeline.css';
+
+body {
+  background-color: var(--clr-background);
+  color: var(--clr-primary-black);
+  font-size: var(--fontsize-root);
+}
