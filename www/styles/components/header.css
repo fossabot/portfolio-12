@@ -9,11 +9,8 @@
 }
 
 .header {
-  --boxshadow-blur: 4px;
-  --space-between-in-header: 12px;
-
   background-color: var(--clr-primary-white);
-  box-shadow: 0 0 var(--boxshadow-blur) 0 var(--clr-shadow);
+  box-shadow: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
   z-index: var(--layer-roof);
 
   .header__container {

@@ -1,0 +1,61 @@
+@import '../variables/colors.css';
+@import '../variables/transitions.css';
+
+.cardboard {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    align-items: stretch;
+    background-color: var(--clr-primary-white);
+    box-shadow: 0 0 var(--boxshadow-blur-floor) 0 var(--clr-shadow);
+    display: flex;
+    flex-direction: column;
+    margin: var(--space-between-cards) 0;
+    padding: var(--padding-card-v) var(--padding-card-h);
+    transition: var(--transition-shadow);
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
+    }
+  }
+
+  .card__description {
+    flex-grow: 2;
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card__more {
+    align-self: flex-end;
+    flex-grow: 0;
+  }
+
+  .card__title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: var(--fontsize-h5);
+    margin: 0 0 .4em;
+    opacity: 1;
+    order: inherit;
+  }
+}
+
+@media (--medium-screen) {
+  .cardboard .card {
+    margin: var(--space-between-cards) var(--space-between-cards) var(--space-between-cards);
+    width: calc(50% - var(--space-between-cards));
+
+    &:nth-child(odd) {
+      margin-left: 0;
+    }
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+}

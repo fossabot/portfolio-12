@@ -12,6 +12,6 @@
   color: var(--clr-primary-white);
   display: inline-block;
   font-size: 1rem;
-  padding: var(--padding-v) var(--padding-h);
+  padding: var(--padding-badge-v) var(--padding-badge-h);
   vertical-align: middle;
 }

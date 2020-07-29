@@ -24,7 +24,7 @@
   display: inline-block;
   font-size: 1.1em;
   margin: 0 var(--space-between);
-  padding: var(--padding-v) var(--padding-h);
+  padding: var(--padding-tag-v) var(--padding-tag-h);
 
   &::before {
     background-color: var(--clr-secondary-accent);
@@ -32,8 +32,12 @@
     border-top-left-radius: var(--border-radius);
     content: var(--hashtag);
     float: left;
-    margin: calc(-1 * var(--padding-v)) var(--padding-h) calc(-1 * var(--padding-v)) calc(-1 * var(--padding-h));
-    padding: var(--padding-v) var(--padding-h);
+    margin:
+      calc(-1 * var(--padding-tag-v))
+      var(--padding-tag-h)
+      calc(-1 * var(--padding-tag-v))
+      calc(-1 * var(--padding-tag-h));
+    padding: var(--padding-tag-v) var(--padding-tag-h);
   }
 
   &:first-child {

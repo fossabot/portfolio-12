@@ -2,6 +2,7 @@
 @import '../utilities/unselectable.css';
 @import '../variables/colors.css';
 @import '../variables/dimensions.css';
+@import '../variables/transitions.css';
 @import './icons.css';
 
 .timeline {
@@ -31,7 +32,7 @@
     margin: var(--margin-event);
     padding: var(--padding-event);
     position: relative;
-    transition: box-shadow .3s ease;
+    transition: var(--transition-shadow);
     width: var(--card-width);
 
     &--achievement {

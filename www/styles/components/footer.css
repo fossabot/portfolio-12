@@ -1,14 +1,11 @@
 @import '../variables/dimensions.css';
 
 .footer {
-  --background-color: #171717;
-  --boxshadow-blur: 4px;
-  --boxshadow-v: 2px;
   --height: 3em;
   --border-width: 2px;
 
-  background: var(--background-color);
-  box-shadow: 0 calc(-1 * var(--boxshadow-v)) var(--boxshadow-blur) 0 var(--clr-shadow);
+  background: var(--background-color-footer);
+  box-shadow: 0 -2px var(--boxshadow-blur-roof) 0 var(--clr-shadow);
   height: var(--height);
   position: relative;
   width: 100%;
