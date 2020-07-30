@@ -3,6 +3,8 @@
 
 figcaption {
   @apply --text-sub;
+
+  margin-top: var(--space-between-paragraphs);
 }
 
 img {

@@ -9,21 +9,17 @@
   .back-to-top {
     @apply --unselectable;
 
-    --bottom: 1em;
-    --right: 0;
-    --height: 100px;
-
     align-items: center;
-    bottom: var(--bottom);
+    bottom: var(--space-between-sections);
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    font-size: 1.7rem;
-    max-height: var(--height);
+    font-size: var(--fontsize-h5);
+    left: calc(100% + var(--btt-right));
+    max-height: 100%;
     opacity: .5;
     overflow: hidden;
     position: absolute;
-    right: var(--right);
     text-decoration: none;
     transition:
       bottom .25s ease,
@@ -43,5 +39,9 @@
   .back-to-top__icon {
     display: block;
     font-size: 2.2rem;
+  }
+
+  .back-to-top__text {
+    white-space: nowrap;
   }
 }

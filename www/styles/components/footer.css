@@ -22,14 +22,8 @@
   }
 }
 
-@media (--medium-screen) {
-  .footer {
-    height: 4em;
-  }
-}
 @media (--large-screen) {
   .footer {
     align-self: end;
-    height: 3em;
   }
 }

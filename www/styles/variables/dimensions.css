@@ -4,6 +4,7 @@
 :root {
   --min-width: 420px;
   --border-radius: 4px;
+  --height-header-compact: 4em;
   --mobile-side-space: 2em;
   --padding-badge-h: .5em;
   --padding-badge-v: .1em;
@@ -11,18 +12,24 @@
   --padding-tag-v: .1em;
   --padding-card-h: 1em;
   --padding-card-v: 1.1em;
+  --padding-header: 2em;
+  --padding-header-compact: .75em;
   --space-between: .3em;
-  --space-between-sections: 2em;
+  --space-between-paragraphs: 1em;
+  --space-between-tags: .2em;
+  --space-between-sections: 2rem;
   --boxshadow-blur-roof: 6px;
   --boxshadow-blur-floor: 3px;
   --space-between-in-header: 12px;
   --space-between-cards: .4em;
+  --btt-right: .5em;
 }
 
 @media (--medium-screen) {
   :root {
     --standard-max-width: 48.75em;
-    --space-between-sections: 2em;
+    --extra-side-padding: 8.75em;
+    --space-between-sections: 2rem;
     --space-between-cards: .4em;
   }
 }

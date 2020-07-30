@@ -1,46 +1,41 @@
 @import '../utilities/unselectable.css';
 @import '../variables/colors.css';
-
-:root {
-  --hashtag: '#';
-}
+@import '../variables/fonts.css';
 
 .tags {
   @apply --unselectable;
 
-  --margin-v: 1.5em;
-
   display: block;
   list-style: none;
-  margin: var(--margin-v) 0;
+  margin: var(--space-between-paragraphs) 0;
   position: relative;
-}
 
-.tag {
-  background-color: var(--clr-primary-accent);
-  border-radius: var(--border-radius);
-  color: var(--clr-primary-white);
-  cursor: default;
-  display: inline-block;
-  font-size: 1.1em;
-  margin: 0 var(--space-between);
-  padding: var(--padding-tag-v) var(--padding-tag-h);
-
-  &::before {
-    background-color: var(--clr-secondary-accent);
-    border-bottom-left-radius: var(--border-radius);
-    border-top-left-radius: var(--border-radius);
-    content: var(--hashtag);
-    float: left;
-    margin:
-      calc(-1 * var(--padding-tag-v))
-      var(--padding-tag-h)
-      calc(-1 * var(--padding-tag-v))
-      calc(-1 * var(--padding-tag-h));
+  & .tag {
+    background-color: var(--clr-primary-accent);
+    border-radius: var(--border-radius);
+    color: var(--clr-primary-white);
+    cursor: default;
+    display: inline-block;
+    font-size: var(--fontsize-subtext);
+    margin: 0 var(--space-between-tags);
     padding: var(--padding-tag-v) var(--padding-tag-h);
-  }
 
-  &:first-child {
-    margin-left: 0;
+    &::before {
+      background-color: var(--clr-secondary-accent);
+      border-bottom-left-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
+      content: '#';
+      float: left;
+      margin:
+        calc(-1 * var(--padding-tag-v))
+        var(--padding-tag-h)
+        calc(-1 * var(--padding-tag-v))
+        calc(-1 * var(--padding-tag-h));
+      padding: var(--padding-tag-v) var(--padding-tag-h);
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
   }
 }

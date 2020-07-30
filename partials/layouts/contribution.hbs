@@ -10,8 +10,8 @@
     {{> includes/header compact=true}}
 
     <main class="main">
-      <article class="section">
-        <ul class="article__links list-of-icons list-of-icons--large">
+      <article class="section article">
+        <ul class="article__links list-of-icons list-of-icons--large float-right">
           {{#each project.links as |url key|}}
             <li class="list-item">
               <a class="icon icon-{{@key}} icon--hover" aria-label="link to the project's {{get_name key}}" href="{{url}}" rel="noopener" target="_self"></a>
@@ -39,7 +39,6 @@
           {{!-- Project description is inserted here --}}
         {{/description}}
       </article>
-
       {{> includes/back-to-top}}
     </main>
 

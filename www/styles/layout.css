@@ -52,6 +52,7 @@ section {
   main {
     grid-column: 2 / 3;
     margin: 0;
+    padding-left: 0;
   }
 
   footer {

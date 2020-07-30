@@ -4,17 +4,13 @@
 @import '../variables/fonts.css';
 @import '../variables/layers.css';
 
-:root {
-  --header-padding: 2em;
-}
-
 .header {
   background-color: var(--clr-primary-white);
   box-shadow: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
   z-index: var(--layer-roof);
 
   .header__container {
-    padding: var(--header-padding) 0;
+    padding: var(--padding-header) 0;
   }
 
   .header__message {
@@ -37,10 +33,7 @@
 }
 
 .header--compact {
-  --height: 4em;
-  --header-padding-compact: .75em;
-
-  height: var(--height);
+  height: var(--height-header-compact);
   overflow: hidden;
   position: sticky;
   top: 0;
@@ -55,7 +48,7 @@
     display: flex;
     flex-direction: row;
     height: 100%;
-    padding: var(--header-padding-compact) 0;
+    padding: var(--padding-header-compact) 0;
   }
 
   .header__logo {
@@ -81,7 +74,7 @@
 
 @media (--medium-screen) {
   .header {
-    padding: 0 2em;
+    padding: 0 var(--padding-header);
   }
 
   .header--compact {
@@ -104,13 +97,12 @@
   }
 
   .header--compact {
-    --header-padding-compact: var(--header-padding);
+    --padding-header-compact: var(--padding-header);
 
     height: unset;
 
     .header__container {
       display: block;
-      height: 100%;
     }
 
     .header__logo {

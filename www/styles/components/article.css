@@ -2,47 +2,26 @@
 @import '../variables/dimensions.css';
 @import '../variables/fonts.css';
 
-.article__date {
-  color: var(--clr-primary-gray);
-  font-family: var(--fontstack-code);
-  font-size: var(--fontsize-text);
-  margin: -.6em 0 1.4em;
-}
-
-.article__figure {
-  --margin-v: 1em;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: var(--margin-v) 0;
-}
-
-.article__image {
-  --margin-v: .5em;
-
-  margin: var(--margin-v) 0;
-  width: 100%;
-}
-
-.article__links {
-  float: right;
-}
-
-@media (--medium-screen) {
-  .article__image {
-    --margin-h: auto;
-    --margin-v: .4em;
-
-    margin: var(--margin-v) var(--margin-h);
-    max-width: 100%;
-    width: auto;
+.article {
+  & .article__date {
+    color: var(--clr-primary-gray);
+    font-family: var(--fontstack-code);
+    font-size: var(--fontsize-subtext);
   }
 
-  .article__figure {
-    --margin-h: 2.8em;
-    --margin-v: 1em;
+  & > p,
+  & > .article__figure {
+    margin: var(--space-between-paragraphs) 0;
+  }
 
-    margin: var(--margin-v) var(--margin-h);
+  & > .article__figure {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & > .article__image {
+      max-width: 100%;
+    }
   }
 }
