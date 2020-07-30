@@ -251,7 +251,7 @@
         }
       }
 
-      /* Show 3 elements on medium screens */
+      /* show 3 elements on medium screens */
       @media only screen and (min-width: 1240px) and (orientation: landscape) {
         .timeline-event {
           &:nth-child(3) {
@@ -260,7 +260,7 @@
         }
       }
 
-      /* Show 4 elements on medium screens */
+      /* show 4 elements on medium screens */
       @media only screen and (min-width: 1440px) and (orientation: landscape) {
         .timeline-event {
           &:nth-child(2) {

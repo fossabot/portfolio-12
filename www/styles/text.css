@@ -77,7 +77,7 @@ code {
   padding: .05em .2em;
 }
 
-kbd { /* Based on GitHub's <kbd> styling */
+kbd { /* based on GitHub's <kbd> styling */
   background-color: #fafbfc;
   border: 1px solid #c6cbd1;
   border-bottom-color: #959da5;

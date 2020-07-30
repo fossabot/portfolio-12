@@ -89,7 +89,7 @@
 @media (--large-screen) {
   .header {
     justify-self: end;
-    margin: 0; /* Undo margin from --medium-screen */
+    margin: 0; /* undo margin from --medium-screen */
     position: sticky;
     top: 0;
     width: 27.5em;

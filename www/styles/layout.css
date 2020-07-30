@@ -38,7 +38,7 @@ section {
 @media (--medium-screen) {
   footer,
   header {
-    padding: 0; /* Undo padding from mobile */
+    padding: 0; /* undo padding from mobile */
   }
 
   header,
