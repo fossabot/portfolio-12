@@ -27,7 +27,7 @@
     }
   }
 
-  .vlist {
+  .hlist {
     margin: var(--space-between-in-header) 0 0;
   }
 }
@@ -65,7 +65,7 @@
     }
   }
 
-  .list-of-icons,
+  .header__social,
   .header__message,
   .header__title {
     display: none;
@@ -90,7 +90,7 @@
 @media (--large-screen) {
   .header {
     justify-self: end;
-    margin: 0; /* Undo padding from --medium-screen */
+    margin: 0; /* Undo margin from --medium-screen */
     position: sticky;
     top: 0;
     width: 27.5em;
@@ -109,7 +109,7 @@
       display: none;
     }
 
-    .list-of-icons,
+    .header__social,
     .header__message,
     .header__title {
       display: block;

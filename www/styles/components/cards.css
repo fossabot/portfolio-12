@@ -23,6 +23,7 @@
 
   .card__description {
     flex-grow: 2;
+    margin-bottom: var(--space-between-paragraphs);
   }
 
   .card__header {
@@ -57,5 +58,30 @@
     &:nth-child(even) {
       margin-right: 0;
     }
+  }
+}
+
+.category {
+  color: var(--clr-primary-gray);
+  cursor: default;
+  font-family: var(--fontstack-code);
+  font-size: var(--fontsize-subtext);
+  font-weight: 400;
+  pointer-events: none;
+}
+
+@media (--medium-screen) {
+  .category {
+    font-size: 1.2em;
+    margin: .6em 0 0;
+    position: absolute;
+    right: calc(100% + 1em);
+  }
+}
+@media (--large-screen) {
+  .category {
+    font-size: 1.3em;
+    right: calc(100% + .1em);
+    transform: rotateZ(-90deg) translateX(-60%);
   }
 }

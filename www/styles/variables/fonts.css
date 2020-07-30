@@ -24,6 +24,9 @@
   --fontsize-h6: 1.5rem;
   --fontsize-text: 1.2rem;
   --fontsize-subtext: 1rem;
+
+  /* glyphs */
+  --fontsize-glyphs: 1.7rem;
 }
 
 @media (--medium-screen) {

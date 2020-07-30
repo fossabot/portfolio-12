@@ -6,7 +6,7 @@
       </a>
     {{/if}}
 
-    <ul class="list-of-icons vlist float-right">
+    <ul class="header__social hlist hlist--glyphs float-right">
       {{#each social}}
         <li class="list-item">
           <a class="icon icon-{{@key}} icon--hover" aria-label="link to my {{get_name @key}}" href="{{url}}" rel="noopener" target="{{target}}"></a>
@@ -18,23 +18,23 @@
     <p class="header__message">Hey there &#x1F44B; I&apos;m software engineering and open source enthusiast with an interest in security and usability. You can find me and my work right here or at the links below.</p>
 
     {{#unless no_breadcrumbs}}
-      <ol class="breadcrumbs">
-        <li class="crumb"><a href="/" rel="noopener">Home</a></li>
+      <ol class="hlist breadcrumbs">
+        <li class="list-item"><a href="/" rel="noopener">Home</a></li>
         {{#each (get_crumbs)}}
           {{#unless @last}}
-            <li class="crumb"><a href="{{path}}" rel="noopener">{{name}}</a></li>
+            <li class="list-item"><a href="{{path}}" rel="noopener">{{name}}</a></li>
           {{else}}
-            <li class="crumb">{{name}}</li>
+            <li class="list-item">{{name}}</li>
           {{/unless}}
         {{/each}}
       </ol>
     {{else}}
-      <ul class="vlist vlist--evenly-spaced">
-        <li><a href="/archive#projects" rel="noopener">Projects</a></li>
-        <li><a href="/archive#contributions" rel="noopener">Contributions</a></li>
-        <li><a href="/snippets" rel="noopener">Snippets</a></li>
-        <li><a href="/downloads/resume_eric-cornelissen.pdf" rel="noopener">Resume</a></li>
-        <li><a href="/timeline" rel="noopener">Timeline</a></li>
+      <ul class="hlist hlist--evenly-spaced">
+        <li class="list-item"><a href="/archive#projects" rel="noopener">Projects</a></li>
+        <li class="list-item"><a href="/archive#contributions" rel="noopener">Contributions</a></li>
+        <li class="list-item"><a href="/snippets" rel="noopener">Snippets</a></li>
+        <li class="list-item"><a href="/downloads/resume_eric-cornelissen.pdf" rel="noopener">Resume</a></li>
+        <li class="list-item"><a href="/timeline" rel="noopener">Timeline</a></li>
       </ul>
     {{/unless}}
   </div>

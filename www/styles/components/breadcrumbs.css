@@ -2,13 +2,22 @@
 @import './list.css';
 
 .breadcrumbs {
-  @extend .vlist;
-
   --separator: '>';
   --separator-fontsize: .8em;
   --space-between: 8px;
 
-  & > .crumb {
+  overflow: hidden;
+
+  & > .list-item {
+    font-size: 14px;
+    margin: 0;
+
+    &:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
     &:not(:last-child)::after {
       content: var(--separator);
       font-size: var(--separator-fontsize);
