@@ -5,28 +5,6 @@
 @import './variables/fonts.css';
 @import './variables/layers.css';
 
-.background-hover {
-  &::before {
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    pointer-events: none; /* Prevents hover action on the (invisible) pseudo element */
-    position: absolute;
-    top: 0;
-    transition: opacity .2s ease;
-    width: 100%;
-    z-index: var(--layer-basement);
-  }
-
-  &:hover {
-    &::before {
-      opacity: 1;
-    }
-  }
-}
-
 .more-arrow {
   @apply --unselectable;
   @apply --text-bold;
@@ -36,7 +14,9 @@
   margin: .7em 1em 0;
   position: relative;
   text-decoration: none;
-  transition: color .1s ease, margin .15s ease;
+  transition:
+    color .1s ease,
+    margin .15s ease;
 
   &::after {
     color: var(--clr-primary-black);
@@ -47,7 +27,9 @@
     pointer-events: none;
     position: absolute;
     top: 0;
-    transition: left .15s ease, opacity .1s ease;
+    transition:
+      left .15s ease,
+      opacity .1s ease;
   }
 
   &:focus,
@@ -91,60 +73,6 @@
     height: .15em;
     margin: .4em 0 0;
     position: absolute;
-    transition: background-color .2s ease;
     width: 2em;
-  }
-
-  &--inverse {
-    &::after {
-      background-color: var(--clr-primary-white);
-    }
-
-    &:hover {
-      &::after {
-        background-color: var(--clr-primary-accent);
-      }
-    }
-  }
-}
-
-.section--full-width {
-  max-width: none;
-}
-
-.text-link {
-  background-color: transparent;
-  color: var(--clr-secondary-accent);
-  position: relative;
-  text-decoration: none;
-  transition: color .15s ease;
-  z-index: 0;
-
-  &::after {
-    background-color: var(--clr-primary-black);
-    content: '';
-    height: calc(100% + 4px);
-    left: -2px;
-    max-height: 0;
-    padding: 0 2px;
-    position: absolute;
-    top: 1px;
-    transition: max-height .2s ease;
-    width: 100%;
-    z-index: -1;
-  }
-
-  &:focus {
-    color: var(--clr-primary-accent);
-  }
-
-  &:hover {
-    color: var(--clr-primary-white);
-
-    &::after {
-      bottom: -1px;
-      max-height: 100%;
-      top: auto;
-    }
   }
 }

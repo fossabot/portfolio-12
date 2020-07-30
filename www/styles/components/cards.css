@@ -1,4 +1,6 @@
 @import '../variables/colors.css';
+@import '../variables/fonts.css';
+@import '../variables/shadows.css';
 @import '../variables/transitions.css';
 
 .cardboard {
@@ -8,16 +10,16 @@
   .card {
     align-items: stretch;
     background-color: var(--clr-primary-white);
-    box-shadow: 0 0 var(--boxshadow-blur-floor) 0 var(--clr-shadow);
+    box-shadow: var(--boxshadow-floor);
     display: flex;
     flex-direction: column;
     margin: var(--space-between-cards) 0;
-    padding: var(--padding-card-v) var(--padding-card-h);
+    padding: var(--padding-v-card) var(--padding-h-card);
     transition: var(--transition-shadow);
     width: 100%;
 
     &:hover {
-      box-shadow: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
+      box-shadow: var(--boxshadow-roof);
     }
   }
 
@@ -62,6 +64,8 @@
 }
 
 .category {
+  @apply --unselectable;
+
   color: var(--clr-primary-gray);
   cursor: default;
   font-family: var(--fontstack-code);

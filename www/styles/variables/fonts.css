@@ -1,5 +1,3 @@
-@import './dimensions.css';
-
 :root {
   /* font stacks */
   --fontstack-header: sans-serif;
@@ -27,6 +25,7 @@
 
   /* glyphs */
   --fontsize-glyphs: 1.7rem;
+  --fontsize-glyphs-l: 2.2rem;
 }
 
 @media (--medium-screen) {

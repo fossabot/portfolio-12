@@ -1,3 +1,10 @@
 :root {
   --transition-shadow: box-shadow .3s ease;
+  --transition-color: color .15s ease;
+  --transition-opacity: opacity .2s ease;
+
+  /* dimensions */
+  --transition-duration-dimensions: .25s;
+  --transition-bottom: bottom var(--transition-duration-dimensions) ease;
+  --transition-max-height: max-height var(--transition-duration-dimensions) ease;
 }

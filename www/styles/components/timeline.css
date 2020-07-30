@@ -25,7 +25,7 @@
   .timeline-event {
     background-color: var(--clr-primary-white);
     border-radius: 4px;
-    box-shadow: 0 0 4px 0 var(--clr-shadow);
+    box-shadow: var(--boxshadow-floor);
     color: var(--clr-primary-black);
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@
     }
 
     &:hover {
-      box-shadow: 0 0 8px 0 var(--clr-shadow);
+      box-shadow: var(--boxshadow-roof);
     }
 
     &:focus-within::after,
@@ -208,7 +208,9 @@
         &--more {
           box-shadow: none;
           height: 0;
+          margin: 0;
           outline: 0;
+          padding: 0;
           width: 0;
         }
 

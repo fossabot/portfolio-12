@@ -1,16 +1,14 @@
-@import '../variables/colors.css';
-@import './list.css';
+@import '../utilities/text.css';
+@import '../variables/dimensions.css';
 
 .breadcrumbs {
   --separator: '>';
   --separator-fontsize: .8em;
-  --space-between: 8px;
 
   overflow: hidden;
 
   & > .list-item {
-    font-size: 14px;
-    margin: 0;
+    @apply --text-sub;
 
     &:last-child {
       overflow: hidden;
@@ -21,7 +19,7 @@
     &:not(:last-child)::after {
       content: var(--separator);
       font-size: var(--separator-fontsize);
-      padding: 0 var(--space-between);
+      margin: 0 var(--space-between-breadcrumbs);
       pointer-events: none;
     }
   }

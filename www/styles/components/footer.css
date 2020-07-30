@@ -1,12 +1,12 @@
+@import '../variables/colors.css';
 @import '../variables/dimensions.css';
+@import '../variables/layers.css';
+@import '../variables/shadows.css';
 
 .footer {
-  --height: 3em;
-  --border-width: 2px;
-
   background: var(--background-color-footer);
-  box-shadow: 0 -2px var(--boxshadow-blur-roof) 0 var(--clr-shadow);
-  height: var(--height);
+  box-shadow: var(--boxshadow-roof-);
+  height: var(--height-footer);
   position: relative;
   width: 100%;
   z-index: var(--layer-roof);
@@ -14,7 +14,7 @@
   &::before {
     background: linear-gradient(90deg, var(--mystic-mauvea-start) 0%, var(--mystic-mauvea-end) 100%);
     content: '';
-    height: var(--border-width);
+    height: var(--border-width-footer);
     left: 0;
     position: absolute;
     top: 0;

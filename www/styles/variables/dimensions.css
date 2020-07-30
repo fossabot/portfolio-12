@@ -1,42 +1,43 @@
-@custom-media --medium-screen only screen and (min-width: 961px) and (orientation: landscape);
-@custom-media --large-screen only screen and (min-width: 1600px) and (orientation: landscape);
-
 :root {
-  --min-width: 420px;
-  --border-radius: 4px;
-  --height-header-compact: 4em;
-  --mobile-side-space: 2em;
-  --padding-badge-h: .5em;
-  --padding-badge-v: .1em;
-  --padding-tag-h: .5em;
-  --padding-tag-v: .1em;
-  --padding-card-h: 1em;
-  --padding-card-v: 1.1em;
+  /* layout */
+  --page-min-margin: 2em;
+  --page-min-width: 420px;
+  --space-between-sections: 2rem;
+  --space-between-paragraphs: 1em;
+
+  /* components */
+  --padding-h-card: 1em;
+  --padding-v-card: 1.1em;
+  --padding-h-span: .5em;
+  --padding-v-span: .1em;
+
+  /* miscellaneous */
+  --std-border-radius: 4px;
+  --back-to-top-right: 2vw;
+  --padding-hashtag: .2em;
+  --height-header--compact: 4em;
+  --height-footer: 3em;
+  --border-width-footer: 2px;
   --padding-header: 2em;
   --padding-header-compact: .75em;
-  --space-between: .3em;
-  --space-between-paragraphs: 1em;
+
+  /* space between */
   --space-between-tags: .2em;
-  --space-between-sections: 2rem;
-  --boxshadow-blur-roof: 6px;
-  --boxshadow-blur-floor: 3px;
-  --space-between-in-header: 12px;
+  --space-between-in-header: .75em;
   --space-between-cards: .4em;
-  --space-between-hlist: 8px;
-  --btt-right: .5em;
+  --space-between-hlist: .5em;
+  --space-between-breadcrumbs: .5em;
 }
 
 @media (--medium-screen) {
   :root {
-    --standard-max-width: 48.75em;
-    --extra-side-padding: 8.75em;
-    --space-between-sections: 2rem;
-    --space-between-cards: .4em;
+    /* layout */
+    --content-max-width: 48.75em;
+    --space-between-sections: 2.75rem;
   }
 }
 @media (--large-screen) {
   :root {
-    --grid-gap: 3.375em;
-    --space-between-sections: 2em;
+    --space-between-sections: 3.375em;
   }
 }

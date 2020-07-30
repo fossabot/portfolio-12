@@ -1,12 +1,11 @@
-@import '../utilities/unselectable.css';
 @import '../variables/colors.css';
 @import '../variables/dimensions.css';
-@import '../variables/fonts.css';
 @import '../variables/layers.css';
+@import '../variables/shadows.css';
 
 .header {
   background-color: var(--clr-primary-white);
-  box-shadow: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
+  box-shadow: var(--boxshadow-roof);
   z-index: var(--layer-roof);
 
   .header__container {
@@ -33,7 +32,7 @@
 }
 
 .header--compact {
-  height: var(--height-header-compact);
+  height: var(--height-header--compact);
   overflow: hidden;
   position: sticky;
   top: 0;
@@ -83,7 +82,7 @@
 
     .header__container {
       margin: 0 auto;
-      max-width: var(--standard-max-width);
+      max-width: var(--content-max-width);
     }
   }
 }

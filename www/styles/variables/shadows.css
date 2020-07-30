@@ -1,0 +1,9 @@
+@import './colors.css';
+
+:root {
+  --boxshadow-blur-floor: 3px;
+  --boxshadow-blur-roof: 6px;
+  --boxshadow-floor: 0 0 var(--boxshadow-blur-floor) 0 var(--clr-shadow);
+  --boxshadow-roof: 0 0 var(--boxshadow-blur-roof) 0 var(--clr-shadow);
+  --boxshadow-roof-: 0 calc(-1 * (var(--boxshadow-blur-roof) / 2)) var(--boxshadow-blur-roof) 0 var(--clr-shadow);
+}

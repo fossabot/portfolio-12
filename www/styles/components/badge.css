@@ -8,10 +8,10 @@
   @apply --unselectable;
 
   background-color: var(--clr-badge);
-  border-radius: var(--border-radius);
+  border-radius: var(--std-border-radius);
   color: var(--clr-primary-white);
   display: inline-block;
   font-size: 1rem;
-  padding: var(--padding-badge-v) var(--padding-badge-h);
+  padding: var(--padding-v-span) var(--padding-h-span);
   vertical-align: middle;
 }

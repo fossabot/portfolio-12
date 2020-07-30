@@ -1,4 +1,3 @@
-@import '../utilities/text.css';
 @import '../variables/colors.css';
 @import '../variables/dimensions.css';
 @import '../variables/fonts.css';
@@ -12,18 +11,6 @@
     margin: 0 0 .3em;
     position: relative;
   }
-
-  .list-item__title {
-    @apply --text-bold;
-
-    display: inline-block;
-    flex-grow: 1;
-    flex-shrink: 0;
-    margin: 0 auto 0 0;
-    opacity: .8;
-    order: 2;
-    transition: margin .2s ease;
-  }
 }
 
 .hlist {
@@ -33,7 +20,6 @@
   display: flex;
   flex-flow: row nowrap;
   font-family: var(--fontstack-subtext);
-  font-size: 0;
 
   & > .list-item {
     color: var(--item-color);
@@ -41,7 +27,6 @@
     display: inline-block;
     font-family: monospace;
     font-size: var(--fontsize-subtext);
-    margin-left: var(--space-between-hlist);
 
     & > a:hover {
       color: var(--item-color-hovered);
@@ -60,5 +45,6 @@
 .hlist--glyphs {
   & > .list-item {
     font-size: var(--fontsize-glyphs);
+    margin-left: var(--space-between-hlist);
   }
 }
