@@ -1,20 +1,22 @@
 FROM node:10-alpine
 
+RUN apk update
+
 # Install prerequisites for node-gyp
-RUN apk add --no-cache \
+RUN apk add \
   g++ \
   make \
   python
 
 # Install prerequisites for gulp-imagemin
-RUN apk add --no-cache \
+RUN apk add \
   autoconf \
   automake \
   libtool \
   nasm
 
 # Install Chomium for puppeteer
-RUN apk add --no-cache \
+RUN apk add \
   chromium \
   nss \
   freetype \
@@ -22,6 +24,8 @@ RUN apk add --no-cache \
   harfbuzz \
   ca-certificates \
   ttf-freefont
+
+RUN rm -rf /var/cache/apk/*
 
 # Configure Puppeteer
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
