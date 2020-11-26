@@ -2,6 +2,10 @@ FROM node:10-alpine
 
 RUN apk update
 
+# Install development prerequisites
+RUN apk add git
+RUN npm install -g gulp
+
 # Install prerequisites for node-gyp
 RUN apk add \
   g++ \
@@ -37,7 +41,6 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 WORKDIR /usr/src/portfolio
 COPY package*.json ./
 RUN npm install
-RUN npm install -g gulp
 
 # Copy the portfolio
 COPY . .
