@@ -1,4 +1,0 @@
-hooks:
-  pre-commit: gulp lint
-  commit-msg: commitlint -e
-  pre-push: gulp lint && gulp build

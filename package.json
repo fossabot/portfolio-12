@@ -8,6 +8,9 @@
     "name": "Eric Cornelissen",
     "email": "ericornelissen@gmail.com"
   },
+  "scripts": {
+    "postinstall": "is-ci || husky install"
+  },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
     "@commitlint/config-conventional": "11.0.0",
@@ -37,7 +40,7 @@
     "gulp-uglify-es": "2.0.0",
     "handlebars-helpers": "0.10.0",
     "handlebars-utils": "1.0.6",
-    "husky": "4.3.5",
+    "husky": "5.0.4",
     "is-ci": "2.0.0",
     "jest-cli": "26.6.3",
     "jest-matcher-one-of": "1.0.2",
