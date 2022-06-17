@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720">
+  <path fill="#FAFAFA" d="M0 0h1280v720H0z"/>
+  <path fill="#FAFAFA" stroke="#757575" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="12" d="M386 222l398-43 26 239-398 43z"/>
+  <path fill="#FAFAFA" stroke="#757575" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="12" d="M440 240h400v240H440z"/>
+</svg>

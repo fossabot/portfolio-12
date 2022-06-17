@@ -1,0 +1,1 @@
+window.onDOMContentLoaded=function(n){"loading"===document.readyState?document.addEventListener("DOMContentLoaded",n):n()};
