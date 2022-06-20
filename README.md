@@ -1,4 +1,6 @@
 # Portfolio
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fericcornelissen%2Fportfolio.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fericcornelissen%2Fportfolio?ref=badge_shield)
+
 
 Repository for the personal portfolio of Eric Cornelissen.
 
@@ -81,3 +83,7 @@ $ docker stop portfolio-server
 [markdownlint]: https://github.com/DavidAnson/markdownlint
 [PostCSS]: https://postcss.org/
 [stylelint]: https://stylelint.io/
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fericcornelissen%2Fportfolio.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fericcornelissen%2Fportfolio?ref=badge_large)
